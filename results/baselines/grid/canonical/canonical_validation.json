@@ -1,0 +1,70 @@
+{
+  "phase": "5B",
+  "final_result": "PASS",
+  "source": {
+    "path": "data/baselines/grid/network_v2.gpkg",
+    "layer": "edges",
+    "expected_sha256": "7698544A01EED008E5451F8368703AFD0DBE232D10C9D7ADAA58C13DA57E0289",
+    "sha256_before": "7698544A01EED008E5451F8368703AFD0DBE232D10C9D7ADAA58C13DA57E0289",
+    "sha256_after": "7698544A01EED008E5451F8368703AFD0DBE232D10C9D7ADAA58C13DA57E0289",
+    "unchanged": true,
+    "feature_count": 76,
+    "exact_endpoint_node_count": 53
+  },
+  "canonical_topology": {
+    "node_count": 46,
+    "edge_count": 69,
+    "component_count": 1,
+    "degree_distribution": {
+      "1": 10,
+      "3": 16,
+      "4": 20
+    },
+    "handshake_degree_sum": 138,
+    "twice_edge_count": 138
+  },
+  "geometry": {
+    "consecutive_duplicate_coordinates_removed_from_derived_geometry": 25,
+    "source_total_length": 10945.657681153116,
+    "canonical_total_length": 10945.657681153116,
+    "absolute_difference": 0.0,
+    "relative_difference": 0.0,
+    "absolute_tolerance_local_units": 1e-09,
+    "geometry_errors": [],
+    "tolerance_based_simplification": false
+  },
+  "canonical_ids": {
+    "node_ordering": "descending exact Y, then ascending exact X; IDs N001..N046",
+    "edge_ordering": "normalize canonical node IDs so u<=v; assign deterministic parallel key; sort (u,v,key); IDs E001..E069",
+    "qgis_fids_are_canonical_identifiers": false
+  },
+  "topology_signature": {
+    "serialization_convention": "UTF-8 lines, one normalized tuple per line as u|v|key\\n, sorted lexicographically by (u,v,key), no header",
+    "topology_signature_sha256": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "canonical_scientific_content_sha256": "4758AEE5BB553EF6AC59988283B25933D6704E3744E6E2863625F39476D9F899",
+  "determinism": {
+    "json_csv_expectation": "byte-identical for identical source input",
+    "geopackage_criterion": "byte identity is tested after stabilizing derived gpkg_contents timestamps; scientific content remains the authoritative criterion",
+    "scientific_content_fields": "layer schemas, canonical IDs, coordinates, connectivity, exact geometry coordinate sequences, CRS, and attributes"
+  },
+  "checks": {
+    "source_feature_count_76": true,
+    "source_exact_node_count_53": true,
+    "approved_suppressions_7": true,
+    "canonical_node_count_46": true,
+    "canonical_edge_count_69": true,
+    "single_component": true,
+    "degree_distribution": true,
+    "degree2_count_zero": true,
+    "handshake": true,
+    "no_isolated_nodes": true,
+    "no_self_loops": true,
+    "no_parallel_edges": true,
+    "unique_normalized_edge_tuples": true,
+    "canonical_geometry_valid": true,
+    "all_suppressed_vertices_preserved": true,
+    "length_preserved": true,
+    "local_cartesian_crs_preserved": true
+  }
+}

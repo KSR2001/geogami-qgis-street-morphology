@@ -1,0 +1,8 @@
+source_tmp_node_id,x,y,original_degree,source_fid_1,source_fid_2,classification,scientific_decision,resulting_canonical_edge,geometry_vertex_preserved
+tmp_node_010,162.17220703245619,139.73570825812487,2,35,42,angular_bend,approved_for_canonical_suppression,E057,True
+tmp_node_015,338.86501833193904,1072.6503559407909,2,8,12,angular_bend,approved_for_canonical_suppression,E005,True
+tmp_node_018,458.5779871431296,762.8344262635142,2,30,31,straight_continuation,approved_for_canonical_suppression,E033,True
+tmp_node_033,723.4098306454775,387.24328503832237,2,47,72,straight_continuation,approved_for_canonical_suppression,E060,True
+tmp_node_035,723.4098306454775,635.014685751152,2,46,76,straight_continuation,approved_for_canonical_suppression,E052,True
+tmp_node_037,723.4098306454775,762.1306686397638,2,45,74,straight_continuation,approved_for_canonical_suppression,E042,True
+tmp_node_048,863.2286215961212,237.95184909085344,2,59,60,straight_continuation,approved_for_canonical_suppression,E053,True
