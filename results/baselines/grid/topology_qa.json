@@ -1,0 +1,2319 @@
+{
+  "validator": "GeoGami Env39 Grid Baseline Phase 4 QA",
+  "input": {
+    "path": "F:/GitHub/geogami-qgis-street-morphology/data/baselines/grid/network_v2.gpkg",
+    "layer": "edges",
+    "exists": true,
+    "available_layers": [
+      "edges",
+      "nodes"
+    ],
+    "feature_count": 76,
+    "source_fid_index_name": "fid",
+    "columns": [
+      "edge_id",
+      "u",
+      "v",
+      "key",
+      "condition",
+      "notes",
+      "geometry"
+    ],
+    "crs": {
+      "text": "LOCAL_CS[\"GeoGami Local Cartesian\",LOCAL_DATUM[\"GeoGami local engineering datum\",32767],UNIT[\"local unit\",1],AXIS[\"X\",EAST],AXIS[\"Y\",NORTH]]",
+      "wkt": "ENGCRS[\"GeoGami Local Cartesian\",EDATUM[\"GeoGami local engineering datum\"],CS[Cartesian,2],AXIS[\"x\",east,ORDER[1],LENGTHUNIT[\"local unit\",1]],AXIS[\"y\",north,ORDER[2],LENGTHUNIT[\"local unit\",1]]]",
+      "is_geographic": false
+    }
+  },
+  "configuration": {
+    "topology_identity": "exact unrounded LineString endpoint tuples",
+    "distance_model": "planar local Cartesian units",
+    "near_miss_tolerance_local_units": 0.01,
+    "near_miss_tolerance_usage": "diagnostic reporting only; never topology construction",
+    "extremely_short_edge_threshold_local_units": 1.0
+  },
+  "schema_validation": {
+    "required_attributes": [
+      "edge_id",
+      "u",
+      "v",
+      "key",
+      "condition",
+      "notes"
+    ],
+    "missing_attributes": [],
+    "unexpected_key_values": []
+  },
+  "graph_statistics": {
+    "source_feature_count": 76,
+    "exact_derived_node_count": 53,
+    "graph_edge_count": 76,
+    "connected_component_count": 1,
+    "component_sizes_nodes": [
+      53
+    ],
+    "components": [
+      {
+        "component_id": 1,
+        "node_count": 53,
+        "edge_count": 76,
+        "nodes": [
+          [
+            15.527348985462112,
+            884.8019166513449
+          ],
+          [
+            92.23950001437511,
+            884.8019166513449
+          ],
+          [
+            92.23950001437512,
+            636.7513705447836
+          ],
+          [
+            92.23950001437514,
+            387.3077002564369
+          ],
+          [
+            92.23950001437517,
+            26.243942854079023
+          ],
+          [
+            162.17220703245607,
+            1187.5352455266075
+          ],
+          [
+            162.1722070324561,
+            884.8019166513449
+          ],
+          [
+            162.17220703245613,
+            636.7513705447836
+          ],
+          [
+            162.17220703245616,
+            387.3077002564369
+          ],
+          [
+            162.17220703245619,
+            139.73570825812487
+          ],
+          [
+            338.8650183319114,
+            636.7513705447836
+          ],
+          [
+            338.8650183319114,
+            762.3239685480539
+          ],
+          [
+            338.8650183319114,
+            884.8019166513449
+          ],
+          [
+            338.86501833192546,
+            980.4276620142698
+          ],
+          [
+            338.86501833193904,
+            1072.6503559407909
+          ],
+          [
+            458.5779871431296,
+            636.7513705447836
+          ],
+          [
+            458.5779871431296,
+            762.3239685480539
+          ],
+          [
+            458.5779871431296,
+            762.8344262635142
+          ],
+          [
+            458.5779871431296,
+            884.8019166513446
+          ],
+          [
+            458.57798714315663,
+            980.4276620142698
+          ],
+          [
+            458.57798714315663,
+            1072.6503559407909
+          ],
+          [
+            589.5954674446257,
+            24.20211199224474
+          ],
+          [
+            589.5954674446257,
+            139.73570825812487
+          ],
+          [
+            589.5954674446257,
+            234.51785504759755
+          ],
+          [
+            589.5954674446257,
+            387.3077002564369
+          ],
+          [
+            589.5954674446257,
+            636.7513705447836
+          ],
+          [
+            589.5954674446257,
+            762.3239685480539
+          ],
+          [
+            589.5954674446257,
+            884.8019166513448
+          ],
+          [
+            589.5954674446693,
+            980.4276620142698
+          ],
+          [
+            589.5954674446693,
+            1072.6503559407909
+          ],
+          [
+            589.5954674446693,
+            1183.1112786592844
+          ],
+          [
+            723.4098306454775,
+            234.51785504761014
+          ],
+          [
+            723.4098306454775,
+            387.24328503832237
+          ],
+          [
+            723.4098306454775,
+            387.3077002564369
+          ],
+          [
+            723.4098306454775,
+            635.014685751152
+          ],
+          [
+            723.4098306454775,
+            636.7513705447836
+          ],
+          [
+            723.4098306454775,
+            762.1306686397638
+          ],
+          [
+            723.4098306454775,
+            762.3239685480539
+          ],
+          [
+            723.4098306454775,
+            884.8019166513449
+          ],
+          [
+            723.4098306454775,
+            980.4276620142698
+          ],
+          [
+            723.4098306454775,
+            1072.6503559407909
+          ],
+          [
+            863.2286215960698,
+            884.8019166513449
+          ],
+          [
+            863.2286215960698,
+            1072.6503559407909
+          ],
+          [
+            863.2286215960698,
+            1186.5490510682237
+          ],
+          [
+            863.2286215961212,
+            28.42000916457073
+          ],
+          [
+            863.2286215961212,
+            139.73570825812487
+          ],
+          [
+            863.2286215961212,
+            234.51785504761014
+          ],
+          [
+            863.2286215961212,
+            237.95184909085344
+          ],
+          [
+            863.2286215961212,
+            636.7513705447834
+          ],
+          [
+            863.2286215961212,
+            762.323968548054
+          ],
+          [
+            978.638688375702,
+            884.8019166513449
+          ],
+          [
+            981.6141111544218,
+            139.73570825812487
+          ],
+          [
+            983.9422427091583,
+            234.51785504761014
+          ]
+        ]
+      }
+    ],
+    "degree_distribution": {
+      "1": 10,
+      "2": 7,
+      "3": 16,
+      "4": 20
+    },
+    "degree_1_count": 10,
+    "degree_2_count": 7,
+    "degree_3_count": 16,
+    "degree_4_count": 20,
+    "degree_greater_than_4_count": 0,
+    "isolated_node_count": 0,
+    "average_degree_streets_per_node": 2.8679245283018866,
+    "total_planar_street_length": 10945.657681153116,
+    "mean_edge_length": 144.02181159411995,
+    "median_edge_length": 125.57259800327029,
+    "multiple_edge_node_pair_count": 0
+  },
+  "grid_geometry_qa": {
+    "exact_horizontal_edge_count": 19,
+    "exact_vertical_edge_count": 24,
+    "other_straight_edge_count": 10,
+    "multi_vertex_linestring_count": 23,
+    "extremely_short_edge_count": 3
+  },
+  "near_miss_diagnostics": {
+    "pair_count": 0,
+    "pairs": []
+  },
+  "exact_graph": {
+    "nodes": [
+      {
+        "coordinate": [
+          15.527348985462112,
+          884.8019166513449
+        ],
+        "degree": 1
+      },
+      {
+        "coordinate": [
+          92.23950001437511,
+          884.8019166513449
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          92.23950001437512,
+          636.7513705447836
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          92.23950001437514,
+          387.3077002564369
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          92.23950001437517,
+          26.243942854079023
+        ],
+        "degree": 1
+      },
+      {
+        "coordinate": [
+          162.17220703245607,
+          1187.5352455266075
+        ],
+        "degree": 1
+      },
+      {
+        "coordinate": [
+          162.1722070324561,
+          884.8019166513449
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          162.17220703245613,
+          636.7513705447836
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          162.17220703245616,
+          387.3077002564369
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          162.17220703245619,
+          139.73570825812487
+        ],
+        "degree": 2
+      },
+      {
+        "coordinate": [
+          338.8650183319114,
+          636.7513705447836
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          338.8650183319114,
+          762.3239685480539
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          338.8650183319114,
+          884.8019166513449
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          338.86501833192546,
+          980.4276620142698
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          338.86501833193904,
+          1072.6503559407909
+        ],
+        "degree": 2
+      },
+      {
+        "coordinate": [
+          458.5779871431296,
+          636.7513705447836
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          458.5779871431296,
+          762.3239685480539
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          458.5779871431296,
+          762.8344262635142
+        ],
+        "degree": 2
+      },
+      {
+        "coordinate": [
+          458.5779871431296,
+          884.8019166513446
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          458.57798714315663,
+          980.4276620142698
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          458.57798714315663,
+          1072.6503559407909
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          589.5954674446257,
+          24.20211199224474
+        ],
+        "degree": 1
+      },
+      {
+        "coordinate": [
+          589.5954674446257,
+          139.73570825812487
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          589.5954674446257,
+          234.51785504759755
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          589.5954674446257,
+          387.3077002564369
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          589.5954674446257,
+          636.7513705447836
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          589.5954674446257,
+          762.3239685480539
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          589.5954674446257,
+          884.8019166513448
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          589.5954674446693,
+          980.4276620142698
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          589.5954674446693,
+          1072.6503559407909
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          589.5954674446693,
+          1183.1112786592844
+        ],
+        "degree": 1
+      },
+      {
+        "coordinate": [
+          723.4098306454775,
+          234.51785504761014
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          723.4098306454775,
+          387.24328503832237
+        ],
+        "degree": 2
+      },
+      {
+        "coordinate": [
+          723.4098306454775,
+          387.3077002564369
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          723.4098306454775,
+          635.014685751152
+        ],
+        "degree": 2
+      },
+      {
+        "coordinate": [
+          723.4098306454775,
+          636.7513705447836
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          723.4098306454775,
+          762.1306686397638
+        ],
+        "degree": 2
+      },
+      {
+        "coordinate": [
+          723.4098306454775,
+          762.3239685480539
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          723.4098306454775,
+          884.8019166513449
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          723.4098306454775,
+          980.4276620142698
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          723.4098306454775,
+          1072.6503559407909
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          863.2286215960698,
+          884.8019166513449
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          863.2286215960698,
+          1072.6503559407909
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          863.2286215960698,
+          1186.5490510682237
+        ],
+        "degree": 1
+      },
+      {
+        "coordinate": [
+          863.2286215961212,
+          28.42000916457073
+        ],
+        "degree": 1
+      },
+      {
+        "coordinate": [
+          863.2286215961212,
+          139.73570825812487
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          863.2286215961212,
+          234.51785504761014
+        ],
+        "degree": 4
+      },
+      {
+        "coordinate": [
+          863.2286215961212,
+          237.95184909085344
+        ],
+        "degree": 2
+      },
+      {
+        "coordinate": [
+          863.2286215961212,
+          636.7513705447834
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          863.2286215961212,
+          762.323968548054
+        ],
+        "degree": 3
+      },
+      {
+        "coordinate": [
+          978.638688375702,
+          884.8019166513449
+        ],
+        "degree": 1
+      },
+      {
+        "coordinate": [
+          981.6141111544218,
+          139.73570825812487
+        ],
+        "degree": 1
+      },
+      {
+        "coordinate": [
+          983.9422427091583,
+          234.51785504761014
+        ],
+        "degree": 1
+      }
+    ],
+    "edges": [
+      {
+        "start": [
+          92.23950001437511,
+          884.8019166513449
+        ],
+        "end": [
+          15.527348985462112,
+          884.8019166513449
+        ],
+        "graph_key": 69,
+        "source_fid": 69,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 76.712151028913
+      },
+      {
+        "start": [
+          92.23950001437511,
+          884.8019166513449
+        ],
+        "end": [
+          92.23950001437512,
+          636.7513705447836
+        ],
+        "graph_key": 36,
+        "source_fid": 36,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 248.05054610656123
+      },
+      {
+        "start": [
+          92.23950001437511,
+          884.8019166513449
+        ],
+        "end": [
+          162.1722070324561,
+          884.8019166513449
+        ],
+        "graph_key": 1,
+        "source_fid": 1,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 69.93270701808099
+      },
+      {
+        "start": [
+          92.23950001437512,
+          636.7513705447836
+        ],
+        "end": [
+          92.23950001437514,
+          387.3077002564369
+        ],
+        "graph_key": 37,
+        "source_fid": 37,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 249.44367028834677
+      },
+      {
+        "start": [
+          92.23950001437514,
+          387.3077002564369
+        ],
+        "end": [
+          92.23950001437517,
+          26.243942854079023
+        ],
+        "graph_key": 38,
+        "source_fid": 38,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 361.06375740235785
+      },
+      {
+        "start": [
+          162.1722070324561,
+          884.8019166513449
+        ],
+        "end": [
+          162.17220703245607,
+          1187.5352455266075
+        ],
+        "graph_key": 32,
+        "source_fid": 32,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 302.7333288752626
+      },
+      {
+        "start": [
+          162.1722070324561,
+          884.8019166513449
+        ],
+        "end": [
+          162.17220703245613,
+          636.7513705447836
+        ],
+        "graph_key": 33,
+        "source_fid": 33,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 248.05054610656123
+      },
+      {
+        "start": [
+          162.1722070324561,
+          884.8019166513449
+        ],
+        "end": [
+          338.8650183319114,
+          884.8019166513449
+        ],
+        "graph_key": 2,
+        "source_fid": 2,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 176.69281129945531
+      },
+      {
+        "start": [
+          162.17220703245613,
+          636.7513705447836
+        ],
+        "end": [
+          92.23950001437512,
+          636.7513705447836
+        ],
+        "graph_key": 40,
+        "source_fid": 40,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 69.932707018081
+      },
+      {
+        "start": [
+          162.17220703245613,
+          636.7513705447836
+        ],
+        "end": [
+          162.17220703245616,
+          387.3077002564369
+        ],
+        "graph_key": 34,
+        "source_fid": 34,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 249.44367028834677
+      },
+      {
+        "start": [
+          162.17220703245616,
+          387.3077002564369
+        ],
+        "end": [
+          92.23950001437514,
+          387.3077002564369
+        ],
+        "graph_key": 62,
+        "source_fid": 62,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 69.93270701808102
+      },
+      {
+        "start": [
+          162.17220703245616,
+          387.3077002564369
+        ],
+        "end": [
+          162.17220703245619,
+          139.73570825812487
+        ],
+        "graph_key": 35,
+        "source_fid": 35,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 247.571991998312
+      },
+      {
+        "start": [
+          338.8650183319114,
+          636.7513705447836
+        ],
+        "end": [
+          162.17220703245613,
+          636.7513705447836
+        ],
+        "graph_key": 39,
+        "source_fid": 39,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 176.6928112994553
+      },
+      {
+        "start": [
+          338.8650183319114,
+          636.7513705447836
+        ],
+        "end": [
+          458.5779871431296,
+          636.7513705447836
+        ],
+        "graph_key": 41,
+        "source_fid": 41,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 119.71296881121816
+      },
+      {
+        "start": [
+          338.8650183319114,
+          762.3239685480539
+        ],
+        "end": [
+          338.8650183319114,
+          636.7513705447836
+        ],
+        "graph_key": 27,
+        "source_fid": 27,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 125.57259800327029
+      },
+      {
+        "start": [
+          338.8650183319114,
+          762.3239685480539
+        ],
+        "end": [
+          458.5779871431296,
+          762.3239685480539
+        ],
+        "graph_key": 51,
+        "source_fid": 51,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 119.71296881121816
+      },
+      {
+        "start": [
+          338.8650183319114,
+          884.8019166513449
+        ],
+        "end": [
+          338.8650183319114,
+          762.3239685480539
+        ],
+        "graph_key": 26,
+        "source_fid": 26,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 122.47794810329094
+      },
+      {
+        "start": [
+          338.8650183319114,
+          884.8019166513449
+        ],
+        "end": [
+          338.86501833192546,
+          980.4276620142698
+        ],
+        "graph_key": 73,
+        "source_fid": 73,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 95.62574536292493
+      },
+      {
+        "start": [
+          338.8650183319114,
+          884.8019166513449
+        ],
+        "end": [
+          458.5779871431296,
+          884.8019166513446
+        ],
+        "graph_key": 3,
+        "source_fid": 3,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 119.71296881121816
+      },
+      {
+        "start": [
+          338.86501833192546,
+          980.4276620142698
+        ],
+        "end": [
+          458.57798714315663,
+          980.4276620142698
+        ],
+        "graph_key": 13,
+        "source_fid": 13,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 119.71296881123118
+      },
+      {
+        "start": [
+          338.86501833193904,
+          1072.6503559407909
+        ],
+        "end": [
+          338.86501833192546,
+          980.4276620142698
+        ],
+        "graph_key": 12,
+        "source_fid": 12,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 92.22269392652106
+      },
+      {
+        "start": [
+          338.86501833193904,
+          1072.6503559407909
+        ],
+        "end": [
+          458.57798714315663,
+          1072.6503559407909
+        ],
+        "graph_key": 8,
+        "source_fid": 8,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 119.71296881121759
+      },
+      {
+        "start": [
+          458.5779871431296,
+          762.3239685480539
+        ],
+        "end": [
+          458.5779871431296,
+          636.7513705447836
+        ],
+        "graph_key": 75,
+        "source_fid": 75,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 125.57259800327029
+      },
+      {
+        "start": [
+          458.5779871431296,
+          762.8344262635142
+        ],
+        "end": [
+          458.5779871431296,
+          762.3239685480539
+        ],
+        "graph_key": 31,
+        "source_fid": 31,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 0.5104577154602339
+      },
+      {
+        "start": [
+          458.5779871431296,
+          884.8019166513446
+        ],
+        "end": [
+          458.5779871431296,
+          762.8344262635142
+        ],
+        "graph_key": 30,
+        "source_fid": 30,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 121.96749038783048
+      },
+      {
+        "start": [
+          458.5779871431296,
+          884.8019166513446
+        ],
+        "end": [
+          458.57798714315663,
+          980.4276620142698
+        ],
+        "graph_key": 29,
+        "source_fid": 29,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 95.62574536292516
+      },
+      {
+        "start": [
+          458.5779871431296,
+          884.8019166513446
+        ],
+        "end": [
+          589.5954674446257,
+          884.8019166513448
+        ],
+        "graph_key": 4,
+        "source_fid": 4,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 131.0174803014961
+      },
+      {
+        "start": [
+          458.57798714315663,
+          980.4276620142698
+        ],
+        "end": [
+          589.5954674446693,
+          980.4276620142698
+        ],
+        "graph_key": 14,
+        "source_fid": 14,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 131.0174803015127
+      },
+      {
+        "start": [
+          458.57798714315663,
+          1072.6503559407909
+        ],
+        "end": [
+          458.57798714315663,
+          980.4276620142698
+        ],
+        "graph_key": 28,
+        "source_fid": 28,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 92.22269392652106
+      },
+      {
+        "start": [
+          458.57798714315663,
+          1072.6503559407909
+        ],
+        "end": [
+          589.5954674446693,
+          1072.6503559407909
+        ],
+        "graph_key": 9,
+        "source_fid": 9,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 131.0174803015127
+      },
+      {
+        "start": [
+          589.5954674446257,
+          139.73570825812487
+        ],
+        "end": [
+          162.17220703245619,
+          139.73570825812487
+        ],
+        "graph_key": 42,
+        "source_fid": 42,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 427.4232604121695
+      },
+      {
+        "start": [
+          589.5954674446257,
+          139.73570825812487
+        ],
+        "end": [
+          589.5954674446257,
+          24.20211199224474
+        ],
+        "graph_key": 25,
+        "source_fid": 25,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 115.53359626588013
+      },
+      {
+        "start": [
+          589.5954674446257,
+          139.73570825812487
+        ],
+        "end": [
+          863.2286215961212,
+          139.73570825812487
+        ],
+        "graph_key": 43,
+        "source_fid": 43,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 273.63315415149555
+      },
+      {
+        "start": [
+          589.5954674446257,
+          234.51785504759755
+        ],
+        "end": [
+          589.5954674446257,
+          139.73570825812487
+        ],
+        "graph_key": 70,
+        "source_fid": 70,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 94.78214678947268
+      },
+      {
+        "start": [
+          589.5954674446257,
+          234.51785504759755
+        ],
+        "end": [
+          723.4098306454775,
+          234.51785504761014
+        ],
+        "graph_key": 65,
+        "source_fid": 65,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 133.81436320085186
+      },
+      {
+        "start": [
+          589.5954674446257,
+          387.3077002564369
+        ],
+        "end": [
+          162.17220703245616,
+          387.3077002564369
+        ],
+        "graph_key": 63,
+        "source_fid": 63,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 427.4232604121695
+      },
+      {
+        "start": [
+          589.5954674446257,
+          387.3077002564369
+        ],
+        "end": [
+          589.5954674446257,
+          234.51785504759755
+        ],
+        "graph_key": 24,
+        "source_fid": 24,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 152.78984520883932
+      },
+      {
+        "start": [
+          589.5954674446257,
+          387.3077002564369
+        ],
+        "end": [
+          723.4098306454775,
+          387.3077002564369
+        ],
+        "graph_key": 64,
+        "source_fid": 64,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 133.81436320085186
+      },
+      {
+        "start": [
+          589.5954674446257,
+          636.7513705447836
+        ],
+        "end": [
+          458.5779871431296,
+          636.7513705447836
+        ],
+        "graph_key": 48,
+        "source_fid": 48,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 131.0174803014961
+      },
+      {
+        "start": [
+          589.5954674446257,
+          636.7513705447836
+        ],
+        "end": [
+          589.5954674446257,
+          387.3077002564369
+        ],
+        "graph_key": 23,
+        "source_fid": 23,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 249.44367028834677
+      },
+      {
+        "start": [
+          589.5954674446257,
+          636.7513705447836
+        ],
+        "end": [
+          723.4098306454775,
+          636.7513705447836
+        ],
+        "graph_key": 49,
+        "source_fid": 49,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 133.81436320085186
+      },
+      {
+        "start": [
+          589.5954674446257,
+          762.3239685480539
+        ],
+        "end": [
+          458.5779871431296,
+          762.3239685480539
+        ],
+        "graph_key": 52,
+        "source_fid": 52,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 131.0174803014961
+      },
+      {
+        "start": [
+          589.5954674446257,
+          762.3239685480539
+        ],
+        "end": [
+          589.5954674446257,
+          636.7513705447836
+        ],
+        "graph_key": 22,
+        "source_fid": 22,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 125.57259800327029
+      },
+      {
+        "start": [
+          589.5954674446257,
+          762.3239685480539
+        ],
+        "end": [
+          723.4098306454775,
+          762.3239685480539
+        ],
+        "graph_key": 53,
+        "source_fid": 53,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 133.81436320085186
+      },
+      {
+        "start": [
+          589.5954674446257,
+          884.8019166513448
+        ],
+        "end": [
+          589.5954674446257,
+          762.3239685480539
+        ],
+        "graph_key": 21,
+        "source_fid": 21,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 122.47794810329083
+      },
+      {
+        "start": [
+          589.5954674446257,
+          884.8019166513448
+        ],
+        "end": [
+          589.5954674446693,
+          980.4276620142698
+        ],
+        "graph_key": 20,
+        "source_fid": 20,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 95.62574536292504
+      },
+      {
+        "start": [
+          589.5954674446257,
+          884.8019166513448
+        ],
+        "end": [
+          723.4098306454775,
+          884.8019166513449
+        ],
+        "graph_key": 5,
+        "source_fid": 5,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 133.81436320085186
+      },
+      {
+        "start": [
+          589.5954674446693,
+          980.4276620142698
+        ],
+        "end": [
+          723.4098306454775,
+          980.4276620142698
+        ],
+        "graph_key": 15,
+        "source_fid": 15,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 133.8143632008082
+      },
+      {
+        "start": [
+          589.5954674446693,
+          1072.6503559407909
+        ],
+        "end": [
+          589.5954674446693,
+          980.4276620142698
+        ],
+        "graph_key": 19,
+        "source_fid": 19,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 92.22269392652106
+      },
+      {
+        "start": [
+          589.5954674446693,
+          1072.6503559407909
+        ],
+        "end": [
+          589.5954674446693,
+          1183.1112786592844
+        ],
+        "graph_key": 18,
+        "source_fid": 18,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 110.46092271849352
+      },
+      {
+        "start": [
+          589.5954674446693,
+          1072.6503559407909
+        ],
+        "end": [
+          723.4098306454775,
+          1072.6503559407909
+        ],
+        "graph_key": 10,
+        "source_fid": 10,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 133.8143632008082
+      },
+      {
+        "start": [
+          723.4098306454775,
+          234.51785504761014
+        ],
+        "end": [
+          863.2286215961212,
+          234.51785504761014
+        ],
+        "graph_key": 66,
+        "source_fid": 66,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 139.8187909506437
+      },
+      {
+        "start": [
+          723.4098306454775,
+          387.24328503832237
+        ],
+        "end": [
+          723.4098306454775,
+          234.51785504761014
+        ],
+        "graph_key": 47,
+        "source_fid": 47,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 152.72542999071223
+      },
+      {
+        "start": [
+          723.4098306454775,
+          387.3077002564369
+        ],
+        "end": [
+          723.4098306454775,
+          387.24328503832237
+        ],
+        "graph_key": 72,
+        "source_fid": 72,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 0.06441521811450457
+      },
+      {
+        "start": [
+          723.4098306454775,
+          635.014685751152
+        ],
+        "end": [
+          723.4098306454775,
+          387.3077002564369
+        ],
+        "graph_key": 46,
+        "source_fid": 46,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 247.70698549471513
+      },
+      {
+        "start": [
+          723.4098306454775,
+          636.7513705447836
+        ],
+        "end": [
+          723.4098306454775,
+          635.014685751152
+        ],
+        "graph_key": 76,
+        "source_fid": 76,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 1.736684793631639
+      },
+      {
+        "start": [
+          723.4098306454775,
+          636.7513705447836
+        ],
+        "end": [
+          863.2286215961212,
+          636.7513705447834
+        ],
+        "graph_key": 50,
+        "source_fid": 50,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 139.8187909506437
+      },
+      {
+        "start": [
+          723.4098306454775,
+          762.1306686397638
+        ],
+        "end": [
+          723.4098306454775,
+          636.7513705447836
+        ],
+        "graph_key": 45,
+        "source_fid": 45,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 125.37929809498019
+      },
+      {
+        "start": [
+          723.4098306454775,
+          762.3239685480539
+        ],
+        "end": [
+          723.4098306454775,
+          762.1306686397638
+        ],
+        "graph_key": 74,
+        "source_fid": 74,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 0.19329990829010057
+      },
+      {
+        "start": [
+          723.4098306454775,
+          762.3239685480539
+        ],
+        "end": [
+          863.2286215961212,
+          762.323968548054
+        ],
+        "graph_key": 54,
+        "source_fid": 54,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 139.8187909506437
+      },
+      {
+        "start": [
+          723.4098306454775,
+          884.8019166513449
+        ],
+        "end": [
+          723.4098306454775,
+          762.3239685480539
+        ],
+        "graph_key": 44,
+        "source_fid": 44,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 122.47794810329094
+      },
+      {
+        "start": [
+          723.4098306454775,
+          884.8019166513449
+        ],
+        "end": [
+          723.4098306454775,
+          980.4276620142698
+        ],
+        "graph_key": 17,
+        "source_fid": 17,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 95.62574536292493
+      },
+      {
+        "start": [
+          723.4098306454775,
+          884.8019166513449
+        ],
+        "end": [
+          863.2286215960698,
+          884.8019166513449
+        ],
+        "graph_key": 6,
+        "source_fid": 6,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 139.8187909505923
+      },
+      {
+        "start": [
+          723.4098306454775,
+          1072.6503559407909
+        ],
+        "end": [
+          723.4098306454775,
+          980.4276620142698
+        ],
+        "graph_key": 16,
+        "source_fid": 16,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 92.22269392652106
+      },
+      {
+        "start": [
+          723.4098306454775,
+          1072.6503559407909
+        ],
+        "end": [
+          863.2286215960698,
+          1072.6503559407909
+        ],
+        "graph_key": 11,
+        "source_fid": 11,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 139.8187909505923
+      },
+      {
+        "start": [
+          863.2286215960698,
+          884.8019166513449
+        ],
+        "end": [
+          863.2286215960698,
+          1072.6503559407909
+        ],
+        "graph_key": 56,
+        "source_fid": 56,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 187.848439289446
+      },
+      {
+        "start": [
+          863.2286215960698,
+          884.8019166513449
+        ],
+        "end": [
+          863.2286215961212,
+          762.323968548054
+        ],
+        "graph_key": 57,
+        "source_fid": 57,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 122.47794810329083
+      },
+      {
+        "start": [
+          863.2286215960698,
+          884.8019166513449
+        ],
+        "end": [
+          978.638688375702,
+          884.8019166513449
+        ],
+        "graph_key": 7,
+        "source_fid": 7,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 115.41006677963219
+      },
+      {
+        "start": [
+          863.2286215960698,
+          1072.6503559407909
+        ],
+        "end": [
+          863.2286215960698,
+          1186.5490510682237
+        ],
+        "graph_key": 55,
+        "source_fid": 55,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 113.8986951274328
+      },
+      {
+        "start": [
+          863.2286215961212,
+          139.73570825812487
+        ],
+        "end": [
+          863.2286215961212,
+          28.42000916457073
+        ],
+        "graph_key": 61,
+        "source_fid": 61,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 111.31569909355414
+      },
+      {
+        "start": [
+          863.2286215961212,
+          139.73570825812487
+        ],
+        "end": [
+          863.2286215961212,
+          234.51785504761014
+        ],
+        "graph_key": 71,
+        "source_fid": 71,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 94.78214678948527
+      },
+      {
+        "start": [
+          863.2286215961212,
+          139.73570825812487
+        ],
+        "end": [
+          981.6141111544218,
+          139.73570825812487
+        ],
+        "graph_key": 68,
+        "source_fid": 68,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 118.3854895583006
+      },
+      {
+        "start": [
+          863.2286215961212,
+          234.51785504761014
+        ],
+        "end": [
+          983.9422427091583,
+          234.51785504761014
+        ],
+        "graph_key": 67,
+        "source_fid": 67,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 120.7136211130371
+      },
+      {
+        "start": [
+          863.2286215961212,
+          237.95184909085344
+        ],
+        "end": [
+          863.2286215961212,
+          234.51785504761014
+        ],
+        "graph_key": 60,
+        "source_fid": 60,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 3.4339940432433025
+      },
+      {
+        "start": [
+          863.2286215961212,
+          636.7513705447834
+        ],
+        "end": [
+          863.2286215961212,
+          237.95184909085344
+        ],
+        "graph_key": 59,
+        "source_fid": 59,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 398.79952145392997
+      },
+      {
+        "start": [
+          863.2286215961212,
+          636.7513705447834
+        ],
+        "end": [
+          863.2286215961212,
+          762.323968548054
+        ],
+        "graph_key": 58,
+        "source_fid": 58,
+        "source_attributes": {
+          "edge_id": null,
+          "u": null,
+          "v": null,
+          "key": 0,
+          "condition": "grid_baseline",
+          "notes": null
+        },
+        "length": 125.57259800327063
+      }
+    ]
+  },
+  "issues": [
+    {
+      "issue_id": "QA-0001",
+      "issue_type": "extremely_short_edge",
+      "severity": "warning",
+      "fid_1": 31,
+      "fid_2": null,
+      "x": 458.5779871431296,
+      "y": 762.8344262635142,
+      "distance_if_applicable": 0.5104577154602339,
+      "description": "Edge length 0.51045771546 is below 1 local units."
+    },
+    {
+      "issue_id": "QA-0002",
+      "issue_type": "extremely_short_edge",
+      "severity": "warning",
+      "fid_1": 72,
+      "fid_2": null,
+      "x": 723.4098306454775,
+      "y": 387.3077002564369,
+      "distance_if_applicable": 0.06441521811450457,
+      "description": "Edge length 0.0644152181145 is below 1 local units."
+    },
+    {
+      "issue_id": "QA-0003",
+      "issue_type": "extremely_short_edge",
+      "severity": "warning",
+      "fid_1": 74,
+      "fid_2": null,
+      "x": 723.4098306454775,
+      "y": 762.3239685480539,
+      "distance_if_applicable": 0.19329990829010057,
+      "description": "Edge length 0.19329990829 is below 1 local units."
+    }
+  ],
+  "issue_counts_by_type": {
+    "extremely_short_edge": 3
+  },
+  "error_count": 0,
+  "warning_count": 3,
+  "final_result": "PASS"
+}

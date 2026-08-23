@@ -1,0 +1,4 @@
+issue_id,issue_type,severity,fid_1,fid_2,x,y,distance_if_applicable,description
+QA-0001,extremely_short_edge,warning,31,,458.5779871431296,762.8344262635142,0.5104577154602339,Edge length 0.51045771546 is below 1 local units.
+QA-0002,extremely_short_edge,warning,72,,723.4098306454775,387.3077002564369,0.06441521811450457,Edge length 0.0644152181145 is below 1 local units.
+QA-0003,extremely_short_edge,warning,74,,723.4098306454775,762.3239685480539,0.19329990829010057,Edge length 0.19329990829 is below 1 local units.
