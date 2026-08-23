@@ -1,0 +1,33 @@
+{
+  "coordinate_system": "local_cartesian",
+  "crs": null,
+  "units": "local_units",
+  "extent": {
+    "xmin": 0.0,
+    "ymin": 0.0,
+    "xmax": 1000.0,
+    "ymax": 1208.0
+  },
+  "rasters": {
+    "env38": {
+      "source_file": "data\\source_images\\env38_original.jpg",
+      "reference_file": "data\\reference\\env38_reference.jpg",
+      "world_file": "data\\reference\\env38_reference.jgw",
+      "source_sha256": "81e5ba7e7fdabd5e34bd8203d53b579c891831cde4127d2f8ff9bb166924cd67",
+      "pixel_width": 578,
+      "pixel_height": 699,
+      "pixel_size_x_local": 1.7301038062283738,
+      "pixel_size_y_local": 1.7281831187410586
+    },
+    "env39": {
+      "source_file": "data\\source_images\\env39_original.jpg",
+      "reference_file": "data\\reference\\env39_reference.jpg",
+      "world_file": "data\\reference\\env39_reference.jgw",
+      "source_sha256": "dff52345c201df01097a4ca52ec07aeea28c2b1a9038d0faf3eaa3a71590b70f",
+      "pixel_width": 581,
+      "pixel_height": 701,
+      "pixel_size_x_local": 1.721170395869191,
+      "pixel_size_y_local": 1.7232524964336662
+    }
+  }
+}
