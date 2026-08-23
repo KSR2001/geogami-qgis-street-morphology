@@ -1,0 +1,1815 @@
+{
+  "metadata": {
+    "phase": "5B",
+    "graph_type": "undirected canonical street MultiGraph",
+    "crs": "LOCAL_CS[\"GeoGami Local Cartesian\",LOCAL_DATUM[\"GeoGami local engineering datum\",32767],UNIT[\"local unit\",1],AXIS[\"X\",EAST],AXIS[\"Y\",NORTH]]",
+    "node_identity": "canonical N IDs assigned by descending exact Y then ascending exact X",
+    "edge_identity": "canonical E IDs assigned after normalized (u,v,key) ordering",
+    "source_fids_role": "provenance only",
+    "topology_signature_serialization": "UTF-8 lines, one normalized tuple per line as u|v|key\\n, sorted lexicographically by (u,v,key), no header",
+    "topology_signature_sha256": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "nodes": [
+    {
+      "node_id": "N001",
+      "x": 162.17220703245607,
+      "y": 1187.5352455266075,
+      "degree": 1,
+      "incident_source_fids": "32"
+    },
+    {
+      "node_id": "N002",
+      "x": 863.2286215960698,
+      "y": 1186.5490510682237,
+      "degree": 1,
+      "incident_source_fids": "55"
+    },
+    {
+      "node_id": "N003",
+      "x": 589.5954674446693,
+      "y": 1183.1112786592844,
+      "degree": 1,
+      "incident_source_fids": "18"
+    },
+    {
+      "node_id": "N004",
+      "x": 458.57798714315663,
+      "y": 1072.6503559407909,
+      "degree": 3,
+      "incident_source_fids": "8;9;28"
+    },
+    {
+      "node_id": "N005",
+      "x": 589.5954674446693,
+      "y": 1072.6503559407909,
+      "degree": 4,
+      "incident_source_fids": "9;10;18;19"
+    },
+    {
+      "node_id": "N006",
+      "x": 723.4098306454775,
+      "y": 1072.6503559407909,
+      "degree": 3,
+      "incident_source_fids": "10;11;16"
+    },
+    {
+      "node_id": "N007",
+      "x": 863.2286215960698,
+      "y": 1072.6503559407909,
+      "degree": 3,
+      "incident_source_fids": "11;55;56"
+    },
+    {
+      "node_id": "N008",
+      "x": 338.86501833192546,
+      "y": 980.4276620142698,
+      "degree": 3,
+      "incident_source_fids": "12;13;73"
+    },
+    {
+      "node_id": "N009",
+      "x": 458.57798714315663,
+      "y": 980.4276620142698,
+      "degree": 4,
+      "incident_source_fids": "13;14;28;29"
+    },
+    {
+      "node_id": "N010",
+      "x": 589.5954674446693,
+      "y": 980.4276620142698,
+      "degree": 4,
+      "incident_source_fids": "14;15;19;20"
+    },
+    {
+      "node_id": "N011",
+      "x": 723.4098306454775,
+      "y": 980.4276620142698,
+      "degree": 3,
+      "incident_source_fids": "15;16;17"
+    },
+    {
+      "node_id": "N012",
+      "x": 15.527348985462112,
+      "y": 884.8019166513449,
+      "degree": 1,
+      "incident_source_fids": "69"
+    },
+    {
+      "node_id": "N013",
+      "x": 92.23950001437511,
+      "y": 884.8019166513449,
+      "degree": 3,
+      "incident_source_fids": "1;36;69"
+    },
+    {
+      "node_id": "N014",
+      "x": 162.1722070324561,
+      "y": 884.8019166513449,
+      "degree": 4,
+      "incident_source_fids": "1;2;32;33"
+    },
+    {
+      "node_id": "N015",
+      "x": 338.8650183319114,
+      "y": 884.8019166513449,
+      "degree": 4,
+      "incident_source_fids": "2;3;26;73"
+    },
+    {
+      "node_id": "N016",
+      "x": 723.4098306454775,
+      "y": 884.8019166513449,
+      "degree": 4,
+      "incident_source_fids": "5;6;17;44"
+    },
+    {
+      "node_id": "N017",
+      "x": 863.2286215960698,
+      "y": 884.8019166513449,
+      "degree": 4,
+      "incident_source_fids": "6;7;56;57"
+    },
+    {
+      "node_id": "N018",
+      "x": 978.638688375702,
+      "y": 884.8019166513449,
+      "degree": 1,
+      "incident_source_fids": "7"
+    },
+    {
+      "node_id": "N019",
+      "x": 589.5954674446257,
+      "y": 884.8019166513448,
+      "degree": 4,
+      "incident_source_fids": "4;5;20;21"
+    },
+    {
+      "node_id": "N020",
+      "x": 458.5779871431296,
+      "y": 884.8019166513446,
+      "degree": 4,
+      "incident_source_fids": "3;4;29;30"
+    },
+    {
+      "node_id": "N021",
+      "x": 863.2286215961212,
+      "y": 762.323968548054,
+      "degree": 3,
+      "incident_source_fids": "54;57;58"
+    },
+    {
+      "node_id": "N022",
+      "x": 338.8650183319114,
+      "y": 762.3239685480539,
+      "degree": 3,
+      "incident_source_fids": "26;27;51"
+    },
+    {
+      "node_id": "N023",
+      "x": 458.5779871431296,
+      "y": 762.3239685480539,
+      "degree": 4,
+      "incident_source_fids": "31;51;52;75"
+    },
+    {
+      "node_id": "N024",
+      "x": 589.5954674446257,
+      "y": 762.3239685480539,
+      "degree": 4,
+      "incident_source_fids": "21;22;52;53"
+    },
+    {
+      "node_id": "N025",
+      "x": 723.4098306454775,
+      "y": 762.3239685480539,
+      "degree": 4,
+      "incident_source_fids": "44;53;54;74"
+    },
+    {
+      "node_id": "N026",
+      "x": 92.23950001437512,
+      "y": 636.7513705447836,
+      "degree": 3,
+      "incident_source_fids": "36;37;40"
+    },
+    {
+      "node_id": "N027",
+      "x": 162.17220703245613,
+      "y": 636.7513705447836,
+      "degree": 4,
+      "incident_source_fids": "33;34;39;40"
+    },
+    {
+      "node_id": "N028",
+      "x": 338.8650183319114,
+      "y": 636.7513705447836,
+      "degree": 3,
+      "incident_source_fids": "27;39;41"
+    },
+    {
+      "node_id": "N029",
+      "x": 458.5779871431296,
+      "y": 636.7513705447836,
+      "degree": 3,
+      "incident_source_fids": "41;48;75"
+    },
+    {
+      "node_id": "N030",
+      "x": 589.5954674446257,
+      "y": 636.7513705447836,
+      "degree": 4,
+      "incident_source_fids": "22;23;48;49"
+    },
+    {
+      "node_id": "N031",
+      "x": 723.4098306454775,
+      "y": 636.7513705447836,
+      "degree": 4,
+      "incident_source_fids": "45;49;50;76"
+    },
+    {
+      "node_id": "N032",
+      "x": 863.2286215961212,
+      "y": 636.7513705447834,
+      "degree": 3,
+      "incident_source_fids": "50;58;59"
+    },
+    {
+      "node_id": "N033",
+      "x": 92.23950001437514,
+      "y": 387.3077002564369,
+      "degree": 3,
+      "incident_source_fids": "37;38;62"
+    },
+    {
+      "node_id": "N034",
+      "x": 162.17220703245616,
+      "y": 387.3077002564369,
+      "degree": 4,
+      "incident_source_fids": "34;35;62;63"
+    },
+    {
+      "node_id": "N035",
+      "x": 589.5954674446257,
+      "y": 387.3077002564369,
+      "degree": 4,
+      "incident_source_fids": "23;24;63;64"
+    },
+    {
+      "node_id": "N036",
+      "x": 723.4098306454775,
+      "y": 387.3077002564369,
+      "degree": 3,
+      "incident_source_fids": "46;64;72"
+    },
+    {
+      "node_id": "N037",
+      "x": 723.4098306454775,
+      "y": 234.51785504761014,
+      "degree": 3,
+      "incident_source_fids": "47;65;66"
+    },
+    {
+      "node_id": "N038",
+      "x": 863.2286215961212,
+      "y": 234.51785504761014,
+      "degree": 4,
+      "incident_source_fids": "60;66;67;71"
+    },
+    {
+      "node_id": "N039",
+      "x": 983.9422427091583,
+      "y": 234.51785504761014,
+      "degree": 1,
+      "incident_source_fids": "67"
+    },
+    {
+      "node_id": "N040",
+      "x": 589.5954674446257,
+      "y": 234.51785504759755,
+      "degree": 3,
+      "incident_source_fids": "24;65;70"
+    },
+    {
+      "node_id": "N041",
+      "x": 589.5954674446257,
+      "y": 139.73570825812487,
+      "degree": 4,
+      "incident_source_fids": "25;42;43;70"
+    },
+    {
+      "node_id": "N042",
+      "x": 863.2286215961212,
+      "y": 139.73570825812487,
+      "degree": 4,
+      "incident_source_fids": "43;61;68;71"
+    },
+    {
+      "node_id": "N043",
+      "x": 981.6141111544218,
+      "y": 139.73570825812487,
+      "degree": 1,
+      "incident_source_fids": "68"
+    },
+    {
+      "node_id": "N044",
+      "x": 863.2286215961212,
+      "y": 28.42000916457073,
+      "degree": 1,
+      "incident_source_fids": "61"
+    },
+    {
+      "node_id": "N045",
+      "x": 92.23950001437517,
+      "y": 26.243942854079023,
+      "degree": 1,
+      "incident_source_fids": "38"
+    },
+    {
+      "node_id": "N046",
+      "x": 589.5954674446257,
+      "y": 24.20211199224474,
+      "degree": 1,
+      "incident_source_fids": "25"
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "E001",
+      "u": "N001",
+      "v": "N014",
+      "key": 0,
+      "source_fids": "32",
+      "source_fids_ordered": "32",
+      "source_edge_count": 1,
+      "length_local": 302.7333288752626,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          162.17220703245607,
+          1187.5352455266075
+        ],
+        [
+          162.1722070324561,
+          884.8019166513449
+        ]
+      ]
+    },
+    {
+      "edge_id": "E002",
+      "u": "N002",
+      "v": "N007",
+      "key": 0,
+      "source_fids": "55",
+      "source_fids_ordered": "55",
+      "source_edge_count": 1,
+      "length_local": 113.8986951274328,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          863.2286215960698,
+          1186.5490510682237
+        ],
+        [
+          863.2286215960698,
+          1072.6503559407909
+        ]
+      ]
+    },
+    {
+      "edge_id": "E003",
+      "u": "N003",
+      "v": "N005",
+      "key": 0,
+      "source_fids": "18",
+      "source_fids_ordered": "18",
+      "source_edge_count": 1,
+      "length_local": 110.46092271849352,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446693,
+          1183.1112786592844
+        ],
+        [
+          589.5954674446693,
+          1072.6503559407909
+        ]
+      ]
+    },
+    {
+      "edge_id": "E004",
+      "u": "N004",
+      "v": "N005",
+      "key": 0,
+      "source_fids": "9",
+      "source_fids_ordered": "9",
+      "source_edge_count": 1,
+      "length_local": 131.0174803015127,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          458.57798714315663,
+          1072.6503559407909
+        ],
+        [
+          589.5954674446693,
+          1072.6503559407909
+        ]
+      ]
+    },
+    {
+      "edge_id": "E005",
+      "u": "N004",
+      "v": "N008",
+      "key": 0,
+      "source_fids": "8;12",
+      "source_fids_ordered": "8;12",
+      "source_edge_count": 2,
+      "length_local": 211.93566273773865,
+      "vertex_count": 3,
+      "coordinates": [
+        [
+          458.57798714315663,
+          1072.6503559407909
+        ],
+        [
+          338.86501833193904,
+          1072.6503559407909
+        ],
+        [
+          338.86501833192546,
+          980.4276620142698
+        ]
+      ]
+    },
+    {
+      "edge_id": "E006",
+      "u": "N004",
+      "v": "N009",
+      "key": 0,
+      "source_fids": "28",
+      "source_fids_ordered": "28",
+      "source_edge_count": 1,
+      "length_local": 92.22269392652106,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          458.57798714315663,
+          1072.6503559407909
+        ],
+        [
+          458.57798714315663,
+          980.4276620142698
+        ]
+      ]
+    },
+    {
+      "edge_id": "E007",
+      "u": "N005",
+      "v": "N006",
+      "key": 0,
+      "source_fids": "10",
+      "source_fids_ordered": "10",
+      "source_edge_count": 1,
+      "length_local": 133.8143632008082,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446693,
+          1072.6503559407909
+        ],
+        [
+          723.4098306454775,
+          1072.6503559407909
+        ]
+      ]
+    },
+    {
+      "edge_id": "E008",
+      "u": "N005",
+      "v": "N010",
+      "key": 0,
+      "source_fids": "19",
+      "source_fids_ordered": "19",
+      "source_edge_count": 1,
+      "length_local": 92.22269392652106,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446693,
+          1072.6503559407909
+        ],
+        [
+          589.5954674446693,
+          980.4276620142698
+        ]
+      ]
+    },
+    {
+      "edge_id": "E009",
+      "u": "N006",
+      "v": "N007",
+      "key": 0,
+      "source_fids": "11",
+      "source_fids_ordered": "11",
+      "source_edge_count": 1,
+      "length_local": 139.8187909505923,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          723.4098306454775,
+          1072.6503559407909
+        ],
+        [
+          863.2286215960698,
+          1072.6503559407909
+        ]
+      ]
+    },
+    {
+      "edge_id": "E010",
+      "u": "N006",
+      "v": "N011",
+      "key": 0,
+      "source_fids": "16",
+      "source_fids_ordered": "16",
+      "source_edge_count": 1,
+      "length_local": 92.22269392652106,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          723.4098306454775,
+          1072.6503559407909
+        ],
+        [
+          723.4098306454775,
+          980.4276620142698
+        ]
+      ]
+    },
+    {
+      "edge_id": "E011",
+      "u": "N007",
+      "v": "N017",
+      "key": 0,
+      "source_fids": "56",
+      "source_fids_ordered": "56",
+      "source_edge_count": 1,
+      "length_local": 187.848439289446,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          863.2286215960698,
+          1072.6503559407909
+        ],
+        [
+          863.2286215960698,
+          884.8019166513449
+        ]
+      ]
+    },
+    {
+      "edge_id": "E012",
+      "u": "N008",
+      "v": "N009",
+      "key": 0,
+      "source_fids": "13",
+      "source_fids_ordered": "13",
+      "source_edge_count": 1,
+      "length_local": 119.71296881123118,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          338.86501833192546,
+          980.4276620142698
+        ],
+        [
+          458.57798714315663,
+          980.4276620142698
+        ]
+      ]
+    },
+    {
+      "edge_id": "E013",
+      "u": "N008",
+      "v": "N015",
+      "key": 0,
+      "source_fids": "73",
+      "source_fids_ordered": "73",
+      "source_edge_count": 1,
+      "length_local": 95.62574536292493,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          338.86501833192546,
+          980.4276620142698
+        ],
+        [
+          338.8650183319114,
+          884.8019166513449
+        ]
+      ]
+    },
+    {
+      "edge_id": "E014",
+      "u": "N009",
+      "v": "N010",
+      "key": 0,
+      "source_fids": "14",
+      "source_fids_ordered": "14",
+      "source_edge_count": 1,
+      "length_local": 131.0174803015127,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          458.57798714315663,
+          980.4276620142698
+        ],
+        [
+          589.5954674446693,
+          980.4276620142698
+        ]
+      ]
+    },
+    {
+      "edge_id": "E015",
+      "u": "N009",
+      "v": "N020",
+      "key": 0,
+      "source_fids": "29",
+      "source_fids_ordered": "29",
+      "source_edge_count": 1,
+      "length_local": 95.62574536292516,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          458.57798714315663,
+          980.4276620142698
+        ],
+        [
+          458.5779871431296,
+          884.8019166513446
+        ]
+      ]
+    },
+    {
+      "edge_id": "E016",
+      "u": "N010",
+      "v": "N011",
+      "key": 0,
+      "source_fids": "15",
+      "source_fids_ordered": "15",
+      "source_edge_count": 1,
+      "length_local": 133.8143632008082,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446693,
+          980.4276620142698
+        ],
+        [
+          723.4098306454775,
+          980.4276620142698
+        ]
+      ]
+    },
+    {
+      "edge_id": "E017",
+      "u": "N010",
+      "v": "N019",
+      "key": 0,
+      "source_fids": "20",
+      "source_fids_ordered": "20",
+      "source_edge_count": 1,
+      "length_local": 95.62574536292504,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446693,
+          980.4276620142698
+        ],
+        [
+          589.5954674446257,
+          884.8019166513448
+        ]
+      ]
+    },
+    {
+      "edge_id": "E018",
+      "u": "N011",
+      "v": "N016",
+      "key": 0,
+      "source_fids": "17",
+      "source_fids_ordered": "17",
+      "source_edge_count": 1,
+      "length_local": 95.62574536292493,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          723.4098306454775,
+          980.4276620142698
+        ],
+        [
+          723.4098306454775,
+          884.8019166513449
+        ]
+      ]
+    },
+    {
+      "edge_id": "E019",
+      "u": "N012",
+      "v": "N013",
+      "key": 0,
+      "source_fids": "69",
+      "source_fids_ordered": "69",
+      "source_edge_count": 1,
+      "length_local": 76.712151028913,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          15.527348985462112,
+          884.8019166513449
+        ],
+        [
+          92.23950001437511,
+          884.8019166513449
+        ]
+      ]
+    },
+    {
+      "edge_id": "E020",
+      "u": "N013",
+      "v": "N014",
+      "key": 0,
+      "source_fids": "1",
+      "source_fids_ordered": "1",
+      "source_edge_count": 1,
+      "length_local": 69.93270701808099,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          92.23950001437511,
+          884.8019166513449
+        ],
+        [
+          162.1722070324561,
+          884.8019166513449
+        ]
+      ]
+    },
+    {
+      "edge_id": "E021",
+      "u": "N013",
+      "v": "N026",
+      "key": 0,
+      "source_fids": "36",
+      "source_fids_ordered": "36",
+      "source_edge_count": 1,
+      "length_local": 248.05054610656123,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          92.23950001437511,
+          884.8019166513449
+        ],
+        [
+          92.23950001437512,
+          636.7513705447836
+        ]
+      ]
+    },
+    {
+      "edge_id": "E022",
+      "u": "N014",
+      "v": "N015",
+      "key": 0,
+      "source_fids": "2",
+      "source_fids_ordered": "2",
+      "source_edge_count": 1,
+      "length_local": 176.69281129945531,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          162.1722070324561,
+          884.8019166513449
+        ],
+        [
+          338.8650183319114,
+          884.8019166513449
+        ]
+      ]
+    },
+    {
+      "edge_id": "E023",
+      "u": "N014",
+      "v": "N027",
+      "key": 0,
+      "source_fids": "33",
+      "source_fids_ordered": "33",
+      "source_edge_count": 1,
+      "length_local": 248.05054610656123,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          162.1722070324561,
+          884.8019166513449
+        ],
+        [
+          162.17220703245613,
+          636.7513705447836
+        ]
+      ]
+    },
+    {
+      "edge_id": "E024",
+      "u": "N015",
+      "v": "N020",
+      "key": 0,
+      "source_fids": "3",
+      "source_fids_ordered": "3",
+      "source_edge_count": 1,
+      "length_local": 119.71296881121816,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          338.8650183319114,
+          884.8019166513449
+        ],
+        [
+          458.5779871431296,
+          884.8019166513446
+        ]
+      ]
+    },
+    {
+      "edge_id": "E025",
+      "u": "N015",
+      "v": "N022",
+      "key": 0,
+      "source_fids": "26",
+      "source_fids_ordered": "26",
+      "source_edge_count": 1,
+      "length_local": 122.47794810329094,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          338.8650183319114,
+          884.8019166513449
+        ],
+        [
+          338.8650183319114,
+          762.3239685480539
+        ]
+      ]
+    },
+    {
+      "edge_id": "E026",
+      "u": "N016",
+      "v": "N017",
+      "key": 0,
+      "source_fids": "6",
+      "source_fids_ordered": "6",
+      "source_edge_count": 1,
+      "length_local": 139.8187909505923,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          723.4098306454775,
+          884.8019166513449
+        ],
+        [
+          863.2286215960698,
+          884.8019166513449
+        ]
+      ]
+    },
+    {
+      "edge_id": "E027",
+      "u": "N016",
+      "v": "N019",
+      "key": 0,
+      "source_fids": "5",
+      "source_fids_ordered": "5",
+      "source_edge_count": 1,
+      "length_local": 133.81436320085186,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          723.4098306454775,
+          884.8019166513449
+        ],
+        [
+          589.5954674446257,
+          884.8019166513448
+        ]
+      ]
+    },
+    {
+      "edge_id": "E028",
+      "u": "N016",
+      "v": "N025",
+      "key": 0,
+      "source_fids": "44",
+      "source_fids_ordered": "44",
+      "source_edge_count": 1,
+      "length_local": 122.47794810329094,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          723.4098306454775,
+          884.8019166513449
+        ],
+        [
+          723.4098306454775,
+          762.3239685480539
+        ]
+      ]
+    },
+    {
+      "edge_id": "E029",
+      "u": "N017",
+      "v": "N018",
+      "key": 0,
+      "source_fids": "7",
+      "source_fids_ordered": "7",
+      "source_edge_count": 1,
+      "length_local": 115.41006677963219,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          863.2286215960698,
+          884.8019166513449
+        ],
+        [
+          978.638688375702,
+          884.8019166513449
+        ]
+      ]
+    },
+    {
+      "edge_id": "E030",
+      "u": "N017",
+      "v": "N021",
+      "key": 0,
+      "source_fids": "57",
+      "source_fids_ordered": "57",
+      "source_edge_count": 1,
+      "length_local": 122.47794810329083,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          863.2286215960698,
+          884.8019166513449
+        ],
+        [
+          863.2286215961212,
+          762.323968548054
+        ]
+      ]
+    },
+    {
+      "edge_id": "E031",
+      "u": "N019",
+      "v": "N020",
+      "key": 0,
+      "source_fids": "4",
+      "source_fids_ordered": "4",
+      "source_edge_count": 1,
+      "length_local": 131.0174803014961,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446257,
+          884.8019166513448
+        ],
+        [
+          458.5779871431296,
+          884.8019166513446
+        ]
+      ]
+    },
+    {
+      "edge_id": "E032",
+      "u": "N019",
+      "v": "N024",
+      "key": 0,
+      "source_fids": "21",
+      "source_fids_ordered": "21",
+      "source_edge_count": 1,
+      "length_local": 122.47794810329083,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446257,
+          884.8019166513448
+        ],
+        [
+          589.5954674446257,
+          762.3239685480539
+        ]
+      ]
+    },
+    {
+      "edge_id": "E033",
+      "u": "N020",
+      "v": "N023",
+      "key": 0,
+      "source_fids": "30;31",
+      "source_fids_ordered": "30;31",
+      "source_edge_count": 2,
+      "length_local": 122.47794810329071,
+      "vertex_count": 3,
+      "coordinates": [
+        [
+          458.5779871431296,
+          884.8019166513446
+        ],
+        [
+          458.5779871431296,
+          762.8344262635142
+        ],
+        [
+          458.5779871431296,
+          762.3239685480539
+        ]
+      ]
+    },
+    {
+      "edge_id": "E034",
+      "u": "N021",
+      "v": "N025",
+      "key": 0,
+      "source_fids": "54",
+      "source_fids_ordered": "54",
+      "source_edge_count": 1,
+      "length_local": 139.8187909506437,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          863.2286215961212,
+          762.323968548054
+        ],
+        [
+          723.4098306454775,
+          762.3239685480539
+        ]
+      ]
+    },
+    {
+      "edge_id": "E035",
+      "u": "N021",
+      "v": "N032",
+      "key": 0,
+      "source_fids": "58",
+      "source_fids_ordered": "58",
+      "source_edge_count": 1,
+      "length_local": 125.57259800327063,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          863.2286215961212,
+          762.323968548054
+        ],
+        [
+          863.2286215961212,
+          636.7513705447834
+        ]
+      ]
+    },
+    {
+      "edge_id": "E036",
+      "u": "N022",
+      "v": "N023",
+      "key": 0,
+      "source_fids": "51",
+      "source_fids_ordered": "51",
+      "source_edge_count": 1,
+      "length_local": 119.71296881121816,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          338.8650183319114,
+          762.3239685480539
+        ],
+        [
+          458.5779871431296,
+          762.3239685480539
+        ]
+      ]
+    },
+    {
+      "edge_id": "E037",
+      "u": "N022",
+      "v": "N028",
+      "key": 0,
+      "source_fids": "27",
+      "source_fids_ordered": "27",
+      "source_edge_count": 1,
+      "length_local": 125.57259800327029,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          338.8650183319114,
+          762.3239685480539
+        ],
+        [
+          338.8650183319114,
+          636.7513705447836
+        ]
+      ]
+    },
+    {
+      "edge_id": "E038",
+      "u": "N023",
+      "v": "N024",
+      "key": 0,
+      "source_fids": "52",
+      "source_fids_ordered": "52",
+      "source_edge_count": 1,
+      "length_local": 131.0174803014961,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          458.5779871431296,
+          762.3239685480539
+        ],
+        [
+          589.5954674446257,
+          762.3239685480539
+        ]
+      ]
+    },
+    {
+      "edge_id": "E039",
+      "u": "N023",
+      "v": "N029",
+      "key": 0,
+      "source_fids": "75",
+      "source_fids_ordered": "75",
+      "source_edge_count": 1,
+      "length_local": 125.57259800327029,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          458.5779871431296,
+          762.3239685480539
+        ],
+        [
+          458.5779871431296,
+          636.7513705447836
+        ]
+      ]
+    },
+    {
+      "edge_id": "E040",
+      "u": "N024",
+      "v": "N025",
+      "key": 0,
+      "source_fids": "53",
+      "source_fids_ordered": "53",
+      "source_edge_count": 1,
+      "length_local": 133.81436320085186,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446257,
+          762.3239685480539
+        ],
+        [
+          723.4098306454775,
+          762.3239685480539
+        ]
+      ]
+    },
+    {
+      "edge_id": "E041",
+      "u": "N024",
+      "v": "N030",
+      "key": 0,
+      "source_fids": "22",
+      "source_fids_ordered": "22",
+      "source_edge_count": 1,
+      "length_local": 125.57259800327029,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446257,
+          762.3239685480539
+        ],
+        [
+          589.5954674446257,
+          636.7513705447836
+        ]
+      ]
+    },
+    {
+      "edge_id": "E042",
+      "u": "N025",
+      "v": "N031",
+      "key": 0,
+      "source_fids": "45;74",
+      "source_fids_ordered": "74;45",
+      "source_edge_count": 2,
+      "length_local": 125.57259800327029,
+      "vertex_count": 3,
+      "coordinates": [
+        [
+          723.4098306454775,
+          762.3239685480539
+        ],
+        [
+          723.4098306454775,
+          762.1306686397638
+        ],
+        [
+          723.4098306454775,
+          636.7513705447836
+        ]
+      ]
+    },
+    {
+      "edge_id": "E043",
+      "u": "N026",
+      "v": "N027",
+      "key": 0,
+      "source_fids": "40",
+      "source_fids_ordered": "40",
+      "source_edge_count": 1,
+      "length_local": 69.932707018081,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          92.23950001437512,
+          636.7513705447836
+        ],
+        [
+          162.17220703245613,
+          636.7513705447836
+        ]
+      ]
+    },
+    {
+      "edge_id": "E044",
+      "u": "N026",
+      "v": "N033",
+      "key": 0,
+      "source_fids": "37",
+      "source_fids_ordered": "37",
+      "source_edge_count": 1,
+      "length_local": 249.44367028834677,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          92.23950001437512,
+          636.7513705447836
+        ],
+        [
+          92.23950001437514,
+          387.3077002564369
+        ]
+      ]
+    },
+    {
+      "edge_id": "E045",
+      "u": "N027",
+      "v": "N028",
+      "key": 0,
+      "source_fids": "39",
+      "source_fids_ordered": "39",
+      "source_edge_count": 1,
+      "length_local": 176.6928112994553,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          162.17220703245613,
+          636.7513705447836
+        ],
+        [
+          338.8650183319114,
+          636.7513705447836
+        ]
+      ]
+    },
+    {
+      "edge_id": "E046",
+      "u": "N027",
+      "v": "N034",
+      "key": 0,
+      "source_fids": "34",
+      "source_fids_ordered": "34",
+      "source_edge_count": 1,
+      "length_local": 249.44367028834677,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          162.17220703245613,
+          636.7513705447836
+        ],
+        [
+          162.17220703245616,
+          387.3077002564369
+        ]
+      ]
+    },
+    {
+      "edge_id": "E047",
+      "u": "N028",
+      "v": "N029",
+      "key": 0,
+      "source_fids": "41",
+      "source_fids_ordered": "41",
+      "source_edge_count": 1,
+      "length_local": 119.71296881121816,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          338.8650183319114,
+          636.7513705447836
+        ],
+        [
+          458.5779871431296,
+          636.7513705447836
+        ]
+      ]
+    },
+    {
+      "edge_id": "E048",
+      "u": "N029",
+      "v": "N030",
+      "key": 0,
+      "source_fids": "48",
+      "source_fids_ordered": "48",
+      "source_edge_count": 1,
+      "length_local": 131.0174803014961,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          458.5779871431296,
+          636.7513705447836
+        ],
+        [
+          589.5954674446257,
+          636.7513705447836
+        ]
+      ]
+    },
+    {
+      "edge_id": "E049",
+      "u": "N030",
+      "v": "N031",
+      "key": 0,
+      "source_fids": "49",
+      "source_fids_ordered": "49",
+      "source_edge_count": 1,
+      "length_local": 133.81436320085186,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446257,
+          636.7513705447836
+        ],
+        [
+          723.4098306454775,
+          636.7513705447836
+        ]
+      ]
+    },
+    {
+      "edge_id": "E050",
+      "u": "N030",
+      "v": "N035",
+      "key": 0,
+      "source_fids": "23",
+      "source_fids_ordered": "23",
+      "source_edge_count": 1,
+      "length_local": 249.44367028834677,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446257,
+          636.7513705447836
+        ],
+        [
+          589.5954674446257,
+          387.3077002564369
+        ]
+      ]
+    },
+    {
+      "edge_id": "E051",
+      "u": "N031",
+      "v": "N032",
+      "key": 0,
+      "source_fids": "50",
+      "source_fids_ordered": "50",
+      "source_edge_count": 1,
+      "length_local": 139.8187909506437,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          723.4098306454775,
+          636.7513705447836
+        ],
+        [
+          863.2286215961212,
+          636.7513705447834
+        ]
+      ]
+    },
+    {
+      "edge_id": "E052",
+      "u": "N031",
+      "v": "N036",
+      "key": 0,
+      "source_fids": "46;76",
+      "source_fids_ordered": "76;46",
+      "source_edge_count": 2,
+      "length_local": 249.44367028834677,
+      "vertex_count": 3,
+      "coordinates": [
+        [
+          723.4098306454775,
+          636.7513705447836
+        ],
+        [
+          723.4098306454775,
+          635.014685751152
+        ],
+        [
+          723.4098306454775,
+          387.3077002564369
+        ]
+      ]
+    },
+    {
+      "edge_id": "E053",
+      "u": "N032",
+      "v": "N038",
+      "key": 0,
+      "source_fids": "59;60",
+      "source_fids_ordered": "59;60",
+      "source_edge_count": 2,
+      "length_local": 402.23351549717324,
+      "vertex_count": 3,
+      "coordinates": [
+        [
+          863.2286215961212,
+          636.7513705447834
+        ],
+        [
+          863.2286215961212,
+          237.95184909085344
+        ],
+        [
+          863.2286215961212,
+          234.51785504761014
+        ]
+      ]
+    },
+    {
+      "edge_id": "E054",
+      "u": "N033",
+      "v": "N034",
+      "key": 0,
+      "source_fids": "62",
+      "source_fids_ordered": "62",
+      "source_edge_count": 1,
+      "length_local": 69.93270701808102,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          92.23950001437514,
+          387.3077002564369
+        ],
+        [
+          162.17220703245616,
+          387.3077002564369
+        ]
+      ]
+    },
+    {
+      "edge_id": "E055",
+      "u": "N033",
+      "v": "N045",
+      "key": 0,
+      "source_fids": "38",
+      "source_fids_ordered": "38",
+      "source_edge_count": 1,
+      "length_local": 361.06375740235785,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          92.23950001437514,
+          387.3077002564369
+        ],
+        [
+          92.23950001437517,
+          26.243942854079023
+        ]
+      ]
+    },
+    {
+      "edge_id": "E056",
+      "u": "N034",
+      "v": "N035",
+      "key": 0,
+      "source_fids": "63",
+      "source_fids_ordered": "63",
+      "source_edge_count": 1,
+      "length_local": 427.4232604121695,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          162.17220703245616,
+          387.3077002564369
+        ],
+        [
+          589.5954674446257,
+          387.3077002564369
+        ]
+      ]
+    },
+    {
+      "edge_id": "E057",
+      "u": "N034",
+      "v": "N041",
+      "key": 0,
+      "source_fids": "35;42",
+      "source_fids_ordered": "35;42",
+      "source_edge_count": 2,
+      "length_local": 674.9952524104815,
+      "vertex_count": 3,
+      "coordinates": [
+        [
+          162.17220703245616,
+          387.3077002564369
+        ],
+        [
+          162.17220703245619,
+          139.73570825812487
+        ],
+        [
+          589.5954674446257,
+          139.73570825812487
+        ]
+      ]
+    },
+    {
+      "edge_id": "E058",
+      "u": "N035",
+      "v": "N036",
+      "key": 0,
+      "source_fids": "64",
+      "source_fids_ordered": "64",
+      "source_edge_count": 1,
+      "length_local": 133.81436320085186,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446257,
+          387.3077002564369
+        ],
+        [
+          723.4098306454775,
+          387.3077002564369
+        ]
+      ]
+    },
+    {
+      "edge_id": "E059",
+      "u": "N035",
+      "v": "N040",
+      "key": 0,
+      "source_fids": "24",
+      "source_fids_ordered": "24",
+      "source_edge_count": 1,
+      "length_local": 152.78984520883932,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446257,
+          387.3077002564369
+        ],
+        [
+          589.5954674446257,
+          234.51785504759755
+        ]
+      ]
+    },
+    {
+      "edge_id": "E060",
+      "u": "N036",
+      "v": "N037",
+      "key": 0,
+      "source_fids": "47;72",
+      "source_fids_ordered": "72;47",
+      "source_edge_count": 2,
+      "length_local": 152.78984520882673,
+      "vertex_count": 3,
+      "coordinates": [
+        [
+          723.4098306454775,
+          387.3077002564369
+        ],
+        [
+          723.4098306454775,
+          387.24328503832237
+        ],
+        [
+          723.4098306454775,
+          234.51785504761014
+        ]
+      ]
+    },
+    {
+      "edge_id": "E061",
+      "u": "N037",
+      "v": "N038",
+      "key": 0,
+      "source_fids": "66",
+      "source_fids_ordered": "66",
+      "source_edge_count": 1,
+      "length_local": 139.8187909506437,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          723.4098306454775,
+          234.51785504761014
+        ],
+        [
+          863.2286215961212,
+          234.51785504761014
+        ]
+      ]
+    },
+    {
+      "edge_id": "E062",
+      "u": "N037",
+      "v": "N040",
+      "key": 0,
+      "source_fids": "65",
+      "source_fids_ordered": "65",
+      "source_edge_count": 1,
+      "length_local": 133.81436320085186,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          723.4098306454775,
+          234.51785504761014
+        ],
+        [
+          589.5954674446257,
+          234.51785504759755
+        ]
+      ]
+    },
+    {
+      "edge_id": "E063",
+      "u": "N038",
+      "v": "N039",
+      "key": 0,
+      "source_fids": "67",
+      "source_fids_ordered": "67",
+      "source_edge_count": 1,
+      "length_local": 120.7136211130371,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          863.2286215961212,
+          234.51785504761014
+        ],
+        [
+          983.9422427091583,
+          234.51785504761014
+        ]
+      ]
+    },
+    {
+      "edge_id": "E064",
+      "u": "N038",
+      "v": "N042",
+      "key": 0,
+      "source_fids": "71",
+      "source_fids_ordered": "71",
+      "source_edge_count": 1,
+      "length_local": 94.78214678948527,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          863.2286215961212,
+          234.51785504761014
+        ],
+        [
+          863.2286215961212,
+          139.73570825812487
+        ]
+      ]
+    },
+    {
+      "edge_id": "E065",
+      "u": "N040",
+      "v": "N041",
+      "key": 0,
+      "source_fids": "70",
+      "source_fids_ordered": "70",
+      "source_edge_count": 1,
+      "length_local": 94.78214678947268,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446257,
+          234.51785504759755
+        ],
+        [
+          589.5954674446257,
+          139.73570825812487
+        ]
+      ]
+    },
+    {
+      "edge_id": "E066",
+      "u": "N041",
+      "v": "N042",
+      "key": 0,
+      "source_fids": "43",
+      "source_fids_ordered": "43",
+      "source_edge_count": 1,
+      "length_local": 273.63315415149555,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446257,
+          139.73570825812487
+        ],
+        [
+          863.2286215961212,
+          139.73570825812487
+        ]
+      ]
+    },
+    {
+      "edge_id": "E067",
+      "u": "N041",
+      "v": "N046",
+      "key": 0,
+      "source_fids": "25",
+      "source_fids_ordered": "25",
+      "source_edge_count": 1,
+      "length_local": 115.53359626588013,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          589.5954674446257,
+          139.73570825812487
+        ],
+        [
+          589.5954674446257,
+          24.20211199224474
+        ]
+      ]
+    },
+    {
+      "edge_id": "E068",
+      "u": "N042",
+      "v": "N043",
+      "key": 0,
+      "source_fids": "68",
+      "source_fids_ordered": "68",
+      "source_edge_count": 1,
+      "length_local": 118.3854895583006,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          863.2286215961212,
+          139.73570825812487
+        ],
+        [
+          981.6141111544218,
+          139.73570825812487
+        ]
+      ]
+    },
+    {
+      "edge_id": "E069",
+      "u": "N042",
+      "v": "N044",
+      "key": 0,
+      "source_fids": "61",
+      "source_fids_ordered": "61",
+      "source_edge_count": 1,
+      "length_local": 111.31569909355414,
+      "vertex_count": 2,
+      "coordinates": [
+        [
+          863.2286215961212,
+          139.73570825812487
+        ],
+        [
+          863.2286215961212,
+          28.42000916457073
+        ]
+      ]
+    }
+  ]
+}
