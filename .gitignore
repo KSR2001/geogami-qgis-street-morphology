@@ -1,0 +1,7 @@
+# SQLite / GeoPackage transient files
+*.gpkg-wal
+*.gpkg-shm
+*.gpkg-journal
+
+# QGIS/GDAL generated raster auxiliary metadata
+*.aux.xml
