@@ -1,0 +1,26 @@
+issue_id,issue_type,severity,fid_1,fid_2,x,y,distance_if_applicable,description
+QA-0001,endpoint_interior_unsplit_intersection,error,10,60,871.0418071890971,882.3533401963068,,An edge endpoint meets the interior of another unsplit edge.
+QA-0002,endpoint_interior_unsplit_intersection,error,10,61,871.0418071890971,882.3533401963068,,An edge endpoint meets the interior of another unsplit edge.
+QA-0003,endpoint_interior_unsplit_intersection,error,11,47,871.0418071890971,1074.2917743308633,,An edge endpoint meets the interior of another unsplit edge.
+QA-0004,endpoint_interior_unsplit_intersection,error,13,48,871.0418071890971,235.2384708777854,,An edge endpoint meets the interior of another unsplit edge.
+QA-0005,endpoint_interior_unsplit_intersection,error,13,50,871.0418071890971,235.2384708777854,,An edge endpoint meets the interior of another unsplit edge.
+QA-0006,endpoint_interior_unsplit_intersection,error,14,15,871.0418071890971,142.1212364870873,,An edge endpoint meets the interior of another unsplit edge.
+QA-0007,endpoint_interior_unsplit_intersection,error,14,51,871.0418071890971,142.1212364870873,,An edge endpoint meets the interior of another unsplit edge.
+QA-0008,endpoint_interior_unsplit_intersection,error,25,57,462.44181409224757,882.3533401962876,,An edge endpoint meets the interior of another unsplit edge.
+QA-0009,endpoint_interior_unsplit_intersection,error,25,58,462.44181409224757,882.3533401962876,,An edge endpoint meets the interior of another unsplit edge.
+QA-0010,endpoint_interior_unsplit_intersection,error,25,62,462.44181409224757,980.4615442710187,,An edge endpoint meets the interior of another unsplit edge.
+QA-0011,endpoint_interior_unsplit_intersection,error,25,63,462.44181409224757,980.4615442710187,,An edge endpoint meets the interior of another unsplit edge.
+QA-0012,endpoint_interior_unsplit_intersection,error,27,58,597.8218667716803,882.3533401962876,,An edge endpoint meets the interior of another unsplit edge.
+QA-0013,endpoint_interior_unsplit_intersection,error,27,59,597.8218667716803,882.3533401962876,,An edge endpoint meets the interior of another unsplit edge.
+QA-0014,endpoint_interior_unsplit_intersection,error,27,63,597.8218667716803,980.4615442710187,,An edge endpoint meets the interior of another unsplit edge.
+QA-0015,endpoint_interior_unsplit_intersection,error,27,64,597.8218667716803,980.4615442710187,,An edge endpoint meets the interior of another unsplit edge.
+QA-0016,endpoint_interior_unsplit_intersection,error,29,45,597.8218667716803,1074.2917743308633,,An edge endpoint meets the interior of another unsplit edge.
+QA-0017,endpoint_interior_unsplit_intersection,error,29,46,597.8218667716803,1074.2917743308633,,An edge endpoint meets the interior of another unsplit edge.
+QA-0018,endpoint_interior_unsplit_intersection,error,31,59,728.1396502001612,882.3533401962876,,An edge endpoint meets the interior of another unsplit edge.
+QA-0019,endpoint_interior_unsplit_intersection,error,31,60,728.1396502001612,882.3533401962876,,An edge endpoint meets the interior of another unsplit edge.
+QA-0020,endpoint_interior_unsplit_intersection,error,32,64,728.1396502001612,980.4615442710187,,An edge endpoint meets the interior of another unsplit edge.
+QA-0021,endpoint_interior_unsplit_intersection,error,34,56,344.65492954903783,765.9211474244948,,An edge endpoint meets the interior of another unsplit edge.
+QA-0022,endpoint_interior_unsplit_intersection,error,35,55,344.6549295490379,882.3533401962876,,An edge endpoint meets the interior of another unsplit edge.
+QA-0023,endpoint_interior_unsplit_intersection,error,35,57,344.6549295490379,882.3533401962876,,An edge endpoint meets the interior of another unsplit edge.
+QA-0024,endpoint_interior_unsplit_intersection,error,42,54,173.4646693866671,882.3533401962876,,An edge endpoint meets the interior of another unsplit edge.
+QA-0025,endpoint_interior_unsplit_intersection,error,42,55,173.4646693866671,882.3533401962876,,An edge endpoint meets the interior of another unsplit edge.
