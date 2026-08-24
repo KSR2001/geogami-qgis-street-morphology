@@ -60,3 +60,44 @@ and endpoint discrepancies over `1e-6` local units. Smaller endpoint-only discre
 are corrected in the candidate and reported; the editable source is never changed.
 
 The Phase 5 Env39 builder and frozen baseline remain independent of this workflow.
+
+## Phase 7C: versioned reproducible runs
+
+The normal professor workflow now creates a complete, immutable run directory and
+updates a cross-platform JSON pointer to the latest successful run:
+
+```powershell
+python scripts/run_canonical_pipeline.py `
+  --environment env39 `
+  --input data/editable/grid/env39_editable.gpkg `
+  --reference-canonical data/canonical/grid/env39_canonical.gpkg `
+  --runs-root data/canonical/grid/runs `
+  --mode preserve-topology
+```
+
+Successful run IDs combine the environment, a UTC provenance timestamp, and the
+first 12 characters of the scientific-content signature. Each run contains the
+canonical GeoPackage, manifest, validation report, deterministic CSV exports,
+signature files, and header-valid endpoint-adjustment and diagnostics tables.
+
+`data/canonical/grid/latest.json` is a regular JSON file rather than a symlink. It
+is replaced atomically only after the canonical network, manifest, validation and
+all required artifacts have passed verification. Failed builds retain diagnostics
+under `runs/failed/` and never change `latest.json`.
+
+### Three distinct identities
+
+- **File SHA-256** hashes exact file bytes. It detects byte-identical GeoPackage
+  containers and can change because of scientifically irrelevant SQLite/GDAL
+  metadata.
+- **Scientific-content signature** hashes deterministic scientific content: CRS,
+  ordered canonical IDs, exact `float.hex()` coordinates, connectivity fields and
+  ordered geometry vertices. It excludes GeoPackage metadata, derived attributes
+  and source-FID provenance.
+- **Topology signature** hashes only the established sorted normalized `(u,v,key)`
+  tuples. Geometry changes therefore do not change topology identity.
+
+The authoritative geospatial artifact is always the run's canonical GeoPackage;
+CSV files are professor-readable explanatory exports. The earlier explicit
+`--output` command remains available for backward-compatible Phase 7B workflows,
+but it does not create a Phase 7C manifest or update `latest.json`.

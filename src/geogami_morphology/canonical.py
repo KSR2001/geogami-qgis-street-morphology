@@ -5,8 +5,6 @@ from __future__ import annotations
 from collections import Counter
 from dataclasses import dataclass
 import csv
-import hashlib
-import json
 import math
 from pathlib import Path
 import tempfile
@@ -16,6 +14,7 @@ import geopandas as gpd
 from shapely.geometry import LineString, Point
 
 from .io import atomic_publish, read_network, sha256_file, write_json, write_network
+from .identity import scientific_content_signature
 from .validation import TOPOLOGY_SERIALIZATION, graph_statistics, intersection_errors
 
 
@@ -65,22 +64,6 @@ def _records(frame: gpd.GeoDataFrame, field: str) -> tuple[dict[str, Any], list[
 
 def _distance(first: tuple[float, float], second: tuple[float, float]) -> float:
     return math.hypot(first[0] - second[0], first[1] - second[1])
-
-
-def _scientific_content_sha(nodes: gpd.GeoDataFrame, edges: gpd.GeoDataFrame) -> str:
-    document = {
-        "nodes": [
-            {**{column: row[column] for column in nodes.columns if column != nodes.geometry.name}, "geometry_wkb": row.geometry.wkb_hex}
-            for _, row in nodes.sort_values("node_id").iterrows()
-        ],
-        "edges": [
-            {**{column: row[column] for column in edges.columns if column != edges.geometry.name}, "geometry_wkb": row.geometry.wkb_hex}
-            for _, row in edges.sort_values("edge_id").iterrows()
-        ],
-        "crs": nodes.crs.to_wkt() if nodes.crs else None,
-    }
-    text = json.dumps(document, sort_keys=True, separators=(",", ":"), default=str, allow_nan=False)
-    return hashlib.sha256(text.encode("utf-8")).hexdigest().upper()
 
 
 def _write_reports(report: dict[str, Any], diagnostics_dir: Path) -> None:
@@ -315,7 +298,10 @@ def run_preserve_topology(
         write_network(candidate_path, candidate_nodes, candidate_edges)
         # A complete reread verifies the actual serialized candidate, not only memory objects.
         published_nodes, published_edges = read_network(candidate_path)
-        report["candidate"] = {"sha256": sha256_file(candidate_path), "scientific_content_sha256": _scientific_content_sha(published_nodes, published_edges)}
+        report["candidate"] = {
+            "sha256": sha256_file(candidate_path),
+            "scientific_content_sha256": scientific_content_signature(published_nodes, published_edges)[0],
+        }
         if sha256_file(input_path) != source_hash or sha256_file(reference_path) != reference_hash:
             issues.append(_issue("io", "input_changed_during_run", "Editable input or reference changed while the candidate was being built."))
             report["error_counts"]["io"] = 1
