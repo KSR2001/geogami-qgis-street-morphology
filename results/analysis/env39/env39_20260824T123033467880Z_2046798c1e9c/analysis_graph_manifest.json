@@ -1,0 +1,60 @@
+{
+  "artifacts": {
+    "graphml_path": "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/graphs/env39_osmnx.graphml",
+    "graphml_sha256": "AE52F2578C88CB216B31025A11FCB197C95C3B0FA8726849E9FF17ABEFC53E0F"
+  },
+  "canonical": {
+    "file_sha256": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "path": "data/canonical/grid/runs/env39_20260824T123033467880Z_2046798c1e9c/env39_canonical.gpkg",
+    "scientific_content_signature": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "canonical_run_id": "env39_20260824T123033467880Z_2046798c1e9c",
+  "created_at_utc": "2026-08-24T12:54:29.134468Z",
+  "environment": "env39",
+  "networkx_graph": {
+    "component_count": 1,
+    "degree_distribution": {
+      "1": 10,
+      "3": 16,
+      "4": 20
+    },
+    "graph_type": "MultiGraph",
+    "handshake_degree_sum": 138,
+    "node_count": 46,
+    "physical_edge_count": 69
+  },
+  "osmnx_graph": {
+    "directed_arc_count": 138,
+    "graph_type": "MultiDiGraph",
+    "node_count": 46,
+    "physical_canonical_edge_count": 69
+  },
+  "roundtrip_validation": {
+    "directed_arc_count": 138,
+    "geometry_orientation_verified": true,
+    "local_crs_verified": true,
+    "node_count": 46,
+    "numeric_attributes_verified": true,
+    "physical_canonical_edge_count": 69,
+    "status": "PASS"
+  },
+  "schema_version": "1.0.0",
+  "semantics": {
+    "authoritative_length": "LineString.length in canonical local Cartesian coordinates",
+    "canonical_graph": "undirected physical street MultiGraph",
+    "coordinate_system": "GeoGami Local Cartesian",
+    "coordinate_units": "local_units",
+    "directed_arcs_are_physical_streets": false,
+    "length_units": "local_units",
+    "osmnx_graph": "reciprocal directed representation"
+  },
+  "software": {
+    "GeoPandas": "1.1.4",
+    "NetworkX": "3.6.1",
+    "OSMnx": "2.1.1",
+    "Python": "3.12.13",
+    "Shapely": "2.1.2",
+    "pyproj": "3.7.2"
+  }
+}

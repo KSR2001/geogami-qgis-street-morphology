@@ -101,3 +101,31 @@ The authoritative geospatial artifact is always the run's canonical GeoPackage;
 CSV files are professor-readable explanatory exports. The earlier explicit
 `--output` command remains available for backward-compatible Phase 7B workflows,
 but it does not create a Phase 7C manifest or update `latest.json`.
+
+## Phase 7D: canonical analysis graphs
+
+Build the analysis representations from the latest verified Phase 7C run:
+
+```powershell
+python scripts/build_analysis_graphs.py `
+  --environment env39 `
+  --canonical-run latest
+```
+
+The adapter independently verifies the canonical file SHA-256, scientific-content
+signature, topology signature, successful validation, and manifest paths before
+loading any graph. An explicit accepted canonical GeoPackage can instead be selected
+with `--canonical <path>` for research reproduction and tests. Editable and Phase 5
+source GeoPackages are never analysis inputs.
+
+The scientific graph is an undirected NetworkX `MultiGraph` with one edge per
+physical canonical street. The OSMnx-compatible graph is a `MultiDiGraph` with two
+geometry-oriented reciprocal arcs per physical street. Thus Env39 has 69 physical
+streets but 138 directed arcs; directed arc count must not be reported as physical
+street count.
+
+Outputs are published under
+`results/analysis/<environment>/<canonical_run_id>/`, including portable GraphML and
+an `analysis_graph_manifest.json`. Length is always recomputed as `LineString.length`
+in GeoGami local Cartesian units. The adapter does not assign EPSG:4326, calculate
+geographic bearings, or use great-circle edge-length functions.

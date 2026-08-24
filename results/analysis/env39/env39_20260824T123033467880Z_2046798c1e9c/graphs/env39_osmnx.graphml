@@ -1,0 +1,2157 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d25" for="edge" attr.name="geometry" attr.type="string" />
+  <key id="d24" for="edge" attr.name="arc_direction" attr.type="string" />
+  <key id="d23" for="edge" attr.name="length_units" attr.type="string" />
+  <key id="d22" for="edge" attr.name="vertex_count" attr.type="string" />
+  <key id="d21" for="edge" attr.name="length_local" attr.type="string" />
+  <key id="d20" for="edge" attr.name="length" attr.type="string" />
+  <key id="d19" for="edge" attr.name="canonical_key" attr.type="string" />
+  <key id="d18" for="edge" attr.name="canonical_v" attr.type="string" />
+  <key id="d17" for="edge" attr.name="canonical_u" attr.type="string" />
+  <key id="d16" for="edge" attr.name="edge_id" attr.type="string" />
+  <key id="d15" for="edge" attr.name="canonical_edge_id" attr.type="string" />
+  <key id="d14" for="node" attr.name="incident_source_fids" attr.type="string" />
+  <key id="d13" for="node" attr.name="degree" attr.type="string" />
+  <key id="d12" for="node" attr.name="y" attr.type="string" />
+  <key id="d11" for="node" attr.name="x" attr.type="string" />
+  <key id="d10" for="node" attr.name="node_id" attr.type="string" />
+  <key id="d9" for="graph" attr.name="length_units" attr.type="string" />
+  <key id="d8" for="graph" attr.name="coordinate_units" attr.type="string" />
+  <key id="d7" for="graph" attr.name="coordinate_system" attr.type="string" />
+  <key id="d6" for="graph" attr.name="graph_semantics" attr.type="string" />
+  <key id="d5" for="graph" attr.name="topology_signature" attr.type="string" />
+  <key id="d4" for="graph" attr.name="scientific_content_signature" attr.type="string" />
+  <key id="d3" for="graph" attr.name="canonical_file_sha256" attr.type="string" />
+  <key id="d2" for="graph" attr.name="canonical_run_id" attr.type="string" />
+  <key id="d1" for="graph" attr.name="environment" attr.type="string" />
+  <key id="d0" for="graph" attr.name="crs" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="N001">
+      <data key="d10">N001</data>
+      <data key="d11">162.17220703245607</data>
+      <data key="d12">1187.5352455266075</data>
+      <data key="d13">1</data>
+      <data key="d14">32</data>
+    </node>
+    <node id="N014">
+      <data key="d10">N014</data>
+      <data key="d11">162.1722070324561</data>
+      <data key="d12">884.8019166513449</data>
+      <data key="d13">4</data>
+      <data key="d14">1;2;32;33</data>
+    </node>
+    <node id="N002">
+      <data key="d10">N002</data>
+      <data key="d11">863.2286215960698</data>
+      <data key="d12">1186.5490510682237</data>
+      <data key="d13">1</data>
+      <data key="d14">55</data>
+    </node>
+    <node id="N007">
+      <data key="d10">N007</data>
+      <data key="d11">863.2286215960698</data>
+      <data key="d12">1072.6503559407909</data>
+      <data key="d13">3</data>
+      <data key="d14">11;55;56</data>
+    </node>
+    <node id="N003">
+      <data key="d10">N003</data>
+      <data key="d11">589.5954674446693</data>
+      <data key="d12">1183.1112786592844</data>
+      <data key="d13">1</data>
+      <data key="d14">18</data>
+    </node>
+    <node id="N005">
+      <data key="d10">N005</data>
+      <data key="d11">589.5954674446693</data>
+      <data key="d12">1072.6503559407909</data>
+      <data key="d13">4</data>
+      <data key="d14">9;10;18;19</data>
+    </node>
+    <node id="N004">
+      <data key="d10">N004</data>
+      <data key="d11">458.57798714315663</data>
+      <data key="d12">1072.6503559407909</data>
+      <data key="d13">3</data>
+      <data key="d14">8;9;28</data>
+    </node>
+    <node id="N008">
+      <data key="d10">N008</data>
+      <data key="d11">338.86501833192546</data>
+      <data key="d12">980.4276620142698</data>
+      <data key="d13">3</data>
+      <data key="d14">12;13;73</data>
+    </node>
+    <node id="N009">
+      <data key="d10">N009</data>
+      <data key="d11">458.57798714315663</data>
+      <data key="d12">980.4276620142698</data>
+      <data key="d13">4</data>
+      <data key="d14">13;14;28;29</data>
+    </node>
+    <node id="N006">
+      <data key="d10">N006</data>
+      <data key="d11">723.4098306454775</data>
+      <data key="d12">1072.6503559407909</data>
+      <data key="d13">3</data>
+      <data key="d14">10;11;16</data>
+    </node>
+    <node id="N010">
+      <data key="d10">N010</data>
+      <data key="d11">589.5954674446693</data>
+      <data key="d12">980.4276620142698</data>
+      <data key="d13">4</data>
+      <data key="d14">14;15;19;20</data>
+    </node>
+    <node id="N011">
+      <data key="d10">N011</data>
+      <data key="d11">723.4098306454775</data>
+      <data key="d12">980.4276620142698</data>
+      <data key="d13">3</data>
+      <data key="d14">15;16;17</data>
+    </node>
+    <node id="N017">
+      <data key="d10">N017</data>
+      <data key="d11">863.2286215960698</data>
+      <data key="d12">884.8019166513449</data>
+      <data key="d13">4</data>
+      <data key="d14">6;7;56;57</data>
+    </node>
+    <node id="N015">
+      <data key="d10">N015</data>
+      <data key="d11">338.8650183319114</data>
+      <data key="d12">884.8019166513449</data>
+      <data key="d13">4</data>
+      <data key="d14">2;3;26;73</data>
+    </node>
+    <node id="N020">
+      <data key="d10">N020</data>
+      <data key="d11">458.5779871431296</data>
+      <data key="d12">884.8019166513446</data>
+      <data key="d13">4</data>
+      <data key="d14">3;4;29;30</data>
+    </node>
+    <node id="N019">
+      <data key="d10">N019</data>
+      <data key="d11">589.5954674446257</data>
+      <data key="d12">884.8019166513448</data>
+      <data key="d13">4</data>
+      <data key="d14">4;5;20;21</data>
+    </node>
+    <node id="N016">
+      <data key="d10">N016</data>
+      <data key="d11">723.4098306454775</data>
+      <data key="d12">884.8019166513449</data>
+      <data key="d13">4</data>
+      <data key="d14">5;6;17;44</data>
+    </node>
+    <node id="N012">
+      <data key="d10">N012</data>
+      <data key="d11">15.527348985462112</data>
+      <data key="d12">884.8019166513449</data>
+      <data key="d13">1</data>
+      <data key="d14">69</data>
+    </node>
+    <node id="N013">
+      <data key="d10">N013</data>
+      <data key="d11">92.23950001437511</data>
+      <data key="d12">884.8019166513449</data>
+      <data key="d13">3</data>
+      <data key="d14">1;36;69</data>
+    </node>
+    <node id="N026">
+      <data key="d10">N026</data>
+      <data key="d11">92.23950001437512</data>
+      <data key="d12">636.7513705447836</data>
+      <data key="d13">3</data>
+      <data key="d14">36;37;40</data>
+    </node>
+    <node id="N027">
+      <data key="d10">N027</data>
+      <data key="d11">162.17220703245613</data>
+      <data key="d12">636.7513705447836</data>
+      <data key="d13">4</data>
+      <data key="d14">33;34;39;40</data>
+    </node>
+    <node id="N022">
+      <data key="d10">N022</data>
+      <data key="d11">338.8650183319114</data>
+      <data key="d12">762.3239685480539</data>
+      <data key="d13">3</data>
+      <data key="d14">26;27;51</data>
+    </node>
+    <node id="N025">
+      <data key="d10">N025</data>
+      <data key="d11">723.4098306454775</data>
+      <data key="d12">762.3239685480539</data>
+      <data key="d13">4</data>
+      <data key="d14">44;53;54;74</data>
+    </node>
+    <node id="N018">
+      <data key="d10">N018</data>
+      <data key="d11">978.638688375702</data>
+      <data key="d12">884.8019166513449</data>
+      <data key="d13">1</data>
+      <data key="d14">7</data>
+    </node>
+    <node id="N021">
+      <data key="d10">N021</data>
+      <data key="d11">863.2286215961212</data>
+      <data key="d12">762.323968548054</data>
+      <data key="d13">3</data>
+      <data key="d14">54;57;58</data>
+    </node>
+    <node id="N024">
+      <data key="d10">N024</data>
+      <data key="d11">589.5954674446257</data>
+      <data key="d12">762.3239685480539</data>
+      <data key="d13">4</data>
+      <data key="d14">21;22;52;53</data>
+    </node>
+    <node id="N023">
+      <data key="d10">N023</data>
+      <data key="d11">458.5779871431296</data>
+      <data key="d12">762.3239685480539</data>
+      <data key="d13">4</data>
+      <data key="d14">31;51;52;75</data>
+    </node>
+    <node id="N032">
+      <data key="d10">N032</data>
+      <data key="d11">863.2286215961212</data>
+      <data key="d12">636.7513705447834</data>
+      <data key="d13">3</data>
+      <data key="d14">50;58;59</data>
+    </node>
+    <node id="N028">
+      <data key="d10">N028</data>
+      <data key="d11">338.8650183319114</data>
+      <data key="d12">636.7513705447836</data>
+      <data key="d13">3</data>
+      <data key="d14">27;39;41</data>
+    </node>
+    <node id="N029">
+      <data key="d10">N029</data>
+      <data key="d11">458.5779871431296</data>
+      <data key="d12">636.7513705447836</data>
+      <data key="d13">3</data>
+      <data key="d14">41;48;75</data>
+    </node>
+    <node id="N030">
+      <data key="d10">N030</data>
+      <data key="d11">589.5954674446257</data>
+      <data key="d12">636.7513705447836</data>
+      <data key="d13">4</data>
+      <data key="d14">22;23;48;49</data>
+    </node>
+    <node id="N031">
+      <data key="d10">N031</data>
+      <data key="d11">723.4098306454775</data>
+      <data key="d12">636.7513705447836</data>
+      <data key="d13">4</data>
+      <data key="d14">45;49;50;76</data>
+    </node>
+    <node id="N033">
+      <data key="d10">N033</data>
+      <data key="d11">92.23950001437514</data>
+      <data key="d12">387.3077002564369</data>
+      <data key="d13">3</data>
+      <data key="d14">37;38;62</data>
+    </node>
+    <node id="N034">
+      <data key="d10">N034</data>
+      <data key="d11">162.17220703245616</data>
+      <data key="d12">387.3077002564369</data>
+      <data key="d13">4</data>
+      <data key="d14">34;35;62;63</data>
+    </node>
+    <node id="N035">
+      <data key="d10">N035</data>
+      <data key="d11">589.5954674446257</data>
+      <data key="d12">387.3077002564369</data>
+      <data key="d13">4</data>
+      <data key="d14">23;24;63;64</data>
+    </node>
+    <node id="N036">
+      <data key="d10">N036</data>
+      <data key="d11">723.4098306454775</data>
+      <data key="d12">387.3077002564369</data>
+      <data key="d13">3</data>
+      <data key="d14">46;64;72</data>
+    </node>
+    <node id="N038">
+      <data key="d10">N038</data>
+      <data key="d11">863.2286215961212</data>
+      <data key="d12">234.51785504761014</data>
+      <data key="d13">4</data>
+      <data key="d14">60;66;67;71</data>
+    </node>
+    <node id="N045">
+      <data key="d10">N045</data>
+      <data key="d11">92.23950001437517</data>
+      <data key="d12">26.243942854079023</data>
+      <data key="d13">1</data>
+      <data key="d14">38</data>
+    </node>
+    <node id="N041">
+      <data key="d10">N041</data>
+      <data key="d11">589.5954674446257</data>
+      <data key="d12">139.73570825812487</data>
+      <data key="d13">4</data>
+      <data key="d14">25;42;43;70</data>
+    </node>
+    <node id="N040">
+      <data key="d10">N040</data>
+      <data key="d11">589.5954674446257</data>
+      <data key="d12">234.51785504759755</data>
+      <data key="d13">3</data>
+      <data key="d14">24;65;70</data>
+    </node>
+    <node id="N037">
+      <data key="d10">N037</data>
+      <data key="d11">723.4098306454775</data>
+      <data key="d12">234.51785504761014</data>
+      <data key="d13">3</data>
+      <data key="d14">47;65;66</data>
+    </node>
+    <node id="N039">
+      <data key="d10">N039</data>
+      <data key="d11">983.9422427091583</data>
+      <data key="d12">234.51785504761014</data>
+      <data key="d13">1</data>
+      <data key="d14">67</data>
+    </node>
+    <node id="N042">
+      <data key="d10">N042</data>
+      <data key="d11">863.2286215961212</data>
+      <data key="d12">139.73570825812487</data>
+      <data key="d13">4</data>
+      <data key="d14">43;61;68;71</data>
+    </node>
+    <node id="N046">
+      <data key="d10">N046</data>
+      <data key="d11">589.5954674446257</data>
+      <data key="d12">24.20211199224474</data>
+      <data key="d13">1</data>
+      <data key="d14">25</data>
+    </node>
+    <node id="N043">
+      <data key="d10">N043</data>
+      <data key="d11">981.6141111544218</data>
+      <data key="d12">139.73570825812487</data>
+      <data key="d13">1</data>
+      <data key="d14">68</data>
+    </node>
+    <node id="N044">
+      <data key="d10">N044</data>
+      <data key="d11">863.2286215961212</data>
+      <data key="d12">28.42000916457073</data>
+      <data key="d13">1</data>
+      <data key="d14">61</data>
+    </node>
+    <edge source="N001" target="N014" id="0">
+      <data key="d15">E001</data>
+      <data key="d16">E001</data>
+      <data key="d17">N001</data>
+      <data key="d18">N014</data>
+      <data key="d19">0</data>
+      <data key="d20">302.7333288752626</data>
+      <data key="d21">302.7333288752626</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (162.17220703245607 1187.5352455266075, 162.1722070324561 884.8019166513449)</data>
+    </edge>
+    <edge source="N014" target="N001" id="0">
+      <data key="d15">E001</data>
+      <data key="d16">E001</data>
+      <data key="d17">N001</data>
+      <data key="d18">N014</data>
+      <data key="d19">0</data>
+      <data key="d20">302.7333288752626</data>
+      <data key="d21">302.7333288752626</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (162.1722070324561 884.8019166513449, 162.17220703245607 1187.5352455266075)</data>
+    </edge>
+    <edge source="N014" target="N013" id="0">
+      <data key="d15">E020</data>
+      <data key="d16">E020</data>
+      <data key="d17">N013</data>
+      <data key="d18">N014</data>
+      <data key="d19">0</data>
+      <data key="d20">69.93270701808099</data>
+      <data key="d21">69.93270701808099</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (162.1722070324561 884.8019166513449, 92.23950001437511 884.8019166513449)</data>
+    </edge>
+    <edge source="N014" target="N015" id="0">
+      <data key="d15">E022</data>
+      <data key="d16">E022</data>
+      <data key="d17">N014</data>
+      <data key="d18">N015</data>
+      <data key="d19">0</data>
+      <data key="d20">176.69281129945531</data>
+      <data key="d21">176.69281129945531</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (162.1722070324561 884.8019166513449, 338.8650183319114 884.8019166513449)</data>
+    </edge>
+    <edge source="N014" target="N027" id="0">
+      <data key="d15">E023</data>
+      <data key="d16">E023</data>
+      <data key="d17">N014</data>
+      <data key="d18">N027</data>
+      <data key="d19">0</data>
+      <data key="d20">248.05054610656123</data>
+      <data key="d21">248.05054610656123</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (162.1722070324561 884.8019166513449, 162.17220703245613 636.7513705447836)</data>
+    </edge>
+    <edge source="N002" target="N007" id="0">
+      <data key="d15">E002</data>
+      <data key="d16">E002</data>
+      <data key="d17">N002</data>
+      <data key="d18">N007</data>
+      <data key="d19">0</data>
+      <data key="d20">113.8986951274328</data>
+      <data key="d21">113.8986951274328</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (863.2286215960698 1186.5490510682237, 863.2286215960698 1072.6503559407909)</data>
+    </edge>
+    <edge source="N007" target="N002" id="0">
+      <data key="d15">E002</data>
+      <data key="d16">E002</data>
+      <data key="d17">N002</data>
+      <data key="d18">N007</data>
+      <data key="d19">0</data>
+      <data key="d20">113.8986951274328</data>
+      <data key="d21">113.8986951274328</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215960698 1072.6503559407909, 863.2286215960698 1186.5490510682237)</data>
+    </edge>
+    <edge source="N007" target="N006" id="0">
+      <data key="d15">E009</data>
+      <data key="d16">E009</data>
+      <data key="d17">N006</data>
+      <data key="d18">N007</data>
+      <data key="d19">0</data>
+      <data key="d20">139.8187909505923</data>
+      <data key="d21">139.8187909505923</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215960698 1072.6503559407909, 723.4098306454775 1072.6503559407909)</data>
+    </edge>
+    <edge source="N007" target="N017" id="0">
+      <data key="d15">E011</data>
+      <data key="d16">E011</data>
+      <data key="d17">N007</data>
+      <data key="d18">N017</data>
+      <data key="d19">0</data>
+      <data key="d20">187.848439289446</data>
+      <data key="d21">187.848439289446</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (863.2286215960698 1072.6503559407909, 863.2286215960698 884.8019166513449)</data>
+    </edge>
+    <edge source="N003" target="N005" id="0">
+      <data key="d15">E003</data>
+      <data key="d16">E003</data>
+      <data key="d17">N003</data>
+      <data key="d18">N005</data>
+      <data key="d19">0</data>
+      <data key="d20">110.46092271849352</data>
+      <data key="d21">110.46092271849352</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446693 1183.1112786592844, 589.5954674446693 1072.6503559407909)</data>
+    </edge>
+    <edge source="N005" target="N003" id="0">
+      <data key="d15">E003</data>
+      <data key="d16">E003</data>
+      <data key="d17">N003</data>
+      <data key="d18">N005</data>
+      <data key="d19">0</data>
+      <data key="d20">110.46092271849352</data>
+      <data key="d21">110.46092271849352</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446693 1072.6503559407909, 589.5954674446693 1183.1112786592844)</data>
+    </edge>
+    <edge source="N005" target="N004" id="0">
+      <data key="d15">E004</data>
+      <data key="d16">E004</data>
+      <data key="d17">N004</data>
+      <data key="d18">N005</data>
+      <data key="d19">0</data>
+      <data key="d20">131.0174803015127</data>
+      <data key="d21">131.0174803015127</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446693 1072.6503559407909, 458.57798714315663 1072.6503559407909)</data>
+    </edge>
+    <edge source="N005" target="N006" id="0">
+      <data key="d15">E007</data>
+      <data key="d16">E007</data>
+      <data key="d17">N005</data>
+      <data key="d18">N006</data>
+      <data key="d19">0</data>
+      <data key="d20">133.8143632008082</data>
+      <data key="d21">133.8143632008082</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446693 1072.6503559407909, 723.4098306454775 1072.6503559407909)</data>
+    </edge>
+    <edge source="N005" target="N010" id="0">
+      <data key="d15">E008</data>
+      <data key="d16">E008</data>
+      <data key="d17">N005</data>
+      <data key="d18">N010</data>
+      <data key="d19">0</data>
+      <data key="d20">92.22269392652106</data>
+      <data key="d21">92.22269392652106</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446693 1072.6503559407909, 589.5954674446693 980.4276620142698)</data>
+    </edge>
+    <edge source="N004" target="N005" id="0">
+      <data key="d15">E004</data>
+      <data key="d16">E004</data>
+      <data key="d17">N004</data>
+      <data key="d18">N005</data>
+      <data key="d19">0</data>
+      <data key="d20">131.0174803015127</data>
+      <data key="d21">131.0174803015127</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (458.57798714315663 1072.6503559407909, 589.5954674446693 1072.6503559407909)</data>
+    </edge>
+    <edge source="N004" target="N008" id="0">
+      <data key="d15">E005</data>
+      <data key="d16">E005</data>
+      <data key="d17">N004</data>
+      <data key="d18">N008</data>
+      <data key="d19">0</data>
+      <data key="d20">211.93566273773865</data>
+      <data key="d21">211.93566273773865</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (458.57798714315663 1072.6503559407909, 338.86501833193904 1072.6503559407909, 338.86501833192546 980.4276620142698)</data>
+    </edge>
+    <edge source="N004" target="N009" id="0">
+      <data key="d15">E006</data>
+      <data key="d16">E006</data>
+      <data key="d17">N004</data>
+      <data key="d18">N009</data>
+      <data key="d19">0</data>
+      <data key="d20">92.22269392652106</data>
+      <data key="d21">92.22269392652106</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (458.57798714315663 1072.6503559407909, 458.57798714315663 980.4276620142698)</data>
+    </edge>
+    <edge source="N008" target="N004" id="0">
+      <data key="d15">E005</data>
+      <data key="d16">E005</data>
+      <data key="d17">N004</data>
+      <data key="d18">N008</data>
+      <data key="d19">0</data>
+      <data key="d20">211.93566273773865</data>
+      <data key="d21">211.93566273773865</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (338.86501833192546 980.4276620142698, 338.86501833193904 1072.6503559407909, 458.57798714315663 1072.6503559407909)</data>
+    </edge>
+    <edge source="N008" target="N009" id="0">
+      <data key="d15">E012</data>
+      <data key="d16">E012</data>
+      <data key="d17">N008</data>
+      <data key="d18">N009</data>
+      <data key="d19">0</data>
+      <data key="d20">119.71296881123118</data>
+      <data key="d21">119.71296881123118</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (338.86501833192546 980.4276620142698, 458.57798714315663 980.4276620142698)</data>
+    </edge>
+    <edge source="N008" target="N015" id="0">
+      <data key="d15">E013</data>
+      <data key="d16">E013</data>
+      <data key="d17">N008</data>
+      <data key="d18">N015</data>
+      <data key="d19">0</data>
+      <data key="d20">95.62574536292493</data>
+      <data key="d21">95.62574536292493</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (338.86501833192546 980.4276620142698, 338.8650183319114 884.8019166513449)</data>
+    </edge>
+    <edge source="N009" target="N004" id="0">
+      <data key="d15">E006</data>
+      <data key="d16">E006</data>
+      <data key="d17">N004</data>
+      <data key="d18">N009</data>
+      <data key="d19">0</data>
+      <data key="d20">92.22269392652106</data>
+      <data key="d21">92.22269392652106</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (458.57798714315663 980.4276620142698, 458.57798714315663 1072.6503559407909)</data>
+    </edge>
+    <edge source="N009" target="N008" id="0">
+      <data key="d15">E012</data>
+      <data key="d16">E012</data>
+      <data key="d17">N008</data>
+      <data key="d18">N009</data>
+      <data key="d19">0</data>
+      <data key="d20">119.71296881123118</data>
+      <data key="d21">119.71296881123118</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (458.57798714315663 980.4276620142698, 338.86501833192546 980.4276620142698)</data>
+    </edge>
+    <edge source="N009" target="N010" id="0">
+      <data key="d15">E014</data>
+      <data key="d16">E014</data>
+      <data key="d17">N009</data>
+      <data key="d18">N010</data>
+      <data key="d19">0</data>
+      <data key="d20">131.0174803015127</data>
+      <data key="d21">131.0174803015127</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (458.57798714315663 980.4276620142698, 589.5954674446693 980.4276620142698)</data>
+    </edge>
+    <edge source="N009" target="N020" id="0">
+      <data key="d15">E015</data>
+      <data key="d16">E015</data>
+      <data key="d17">N009</data>
+      <data key="d18">N020</data>
+      <data key="d19">0</data>
+      <data key="d20">95.62574536292516</data>
+      <data key="d21">95.62574536292516</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (458.57798714315663 980.4276620142698, 458.5779871431296 884.8019166513446)</data>
+    </edge>
+    <edge source="N006" target="N005" id="0">
+      <data key="d15">E007</data>
+      <data key="d16">E007</data>
+      <data key="d17">N005</data>
+      <data key="d18">N006</data>
+      <data key="d19">0</data>
+      <data key="d20">133.8143632008082</data>
+      <data key="d21">133.8143632008082</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 1072.6503559407909, 589.5954674446693 1072.6503559407909)</data>
+    </edge>
+    <edge source="N006" target="N007" id="0">
+      <data key="d15">E009</data>
+      <data key="d16">E009</data>
+      <data key="d17">N006</data>
+      <data key="d18">N007</data>
+      <data key="d19">0</data>
+      <data key="d20">139.8187909505923</data>
+      <data key="d21">139.8187909505923</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 1072.6503559407909, 863.2286215960698 1072.6503559407909)</data>
+    </edge>
+    <edge source="N006" target="N011" id="0">
+      <data key="d15">E010</data>
+      <data key="d16">E010</data>
+      <data key="d17">N006</data>
+      <data key="d18">N011</data>
+      <data key="d19">0</data>
+      <data key="d20">92.22269392652106</data>
+      <data key="d21">92.22269392652106</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 1072.6503559407909, 723.4098306454775 980.4276620142698)</data>
+    </edge>
+    <edge source="N010" target="N005" id="0">
+      <data key="d15">E008</data>
+      <data key="d16">E008</data>
+      <data key="d17">N005</data>
+      <data key="d18">N010</data>
+      <data key="d19">0</data>
+      <data key="d20">92.22269392652106</data>
+      <data key="d21">92.22269392652106</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446693 980.4276620142698, 589.5954674446693 1072.6503559407909)</data>
+    </edge>
+    <edge source="N010" target="N009" id="0">
+      <data key="d15">E014</data>
+      <data key="d16">E014</data>
+      <data key="d17">N009</data>
+      <data key="d18">N010</data>
+      <data key="d19">0</data>
+      <data key="d20">131.0174803015127</data>
+      <data key="d21">131.0174803015127</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446693 980.4276620142698, 458.57798714315663 980.4276620142698)</data>
+    </edge>
+    <edge source="N010" target="N011" id="0">
+      <data key="d15">E016</data>
+      <data key="d16">E016</data>
+      <data key="d17">N010</data>
+      <data key="d18">N011</data>
+      <data key="d19">0</data>
+      <data key="d20">133.8143632008082</data>
+      <data key="d21">133.8143632008082</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446693 980.4276620142698, 723.4098306454775 980.4276620142698)</data>
+    </edge>
+    <edge source="N010" target="N019" id="0">
+      <data key="d15">E017</data>
+      <data key="d16">E017</data>
+      <data key="d17">N010</data>
+      <data key="d18">N019</data>
+      <data key="d19">0</data>
+      <data key="d20">95.62574536292504</data>
+      <data key="d21">95.62574536292504</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446693 980.4276620142698, 589.5954674446257 884.8019166513448)</data>
+    </edge>
+    <edge source="N011" target="N006" id="0">
+      <data key="d15">E010</data>
+      <data key="d16">E010</data>
+      <data key="d17">N006</data>
+      <data key="d18">N011</data>
+      <data key="d19">0</data>
+      <data key="d20">92.22269392652106</data>
+      <data key="d21">92.22269392652106</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 980.4276620142698, 723.4098306454775 1072.6503559407909)</data>
+    </edge>
+    <edge source="N011" target="N010" id="0">
+      <data key="d15">E016</data>
+      <data key="d16">E016</data>
+      <data key="d17">N010</data>
+      <data key="d18">N011</data>
+      <data key="d19">0</data>
+      <data key="d20">133.8143632008082</data>
+      <data key="d21">133.8143632008082</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 980.4276620142698, 589.5954674446693 980.4276620142698)</data>
+    </edge>
+    <edge source="N011" target="N016" id="0">
+      <data key="d15">E018</data>
+      <data key="d16">E018</data>
+      <data key="d17">N011</data>
+      <data key="d18">N016</data>
+      <data key="d19">0</data>
+      <data key="d20">95.62574536292493</data>
+      <data key="d21">95.62574536292493</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 980.4276620142698, 723.4098306454775 884.8019166513449)</data>
+    </edge>
+    <edge source="N017" target="N007" id="0">
+      <data key="d15">E011</data>
+      <data key="d16">E011</data>
+      <data key="d17">N007</data>
+      <data key="d18">N017</data>
+      <data key="d19">0</data>
+      <data key="d20">187.848439289446</data>
+      <data key="d21">187.848439289446</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215960698 884.8019166513449, 863.2286215960698 1072.6503559407909)</data>
+    </edge>
+    <edge source="N017" target="N016" id="0">
+      <data key="d15">E026</data>
+      <data key="d16">E026</data>
+      <data key="d17">N016</data>
+      <data key="d18">N017</data>
+      <data key="d19">0</data>
+      <data key="d20">139.8187909505923</data>
+      <data key="d21">139.8187909505923</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215960698 884.8019166513449, 723.4098306454775 884.8019166513449)</data>
+    </edge>
+    <edge source="N017" target="N018" id="0">
+      <data key="d15">E029</data>
+      <data key="d16">E029</data>
+      <data key="d17">N017</data>
+      <data key="d18">N018</data>
+      <data key="d19">0</data>
+      <data key="d20">115.41006677963219</data>
+      <data key="d21">115.41006677963219</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (863.2286215960698 884.8019166513449, 978.638688375702 884.8019166513449)</data>
+    </edge>
+    <edge source="N017" target="N021" id="0">
+      <data key="d15">E030</data>
+      <data key="d16">E030</data>
+      <data key="d17">N017</data>
+      <data key="d18">N021</data>
+      <data key="d19">0</data>
+      <data key="d20">122.47794810329083</data>
+      <data key="d21">122.47794810329083</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (863.2286215960698 884.8019166513449, 863.2286215961212 762.323968548054)</data>
+    </edge>
+    <edge source="N015" target="N008" id="0">
+      <data key="d15">E013</data>
+      <data key="d16">E013</data>
+      <data key="d17">N008</data>
+      <data key="d18">N015</data>
+      <data key="d19">0</data>
+      <data key="d20">95.62574536292493</data>
+      <data key="d21">95.62574536292493</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (338.8650183319114 884.8019166513449, 338.86501833192546 980.4276620142698)</data>
+    </edge>
+    <edge source="N015" target="N014" id="0">
+      <data key="d15">E022</data>
+      <data key="d16">E022</data>
+      <data key="d17">N014</data>
+      <data key="d18">N015</data>
+      <data key="d19">0</data>
+      <data key="d20">176.69281129945531</data>
+      <data key="d21">176.69281129945531</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (338.8650183319114 884.8019166513449, 162.1722070324561 884.8019166513449)</data>
+    </edge>
+    <edge source="N015" target="N020" id="0">
+      <data key="d15">E024</data>
+      <data key="d16">E024</data>
+      <data key="d17">N015</data>
+      <data key="d18">N020</data>
+      <data key="d19">0</data>
+      <data key="d20">119.71296881121816</data>
+      <data key="d21">119.71296881121816</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (338.8650183319114 884.8019166513449, 458.5779871431296 884.8019166513446)</data>
+    </edge>
+    <edge source="N015" target="N022" id="0">
+      <data key="d15">E025</data>
+      <data key="d16">E025</data>
+      <data key="d17">N015</data>
+      <data key="d18">N022</data>
+      <data key="d19">0</data>
+      <data key="d20">122.47794810329094</data>
+      <data key="d21">122.47794810329094</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (338.8650183319114 884.8019166513449, 338.8650183319114 762.3239685480539)</data>
+    </edge>
+    <edge source="N020" target="N009" id="0">
+      <data key="d15">E015</data>
+      <data key="d16">E015</data>
+      <data key="d17">N009</data>
+      <data key="d18">N020</data>
+      <data key="d19">0</data>
+      <data key="d20">95.62574536292516</data>
+      <data key="d21">95.62574536292516</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (458.5779871431296 884.8019166513446, 458.57798714315663 980.4276620142698)</data>
+    </edge>
+    <edge source="N020" target="N015" id="0">
+      <data key="d15">E024</data>
+      <data key="d16">E024</data>
+      <data key="d17">N015</data>
+      <data key="d18">N020</data>
+      <data key="d19">0</data>
+      <data key="d20">119.71296881121816</data>
+      <data key="d21">119.71296881121816</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (458.5779871431296 884.8019166513446, 338.8650183319114 884.8019166513449)</data>
+    </edge>
+    <edge source="N020" target="N019" id="0">
+      <data key="d15">E031</data>
+      <data key="d16">E031</data>
+      <data key="d17">N019</data>
+      <data key="d18">N020</data>
+      <data key="d19">0</data>
+      <data key="d20">131.0174803014961</data>
+      <data key="d21">131.0174803014961</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (458.5779871431296 884.8019166513446, 589.5954674446257 884.8019166513448)</data>
+    </edge>
+    <edge source="N020" target="N023" id="0">
+      <data key="d15">E033</data>
+      <data key="d16">E033</data>
+      <data key="d17">N020</data>
+      <data key="d18">N023</data>
+      <data key="d19">0</data>
+      <data key="d20">122.47794810329071</data>
+      <data key="d21">122.47794810329071</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (458.5779871431296 884.8019166513446, 458.5779871431296 762.8344262635142, 458.5779871431296 762.3239685480539)</data>
+    </edge>
+    <edge source="N019" target="N010" id="0">
+      <data key="d15">E017</data>
+      <data key="d16">E017</data>
+      <data key="d17">N010</data>
+      <data key="d18">N019</data>
+      <data key="d19">0</data>
+      <data key="d20">95.62574536292504</data>
+      <data key="d21">95.62574536292504</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 884.8019166513448, 589.5954674446693 980.4276620142698)</data>
+    </edge>
+    <edge source="N019" target="N016" id="0">
+      <data key="d15">E027</data>
+      <data key="d16">E027</data>
+      <data key="d17">N016</data>
+      <data key="d18">N019</data>
+      <data key="d19">0</data>
+      <data key="d20">133.81436320085186</data>
+      <data key="d21">133.81436320085186</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 884.8019166513448, 723.4098306454775 884.8019166513449)</data>
+    </edge>
+    <edge source="N019" target="N020" id="0">
+      <data key="d15">E031</data>
+      <data key="d16">E031</data>
+      <data key="d17">N019</data>
+      <data key="d18">N020</data>
+      <data key="d19">0</data>
+      <data key="d20">131.0174803014961</data>
+      <data key="d21">131.0174803014961</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446257 884.8019166513448, 458.5779871431296 884.8019166513446)</data>
+    </edge>
+    <edge source="N019" target="N024" id="0">
+      <data key="d15">E032</data>
+      <data key="d16">E032</data>
+      <data key="d17">N019</data>
+      <data key="d18">N024</data>
+      <data key="d19">0</data>
+      <data key="d20">122.47794810329083</data>
+      <data key="d21">122.47794810329083</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446257 884.8019166513448, 589.5954674446257 762.3239685480539)</data>
+    </edge>
+    <edge source="N016" target="N011" id="0">
+      <data key="d15">E018</data>
+      <data key="d16">E018</data>
+      <data key="d17">N011</data>
+      <data key="d18">N016</data>
+      <data key="d19">0</data>
+      <data key="d20">95.62574536292493</data>
+      <data key="d21">95.62574536292493</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 884.8019166513449, 723.4098306454775 980.4276620142698)</data>
+    </edge>
+    <edge source="N016" target="N017" id="0">
+      <data key="d15">E026</data>
+      <data key="d16">E026</data>
+      <data key="d17">N016</data>
+      <data key="d18">N017</data>
+      <data key="d19">0</data>
+      <data key="d20">139.8187909505923</data>
+      <data key="d21">139.8187909505923</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 884.8019166513449, 863.2286215960698 884.8019166513449)</data>
+    </edge>
+    <edge source="N016" target="N019" id="0">
+      <data key="d15">E027</data>
+      <data key="d16">E027</data>
+      <data key="d17">N016</data>
+      <data key="d18">N019</data>
+      <data key="d19">0</data>
+      <data key="d20">133.81436320085186</data>
+      <data key="d21">133.81436320085186</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 884.8019166513449, 589.5954674446257 884.8019166513448)</data>
+    </edge>
+    <edge source="N016" target="N025" id="0">
+      <data key="d15">E028</data>
+      <data key="d16">E028</data>
+      <data key="d17">N016</data>
+      <data key="d18">N025</data>
+      <data key="d19">0</data>
+      <data key="d20">122.47794810329094</data>
+      <data key="d21">122.47794810329094</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 884.8019166513449, 723.4098306454775 762.3239685480539)</data>
+    </edge>
+    <edge source="N012" target="N013" id="0">
+      <data key="d15">E019</data>
+      <data key="d16">E019</data>
+      <data key="d17">N012</data>
+      <data key="d18">N013</data>
+      <data key="d19">0</data>
+      <data key="d20">76.712151028913</data>
+      <data key="d21">76.712151028913</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (15.527348985462112 884.8019166513449, 92.23950001437511 884.8019166513449)</data>
+    </edge>
+    <edge source="N013" target="N012" id="0">
+      <data key="d15">E019</data>
+      <data key="d16">E019</data>
+      <data key="d17">N012</data>
+      <data key="d18">N013</data>
+      <data key="d19">0</data>
+      <data key="d20">76.712151028913</data>
+      <data key="d21">76.712151028913</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (92.23950001437511 884.8019166513449, 15.527348985462112 884.8019166513449)</data>
+    </edge>
+    <edge source="N013" target="N014" id="0">
+      <data key="d15">E020</data>
+      <data key="d16">E020</data>
+      <data key="d17">N013</data>
+      <data key="d18">N014</data>
+      <data key="d19">0</data>
+      <data key="d20">69.93270701808099</data>
+      <data key="d21">69.93270701808099</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (92.23950001437511 884.8019166513449, 162.1722070324561 884.8019166513449)</data>
+    </edge>
+    <edge source="N013" target="N026" id="0">
+      <data key="d15">E021</data>
+      <data key="d16">E021</data>
+      <data key="d17">N013</data>
+      <data key="d18">N026</data>
+      <data key="d19">0</data>
+      <data key="d20">248.05054610656123</data>
+      <data key="d21">248.05054610656123</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (92.23950001437511 884.8019166513449, 92.23950001437512 636.7513705447836)</data>
+    </edge>
+    <edge source="N026" target="N013" id="0">
+      <data key="d15">E021</data>
+      <data key="d16">E021</data>
+      <data key="d17">N013</data>
+      <data key="d18">N026</data>
+      <data key="d19">0</data>
+      <data key="d20">248.05054610656123</data>
+      <data key="d21">248.05054610656123</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (92.23950001437512 636.7513705447836, 92.23950001437511 884.8019166513449)</data>
+    </edge>
+    <edge source="N026" target="N027" id="0">
+      <data key="d15">E043</data>
+      <data key="d16">E043</data>
+      <data key="d17">N026</data>
+      <data key="d18">N027</data>
+      <data key="d19">0</data>
+      <data key="d20">69.932707018081</data>
+      <data key="d21">69.932707018081</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (92.23950001437512 636.7513705447836, 162.17220703245613 636.7513705447836)</data>
+    </edge>
+    <edge source="N026" target="N033" id="0">
+      <data key="d15">E044</data>
+      <data key="d16">E044</data>
+      <data key="d17">N026</data>
+      <data key="d18">N033</data>
+      <data key="d19">0</data>
+      <data key="d20">249.44367028834677</data>
+      <data key="d21">249.44367028834677</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (92.23950001437512 636.7513705447836, 92.23950001437514 387.3077002564369)</data>
+    </edge>
+    <edge source="N027" target="N014" id="0">
+      <data key="d15">E023</data>
+      <data key="d16">E023</data>
+      <data key="d17">N014</data>
+      <data key="d18">N027</data>
+      <data key="d19">0</data>
+      <data key="d20">248.05054610656123</data>
+      <data key="d21">248.05054610656123</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (162.17220703245613 636.7513705447836, 162.1722070324561 884.8019166513449)</data>
+    </edge>
+    <edge source="N027" target="N026" id="0">
+      <data key="d15">E043</data>
+      <data key="d16">E043</data>
+      <data key="d17">N026</data>
+      <data key="d18">N027</data>
+      <data key="d19">0</data>
+      <data key="d20">69.932707018081</data>
+      <data key="d21">69.932707018081</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (162.17220703245613 636.7513705447836, 92.23950001437512 636.7513705447836)</data>
+    </edge>
+    <edge source="N027" target="N028" id="0">
+      <data key="d15">E045</data>
+      <data key="d16">E045</data>
+      <data key="d17">N027</data>
+      <data key="d18">N028</data>
+      <data key="d19">0</data>
+      <data key="d20">176.6928112994553</data>
+      <data key="d21">176.6928112994553</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (162.17220703245613 636.7513705447836, 338.8650183319114 636.7513705447836)</data>
+    </edge>
+    <edge source="N027" target="N034" id="0">
+      <data key="d15">E046</data>
+      <data key="d16">E046</data>
+      <data key="d17">N027</data>
+      <data key="d18">N034</data>
+      <data key="d19">0</data>
+      <data key="d20">249.44367028834677</data>
+      <data key="d21">249.44367028834677</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (162.17220703245613 636.7513705447836, 162.17220703245616 387.3077002564369)</data>
+    </edge>
+    <edge source="N022" target="N015" id="0">
+      <data key="d15">E025</data>
+      <data key="d16">E025</data>
+      <data key="d17">N015</data>
+      <data key="d18">N022</data>
+      <data key="d19">0</data>
+      <data key="d20">122.47794810329094</data>
+      <data key="d21">122.47794810329094</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (338.8650183319114 762.3239685480539, 338.8650183319114 884.8019166513449)</data>
+    </edge>
+    <edge source="N022" target="N023" id="0">
+      <data key="d15">E036</data>
+      <data key="d16">E036</data>
+      <data key="d17">N022</data>
+      <data key="d18">N023</data>
+      <data key="d19">0</data>
+      <data key="d20">119.71296881121816</data>
+      <data key="d21">119.71296881121816</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (338.8650183319114 762.3239685480539, 458.5779871431296 762.3239685480539)</data>
+    </edge>
+    <edge source="N022" target="N028" id="0">
+      <data key="d15">E037</data>
+      <data key="d16">E037</data>
+      <data key="d17">N022</data>
+      <data key="d18">N028</data>
+      <data key="d19">0</data>
+      <data key="d20">125.57259800327029</data>
+      <data key="d21">125.57259800327029</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (338.8650183319114 762.3239685480539, 338.8650183319114 636.7513705447836)</data>
+    </edge>
+    <edge source="N025" target="N016" id="0">
+      <data key="d15">E028</data>
+      <data key="d16">E028</data>
+      <data key="d17">N016</data>
+      <data key="d18">N025</data>
+      <data key="d19">0</data>
+      <data key="d20">122.47794810329094</data>
+      <data key="d21">122.47794810329094</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 762.3239685480539, 723.4098306454775 884.8019166513449)</data>
+    </edge>
+    <edge source="N025" target="N021" id="0">
+      <data key="d15">E034</data>
+      <data key="d16">E034</data>
+      <data key="d17">N021</data>
+      <data key="d18">N025</data>
+      <data key="d19">0</data>
+      <data key="d20">139.8187909506437</data>
+      <data key="d21">139.8187909506437</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 762.3239685480539, 863.2286215961212 762.323968548054)</data>
+    </edge>
+    <edge source="N025" target="N024" id="0">
+      <data key="d15">E040</data>
+      <data key="d16">E040</data>
+      <data key="d17">N024</data>
+      <data key="d18">N025</data>
+      <data key="d19">0</data>
+      <data key="d20">133.81436320085186</data>
+      <data key="d21">133.81436320085186</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 762.3239685480539, 589.5954674446257 762.3239685480539)</data>
+    </edge>
+    <edge source="N025" target="N031" id="0">
+      <data key="d15">E042</data>
+      <data key="d16">E042</data>
+      <data key="d17">N025</data>
+      <data key="d18">N031</data>
+      <data key="d19">0</data>
+      <data key="d20">125.57259800327029</data>
+      <data key="d21">125.57259800327029</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 762.3239685480539, 723.4098306454775 762.1306686397638, 723.4098306454775 636.7513705447836)</data>
+    </edge>
+    <edge source="N018" target="N017" id="0">
+      <data key="d15">E029</data>
+      <data key="d16">E029</data>
+      <data key="d17">N017</data>
+      <data key="d18">N018</data>
+      <data key="d19">0</data>
+      <data key="d20">115.41006677963219</data>
+      <data key="d21">115.41006677963219</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (978.638688375702 884.8019166513449, 863.2286215960698 884.8019166513449)</data>
+    </edge>
+    <edge source="N021" target="N017" id="0">
+      <data key="d15">E030</data>
+      <data key="d16">E030</data>
+      <data key="d17">N017</data>
+      <data key="d18">N021</data>
+      <data key="d19">0</data>
+      <data key="d20">122.47794810329083</data>
+      <data key="d21">122.47794810329083</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215961212 762.323968548054, 863.2286215960698 884.8019166513449)</data>
+    </edge>
+    <edge source="N021" target="N025" id="0">
+      <data key="d15">E034</data>
+      <data key="d16">E034</data>
+      <data key="d17">N021</data>
+      <data key="d18">N025</data>
+      <data key="d19">0</data>
+      <data key="d20">139.8187909506437</data>
+      <data key="d21">139.8187909506437</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (863.2286215961212 762.323968548054, 723.4098306454775 762.3239685480539)</data>
+    </edge>
+    <edge source="N021" target="N032" id="0">
+      <data key="d15">E035</data>
+      <data key="d16">E035</data>
+      <data key="d17">N021</data>
+      <data key="d18">N032</data>
+      <data key="d19">0</data>
+      <data key="d20">125.57259800327063</data>
+      <data key="d21">125.57259800327063</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (863.2286215961212 762.323968548054, 863.2286215961212 636.7513705447834)</data>
+    </edge>
+    <edge source="N024" target="N019" id="0">
+      <data key="d15">E032</data>
+      <data key="d16">E032</data>
+      <data key="d17">N019</data>
+      <data key="d18">N024</data>
+      <data key="d19">0</data>
+      <data key="d20">122.47794810329083</data>
+      <data key="d21">122.47794810329083</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 762.3239685480539, 589.5954674446257 884.8019166513448)</data>
+    </edge>
+    <edge source="N024" target="N023" id="0">
+      <data key="d15">E038</data>
+      <data key="d16">E038</data>
+      <data key="d17">N023</data>
+      <data key="d18">N024</data>
+      <data key="d19">0</data>
+      <data key="d20">131.0174803014961</data>
+      <data key="d21">131.0174803014961</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 762.3239685480539, 458.5779871431296 762.3239685480539)</data>
+    </edge>
+    <edge source="N024" target="N025" id="0">
+      <data key="d15">E040</data>
+      <data key="d16">E040</data>
+      <data key="d17">N024</data>
+      <data key="d18">N025</data>
+      <data key="d19">0</data>
+      <data key="d20">133.81436320085186</data>
+      <data key="d21">133.81436320085186</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446257 762.3239685480539, 723.4098306454775 762.3239685480539)</data>
+    </edge>
+    <edge source="N024" target="N030" id="0">
+      <data key="d15">E041</data>
+      <data key="d16">E041</data>
+      <data key="d17">N024</data>
+      <data key="d18">N030</data>
+      <data key="d19">0</data>
+      <data key="d20">125.57259800327029</data>
+      <data key="d21">125.57259800327029</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446257 762.3239685480539, 589.5954674446257 636.7513705447836)</data>
+    </edge>
+    <edge source="N023" target="N020" id="0">
+      <data key="d15">E033</data>
+      <data key="d16">E033</data>
+      <data key="d17">N020</data>
+      <data key="d18">N023</data>
+      <data key="d19">0</data>
+      <data key="d20">122.47794810329071</data>
+      <data key="d21">122.47794810329071</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (458.5779871431296 762.3239685480539, 458.5779871431296 762.8344262635142, 458.5779871431296 884.8019166513446)</data>
+    </edge>
+    <edge source="N023" target="N022" id="0">
+      <data key="d15">E036</data>
+      <data key="d16">E036</data>
+      <data key="d17">N022</data>
+      <data key="d18">N023</data>
+      <data key="d19">0</data>
+      <data key="d20">119.71296881121816</data>
+      <data key="d21">119.71296881121816</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (458.5779871431296 762.3239685480539, 338.8650183319114 762.3239685480539)</data>
+    </edge>
+    <edge source="N023" target="N024" id="0">
+      <data key="d15">E038</data>
+      <data key="d16">E038</data>
+      <data key="d17">N023</data>
+      <data key="d18">N024</data>
+      <data key="d19">0</data>
+      <data key="d20">131.0174803014961</data>
+      <data key="d21">131.0174803014961</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (458.5779871431296 762.3239685480539, 589.5954674446257 762.3239685480539)</data>
+    </edge>
+    <edge source="N023" target="N029" id="0">
+      <data key="d15">E039</data>
+      <data key="d16">E039</data>
+      <data key="d17">N023</data>
+      <data key="d18">N029</data>
+      <data key="d19">0</data>
+      <data key="d20">125.57259800327029</data>
+      <data key="d21">125.57259800327029</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (458.5779871431296 762.3239685480539, 458.5779871431296 636.7513705447836)</data>
+    </edge>
+    <edge source="N032" target="N021" id="0">
+      <data key="d15">E035</data>
+      <data key="d16">E035</data>
+      <data key="d17">N021</data>
+      <data key="d18">N032</data>
+      <data key="d19">0</data>
+      <data key="d20">125.57259800327063</data>
+      <data key="d21">125.57259800327063</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215961212 636.7513705447834, 863.2286215961212 762.323968548054)</data>
+    </edge>
+    <edge source="N032" target="N031" id="0">
+      <data key="d15">E051</data>
+      <data key="d16">E051</data>
+      <data key="d17">N031</data>
+      <data key="d18">N032</data>
+      <data key="d19">0</data>
+      <data key="d20">139.8187909506437</data>
+      <data key="d21">139.8187909506437</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215961212 636.7513705447834, 723.4098306454775 636.7513705447836)</data>
+    </edge>
+    <edge source="N032" target="N038" id="0">
+      <data key="d15">E053</data>
+      <data key="d16">E053</data>
+      <data key="d17">N032</data>
+      <data key="d18">N038</data>
+      <data key="d19">0</data>
+      <data key="d20">402.23351549717324</data>
+      <data key="d21">402.23351549717324</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (863.2286215961212 636.7513705447834, 863.2286215961212 237.95184909085344, 863.2286215961212 234.51785504761014)</data>
+    </edge>
+    <edge source="N028" target="N022" id="0">
+      <data key="d15">E037</data>
+      <data key="d16">E037</data>
+      <data key="d17">N022</data>
+      <data key="d18">N028</data>
+      <data key="d19">0</data>
+      <data key="d20">125.57259800327029</data>
+      <data key="d21">125.57259800327029</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (338.8650183319114 636.7513705447836, 338.8650183319114 762.3239685480539)</data>
+    </edge>
+    <edge source="N028" target="N027" id="0">
+      <data key="d15">E045</data>
+      <data key="d16">E045</data>
+      <data key="d17">N027</data>
+      <data key="d18">N028</data>
+      <data key="d19">0</data>
+      <data key="d20">176.6928112994553</data>
+      <data key="d21">176.6928112994553</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (338.8650183319114 636.7513705447836, 162.17220703245613 636.7513705447836)</data>
+    </edge>
+    <edge source="N028" target="N029" id="0">
+      <data key="d15">E047</data>
+      <data key="d16">E047</data>
+      <data key="d17">N028</data>
+      <data key="d18">N029</data>
+      <data key="d19">0</data>
+      <data key="d20">119.71296881121816</data>
+      <data key="d21">119.71296881121816</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (338.8650183319114 636.7513705447836, 458.5779871431296 636.7513705447836)</data>
+    </edge>
+    <edge source="N029" target="N023" id="0">
+      <data key="d15">E039</data>
+      <data key="d16">E039</data>
+      <data key="d17">N023</data>
+      <data key="d18">N029</data>
+      <data key="d19">0</data>
+      <data key="d20">125.57259800327029</data>
+      <data key="d21">125.57259800327029</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (458.5779871431296 636.7513705447836, 458.5779871431296 762.3239685480539)</data>
+    </edge>
+    <edge source="N029" target="N028" id="0">
+      <data key="d15">E047</data>
+      <data key="d16">E047</data>
+      <data key="d17">N028</data>
+      <data key="d18">N029</data>
+      <data key="d19">0</data>
+      <data key="d20">119.71296881121816</data>
+      <data key="d21">119.71296881121816</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (458.5779871431296 636.7513705447836, 338.8650183319114 636.7513705447836)</data>
+    </edge>
+    <edge source="N029" target="N030" id="0">
+      <data key="d15">E048</data>
+      <data key="d16">E048</data>
+      <data key="d17">N029</data>
+      <data key="d18">N030</data>
+      <data key="d19">0</data>
+      <data key="d20">131.0174803014961</data>
+      <data key="d21">131.0174803014961</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (458.5779871431296 636.7513705447836, 589.5954674446257 636.7513705447836)</data>
+    </edge>
+    <edge source="N030" target="N024" id="0">
+      <data key="d15">E041</data>
+      <data key="d16">E041</data>
+      <data key="d17">N024</data>
+      <data key="d18">N030</data>
+      <data key="d19">0</data>
+      <data key="d20">125.57259800327029</data>
+      <data key="d21">125.57259800327029</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 636.7513705447836, 589.5954674446257 762.3239685480539)</data>
+    </edge>
+    <edge source="N030" target="N029" id="0">
+      <data key="d15">E048</data>
+      <data key="d16">E048</data>
+      <data key="d17">N029</data>
+      <data key="d18">N030</data>
+      <data key="d19">0</data>
+      <data key="d20">131.0174803014961</data>
+      <data key="d21">131.0174803014961</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 636.7513705447836, 458.5779871431296 636.7513705447836)</data>
+    </edge>
+    <edge source="N030" target="N031" id="0">
+      <data key="d15">E049</data>
+      <data key="d16">E049</data>
+      <data key="d17">N030</data>
+      <data key="d18">N031</data>
+      <data key="d19">0</data>
+      <data key="d20">133.81436320085186</data>
+      <data key="d21">133.81436320085186</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446257 636.7513705447836, 723.4098306454775 636.7513705447836)</data>
+    </edge>
+    <edge source="N030" target="N035" id="0">
+      <data key="d15">E050</data>
+      <data key="d16">E050</data>
+      <data key="d17">N030</data>
+      <data key="d18">N035</data>
+      <data key="d19">0</data>
+      <data key="d20">249.44367028834677</data>
+      <data key="d21">249.44367028834677</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446257 636.7513705447836, 589.5954674446257 387.3077002564369)</data>
+    </edge>
+    <edge source="N031" target="N025" id="0">
+      <data key="d15">E042</data>
+      <data key="d16">E042</data>
+      <data key="d17">N025</data>
+      <data key="d18">N031</data>
+      <data key="d19">0</data>
+      <data key="d20">125.57259800327029</data>
+      <data key="d21">125.57259800327029</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 636.7513705447836, 723.4098306454775 762.1306686397638, 723.4098306454775 762.3239685480539)</data>
+    </edge>
+    <edge source="N031" target="N030" id="0">
+      <data key="d15">E049</data>
+      <data key="d16">E049</data>
+      <data key="d17">N030</data>
+      <data key="d18">N031</data>
+      <data key="d19">0</data>
+      <data key="d20">133.81436320085186</data>
+      <data key="d21">133.81436320085186</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 636.7513705447836, 589.5954674446257 636.7513705447836)</data>
+    </edge>
+    <edge source="N031" target="N032" id="0">
+      <data key="d15">E051</data>
+      <data key="d16">E051</data>
+      <data key="d17">N031</data>
+      <data key="d18">N032</data>
+      <data key="d19">0</data>
+      <data key="d20">139.8187909506437</data>
+      <data key="d21">139.8187909506437</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 636.7513705447836, 863.2286215961212 636.7513705447834)</data>
+    </edge>
+    <edge source="N031" target="N036" id="0">
+      <data key="d15">E052</data>
+      <data key="d16">E052</data>
+      <data key="d17">N031</data>
+      <data key="d18">N036</data>
+      <data key="d19">0</data>
+      <data key="d20">249.44367028834677</data>
+      <data key="d21">249.44367028834677</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 636.7513705447836, 723.4098306454775 635.014685751152, 723.4098306454775 387.3077002564369)</data>
+    </edge>
+    <edge source="N033" target="N026" id="0">
+      <data key="d15">E044</data>
+      <data key="d16">E044</data>
+      <data key="d17">N026</data>
+      <data key="d18">N033</data>
+      <data key="d19">0</data>
+      <data key="d20">249.44367028834677</data>
+      <data key="d21">249.44367028834677</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (92.23950001437514 387.3077002564369, 92.23950001437512 636.7513705447836)</data>
+    </edge>
+    <edge source="N033" target="N034" id="0">
+      <data key="d15">E054</data>
+      <data key="d16">E054</data>
+      <data key="d17">N033</data>
+      <data key="d18">N034</data>
+      <data key="d19">0</data>
+      <data key="d20">69.93270701808102</data>
+      <data key="d21">69.93270701808102</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (92.23950001437514 387.3077002564369, 162.17220703245616 387.3077002564369)</data>
+    </edge>
+    <edge source="N033" target="N045" id="0">
+      <data key="d15">E055</data>
+      <data key="d16">E055</data>
+      <data key="d17">N033</data>
+      <data key="d18">N045</data>
+      <data key="d19">0</data>
+      <data key="d20">361.06375740235785</data>
+      <data key="d21">361.06375740235785</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (92.23950001437514 387.3077002564369, 92.23950001437517 26.243942854079023)</data>
+    </edge>
+    <edge source="N034" target="N027" id="0">
+      <data key="d15">E046</data>
+      <data key="d16">E046</data>
+      <data key="d17">N027</data>
+      <data key="d18">N034</data>
+      <data key="d19">0</data>
+      <data key="d20">249.44367028834677</data>
+      <data key="d21">249.44367028834677</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (162.17220703245616 387.3077002564369, 162.17220703245613 636.7513705447836)</data>
+    </edge>
+    <edge source="N034" target="N033" id="0">
+      <data key="d15">E054</data>
+      <data key="d16">E054</data>
+      <data key="d17">N033</data>
+      <data key="d18">N034</data>
+      <data key="d19">0</data>
+      <data key="d20">69.93270701808102</data>
+      <data key="d21">69.93270701808102</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (162.17220703245616 387.3077002564369, 92.23950001437514 387.3077002564369)</data>
+    </edge>
+    <edge source="N034" target="N035" id="0">
+      <data key="d15">E056</data>
+      <data key="d16">E056</data>
+      <data key="d17">N034</data>
+      <data key="d18">N035</data>
+      <data key="d19">0</data>
+      <data key="d20">427.4232604121695</data>
+      <data key="d21">427.4232604121695</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (162.17220703245616 387.3077002564369, 589.5954674446257 387.3077002564369)</data>
+    </edge>
+    <edge source="N034" target="N041" id="0">
+      <data key="d15">E057</data>
+      <data key="d16">E057</data>
+      <data key="d17">N034</data>
+      <data key="d18">N041</data>
+      <data key="d19">0</data>
+      <data key="d20">674.9952524104815</data>
+      <data key="d21">674.9952524104815</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (162.17220703245616 387.3077002564369, 162.17220703245619 139.73570825812487, 589.5954674446257 139.73570825812487)</data>
+    </edge>
+    <edge source="N035" target="N030" id="0">
+      <data key="d15">E050</data>
+      <data key="d16">E050</data>
+      <data key="d17">N030</data>
+      <data key="d18">N035</data>
+      <data key="d19">0</data>
+      <data key="d20">249.44367028834677</data>
+      <data key="d21">249.44367028834677</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 387.3077002564369, 589.5954674446257 636.7513705447836)</data>
+    </edge>
+    <edge source="N035" target="N034" id="0">
+      <data key="d15">E056</data>
+      <data key="d16">E056</data>
+      <data key="d17">N034</data>
+      <data key="d18">N035</data>
+      <data key="d19">0</data>
+      <data key="d20">427.4232604121695</data>
+      <data key="d21">427.4232604121695</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 387.3077002564369, 162.17220703245616 387.3077002564369)</data>
+    </edge>
+    <edge source="N035" target="N036" id="0">
+      <data key="d15">E058</data>
+      <data key="d16">E058</data>
+      <data key="d17">N035</data>
+      <data key="d18">N036</data>
+      <data key="d19">0</data>
+      <data key="d20">133.81436320085186</data>
+      <data key="d21">133.81436320085186</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446257 387.3077002564369, 723.4098306454775 387.3077002564369)</data>
+    </edge>
+    <edge source="N035" target="N040" id="0">
+      <data key="d15">E059</data>
+      <data key="d16">E059</data>
+      <data key="d17">N035</data>
+      <data key="d18">N040</data>
+      <data key="d19">0</data>
+      <data key="d20">152.78984520883932</data>
+      <data key="d21">152.78984520883932</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446257 387.3077002564369, 589.5954674446257 234.51785504759755)</data>
+    </edge>
+    <edge source="N036" target="N031" id="0">
+      <data key="d15">E052</data>
+      <data key="d16">E052</data>
+      <data key="d17">N031</data>
+      <data key="d18">N036</data>
+      <data key="d19">0</data>
+      <data key="d20">249.44367028834677</data>
+      <data key="d21">249.44367028834677</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 387.3077002564369, 723.4098306454775 635.014685751152, 723.4098306454775 636.7513705447836)</data>
+    </edge>
+    <edge source="N036" target="N035" id="0">
+      <data key="d15">E058</data>
+      <data key="d16">E058</data>
+      <data key="d17">N035</data>
+      <data key="d18">N036</data>
+      <data key="d19">0</data>
+      <data key="d20">133.81436320085186</data>
+      <data key="d21">133.81436320085186</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 387.3077002564369, 589.5954674446257 387.3077002564369)</data>
+    </edge>
+    <edge source="N036" target="N037" id="0">
+      <data key="d15">E060</data>
+      <data key="d16">E060</data>
+      <data key="d17">N036</data>
+      <data key="d18">N037</data>
+      <data key="d19">0</data>
+      <data key="d20">152.78984520882673</data>
+      <data key="d21">152.78984520882673</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 387.3077002564369, 723.4098306454775 387.24328503832237, 723.4098306454775 234.51785504761014)</data>
+    </edge>
+    <edge source="N038" target="N032" id="0">
+      <data key="d15">E053</data>
+      <data key="d16">E053</data>
+      <data key="d17">N032</data>
+      <data key="d18">N038</data>
+      <data key="d19">0</data>
+      <data key="d20">402.23351549717324</data>
+      <data key="d21">402.23351549717324</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215961212 234.51785504761014, 863.2286215961212 237.95184909085344, 863.2286215961212 636.7513705447834)</data>
+    </edge>
+    <edge source="N038" target="N037" id="0">
+      <data key="d15">E061</data>
+      <data key="d16">E061</data>
+      <data key="d17">N037</data>
+      <data key="d18">N038</data>
+      <data key="d19">0</data>
+      <data key="d20">139.8187909506437</data>
+      <data key="d21">139.8187909506437</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215961212 234.51785504761014, 723.4098306454775 234.51785504761014)</data>
+    </edge>
+    <edge source="N038" target="N039" id="0">
+      <data key="d15">E063</data>
+      <data key="d16">E063</data>
+      <data key="d17">N038</data>
+      <data key="d18">N039</data>
+      <data key="d19">0</data>
+      <data key="d20">120.7136211130371</data>
+      <data key="d21">120.7136211130371</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (863.2286215961212 234.51785504761014, 983.9422427091583 234.51785504761014)</data>
+    </edge>
+    <edge source="N038" target="N042" id="0">
+      <data key="d15">E064</data>
+      <data key="d16">E064</data>
+      <data key="d17">N038</data>
+      <data key="d18">N042</data>
+      <data key="d19">0</data>
+      <data key="d20">94.78214678948527</data>
+      <data key="d21">94.78214678948527</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (863.2286215961212 234.51785504761014, 863.2286215961212 139.73570825812487)</data>
+    </edge>
+    <edge source="N045" target="N033" id="0">
+      <data key="d15">E055</data>
+      <data key="d16">E055</data>
+      <data key="d17">N033</data>
+      <data key="d18">N045</data>
+      <data key="d19">0</data>
+      <data key="d20">361.06375740235785</data>
+      <data key="d21">361.06375740235785</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (92.23950001437517 26.243942854079023, 92.23950001437514 387.3077002564369)</data>
+    </edge>
+    <edge source="N041" target="N034" id="0">
+      <data key="d15">E057</data>
+      <data key="d16">E057</data>
+      <data key="d17">N034</data>
+      <data key="d18">N041</data>
+      <data key="d19">0</data>
+      <data key="d20">674.9952524104815</data>
+      <data key="d21">674.9952524104815</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 139.73570825812487, 162.17220703245619 139.73570825812487, 162.17220703245616 387.3077002564369)</data>
+    </edge>
+    <edge source="N041" target="N040" id="0">
+      <data key="d15">E065</data>
+      <data key="d16">E065</data>
+      <data key="d17">N040</data>
+      <data key="d18">N041</data>
+      <data key="d19">0</data>
+      <data key="d20">94.78214678947268</data>
+      <data key="d21">94.78214678947268</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 139.73570825812487, 589.5954674446257 234.51785504759755)</data>
+    </edge>
+    <edge source="N041" target="N042" id="0">
+      <data key="d15">E066</data>
+      <data key="d16">E066</data>
+      <data key="d17">N041</data>
+      <data key="d18">N042</data>
+      <data key="d19">0</data>
+      <data key="d20">273.63315415149555</data>
+      <data key="d21">273.63315415149555</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446257 139.73570825812487, 863.2286215961212 139.73570825812487)</data>
+    </edge>
+    <edge source="N041" target="N046" id="0">
+      <data key="d15">E067</data>
+      <data key="d16">E067</data>
+      <data key="d17">N041</data>
+      <data key="d18">N046</data>
+      <data key="d19">0</data>
+      <data key="d20">115.53359626588013</data>
+      <data key="d21">115.53359626588013</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446257 139.73570825812487, 589.5954674446257 24.20211199224474)</data>
+    </edge>
+    <edge source="N040" target="N035" id="0">
+      <data key="d15">E059</data>
+      <data key="d16">E059</data>
+      <data key="d17">N035</data>
+      <data key="d18">N040</data>
+      <data key="d19">0</data>
+      <data key="d20">152.78984520883932</data>
+      <data key="d21">152.78984520883932</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 234.51785504759755, 589.5954674446257 387.3077002564369)</data>
+    </edge>
+    <edge source="N040" target="N037" id="0">
+      <data key="d15">E062</data>
+      <data key="d16">E062</data>
+      <data key="d17">N037</data>
+      <data key="d18">N040</data>
+      <data key="d19">0</data>
+      <data key="d20">133.81436320085186</data>
+      <data key="d21">133.81436320085186</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 234.51785504759755, 723.4098306454775 234.51785504761014)</data>
+    </edge>
+    <edge source="N040" target="N041" id="0">
+      <data key="d15">E065</data>
+      <data key="d16">E065</data>
+      <data key="d17">N040</data>
+      <data key="d18">N041</data>
+      <data key="d19">0</data>
+      <data key="d20">94.78214678947268</data>
+      <data key="d21">94.78214678947268</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (589.5954674446257 234.51785504759755, 589.5954674446257 139.73570825812487)</data>
+    </edge>
+    <edge source="N037" target="N036" id="0">
+      <data key="d15">E060</data>
+      <data key="d16">E060</data>
+      <data key="d17">N036</data>
+      <data key="d18">N037</data>
+      <data key="d19">0</data>
+      <data key="d20">152.78984520882673</data>
+      <data key="d21">152.78984520882673</data>
+      <data key="d22">3</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (723.4098306454775 234.51785504761014, 723.4098306454775 387.24328503832237, 723.4098306454775 387.3077002564369)</data>
+    </edge>
+    <edge source="N037" target="N038" id="0">
+      <data key="d15">E061</data>
+      <data key="d16">E061</data>
+      <data key="d17">N037</data>
+      <data key="d18">N038</data>
+      <data key="d19">0</data>
+      <data key="d20">139.8187909506437</data>
+      <data key="d21">139.8187909506437</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 234.51785504761014, 863.2286215961212 234.51785504761014)</data>
+    </edge>
+    <edge source="N037" target="N040" id="0">
+      <data key="d15">E062</data>
+      <data key="d16">E062</data>
+      <data key="d17">N037</data>
+      <data key="d18">N040</data>
+      <data key="d19">0</data>
+      <data key="d20">133.81436320085186</data>
+      <data key="d21">133.81436320085186</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (723.4098306454775 234.51785504761014, 589.5954674446257 234.51785504759755)</data>
+    </edge>
+    <edge source="N039" target="N038" id="0">
+      <data key="d15">E063</data>
+      <data key="d16">E063</data>
+      <data key="d17">N038</data>
+      <data key="d18">N039</data>
+      <data key="d19">0</data>
+      <data key="d20">120.7136211130371</data>
+      <data key="d21">120.7136211130371</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (983.9422427091583 234.51785504761014, 863.2286215961212 234.51785504761014)</data>
+    </edge>
+    <edge source="N042" target="N038" id="0">
+      <data key="d15">E064</data>
+      <data key="d16">E064</data>
+      <data key="d17">N038</data>
+      <data key="d18">N042</data>
+      <data key="d19">0</data>
+      <data key="d20">94.78214678948527</data>
+      <data key="d21">94.78214678948527</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215961212 139.73570825812487, 863.2286215961212 234.51785504761014)</data>
+    </edge>
+    <edge source="N042" target="N041" id="0">
+      <data key="d15">E066</data>
+      <data key="d16">E066</data>
+      <data key="d17">N041</data>
+      <data key="d18">N042</data>
+      <data key="d19">0</data>
+      <data key="d20">273.63315415149555</data>
+      <data key="d21">273.63315415149555</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215961212 139.73570825812487, 589.5954674446257 139.73570825812487)</data>
+    </edge>
+    <edge source="N042" target="N043" id="0">
+      <data key="d15">E068</data>
+      <data key="d16">E068</data>
+      <data key="d17">N042</data>
+      <data key="d18">N043</data>
+      <data key="d19">0</data>
+      <data key="d20">118.3854895583006</data>
+      <data key="d21">118.3854895583006</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (863.2286215961212 139.73570825812487, 981.6141111544218 139.73570825812487)</data>
+    </edge>
+    <edge source="N042" target="N044" id="0">
+      <data key="d15">E069</data>
+      <data key="d16">E069</data>
+      <data key="d17">N042</data>
+      <data key="d18">N044</data>
+      <data key="d19">0</data>
+      <data key="d20">111.31569909355414</data>
+      <data key="d21">111.31569909355414</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">forward</data>
+      <data key="d25">LINESTRING (863.2286215961212 139.73570825812487, 863.2286215961212 28.42000916457073)</data>
+    </edge>
+    <edge source="N046" target="N041" id="0">
+      <data key="d15">E067</data>
+      <data key="d16">E067</data>
+      <data key="d17">N041</data>
+      <data key="d18">N046</data>
+      <data key="d19">0</data>
+      <data key="d20">115.53359626588013</data>
+      <data key="d21">115.53359626588013</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (589.5954674446257 24.20211199224474, 589.5954674446257 139.73570825812487)</data>
+    </edge>
+    <edge source="N043" target="N042" id="0">
+      <data key="d15">E068</data>
+      <data key="d16">E068</data>
+      <data key="d17">N042</data>
+      <data key="d18">N043</data>
+      <data key="d19">0</data>
+      <data key="d20">118.3854895583006</data>
+      <data key="d21">118.3854895583006</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (981.6141111544218 139.73570825812487, 863.2286215961212 139.73570825812487)</data>
+    </edge>
+    <edge source="N044" target="N042" id="0">
+      <data key="d15">E069</data>
+      <data key="d16">E069</data>
+      <data key="d17">N042</data>
+      <data key="d18">N044</data>
+      <data key="d19">0</data>
+      <data key="d20">111.31569909355414</data>
+      <data key="d21">111.31569909355414</data>
+      <data key="d22">2</data>
+      <data key="d23">local_units</data>
+      <data key="d24">reverse</data>
+      <data key="d25">LINESTRING (863.2286215961212 28.42000916457073, 863.2286215961212 139.73570825812487)</data>
+    </edge>
+    <data key="d0">LOCAL_CS["GeoGami Local Cartesian",LOCAL_DATUM["GeoGami local engineering datum",32767],UNIT["local unit",1],AXIS["X",EAST],AXIS["Y",NORTH]]</data>
+    <data key="d1">env39</data>
+    <data key="d2">env39_20260824T123033467880Z_2046798c1e9c</data>
+    <data key="d3">212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847</data>
+    <data key="d4">2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447</data>
+    <data key="d5">4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB</data>
+    <data key="d6">reciprocal directed representation of canonical physical streets</data>
+    <data key="d7">GeoGami Local Cartesian</data>
+    <data key="d8">local_units</data>
+    <data key="d9">local_units</data>
+  </graph>
+</graphml>
