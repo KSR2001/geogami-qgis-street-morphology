@@ -5,3 +5,7 @@
 
 # QGIS/GDAL generated raster auxiliary metadata
 *.aux.xml
+
+# Repository-local test scratch space (required in restricted environments)
+tests/.tmp/
+__pycache__/
