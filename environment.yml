@@ -11,3 +11,4 @@ shapely
 pandas
 numpy
 pillow
+pyyaml=6.0.3

@@ -7,6 +7,64 @@ from html import escape
 import geopandas as gpd
 
 
+def degree_count_svg(
+    degree_counts: dict[int, int],
+    *,
+    title: str = "Physical node degree counts",
+    width: int = 640,
+    height: int = 360,
+) -> str:
+    """Render a deterministic headless-safe degree-frequency bar chart."""
+    if not degree_counts or any(int(degree) < 0 or int(count) < 0 for degree, count in degree_counts.items()):
+        raise ValueError("Degree SVG requires non-negative degree counts.")
+    items = sorted((int(degree), int(count)) for degree, count in degree_counts.items())
+    maximum = max(count for _, count in items)
+    if maximum == 0:
+        raise ValueError("Degree SVG requires at least one node.")
+    left, right, top, bottom = 64.0, 24.0, 52.0, 62.0
+    plot_width, plot_height = width - left - right, height - top - bottom
+    slot = plot_width / len(items)
+    bars: list[str] = []
+    labels: list[str] = []
+    for index, (degree, count) in enumerate(items):
+        bar_width = slot * 0.58
+        x = left + index * slot + (slot - bar_width) / 2
+        bar_height = plot_height * count / maximum
+        y = top + plot_height - bar_height
+        bars.append(
+            f'<rect x="{x:.3f}" y="{y:.3f}" width="{bar_width:.3f}" '
+            f'height="{bar_height:.3f}" fill="#35618f"/>'
+        )
+        labels.extend(
+            [
+                f'<text x="{x + bar_width / 2:.3f}" y="{y - 7:.3f}" text-anchor="middle" '
+                f'font-family="sans-serif" font-size="12">{count}</text>',
+                f'<text x="{x + bar_width / 2:.3f}" y="{top + plot_height + 21:.3f}" '
+                f'text-anchor="middle" font-family="sans-serif" font-size="12">{degree}</text>',
+            ]
+        )
+    return "".join(
+        [
+            f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" ',
+            f'viewBox="0 0 {width} {height}" role="img" aria-label="{escape(title)}">',
+            '<rect width="100%" height="100%" fill="white"/>',
+            f'<text x="{width / 2:.1f}" y="27" text-anchor="middle" font-family="sans-serif" '
+            f'font-size="18">{escape(title)}</text>',
+            f'<line x1="{left}" y1="{top + plot_height}" x2="{left + plot_width}" '
+            f'y2="{top + plot_height}" stroke="#333"/>',
+            f'<line x1="{left}" y1="{top}" x2="{left}" y2="{top + plot_height}" stroke="#333"/>',
+            *bars,
+            *labels,
+            f'<text x="{width / 2:.1f}" y="{height - 13}" text-anchor="middle" '
+            'font-family="sans-serif" font-size="13">Physical node degree</text>',
+            f'<text x="17" y="{height / 2:.1f}" text-anchor="middle" '
+            f'transform="rotate(-90 17 {height / 2:.1f})" font-family="sans-serif" '
+            'font-size="13">Node count</text>',
+            '</svg>',
+        ]
+    )
+
+
 def canonical_network_svg(
     nodes: gpd.GeoDataFrame,
     edges: gpd.GeoDataFrame,

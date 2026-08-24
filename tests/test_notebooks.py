@@ -17,11 +17,12 @@ ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOKS = ROOT / "notebooks"
 
 
-class Phase7ENotebookTests(unittest.TestCase):
+class Phase7EAnd7FNotebookTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.introduction_path = NOTEBOOKS / "00_osmnx_networkx_introduction.ipynb"
         cls.canonical_path = NOTEBOOKS / "01_env39_load_canonical_graph.ipynb"
+        cls.topology_path = NOTEBOOKS / "02_env39_topological_metrics.ipynb"
         cls.latest_path = ROOT / "data" / "canonical" / "grid" / "latest.json"
         cls.latest_bytes = cls.latest_path.read_bytes()
         cls._original_path = os.environ.get("PATH", "")
@@ -48,6 +49,7 @@ class Phase7ENotebookTests(unittest.TestCase):
             asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
         cls._executed_00 = None
         cls._executed_01_root = None
+        cls._executed_02_root = None
 
     @classmethod
     def tearDownClass(cls):
@@ -105,7 +107,7 @@ class Phase7ENotebookTests(unittest.TestCase):
         return "\n".join(cell.source for cell in notebook.cells if cell.cell_type == "code")
 
     def test_01_source_notebooks_are_valid_clean_nbformat_documents(self):
-        for path in (self.introduction_path, self.canonical_path):
+        for path in (self.introduction_path, self.canonical_path, self.topology_path):
             with self.subTest(path=path.name):
                 notebook = nbformat.read(path, as_version=4)
                 nbformat.validate(notebook)
@@ -166,7 +168,8 @@ class Phase7ENotebookTests(unittest.TestCase):
     def test_05_notebook_code_has_no_prohibited_sources_geographic_calls_or_absolute_paths(self):
         introduction = nbformat.read(self.introduction_path, as_version=4)
         canonical = nbformat.read(self.canonical_path, as_version=4)
-        code = self._code(introduction) + "\n" + self._code(canonical)
+        topology = nbformat.read(self.topology_path, as_version=4)
+        code = self._code(introduction) + "\n" + self._code(canonical) + "\n" + self._code(topology)
         for forbidden in (
             "data/editable/grid/env39_editable.gpkg",
             "data/baselines/grid/network_v2.gpkg",
@@ -197,6 +200,63 @@ class Phase7ENotebookTests(unittest.TestCase):
         self.assertIn("NOTEBOOK_01_EXECUTION: PASS", output)
 
     def test_08_notebook_execution_does_not_modify_latest_pointer(self):
+        self.assertEqual(self.latest_path.read_bytes(), self.latest_bytes)
+
+    def test_09_topology_notebook_contains_all_professor_facing_sections(self):
+        source = self.topology_path.read_text(encoding="utf-8")
+        for number, title in enumerate((
+            "Purpose",
+            "Selected canonical run",
+            "Scientific graph representations",
+            "Metric configuration",
+            "Network identity",
+            "Degree and junction structure",
+            "NetworkX / OSMnx street-count cross-check",
+            "Connectedness and cycle rank",
+            "Bridges and articulation points",
+            "Shortest-path structure",
+            "Centrality",
+            "Compact result table",
+            "Minimal figures",
+            "Exported artifacts",
+            "Interpretation",
+            "Final reproducibility summary",
+        ), start=1):
+            self.assertIn(f"## {number}. {title}", source)
+
+    def test_10_topology_notebook_executes_end_to_end_from_clean_kernel(self):
+        if self.__class__._executed_02_root is None:
+            self.__class__._executed_02_root = self._execute(self.topology_path, ROOT)
+        output = self._text(self.__class__._executed_02_root)
+        for marker in (
+            "CANONICAL_RUN_RESOLUTION: PASS",
+            "GRAPH_REPRESENTATIONS: PASS",
+            "NETWORK_IDENTITY_AND_HANDSHAKE: PASS",
+            "DEGREE_STRUCTURE: PASS",
+            "OSMNX_NODE_BY_NODE_CROSSCHECK: PASS",
+            "CONNECTEDNESS_AND_CYCLE_RANK: PASS",
+            "HEADLESS_DEGREE_FIGURE: PASS",
+            "EXPORTED_ARTIFACTS: PASS",
+            "NOTEBOOK_02_EXECUTION: PASS",
+        ):
+            self.assertIn(marker, output)
+
+    def test_11_topology_notebook_calls_module_and_excludes_phase7g_metrics(self):
+        notebook = nbformat.read(self.topology_path, as_version=4)
+        code = self._code(notebook)
+        self.assertIn("analyze_topology(", code)
+        for forbidden in (
+            "orientation_entropy(",
+            "add_edge_bearings(",
+            "add_edge_lengths(",
+            "circuity_avg(",
+            "graph_from_place(",
+        ):
+            self.assertNotIn(forbidden, code)
+
+    def test_12_topology_notebook_execution_does_not_modify_latest_pointer(self):
+        if self.__class__._executed_02_root is None:
+            self.__class__._executed_02_root = self._execute(self.topology_path, ROOT)
         self.assertEqual(self.latest_path.read_bytes(), self.latest_bytes)
 
 

@@ -511,6 +511,9 @@ def build_networkx_multigraph(
         }
         attributes.update(
             edge_id=str(row.edge_id),
+            canonical_u=str(row.u),
+            canonical_v=str(row.v),
+            canonical_key=int(row.key),
             u=str(row.u),
             v=str(row.v),
             geometry=row.geometry,

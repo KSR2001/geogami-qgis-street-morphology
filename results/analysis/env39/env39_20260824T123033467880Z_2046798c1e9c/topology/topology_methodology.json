@@ -1,0 +1,77 @@
+{
+  "authoritative_distance": {
+    "attribute": "length",
+    "strictly_positive": true,
+    "units": "local units"
+  },
+  "centrality": {
+    "betweenness_length": "NetworkX betweenness_centrality with weight='length'; weight is path cost",
+    "betweenness_normalized": true,
+    "betweenness_unweighted": "NetworkX betweenness_centrality with weight=None",
+    "closeness_length": "NetworkX closeness_centrality with distance='length'; units are 1 / local unit",
+    "closeness_unweighted": "NetworkX closeness_centrality with distance=None",
+    "degree": "NetworkX degree_centrality normalized by n-1",
+    "edge_betweenness": "NetworkX edge_betweenness_centrality mapped deterministically to canonical edge_id"
+  },
+  "configuration": {
+    "centrality_normalized": true,
+    "disconnected_policy": "error",
+    "file_sha256": "4A8D490A32DD3C7419A08A9A266A14E469BA020FCB841D988A1AB0E4D45D7FFB",
+    "osmnx_intersection_min_streets": 2,
+    "path": "config/metrics.yaml",
+    "physical_length_attribute": "length",
+    "schema_version": "1.0.0"
+  },
+  "connected_graph_policy": "error",
+  "excluded_phase_7g_metrics": [
+    "circuity",
+    "edge chord geometry",
+    "orientation",
+    "orientation entropy",
+    "orientation order",
+    "rose diagrams",
+    "curvature"
+  ],
+  "graph_representations": {
+    "G_ox": "MultiDiGraph with two reciprocal arcs per canonical physical street",
+    "G_physical": "undirected MultiGraph with one edge per canonical physical street",
+    "G_simple": "Graph created only after zero self-loop and zero parallel-edge assertions; node, edge, endpoint and canonical edge identities rechecked"
+  },
+  "networkx_functions_used": {
+    "Graph.degree": "G_physical MultiGraph; physical incidence and handshake theorem",
+    "average_shortest_path_length": "G_simple Graph; weight=None for hops and weight='length' for local-unit distance",
+    "betweenness_centrality": "G_simple Graph; weight=None and weight='length' as path cost",
+    "bridges / articulation_points": "G_simple Graph; topological vulnerability with canonical ID mapping",
+    "closeness_centrality": "G_simple Graph; distance=None and distance='length'",
+    "degree_centrality": "G_simple Graph; degree divided by n-1",
+    "diameter / radius / eccentricity": "G_simple Graph; unweighted hop distance",
+    "edge_betweenness_centrality": "G_simple Graph; weight=None and weight='length', then canonical edge_id mapping",
+    "node_connectivity / edge_connectivity": "G_simple Graph; exact minimum disconnecting sets",
+    "number_connected_components / is_connected": "G_simple Graph; component identity and connected-only guard",
+    "number_of_selfloops": "G_physical MultiGraph; simple-conversion safety",
+    "single_source_dijkstra_path_length": "G_simple Graph; per-node mean distance with weight='length'"
+  },
+  "osmnx_functions_not_used": {
+    "bearing.add_edge_bearings": "forbidden: orientation belongs to Phase 7G and requires geographic assumptions",
+    "distance.add_edge_lengths": "forbidden: would calculate great-circle distance on invented geographic coordinates",
+    "stats.basic_stats": "not used because it bundles density and geometry semantics inappropriate for this local synthetic network",
+    "stats.edge_length_total": "not used because OSMnx documents geographic/metric units while this network uses local units",
+    "stats.street_length_total": "not used because Phase 7F defers geometric length summaries and this network uses local units"
+  },
+  "osmnx_functions_used": {
+    "stats.count_streets_per_node": "G_ox MultiDiGraph; physical street incidence per node",
+    "stats.intersection_count": "G_ox MultiDiGraph; nodes with at least 2 streets",
+    "stats.self_loop_proportion": "G_physical MultiGraph; physical self-loop fraction",
+    "stats.street_segment_count": "G_physical MultiGraph; 69 physical edges rather than 138 arcs",
+    "stats.streets_per_node": "G_ox MultiDiGraph after explicit street_count population",
+    "stats.streets_per_node_avg": "G_ox MultiDiGraph; average incidence",
+    "stats.streets_per_node_counts": "G_ox MultiDiGraph; degree-frequency cross-check",
+    "stats.streets_per_node_proportions": "G_ox MultiDiGraph; degree-proportion cross-check"
+  },
+  "schema_version": "1.0.0",
+  "scope": "topological and network-structure metrics only",
+  "software_versions": {
+    "NetworkX": "3.6.1",
+    "OSMnx": "2.1.1"
+  }
+}

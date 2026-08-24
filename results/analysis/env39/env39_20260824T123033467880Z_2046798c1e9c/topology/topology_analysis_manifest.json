@@ -1,0 +1,120 @@
+{
+  "analysis_git_provenance": {
+    "branch": "phase-7-env39-reproducible-osmnx",
+    "changed_paths": [
+      "README.md",
+      "config/metrics.yaml",
+      "environment.yml",
+      "src/geogami_morphology/__init__.py",
+      "src/geogami_morphology/graph.py",
+      "src/geogami_morphology/notebook.py",
+      "tests/test_notebooks.py",
+      "notebooks/02_env39_topological_metrics.ipynb",
+      "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/edge_topology_metrics.csv",
+      "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/node_topology_metrics.csv",
+      "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/osmnx_crosscheck.json",
+      "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/topology_analysis_manifest.json",
+      "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/topology_methodology.json",
+      "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/topology_metrics_summary.csv",
+      "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/topology_metrics_summary.json",
+      "scripts/run_topology_metrics.py",
+      "src/geogami_morphology/metrics_topology.py",
+      "tests/test_topology_metrics.py"
+    ],
+    "commit_sha": "c3dbc4fb15519dd9bfc27458e38b473d047bfd40",
+    "dirty": true,
+    "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git",
+    "repository": "geogami-qgis-street-morphology",
+    "repository_root": "."
+  },
+  "analysis_type": "Phase 7F topology metrics",
+  "artifacts": {
+    "edge_topology_metrics_csv": {
+      "file_sha256": "91E763454A09E48451D711D13449F81AAB8EF2587E7265352FE9A62E7F63A87A",
+      "path": "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/edge_topology_metrics.csv"
+    },
+    "node_topology_metrics_csv": {
+      "file_sha256": "050DDC0A0DDD07A6A9A63BDD44F49525F7CDA3390C0737870752DB34B66FDDE3",
+      "path": "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/node_topology_metrics.csv"
+    },
+    "osmnx_crosscheck_json": {
+      "file_sha256": "1F21853A49D93BC589E676FD8DD212762A74E3D72A20364EE6A5D794CE7E3320",
+      "path": "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/osmnx_crosscheck.json"
+    },
+    "topology_methodology_json": {
+      "file_sha256": "69FE9F6198F6A68C62FE3AE1505F4774FBAD641B99191D26685C00D8A8189F58",
+      "path": "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/topology_methodology.json"
+    },
+    "topology_metrics_summary_csv": {
+      "file_sha256": "D52E3D8CA9A4B3872529DB536106F4826972DEAB814E5625B1E5965DBD8CF94D",
+      "path": "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/topology_metrics_summary.csv"
+    },
+    "topology_metrics_summary_json": {
+      "file_sha256": "2E309E54545128E548A759DE20276E9BE51D9EE6E6D8DB25DC39BBF8AEF4878E",
+      "path": "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/topology/topology_metrics_summary.json"
+    }
+  },
+  "canonical": {
+    "file_sha256": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "path": "data/canonical/grid/runs/env39_20260824T123033467880Z_2046798c1e9c/env39_canonical.gpkg",
+    "publication_git_provenance": {
+      "branch": "phase-7-env39-reproducible-osmnx",
+      "changed_paths": [
+        "README.md",
+        "scripts/__pycache__/validate_env38_topology.cpython-312.pyc",
+        "scripts/run_canonical_pipeline.py",
+        "src/geogami_morphology/__init__.py",
+        "src/geogami_morphology/canonical.py",
+        "src/geogami_morphology/identity.py",
+        "src/geogami_morphology/versioned.py",
+        "tests/test_versioned_canonical_runs.py"
+      ],
+      "commit_sha": "2803bc52be9111f92745907670832e95759fb803",
+      "dirty": true,
+      "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git",
+      "repository": "geogami-qgis-street-morphology",
+      "repository_root": "."
+    },
+    "scientific_content_signature": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "canonical_run_id": "env39_20260824T123033467880Z_2046798c1e9c",
+  "environment": "env39",
+  "graph_identity": {
+    "directed_arc_count": 138,
+    "node_count": 46,
+    "osmnx_graph_type": "MultiDiGraph",
+    "physical_edge_count": 69,
+    "physical_graph_type": "MultiGraph"
+  },
+  "metrics_configuration": {
+    "file_sha256": "4A8D490A32DD3C7419A08A9A266A14E469BA020FCB841D988A1AB0E4D45D7FFB",
+    "path": "config/metrics.yaml",
+    "schema_version": "1.0.0"
+  },
+  "phase_7d_manifest_preserved": {
+    "available": true,
+    "file_sha256": "CE30A2D8D48632B16D56C46D5E39CC8FA7EA5686050CC74B3253B2A7CF9DA52F",
+    "path": "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/analysis_graph_manifest.json"
+  },
+  "schema_version": "1.0.0",
+  "software_environment": {
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "fiona": null,
+      "gdal": "3.13.2",
+      "geopandas": "1.1.4",
+      "matplotlib": "3.11.1",
+      "networkx": "3.6.1",
+      "numpy": "2.5.2",
+      "osmnx": "2.1.1",
+      "pandas": "3.0.5",
+      "pyogrio": "0.13.0",
+      "pyproj": "3.7.2",
+      "scipy": "1.18.0",
+      "shapely": "2.1.2"
+    },
+    "python": "3.12.13",
+    "python_implementation": "CPython"
+  }
+}

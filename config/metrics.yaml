@@ -1,0 +1,19 @@
+schema_version: 1.0.0
+
+topology:
+  # Canonical LineString.length copied by the Phase 7D adapter. Values are in
+  # GeoGami local Cartesian units, not metres.
+  physical_length_attribute: length
+
+  # OSMnx counts a node as an intersection when at least this many physical
+  # street segments are incident on it.
+  osmnx_intersection_min_streets: 2
+
+  # Connected-only whole-network path and connectivity metrics fail clearly
+  # instead of being averaged separately over components.
+  disconnected_policy: error
+
+  centrality:
+    # NetworkX betweenness values are divided by their standard graph-size
+    # normalization factor. Degree centrality is always normalized by n - 1.
+    normalized: true

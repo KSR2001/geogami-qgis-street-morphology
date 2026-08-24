@@ -175,3 +175,46 @@ python -m jupyter nbconvert --execute --to notebook --ExecutePreprocessor.timeou
   --output 01_env39_load_canonical_graph.executed `
   notebooks/01_env39_load_canonical_graph.ipynb
 ```
+
+## Phase 7F: reproducible topology metrics
+
+Calculate the focused topology metric set from the latest independently verified
+canonical run with:
+
+```powershell
+python scripts/run_topology_metrics.py `
+  --environment env39 `
+  --canonical-run latest
+```
+
+The command reads the versioned options in `config/metrics.yaml`, constructs the
+validated Phase 7D physical and reciprocal graph representations, and publishes
+stable tables and provenance under
+`results/analysis/env39/<canonical_run_id>/topology/`. The complementary
+`topology_analysis_manifest.json` records all three canonical identities, both the
+canonical publication and analysis Git states, the configuration SHA-256, software
+versions, and output hashes. It does not replace the Phase 7D graph manifest.
+
+Open `notebooks/02_env39_topological_metrics.ipynb` in the **GeoGami Morphology**
+kernel and choose **Restart Kernel and Run All Cells** for the professor-facing
+walkthrough. To execute it headlessly without changing the committed source:
+
+```powershell
+python -m jupyter nbconvert --execute --to notebook --ExecutePreprocessor.timeout=300 `
+  --output-dir results/notebooks `
+  --output 02_env39_topological_metrics.executed `
+  notebooks/02_env39_topological_metrics.ipynb
+```
+
+Phase 7F keeps three concepts distinct:
+
+| Metric type | Examples | Weight and units |
+|---|---|---|
+| Topology | degree, cycles, bridges, articulation, hop paths | unweighted; counts, proportions, or hops |
+| Weighted network distance | shortest paths, weighted betweenness and closeness | canonical `length`; local units or `1 / local unit` |
+| Future geometric morphology (Phase 7G) | circuity, orientation, entropy, curvature | deliberately not calculated in Phase 7F |
+
+The OSMnx cross-check counts 69 undirected physical street segments from the
+reciprocal 138-arc representation and verifies every node's OSMnx street count
+against its NetworkX physical degree. No geographic distance, bearing, nearest-node,
+or fake WGS84 operation is used.
