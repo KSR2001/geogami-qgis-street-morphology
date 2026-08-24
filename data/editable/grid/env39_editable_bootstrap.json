@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-08-24T12:07:11.955431+00:00",
+  "editable": "data\\editable\\grid\\env39_editable.gpkg",
+  "editable_sha256_at_bootstrap": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+  "layers": [
+    "nodes",
+    "edges"
+  ],
+  "overwrite_policy": "refuse",
+  "purpose": "QGIS-editable source network; never treat this file as generated canonical output",
+  "source": "data\\canonical\\grid\\env39_canonical.gpkg",
+  "source_sha256": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847"
+}

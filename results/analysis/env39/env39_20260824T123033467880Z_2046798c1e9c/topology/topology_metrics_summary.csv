@@ -1,0 +1,40 @@
+metric_name,value,units,library,function,graph_representation,weighting,interpretation
+node_count,46,nodes,NetworkX,Graph.number_of_nodes,G_physical MultiGraph,unweighted,canonical physical nodes
+physical_edge_count,69,physical streets,NetworkX,Graph.number_of_edges,G_physical MultiGraph,unweighted,"canonical physical streets, not reciprocal arcs"
+connected_component_count,1,components,NetworkX,number_connected_components,G_simple Graph,unweighted,maximal connected node sets
+is_connected,True,boolean,NetworkX,is_connected,G_simple Graph,unweighted,whether every pair of nodes has a path
+self_loop_count,0,physical streets,NetworkX,number_of_selfloops,G_physical MultiGraph,unweighted,physical streets whose endpoints are identical
+parallel_physical_edge_count,0,physical streets beyond first per pair,custom,parallel_physical_edge_count,G_physical MultiGraph,unweighted,edges that would be lost by simple conversion
+degree_sum,138,incidences,NetworkX,Graph.degree,G_physical MultiGraph,unweighted,sum of physical street incidences
+twice_physical_edge_count,138,incidences,custom,2 * E,G_physical MultiGraph,unweighted,independent handshake-theorem comparator
+degree_min,1,physical streets per node,Python,min,G_physical MultiGraph,unweighted,minimum node degree
+degree_max,4,physical streets per node,Python,max,G_physical MultiGraph,unweighted,maximum node degree
+degree_mean,3.0,physical streets per node,Python,statistics.mean,G_physical MultiGraph,unweighted,mean node degree
+degree_median,3.0,physical streets per node,Python,statistics.median,G_physical MultiGraph,unweighted,median node degree
+dead_end_count,10,nodes,custom,degree == 1,G_physical MultiGraph,unweighted,nodes incident to one physical street
+dead_end_proportion,0.21739130434782608,proportion,custom,degree == 1,G_physical MultiGraph,unweighted,fraction of nodes that are dead ends
+degree_3_count,16,nodes,custom,degree == 3,G_physical MultiGraph,unweighted,three-street junction nodes
+degree_3_proportion,0.34782608695652173,proportion,custom,degree == 3,G_physical MultiGraph,unweighted,fraction of three-street junctions
+degree_4_count,20,nodes,custom,degree == 4,G_physical MultiGraph,unweighted,four-street junction nodes
+degree_4_proportion,0.43478260869565216,proportion,custom,degree == 4,G_physical MultiGraph,unweighted,fraction of four-street junctions
+osmnx_streets_per_node_average,3.0,physical streets per node,OSMnx,stats.streets_per_node_avg,G_ox MultiDiGraph,unweighted,average physical street incidence after reciprocal-arc de-duplication
+osmnx_intersection_count,36,nodes,OSMnx,stats.intersection_count,G_ox MultiDiGraph,unweighted,nodes with at least 2 physical streets
+osmnx_street_segment_count,69,physical streets,OSMnx,stats.street_segment_count,G_physical MultiGraph,unweighted,undirected physical street count
+osmnx_self_loop_proportion,0.0,proportion,OSMnx,stats.self_loop_proportion,G_physical MultiGraph,unweighted,fraction of physical streets that are self-loops
+cycle_rank,24,independent cycles,custom,E - V + C,G_simple Graph,unweighted,cyclomatic number of the physical topology
+bridge_count,10,physical streets,NetworkX,bridges,G_simple Graph,unweighted,streets whose removal increases component count
+bridge_proportion,0.14492753623188406,proportion,NetworkX,bridges,G_simple Graph,unweighted,fraction of physical streets that are bridges
+articulation_point_count,9,nodes,NetworkX,articulation_points,G_simple Graph,unweighted,nodes whose removal increases component count
+articulation_point_proportion,0.1956521739130435,proportion,NetworkX,articulation_points,G_simple Graph,unweighted,fraction of nodes that are articulation points
+node_connectivity,1,nodes,NetworkX,node_connectivity,G_simple Graph,unweighted,minimum nodes whose removal disconnects the graph
+edge_connectivity,1,physical streets,NetworkX,edge_connectivity,G_simple Graph,unweighted,minimum streets whose removal disconnects the graph
+average_shortest_path_hops,4.308212560386473,hops,NetworkX,average_shortest_path_length,G_simple Graph,edge cost = 1,mean minimum physical-edge count between node pairs
+diameter_hops,10,hops,NetworkX,diameter,G_simple Graph,edge cost = 1,largest node eccentricity
+radius_hops,6,hops,NetworkX,radius,G_simple Graph,edge cost = 1,smallest node eccentricity
+average_shortest_path_length_local,724.2999737149149,local units,NetworkX,average_shortest_path_length,G_simple Graph,weight = length,mean geometry-length-weighted shortest-path distance
+degree_count_1,10,nodes,custom,Counter(Graph.degree),G_physical MultiGraph,unweighted,nodes of physical degree 1
+degree_proportion_1,0.21739130434782608,proportion,custom,Counter(Graph.degree) / V,G_physical MultiGraph,unweighted,fraction of nodes of physical degree 1
+degree_count_3,16,nodes,custom,Counter(Graph.degree),G_physical MultiGraph,unweighted,nodes of physical degree 3
+degree_proportion_3,0.34782608695652173,proportion,custom,Counter(Graph.degree) / V,G_physical MultiGraph,unweighted,fraction of nodes of physical degree 3
+degree_count_4,20,nodes,custom,Counter(Graph.degree),G_physical MultiGraph,unweighted,nodes of physical degree 4
+degree_proportion_4,0.43478260869565216,proportion,custom,Counter(Graph.degree) / V,G_physical MultiGraph,unweighted,fraction of nodes of physical degree 4

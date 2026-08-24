@@ -1,6 +1,14 @@
 geopandas
 networkx
+osmnx=2.1.1
+pyproj=3.7.2
+jupyterlab=4.4.7
+ipykernel=6.30.1
+nbconvert=7.16.6
+nbclient=0.10.2
+nbformat=5.10.4
 shapely
 pandas
 numpy
 pillow
+pyyaml=6.0.3
