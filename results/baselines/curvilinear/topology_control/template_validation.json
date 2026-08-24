@@ -1,0 +1,77 @@
+{
+  "phase": "6A",
+  "final_result": "PASS",
+  "topology_control_status": "PASS",
+  "geometric_realization_qa_status": "PASS",
+  "candidate": {
+    "path": "data\\working\\curvilinear\\env38_working.gpkg",
+    "node_count": 46,
+    "edge_count": 69,
+    "crs": "LOCAL_CS[\"GeoGami Local Cartesian\",LOCAL_DATUM[\"GeoGami local engineering datum\",32767],UNIT[\"local unit\",1],AXIS[\"X\",EAST],AXIS[\"Y\",NORTH]]"
+  },
+  "canonical": {
+    "path": "data\\canonical\\grid\\env39_canonical.gpkg",
+    "expected_sha256": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "sha256_before": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "sha256_after": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "unchanged": true
+  },
+  "methodology": {
+    "topology_serialization": "UTF-8, sorted normalized (u,v,key) tuples as u|v|key followed by one LF; no header",
+    "geometry_in_topology_signature": false,
+    "near_miss_tolerance_local_units": 1e-06,
+    "near_miss_policy": "diagnostic only; no snapping or automatic repair",
+    "line_direction": "either u-to-v or v-to-u is accepted deterministically"
+  },
+  "topology_control": {
+    "checks": {
+      "node_count": true,
+      "canonical_node_id_set": true,
+      "edge_count": true,
+      "canonical_edge_id_set": true,
+      "valid_integer_keys": true,
+      "canonical_connectivity_set": true,
+      "single_component": true,
+      "degree_distribution": true,
+      "no_degree2_nodes": true,
+      "no_self_loops": true,
+      "no_parallel_edges": true,
+      "topology_signature": true
+    },
+    "component_count": 1,
+    "degree_distribution": {
+      "1": 10,
+      "3": 16,
+      "4": 20
+    },
+    "topology_signature_sha256": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB",
+    "expected_topology_signature_sha256": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB",
+    "missing_nodes": [],
+    "extra_nodes": [],
+    "duplicate_node_ids": [],
+    "missing_edges": [],
+    "extra_edges": [],
+    "duplicate_edge_ids": [],
+    "missing_normalized_tuples": [],
+    "extra_normalized_tuples": [],
+    "duplicate_normalized_tuples": [],
+    "changed_adjacency": [],
+    "changed_key": [],
+    "self_loop_edges": [],
+    "parallel_endpoint_pairs": [],
+    "invalid_key_edges": []
+  },
+  "geometric_realization_qa": {
+    "checks": {
+      "valid_node_points": true,
+      "valid_edge_linestrings": true,
+      "endpoint_node_consistency": true,
+      "no_self_intersections": true,
+      "no_unintended_intersections": true,
+      "canonical_crs_preserved": true
+    },
+    "error_counts": {},
+    "near_miss_count": 0
+  },
+  "diagnostics": []
+}
