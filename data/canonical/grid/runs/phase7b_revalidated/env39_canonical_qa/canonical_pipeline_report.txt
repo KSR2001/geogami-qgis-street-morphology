@@ -1,0 +1,14 @@
+GeoGami canonical pipeline: PASS
+Environment: env39
+Mode: preserve-topology
+Source: data\editable\grid\env39_editable.gpkg
+Source SHA-256: 212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847
+Reference: data\canonical\grid\env39_canonical.gpkg
+Reference SHA-256: 212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847
+Candidate SHA-256: 212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847
+Nodes / edges / components: 46 / 69 / 1
+Degree distribution: {1: 10, 3: 16, 4: 20}
+Topology signature: 4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB
+Endpoint corrections: 0
+Topology errors: 0
+Geometry errors: 0

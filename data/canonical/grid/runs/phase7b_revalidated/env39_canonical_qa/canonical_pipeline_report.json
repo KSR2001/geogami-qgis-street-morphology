@@ -1,0 +1,59 @@
+{
+  "candidate": {
+    "scientific_content_sha256": "D32FBB7A5CD1B9F2AD803C0155F5F2F38314C37F924666B85F640F0E93C0B785",
+    "sha256": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847"
+  },
+  "diagnostics": [],
+  "endpoint_corrections": [],
+  "endpoint_tolerance_local_units": 1e-06,
+  "environment": "env39",
+  "error_counts": {
+    "geometry": 0,
+    "io": 0,
+    "topology": 0
+  },
+  "final_result": "PASS",
+  "methodology": {
+    "arbitrary_snapping": false,
+    "source_modified": false,
+    "topology_serialization": "UTF-8 lines, sorted normalized tuples as u|v|key followed by LF; no header"
+  },
+  "mode": "preserve-topology",
+  "output": "data\\canonical\\grid\\runs\\phase7b_revalidated\\env39_canonical.gpkg",
+  "phase": "7B",
+  "published": true,
+  "reference": {
+    "path": "data\\canonical\\grid\\env39_canonical.gpkg",
+    "sha256_after": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "sha256_before": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "unchanged": true
+  },
+  "reference_topology": {
+    "connected_components": 1,
+    "degree_distribution": {
+      "1": 10,
+      "3": 16,
+      "4": 20
+    },
+    "edge_count": 69,
+    "node_count": 46,
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "source": {
+    "path": "data\\editable\\grid\\env39_editable.gpkg",
+    "sha256_after": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "sha256_before": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "unchanged": true
+  },
+  "topology": {
+    "connected_components": 1,
+    "degree_distribution": {
+      "1": 10,
+      "3": 16,
+      "4": 20
+    },
+    "edge_count": 69,
+    "node_count": 46,
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  }
+}
