@@ -17,3 +17,41 @@ topology:
     # NetworkX betweenness values are divided by their standard graph-size
     # normalization factor. Degree centrality is always normalized by n - 1.
     normalized: true
+
+geometry:
+  # Values at or below this Euclidean endpoint distance are classified as
+  # zero-chord edges and receive no circuity or chord orientation.
+  zero_chord_tolerance_local: 1.0e-9
+
+  # Consecutive LineString coordinates this close are excluded from the
+  # segment-orientation population and counted explicitly.
+  zero_segment_tolerance_local: 1.0e-12
+
+  # Absolute tolerance for stored-versus-recomputed lengths and for the
+  # independent equality of summed segment and LineString lengths.
+  length_comparison_tolerance_local: 1.0e-9
+
+  # A circuity just below one by no more than this amount is treated as the
+  # floating-point representation of a theoretically straight edge.
+  circuity_floating_tolerance: 1.0e-12
+
+  # Summary dispersion is the population standard deviation (ddof = 0).
+  standard_deviation_ddof: 0
+
+orientation:
+  convention: north_clockwise
+  axial_period_degrees: 180
+
+  # The 180-degree axial domain is divided into 36 deterministic 5-degree bins.
+  bins: 36
+
+  # Snap only floating-point representations within this angular distance of
+  # an exact bin boundary before deterministic half-open bin assignment.
+  boundary_tolerance_degrees: 1.0e-9
+  chord_weighting: equal_edge
+  segment_weighting: segment_length_local
+  entropy_logarithm_base: natural
+
+order_parameter:
+  # exp(i * 4 * theta) makes orthogonal orientations 90 degrees apart reinforce.
+  symmetry: 4

@@ -218,3 +218,51 @@ The OSMnx cross-check counts 69 undirected physical street segments from the
 reciprocal 138-arc representation and verifies every node's OSMnx street count
 against its NetworkX physical degree. No geographic distance, bearing, nearest-node,
 or fake WGS84 operation is used.
+
+## Phase 7G: planar geometry and orientation
+
+Calculate the geometry metrics for the same verified canonical run with:
+
+```powershell
+python scripts/run_geometry_metrics.py `
+  --environment env39 `
+  --canonical-run latest
+```
+
+Results and deterministic SVG figures are written beneath
+`results/analysis/env39/<canonical_run_id>/geometry/`. The complementary geometry
+manifest records canonical identities, configuration and artifact hashes, Git state,
+software versions, orientation conventions, and proof that the Phase 7F outputs were
+not changed.
+
+All calculations are planar in **GeoGami Local Cartesian** coordinates. Lengths are
+in **local units, not metres**. For physical edge `i`, the implementation defines:
+
+- geometry length `L_i` as recomputed `LineString.length`;
+- chord `D_i` as Euclidean distance between canonical `u` and `v` node Points;
+- edge circuity as `L_i / D_i` for positive chords;
+- mean edge circuity as `mean(L_i / D_i)`;
+- network circuity as `sum(L_i) / sum(D_i)`.
+
+Chord orientation supplies one equal-weight endpoint axis per physical street.
+Segment orientation instead uses every positive consecutive LineString segment,
+weighted by its local length, so it retains local directions inside bent streets.
+Both use north-clockwise axial angles over `[0°,180°)` and 36 five-degree bins.
+Values within `1e-9°` of an exact boundary are snapped before half-open binning so
+floating-point representations of the same cardinal axis are not split.
+Shannon entropy is `H = -sum(p_i ln p_i)`, with `H / ln(36)` also reported. Fourfold
+order is `phi = |sum(w_i exp(i 4 theta_i)) / sum(w_i)|`.
+
+Open `notebooks/03_env39_geometry_orientation_metrics.ipynb` in the **GeoGami
+Morphology** kernel and choose **Restart Kernel and Run All Cells**, or execute a
+copy headlessly:
+
+```powershell
+python -m jupyter nbconvert --execute --to notebook --ExecutePreprocessor.timeout=300 `
+  --output-dir results/notebooks `
+  --output 03_env39_geometry_orientation_metrics.executed `
+  notebooks/03_env39_geometry_orientation_metrics.ipynb
+```
+
+OSMnx geographic bearing, great-circle edge-length, geographic nearest-node,
+orientation-plot, and fake WGS84 workflows are deliberately excluded.

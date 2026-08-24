@@ -137,7 +137,8 @@ def load_topology_config(
         "disconnected_policy",
         "centrality",
     }
-    if set(raw) != {"schema_version", "topology"} or set(topology) != expected_topology:
+    expected_sections = {"schema_version", "topology", "geometry", "orientation", "order_parameter"}
+    if set(raw) != expected_sections or set(topology) != expected_topology:
         raise TopologyMetricError("Metrics configuration has unknown or missing top-level topology fields.")
     centrality = topology["centrality"]
     if set(centrality) != {"normalized"}:

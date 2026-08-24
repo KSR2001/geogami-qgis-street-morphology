@@ -13,6 +13,11 @@ from .metrics_topology import (
     TopologyMetricError,
     analyze_topology,
 )
+from .metrics_geometry import (
+    GeometryAnalysisResult,
+    GeometryMetricError,
+    analyze_geometry,
+)
 from .versioned import VersionedRunResult, run_versioned_canonical
 
 __all__ = [
@@ -22,9 +27,12 @@ __all__ = [
     "AnalysisGraphError",
     "TopologyAnalysisResult",
     "TopologyMetricError",
+    "GeometryAnalysisResult",
+    "GeometryMetricError",
     "VersionedRunResult",
     "build_analysis_graphs",
     "analyze_topology",
+    "analyze_geometry",
     "resolve_canonical_run",
     "run_preserve_topology",
     "run_versioned_canonical",

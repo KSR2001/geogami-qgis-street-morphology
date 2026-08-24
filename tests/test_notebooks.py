@@ -17,12 +17,13 @@ ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOKS = ROOT / "notebooks"
 
 
-class Phase7EAnd7FNotebookTests(unittest.TestCase):
+class Phase7EThrough7GNotebookTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.introduction_path = NOTEBOOKS / "00_osmnx_networkx_introduction.ipynb"
         cls.canonical_path = NOTEBOOKS / "01_env39_load_canonical_graph.ipynb"
         cls.topology_path = NOTEBOOKS / "02_env39_topological_metrics.ipynb"
+        cls.geometry_path = NOTEBOOKS / "03_env39_geometry_orientation_metrics.ipynb"
         cls.latest_path = ROOT / "data" / "canonical" / "grid" / "latest.json"
         cls.latest_bytes = cls.latest_path.read_bytes()
         cls._original_path = os.environ.get("PATH", "")
@@ -50,6 +51,7 @@ class Phase7EAnd7FNotebookTests(unittest.TestCase):
         cls._executed_00 = None
         cls._executed_01_root = None
         cls._executed_02_root = None
+        cls._executed_03_root = None
 
     @classmethod
     def tearDownClass(cls):
@@ -107,7 +109,7 @@ class Phase7EAnd7FNotebookTests(unittest.TestCase):
         return "\n".join(cell.source for cell in notebook.cells if cell.cell_type == "code")
 
     def test_01_source_notebooks_are_valid_clean_nbformat_documents(self):
-        for path in (self.introduction_path, self.canonical_path, self.topology_path):
+        for path in (self.introduction_path, self.canonical_path, self.topology_path, self.geometry_path):
             with self.subTest(path=path.name):
                 notebook = nbformat.read(path, as_version=4)
                 nbformat.validate(notebook)
@@ -169,7 +171,8 @@ class Phase7EAnd7FNotebookTests(unittest.TestCase):
         introduction = nbformat.read(self.introduction_path, as_version=4)
         canonical = nbformat.read(self.canonical_path, as_version=4)
         topology = nbformat.read(self.topology_path, as_version=4)
-        code = self._code(introduction) + "\n" + self._code(canonical) + "\n" + self._code(topology)
+        geometry = nbformat.read(self.geometry_path, as_version=4)
+        code = self._code(introduction) + "\n" + self._code(canonical) + "\n" + self._code(topology) + "\n" + self._code(geometry)
         for forbidden in (
             "data/editable/grid/env39_editable.gpkg",
             "data/baselines/grid/network_v2.gpkg",
@@ -257,6 +260,75 @@ class Phase7EAnd7FNotebookTests(unittest.TestCase):
     def test_12_topology_notebook_execution_does_not_modify_latest_pointer(self):
         if self.__class__._executed_02_root is None:
             self.__class__._executed_02_root = self._execute(self.topology_path, ROOT)
+        self.assertEqual(self.latest_path.read_bytes(), self.latest_bytes)
+
+    def test_13_geometry_notebook_contains_all_professor_facing_sections_and_formulas(self):
+        source = self.geometry_path.read_text(encoding="utf-8")
+        for number, title in enumerate((
+            "Purpose",
+            "Why this phase uses planar geometry",
+            "Selected canonical run/provenance",
+            "Coordinate system and units",
+            "Edge geometry length",
+            "Chord length",
+            "Circuity definitions",
+            "Edge-chord orientation",
+            "LineString-segment orientation",
+            "Orientation histogram and binning",
+            "Shannon orientation entropy",
+            "Fourfold orientation order phi",
+            "Geometry metric summary",
+            "Scientific figures",
+            "Exported artifacts",
+            "Interpretation for grid-like Env39",
+            "How these metrics will later compare to Env38",
+            "Reproducibility summary",
+        ), start=1):
+            self.assertIn(f"## {number}. {title}", source)
+        for formula in ("L_i/D_i", "sum L_i", "H=-", "exp(i4"):
+            self.assertIn(formula, source)
+
+    def test_14_geometry_notebook_executes_end_to_end_from_clean_kernel(self):
+        if self.__class__._executed_03_root is None:
+            self.__class__._executed_03_root = self._execute(self.geometry_path, ROOT)
+        output = self._text(self.__class__._executed_03_root)
+        for marker in (
+            "CANONICAL_GEOMETRY_RESOLUTION: PASS",
+            "PLANAR_CONFIGURATION: PASS",
+            "EDGE_LENGTH_METRICS: PASS",
+            "CHORD_LENGTH_METRICS: PASS",
+            "PLANAR_CIRCUITY: PASS",
+            "CHORD_ORIENTATION: PASS",
+            "SEGMENT_ORIENTATION: PASS",
+            "AXIAL_HISTOGRAMS: PASS",
+            "SHANNON_ENTROPY: PASS",
+            "FOURFOLD_ORIENTATION_ORDER: PASS",
+            "HEADLESS_GEOMETRY_FIGURES: PASS",
+            "EXPORTED_GEOMETRY_ARTIFACTS: PASS",
+            "NOTEBOOK_03_EXECUTION: PASS",
+        ):
+            self.assertIn(marker, output)
+
+    def test_15_geometry_notebook_calls_module_and_has_no_competing_or_geographic_algorithms(self):
+        notebook = nbformat.read(self.geometry_path, as_version=4)
+        code = self._code(notebook)
+        self.assertIn("analyze_geometry(", code)
+        for forbidden in (
+            "atan2(",
+            "add_edge_bearings(",
+            "add_edge_lengths(",
+            "plot_orientation(",
+            "graph_from_place(",
+        ):
+            self.assertNotIn(forbidden, code)
+
+    def test_16_geometry_notebook_execution_preserves_latest_and_phase7f_outputs(self):
+        topology_dir = ROOT / "results" / "analysis" / "env39" / "env39_20260824T123033467880Z_2046798c1e9c" / "topology"
+        before = {path.name: path.read_bytes() for path in topology_dir.iterdir() if path.is_file()}
+        if self.__class__._executed_03_root is None:
+            self.__class__._executed_03_root = self._execute(self.geometry_path, ROOT)
+        after = {path.name: path.read_bytes() for path in topology_dir.iterdir() if path.is_file()}
+        self.assertEqual(before, after)
         self.assertEqual(self.latest_path.read_bytes(), self.latest_bytes)
 
 
