@@ -18,6 +18,11 @@ from .metrics_geometry import (
     GeometryMetricError,
     analyze_geometry,
 )
+from .integrated import (
+    IntegratedAnalysisError,
+    IntegratedResult,
+    integrate_results,
+)
 from .versioned import VersionedRunResult, run_versioned_canonical
 
 __all__ = [
@@ -29,10 +34,13 @@ __all__ = [
     "TopologyMetricError",
     "GeometryAnalysisResult",
     "GeometryMetricError",
+    "IntegratedAnalysisError",
+    "IntegratedResult",
     "VersionedRunResult",
     "build_analysis_graphs",
     "analyze_topology",
     "analyze_geometry",
+    "integrate_results",
     "resolve_canonical_run",
     "run_preserve_topology",
     "run_versioned_canonical",

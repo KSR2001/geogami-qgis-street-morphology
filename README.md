@@ -142,12 +142,18 @@ python -m ipykernel install --user --name geogami-morphology --display-name "Geo
 python -m jupyter lab
 ```
 
-Inside Jupyter Lab, open `notebooks/`, select the **GeoGami Morphology** kernel,
-open `00_osmnx_networkx_introduction.ipynb`, and choose **Restart Kernel and Run All
-Cells**. Then repeat with `01_env39_load_canonical_graph.ipynb`. The first notebook
-is an offline conceptual introduction. The second resolves the latest successful
-canonical run, validates both graph representations, plots the physical network,
-and checks the Phase 7D GraphML round-trip without calculating morphology metrics.
+Inside Jupyter Lab, open `notebooks/` and select the **GeoGami Morphology** kernel.
+The professor-facing order is:
+
+1. `00_osmnx_networkx_introduction.ipynb` — offline conceptual introduction;
+2. `01_env39_load_canonical_graph.ipynb` — canonical and graph validation;
+3. `02_env39_topological_metrics.ipynb` — topology and weighted-network results;
+4. `03_env39_geometry_orientation_metrics.ipynb` — geometry and orientation results;
+5. `04_env39_integrated_results.ipynb` — principal integrated Env39 results.
+
+For routine analysis, normally choose **Restart Kernel and Run All Cells** for
+Notebooks 01, 02, 03, and 04 in that order. Notebook 00 is introductory and can be
+revisited whenever a conceptual refresher is useful.
 
 Without activating Conda, the deterministic alternatives are:
 
@@ -266,3 +272,42 @@ python -m jupyter nbconvert --execute --to notebook --ExecutePreprocessor.timeou
 
 OSMnx geographic bearing, great-circle edge-length, geographic nearest-node,
 orientation-plot, and fake WGS84 workflows are deliberately excluded.
+
+## Phase 7H: integrated research results
+
+Build the comparison-ready Env39 package only after the accepted Phase 7F and Phase
+7G outputs exist for the same canonical run:
+
+```powershell
+python scripts/build_integrated_results.py `
+  --environment env39 `
+  --canonical-run latest
+```
+
+The integration command verifies the canonical identity and upstream manifest hashes,
+then reads the stored topology, geometry, and orientation summaries. It does not
+reimplement any scientific metric. Outputs are written to
+`results/analysis/env39/<canonical_run_id>/integrated/` and include:
+
+- `comparison_ready_metrics.csv`, a long-form 39-metric table with stable,
+  environment-independent metric IDs;
+- `core_metrics.csv` and `core_metrics.json`, the concise 19-metric research set;
+- `integrated_methodology.json`, including family definitions, selection rationale,
+  controlled-comparison rules, and the historical-methodology note;
+- `integrated_analysis_manifest.json`, linking canonical, Phase 7D, Phase 7F, Phase
+  7G, configuration, Git, software, figure, and output hashes;
+- `env39_baseline_summary.md`, the machine-produced one-page baseline; and
+- two deterministic integrated SVG views, with three accepted Phase 7G figures
+  referenced in place to avoid duplication.
+
+Every row is classified as `topology_controlled`, `geometry_weighted_network`,
+`geometric_morphology`, or `orientation_morphology`. A later Env38 run can populate
+the identical schema. Identical topology-control values will check that frozen
+connectivity was maintained; geometric, orientation, and length-weighted routing
+values may differ with geometric realization. This design supports interpretation
+within the controlled experiment and does not by itself establish broader causality.
+
+Open `notebooks/04_env39_integrated_results.ipynb` for the principal professor-facing
+baseline. It explains what every result family means, its units and population,
+whether it depends on topology or geometry, and whether it may change for Env38. No
+Env38 values or placeholder artifacts are created in Phase 7H.

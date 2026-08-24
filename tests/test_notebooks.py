@@ -17,13 +17,14 @@ ROOT = Path(__file__).resolve().parents[1]
 NOTEBOOKS = ROOT / "notebooks"
 
 
-class Phase7EThrough7GNotebookTests(unittest.TestCase):
+class Phase7EThrough7HNotebookTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.introduction_path = NOTEBOOKS / "00_osmnx_networkx_introduction.ipynb"
         cls.canonical_path = NOTEBOOKS / "01_env39_load_canonical_graph.ipynb"
         cls.topology_path = NOTEBOOKS / "02_env39_topological_metrics.ipynb"
         cls.geometry_path = NOTEBOOKS / "03_env39_geometry_orientation_metrics.ipynb"
+        cls.integrated_path = NOTEBOOKS / "04_env39_integrated_results.ipynb"
         cls.latest_path = ROOT / "data" / "canonical" / "grid" / "latest.json"
         cls.latest_bytes = cls.latest_path.read_bytes()
         cls._original_path = os.environ.get("PATH", "")
@@ -52,6 +53,7 @@ class Phase7EThrough7GNotebookTests(unittest.TestCase):
         cls._executed_01_root = None
         cls._executed_02_root = None
         cls._executed_03_root = None
+        cls._executed_04_root = None
 
     @classmethod
     def tearDownClass(cls):
@@ -109,7 +111,7 @@ class Phase7EThrough7GNotebookTests(unittest.TestCase):
         return "\n".join(cell.source for cell in notebook.cells if cell.cell_type == "code")
 
     def test_01_source_notebooks_are_valid_clean_nbformat_documents(self):
-        for path in (self.introduction_path, self.canonical_path, self.topology_path, self.geometry_path):
+        for path in (self.introduction_path, self.canonical_path, self.topology_path, self.geometry_path, self.integrated_path):
             with self.subTest(path=path.name):
                 notebook = nbformat.read(path, as_version=4)
                 nbformat.validate(notebook)
@@ -172,7 +174,8 @@ class Phase7EThrough7GNotebookTests(unittest.TestCase):
         canonical = nbformat.read(self.canonical_path, as_version=4)
         topology = nbformat.read(self.topology_path, as_version=4)
         geometry = nbformat.read(self.geometry_path, as_version=4)
-        code = self._code(introduction) + "\n" + self._code(canonical) + "\n" + self._code(topology) + "\n" + self._code(geometry)
+        integrated = nbformat.read(self.integrated_path, as_version=4)
+        code = self._code(introduction) + "\n" + self._code(canonical) + "\n" + self._code(topology) + "\n" + self._code(geometry) + "\n" + self._code(integrated)
         for forbidden in (
             "data/editable/grid/env39_editable.gpkg",
             "data/baselines/grid/network_v2.gpkg",
@@ -328,6 +331,80 @@ class Phase7EThrough7GNotebookTests(unittest.TestCase):
         if self.__class__._executed_03_root is None:
             self.__class__._executed_03_root = self._execute(self.geometry_path, ROOT)
         after = {path.name: path.read_bytes() for path in topology_dir.iterdir() if path.is_file()}
+        self.assertEqual(before, after)
+        self.assertEqual(self.latest_path.read_bytes(), self.latest_bytes)
+
+    def test_17_integrated_notebook_contains_all_professor_facing_sections(self):
+        source = self.integrated_path.read_text(encoding="utf-8")
+        for number, title in enumerate((
+            "Research objective",
+            "Selected canonical run and provenance",
+            "Analysis architecture",
+            "Metric-family classification",
+            "Topology-control results",
+            "Geometry-weighted network results",
+            "Geometric morphology results",
+            "Orientation morphology results",
+            "Core metric table",
+            "Selected supplementary results",
+            "Key scientific figures",
+            "What is controlled versus what can vary",
+            "Interpretation of grid-like Env39",
+            "Historical methodology note",
+            "Export package",
+            "Reproducibility summary",
+            "How the same workflow will later analyze Env38",
+            "Final Env39 baseline summary",
+        ), start=1):
+            self.assertIn(f"## {number}. {title}", source)
+
+    def test_18_integrated_notebook_executes_end_to_end_from_clean_kernel(self):
+        if self.__class__._executed_04_root is None:
+            self.__class__._executed_04_root = self._execute(self.integrated_path, ROOT)
+        output = self._text(self.__class__._executed_04_root)
+        for marker in (
+            "INTEGRATED_SOURCE_LOADING: PASS",
+            "INTEGRATED_PROVENANCE_CHAIN: PASS",
+            "METRIC_FAMILY_CLASSIFICATION: PASS",
+            "TOPOLOGY_CONTROL_RESULTS: PASS",
+            "GEOMETRY_WEIGHTED_NETWORK_RESULTS: PASS",
+            "GEOMETRIC_MORPHOLOGY_RESULTS: PASS",
+            "ORIENTATION_MORPHOLOGY_RESULTS: PASS",
+            "CORE_METRIC_TABLE: 19 METRICS | PASS",
+            "INTEGRATED_FIGURES: 5 FOUND | PASS",
+            "INTEGRATED_EXPORT_PACKAGE: PASS",
+            "INTEGRATED_REPRODUCIBILITY: PASS",
+            "NOTEBOOK_04_EXECUTION: PASS",
+        ):
+            self.assertIn(marker, output)
+
+    def test_19_integrated_notebook_loads_module_without_competing_algorithms(self):
+        notebook = nbformat.read(self.integrated_path, as_version=4)
+        code = self._code(notebook)
+        self.assertIn("integrate_results(", code)
+        for forbidden in (
+            "analyze_topology(",
+            "analyze_geometry(",
+            "betweenness_centrality(",
+            "orientation_entropy(",
+            "atan2(",
+            "add_edge_bearings(",
+        ):
+            self.assertNotIn(forbidden, code)
+
+    def test_20_integrated_notebook_preserves_latest_phase7f_and_phase7g_outputs(self):
+        run_root = ROOT / "results" / "analysis" / "env39" / "env39_20260824T123033467880Z_2046798c1e9c"
+        protected = [run_root / "topology", run_root / "geometry"]
+        before = {
+            path.relative_to(run_root).as_posix(): path.read_bytes()
+            for directory in protected for path in directory.rglob("*") if path.is_file()
+        }
+        if self.__class__._executed_04_root is None:
+            self.__class__._executed_04_root = self._execute(self.integrated_path, ROOT)
+        after = {
+            path.relative_to(run_root).as_posix(): path.read_bytes()
+            for directory in protected for path in directory.rglob("*") if path.is_file()
+        }
         self.assertEqual(before, after)
         self.assertEqual(self.latest_path.read_bytes(), self.latest_bytes)
 
