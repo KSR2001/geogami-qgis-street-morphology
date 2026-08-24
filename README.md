@@ -129,3 +129,49 @@ Outputs are published under
 an `analysis_graph_manifest.json`. Length is always recomputed as `LineString.length`
 in GeoGami local Cartesian units. The adapter does not assign EPSG:4326, calculate
 geographic bearings, or use great-circle edge-length functions.
+
+## Phase 7E: Jupyter Lab notebooks
+
+The professor-facing notebooks live in `notebooks/` and use the same
+`geogami-morphology` environment as the tested pipeline. After creating or updating
+that environment, register its selectable kernel once:
+
+```powershell
+conda activate geogami-morphology
+python -m ipykernel install --user --name geogami-morphology --display-name "GeoGami Morphology"
+python -m jupyter lab
+```
+
+Inside Jupyter Lab, open `notebooks/`, select the **GeoGami Morphology** kernel,
+open `00_osmnx_networkx_introduction.ipynb`, and choose **Restart Kernel and Run All
+Cells**. Then repeat with `01_env39_load_canonical_graph.ipynb`. The first notebook
+is an offline conceptual introduction. The second resolves the latest successful
+canonical run, validates both graph representations, plots the physical network,
+and checks the Phase 7D GraphML round-trip without calculating morphology metrics.
+
+Without activating Conda, the deterministic alternatives are:
+
+```powershell
+conda run -n geogami-morphology python -m jupyter lab
+conda run -n geogami-morphology python -m ipykernel install --user --name geogami-morphology --display-name "GeoGami Morphology"
+```
+
+Verify the active environment and core versions with:
+
+```powershell
+python -c "import osmnx, networkx, jupyterlab, ipykernel, nbclient, nbformat; print(osmnx.__version__, networkx.__version__, jupyterlab.__version__, ipykernel.__version__, nbclient.__version__, nbformat.__version__)"
+```
+
+On Windows, if bare `python` unexpectedly opens Microsoft Store Python or resolves
+through `WindowsApps`, run `where python`. The expected interpreter path must belong
+to the `geogami-morphology` environment. Use `conda run -n geogami-morphology
+python ...` as the reliable fallback.
+
+Notebook 01 can be executed headlessly without overwriting its committed source:
+
+```powershell
+python -m jupyter nbconvert --execute --to notebook --ExecutePreprocessor.timeout=300 `
+  --output-dir results/notebooks `
+  --output 01_env39_load_canonical_graph.executed `
+  notebooks/01_env39_load_canonical_graph.ipynb
+```
