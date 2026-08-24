@@ -4,8 +4,10 @@ import copy
 import csv
 import json
 from pathlib import Path
+import shutil
 import sys
 import unittest
+import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
@@ -153,7 +155,21 @@ class Phase7HIntegratedResultsTests(unittest.TestCase):
     def test_20_publication_preserves_phase7f_and_phase7g(self):
         topology_before = directory_hashes(RUN_ROOT / "topology")
         geometry_before = directory_hashes(RUN_ROOT / "geometry")
-        integrate_results("env39", canonical_run=RUN_ID, project_root=ROOT, publish=True)
+        fixture_root = ROOT / "tests" / ".tmp" / f"phase7h-publish-{uuid.uuid4().hex}"
+        fixture_run = fixture_root / "env39" / RUN_ID
+        fixture_run.mkdir(parents=True)
+        shutil.copy2(RUN_ROOT / "analysis_graph_manifest.json", fixture_run / "analysis_graph_manifest.json")
+        shutil.copytree(RUN_ROOT / "topology", fixture_run / "topology")
+        shutil.copytree(RUN_ROOT / "geometry", fixture_run / "geometry")
+        try:
+            integrate_results(
+                "env39", canonical_run=RUN_ID, output_root=fixture_root,
+                project_root=ROOT, publish=True,
+            )
+            self.assertEqual(directory_hashes(fixture_run / "topology"), topology_before)
+            self.assertEqual(directory_hashes(fixture_run / "geometry"), geometry_before)
+        finally:
+            shutil.rmtree(fixture_root, ignore_errors=True)
         self.assertEqual(directory_hashes(RUN_ROOT / "topology"), topology_before)
         self.assertEqual(directory_hashes(RUN_ROOT / "geometry"), geometry_before)
 

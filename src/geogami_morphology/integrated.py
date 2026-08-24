@@ -250,12 +250,18 @@ def _baseline_markdown(selection: CanonicalSelection, core: tuple[dict[str, Any]
 
 def integrate_results(
     environment: str = "env39", *, canonical_run: str = "latest",
-    project_root: Path = PROJECT_ROOT, publish: bool = True,
+    canonical_path: Path | None = None, latest_path: Path | None = None,
+    output_root: Path | None = None, project_root: Path = PROJECT_ROOT,
+    publish: bool = True,
 ) -> IntegratedResult:
     """Verify accepted inputs, assemble classified results, and optionally publish Phase 7H."""
     root = Path(project_root).resolve()
-    selection = resolve_canonical_run(environment, canonical_run=canonical_run, project_root=root)
-    run_root = root / "results" / "analysis" / environment / selection.run_id
+    selection = resolve_canonical_run(
+        environment, canonical_run=canonical_run, canonical_path=canonical_path,
+        latest_path=latest_path, project_root=root,
+    )
+    chosen_output = Path(output_root).resolve() if output_root is not None else root / "results" / "analysis"
+    run_root = chosen_output / environment / selection.run_id
     topology_dir, geometry_dir = run_root / "topology", run_root / "geometry"
     topology_manifest_path = topology_dir / "topology_analysis_manifest.json"
     geometry_manifest_path = geometry_dir / "geometry_analysis_manifest.json"
@@ -301,7 +307,7 @@ def integrate_results(
         nodes, edges = load_canonical_geopackage(selection.canonical_path)
         canonical = validate_canonical_for_analysis(nodes, edges)
         (figures_dir / "canonical_physical_network.svg").write_text(
-            canonical_network_svg(canonical.nodes, canonical.edges, title="Canonical Env39 physical street network"),
+            canonical_network_svg(canonical.nodes, canonical.edges, title=f"Canonical {environment} physical street network"),
             encoding="utf-8", newline="\n",
         )
         topology_values = _summary_index(topology_summary, "topology summary")

@@ -1,5 +1,21 @@
 # GeoGami QGIS street morphology
 
+## Professor quick start
+
+1. Open `qgis/geogami_baselines.qgz` in QGIS.
+2. Edit only `data/editable/grid/env39_editable.gpkg`.
+3. Save all edits and close QGIS completely.
+4. From the repository root, run:
+
+```powershell
+conda activate geogami-morphology
+python scripts/run_full_analysis.py --environment env39 --input data/editable/grid/env39_editable.gpkg --mode preserve-topology
+```
+
+Optionally inspect the same analysis interactively with `python -m jupyter lab`.
+The complete installation, dry-run, troubleshooting, results, and recovery guide is
+in [`docs/professor_workflow.md`](docs/professor_workflow.md).
+
 ## Data editing boundary
 
 **FROZEN — DO NOT EDIT IN QGIS:**
