@@ -23,7 +23,7 @@ from .versioned import VersionedRunResult, git_provenance, run_versioned_canonic
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-WORKFLOW_SCHEMA_VERSION = "1.0.0"
+WORKFLOW_SCHEMA_VERSION = "2.0.0"
 SUPPORTED_MODE = "preserve-topology"
 LOCK_SUFFIXES = ("-wal", "-shm", "-journal")
 
@@ -52,6 +52,113 @@ class FullAnalysisResult:
     end_to_end_manifest_path: Path | None
     analysis_latest_path: Path
     manifest: dict[str, Any]
+
+
+@dataclass(frozen=True)
+class GitSnapshot:
+    """Immutable Git identity captured at one explicit workflow instant."""
+
+    repository: str | None
+    repository_root: str | None
+    remote_origin: str | None
+    branch: str | None
+    commit_sha: str | None
+    dirty: bool
+    changed_paths: tuple[str, ...]
+
+    def as_dict(self) -> dict[str, Any]:
+        return {
+            "repository": self.repository,
+            "repository_root": self.repository_root,
+            "remote_origin": self.remote_origin,
+            "branch": self.branch,
+            "commit_sha": self.commit_sha,
+            "dirty": self.dirty,
+            "changed_paths": list(self.changed_paths),
+        }
+
+
+def capture_git_snapshot(project_root: Path = PROJECT_ROOT) -> GitSnapshot:
+    """Capture Git provenance once and detach it from the mutable source mapping."""
+    value = git_provenance(Path(project_root).resolve())
+    return GitSnapshot(
+        repository=value.get("repository"),
+        repository_root=value.get("repository_root"),
+        remote_origin=value.get("remote_origin"),
+        branch=value.get("branch"),
+        commit_sha=value.get("commit_sha"),
+        dirty=bool(value.get("dirty")),
+        changed_paths=tuple(str(path).replace("\\", "/") for path in value.get("changed_paths", ())),
+    )
+
+
+def _repository_path(path: Path, project_root: Path) -> str | None:
+    try:
+        return Path(path).resolve(strict=False).relative_to(Path(project_root).resolve()).as_posix()
+    except ValueError:
+        return None
+
+
+def classify_workflow_provenance(
+    workflow_start_git: GitSnapshot,
+    workflow_end_git: GitSnapshot,
+    *,
+    allowed_generated_roots: tuple[str, ...],
+    allowed_generated_files: tuple[str, ...],
+    frozen_inputs_unchanged: bool = True,
+    editable_input_unchanged: bool = True,
+) -> dict[str, Any]:
+    """Classify post-run dirtiness without weakening the clean-start requirement."""
+    roots = tuple(path.strip("/").lower() for path in allowed_generated_roots if path)
+    files = {path.strip("/").lower() for path in allowed_generated_files if path}
+    allowed: list[str] = []
+    unexpected: list[str] = []
+    for original in workflow_end_git.changed_paths:
+        normalized = original.replace("\\", "/").strip("/")
+        lowered = normalized.lower()
+        if lowered in files or any(lowered == root or lowered.startswith(root + "/") for root in roots):
+            allowed.append(normalized)
+        else:
+            unexpected.append(normalized)
+    protected_source_prefixes = ("src/", "scripts/", "tests/", "notebooks/", "docs/")
+    source_names = {"readme.md", "environment.yml"}
+    source_code_unchanged = not any(
+        path.lower().startswith(protected_source_prefixes) or path.lower() in source_names
+        for path in unexpected
+    )
+    configuration_unchanged = not any(
+        path.lower().startswith("config/") or path.lower() == "environment.yml"
+        for path in unexpected
+    )
+    clean_start = (
+        not workflow_start_git.dirty
+        and not workflow_start_git.changed_paths
+        and workflow_start_git.commit_sha is not None
+    )
+    head_unchanged = (
+        workflow_start_git.commit_sha is not None
+        and workflow_start_git.commit_sha == workflow_end_git.commit_sha
+    )
+    branch_unchanged = workflow_start_git.branch == workflow_end_git.branch
+    only_expected = not unexpected
+    accepted = all((
+        clean_start, head_unchanged, branch_unchanged, source_code_unchanged,
+        configuration_unchanged, frozen_inputs_unchanged,
+        editable_input_unchanged, only_expected,
+    ))
+    return {
+        "clean_start": clean_start,
+        "head_unchanged": head_unchanged,
+        "branch_unchanged": branch_unchanged,
+        "source_code_unchanged": source_code_unchanged,
+        "configuration_unchanged": configuration_unchanged,
+        "frozen_inputs_unchanged": frozen_inputs_unchanged,
+        "editable_input_unchanged": editable_input_unchanged,
+        "only_expected_generated_changes": only_expected,
+        "allowed_generated_changes": allowed,
+        "unexpected_changes": unexpected,
+        "status": "PASS" if accepted else "FAIL",
+    }
 
 
 def _utc_text() -> str:
@@ -150,6 +257,31 @@ def _atomic_json(path: Path, value: dict[str, Any]) -> None:
             candidate.unlink()
 
 
+def _restore_pointer(path: Path, previous_bytes: bytes | None) -> None:
+    """Restore an analysis pointer after a final provenance rejection."""
+    path = Path(path)
+    if previous_bytes is None:
+        if path.exists():
+            path.unlink()
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    candidate = path.parent / f".{path.name}.{uuid.uuid4().hex}.rollback"
+    try:
+        candidate.write_bytes(previous_bytes)
+        os.replace(candidate, path)
+    finally:
+        if candidate.exists():
+            candidate.unlink()
+
+
+def _record_stage_workflow_start(
+    path: Path, document: dict[str, Any], workflow_start_git: GitSnapshot,
+) -> None:
+    """Add immutable entry provenance without replacing honest stage-time provenance."""
+    document["workflow_start_git"] = workflow_start_git.as_dict()
+    write_json(path, document)
+
+
 def _stage(number: int, name: str, action: Callable[[], Any], report: Callable[[str], None]) -> Any:
     report(f"[{number}/8] {name}")
     try:
@@ -167,7 +299,9 @@ def _verify_and_publish_summary(
     editable: dict[str, Any] | None, editable_path: Path | None,
     frozen_before: dict[str, str], graph: AnalysisBuildResult,
     topology: TopologyAnalysisResult, geometry: GeometryAnalysisResult,
-    integrated: IntegratedResult, metrics_config: Path, analysis_latest: Path,
+    integrated: IntegratedResult, metrics_config: Path,
+    canonical_latest: Path, analysis_latest: Path,
+    workflow_start_git: GitSnapshot,
 ) -> tuple[Path, dict[str, Any]]:
     run_id = selection.run_id
     stage_manifests = {
@@ -236,13 +370,15 @@ def _verify_and_publish_summary(
     end_manifest_path = graph.output_dir / "end_to_end_analysis_manifest.json"
     if end_manifest_path.exists():
         raise RuntimeError(f"End-to-end manifest already exists and will not be overwritten: {end_manifest_path}")
+    created_at = _utc_text()
     manifest = {
         "schema_version": WORKFLOW_SCHEMA_VERSION,
         "workflow": "professor_end_to_end_preserve_topology",
-        "final_status": "PASS",
-        "created_at_utc": _utc_text(),
+        "final_status": "PENDING_PROVENANCE",
+        "created_at_utc": created_at,
         "environment": environment,
         "canonical_run_id": run_id,
+        "workflow_start_git": workflow_start_git.as_dict(),
         "editable_source": None if editable is None else {
             "path": editable["path"],
             "file_sha256_before": editable["file_sha256"],
@@ -270,7 +406,6 @@ def _verify_and_publish_summary(
             "path": _display_path(metrics_config, project_root), "file_sha256": config_sha,
         },
         "frozen_baseline_guard": {"before": frozen_before, "after": frozen_after, "status": "PASS"},
-        "git_provenance": git_provenance(project_root),
         "software_environment": software_environment(),
         "principal_outputs": {
             "graphml": _display_path(graph.graphml_path, project_root),
@@ -291,9 +426,42 @@ def _verify_and_publish_summary(
         "integrated_results_path": _display_path(integrated.output_dir, project_root),
         "comparison_ready_metrics_path": _display_path(integrated.output_dir / "comparison_ready_metrics.csv", project_root),
         "analysis_manifest_path": _display_path(end_manifest_path, project_root),
-        "created_at_utc": manifest["created_at_utc"],
+        "created_at_utc": created_at,
     }
+    previous_pointer = analysis_latest.read_bytes() if analysis_latest.is_file() else None
     _atomic_json(analysis_latest, pointer)
+    try:
+        workflow_end_git = capture_git_snapshot(project_root)
+        canonical_root = _repository_path(selection.canonical_path.parent, project_root)
+        analysis_root = _repository_path(graph.output_dir, project_root)
+        canonical_pointer = _repository_path(canonical_latest, project_root)
+        analysis_pointer = _repository_path(analysis_latest, project_root)
+        provenance_acceptance = classify_workflow_provenance(
+            workflow_start_git,
+            workflow_end_git,
+            allowed_generated_roots=tuple(
+                path for path in (canonical_root, analysis_root) if path is not None
+            ),
+            allowed_generated_files=tuple(
+                path for path in (canonical_pointer, analysis_pointer) if path is not None
+            ),
+            frozen_inputs_unchanged=frozen_after == frozen_before,
+            editable_input_unchanged=(editable is None or after == editable["file_sha256"]),
+        )
+        manifest["workflow_end_git"] = workflow_end_git.as_dict()
+        manifest["provenance_acceptance"] = provenance_acceptance
+        if provenance_acceptance["status"] != "PASS":
+            manifest["final_status"] = "FAIL_PROVENANCE"
+            write_json(end_manifest_path, manifest)
+            raise RuntimeError(
+                "Workflow provenance acceptance failed: "
+                f"{provenance_acceptance}"
+            )
+        manifest["final_status"] = "PASS"
+        write_json(end_manifest_path, manifest)
+    except Exception:
+        _restore_pointer(analysis_latest, previous_pointer)
+        raise
     return end_manifest_path, manifest
 
 
@@ -308,6 +476,18 @@ def run_full_analysis(
 ) -> FullAnalysisResult:
     """Run or plan the strictly gated Phase 7B-through-7H workflow."""
     root = Path(project_root).resolve()
+    workflow_start_git = capture_git_snapshot(root)
+    if (
+        workflow_start_git.dirty
+        or workflow_start_git.changed_paths
+        or workflow_start_git.commit_sha is None
+    ):
+        changed = ", ".join(workflow_start_git.changed_paths) or "Git identity unavailable"
+        raise WorkflowError(
+            0,
+            "Clean-start Git provenance",
+            f"Workflow requires a clean committed repository before execution. Changed paths: {changed}",
+        )
     if not re.fullmatch(r"[A-Za-z0-9_-]+", environment):
         raise WorkflowError(2, "Editable input validation", "Environment must use letters, digits, underscore, or hyphen.")
     if mode != SUPPORTED_MODE:
@@ -382,30 +562,53 @@ def run_full_analysis(
         f"{identity.get('node_count')} / {identity.get('physical_edge_count')} / {identity.get('component_count')}"
     )
     reporter("")
-    graph = _stage(4, "NetworkX / OSMnx graph build", lambda: build_analysis_graphs(
-        environment, canonical_path=selection.canonical_path,
-        output_root=analysis_output, project_root=root,
-    ), reporter)
+    def graph_stage() -> AnalysisBuildResult:
+        result = build_analysis_graphs(
+            environment, canonical_path=selection.canonical_path,
+            output_root=analysis_output, project_root=root,
+        )
+        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git)
+        return result
+
+    graph = _stage(4, "NetworkX / OSMnx graph build", graph_stage, reporter)
     reporter(f"NetworkX: {graph.networkx_graph.number_of_nodes()} nodes / {graph.networkx_graph.number_of_edges()} physical streets")
     reporter(f"OSMnx: {graph.osmnx_graph.number_of_nodes()} nodes / {graph.osmnx_graph.number_of_edges()} directed arcs / {graph.networkx_graph.number_of_edges()} physical streets")
     reporter("")
-    topology = _stage(5, "Topology metrics", lambda: analyze_topology(
-        environment, canonical_path=selection.canonical_path, config_path=config,
-        output_root=analysis_output, project_root=root, publish=True,
-    ), reporter)
-    geometry = _stage(6, "Geometry / orientation metrics", lambda: analyze_geometry(
-        environment, canonical_path=selection.canonical_path, config_path=config,
-        output_root=analysis_output, project_root=root, publish=True,
-    ), reporter)
-    integrated = _stage(7, "Integrated results", lambda: integrate_results(
-        environment, canonical_path=selection.canonical_path,
-        output_root=analysis_output, project_root=root, publish=True,
-    ), reporter)
+    def topology_stage() -> TopologyAnalysisResult:
+        result = analyze_topology(
+            environment, canonical_path=selection.canonical_path, config_path=config,
+            output_root=analysis_output, project_root=root, publish=True,
+        )
+        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git)
+        return result
+
+    topology = _stage(5, "Topology metrics", topology_stage, reporter)
+
+    def geometry_stage() -> GeometryAnalysisResult:
+        result = analyze_geometry(
+            environment, canonical_path=selection.canonical_path, config_path=config,
+            output_root=analysis_output, project_root=root, publish=True,
+        )
+        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git)
+        return result
+
+    geometry = _stage(6, "Geometry / orientation metrics", geometry_stage, reporter)
+
+    def integrated_stage() -> IntegratedResult:
+        result = integrate_results(
+            environment, canonical_path=selection.canonical_path,
+            output_root=analysis_output, project_root=root, publish=True,
+        )
+        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git)
+        return result
+
+    integrated = _stage(7, "Integrated results", integrated_stage, reporter)
     end_manifest_path, manifest = _stage(8, "Final cross-stage verification", lambda: _verify_and_publish_summary(
         project_root=root, environment=environment, selection=selection,
         editable=editable, editable_path=selected_input, frozen_before=frozen_before,
         graph=graph, topology=topology, geometry=geometry, integrated=integrated,
-        metrics_config=config, analysis_latest=analysis_pointer,
+        metrics_config=config, canonical_latest=canonical_pointer,
+        analysis_latest=analysis_pointer, workflow_start_git=workflow_start_git,
     ), reporter)
     if verbose:
         reporter(f"Canonical SHA-256: {selection.file_sha256}")

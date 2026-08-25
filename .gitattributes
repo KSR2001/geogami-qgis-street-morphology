@@ -1,0 +1,22 @@
+# Keep repository text bytes deterministic on every platform. Git's text
+# detection remains active, but text files are always checked out with LF.
+* text=auto eol=lf
+
+# Research artifacts and human-authored source/configuration formats.
+*.csv text eol=lf
+*.graphml text eol=lf
+*.ipynb text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.svg text eol=lf
+*.txt text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# Binary containers and raster assets must never undergo EOL conversion.
+*.gpkg -text
+*.jpg -text
+*.jpeg -text
+*.png -text
+*.qgz -text

@@ -148,6 +148,23 @@ The command is strictly gated:
 stops the command immediately; downstream stages are not run and the process exits
 non-zero. A failed or incomplete analysis never updates the analysis latest pointer.
 
+The clean-Git requirement applies at workflow entry: committed code, configuration,
+documentation, notebooks, tests, frozen inputs, and the selected editable GeoPackage
+must have no uncommitted change when execution starts. The end-to-end manifest records
+this immutable `workflow_start_git` snapshot separately from `workflow_end_git`.
+Versioned canonical and analysis artifacts may legitimately make the post-run tree
+dirty when those research outputs are tracked. They are accepted only when every
+changed path belongs to the actual new run or its two latest pointers; any unexpected
+source, configuration, frozen-input, or editable-input change still fails final
+verification.
+
+Repository text bytes are governed by `.gitattributes`: source, configuration,
+notebook, documentation, GraphML, SVG, and tabular research artifacts use LF on every
+platform, including Windows installations with `core.autocrlf=true`. GeoPackages, QGIS
+projects, and raster images are explicitly binary and are never subject to line-ending
+conversion. Artifact SHA-256 values continue to identify exact file bytes; validation
+does not normalize content while hashing.
+
 ## 13. Where results are stored
 
 Canonical publication:

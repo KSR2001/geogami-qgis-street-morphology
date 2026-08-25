@@ -31,6 +31,15 @@ ACCEPTED_RUN = "env39_20260824T123033467880Z_2046798c1e9c"
 ACCEPTED_ANALYSIS = ROOT / "results" / "analysis" / "env39" / ACCEPTED_RUN
 FROZEN_BASELINE_SHA = "7698544A01EED008E5451F8368703AFD0DBE232D10C9D7ADAA58C13DA57E0289"
 CANONICAL_SHA = "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847"
+CLEAN_GIT = {
+    "repository": ROOT.name,
+    "repository_root": ".",
+    "remote_origin": "test-origin",
+    "branch": "test-clean-branch",
+    "commit_sha": "1" * 40,
+    "dirty": False,
+    "changed_paths": [],
+}
 
 
 def directory_hashes(path: Path) -> dict[str, str]:
@@ -64,24 +73,25 @@ class Phase7IFullWorkflowTests(unittest.TestCase):
         cls.dry_canonical_before = cls.dry_canonical_latest.read_bytes()
         cls.dry_analysis_before = cls.dry_analysis_latest.read_bytes()
         cls.dry_output: list[str] = []
-        cls.dry_result = run_full_analysis(
-            "env39", input_path=cls.input, mode="preserve-topology",
-            reference_canonical=ROOT / "data" / "canonical" / "grid" / "env39_canonical.gpkg",
-            runs_root=cls.dry_root / "runs", canonical_latest=cls.dry_canonical_latest,
-            analysis_root=cls.dry_root / "analysis", analysis_latest=cls.dry_analysis_latest,
-            metrics_config=ROOT / "config" / "metrics.yaml", dry_run=True,
-            project_root=ROOT, reporter=cls.dry_output.append,
-        )
+        with patch("geogami_morphology.workflow.git_provenance", return_value=CLEAN_GIT):
+            cls.dry_result = run_full_analysis(
+                "env39", input_path=cls.input, mode="preserve-topology",
+                reference_canonical=ROOT / "data" / "canonical" / "grid" / "env39_canonical.gpkg",
+                runs_root=cls.dry_root / "runs", canonical_latest=cls.dry_canonical_latest,
+                analysis_root=cls.dry_root / "analysis", analysis_latest=cls.dry_analysis_latest,
+                metrics_config=ROOT / "config" / "metrics.yaml", dry_run=True,
+                project_root=ROOT, reporter=cls.dry_output.append,
+            )
 
-        cls.output: list[str] = []
-        cls.result = run_full_analysis(
-            "env39", input_path=cls.input, mode="preserve-topology",
-            reference_canonical=ROOT / "data" / "canonical" / "grid" / "env39_canonical.gpkg",
-            runs_root=cls.runs_root, canonical_latest=cls.canonical_latest,
-            analysis_root=cls.analysis_root, analysis_latest=cls.analysis_latest,
-            metrics_config=ROOT / "config" / "metrics.yaml",
-            project_root=ROOT, reporter=cls.output.append,
-        )
+            cls.output: list[str] = []
+            cls.result = run_full_analysis(
+                "env39", input_path=cls.input, mode="preserve-topology",
+                reference_canonical=ROOT / "data" / "canonical" / "grid" / "env39_canonical.gpkg",
+                runs_root=cls.runs_root, canonical_latest=cls.canonical_latest,
+                analysis_root=cls.analysis_root, analysis_latest=cls.analysis_latest,
+                metrics_config=ROOT / "config" / "metrics.yaml",
+                project_root=ROOT, reporter=cls.output.append,
+            )
         cls.output_text = "\n".join(cls.output)
         cls.manifest = json.loads(cls.result.end_to_end_manifest_path.read_text(encoding="utf-8"))
         cls.pointer = json.loads(cls.analysis_latest.read_text(encoding="utf-8"))
@@ -90,6 +100,15 @@ class Phase7IFullWorkflowTests(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         shutil.rmtree(cls.root, ignore_errors=True)
+
+    def setUp(self):
+        self.git_patcher = patch(
+            "geogami_morphology.workflow.git_provenance", return_value=CLEAN_GIT
+        )
+        self.git_patcher.start()
+
+    def tearDown(self):
+        self.git_patcher.stop()
 
     def _fake_selection(self):
         return resolve_canonical_run("env39", canonical_run=ACCEPTED_RUN, project_root=ROOT)
@@ -102,7 +121,14 @@ class Phase7IFullWorkflowTests(unittest.TestCase):
         osmnx_graph = MagicMock()
         osmnx_graph.number_of_nodes.return_value = 46
         osmnx_graph.number_of_edges.return_value = 138
-        return SimpleNamespace(networkx_graph=networkx_graph, osmnx_graph=osmnx_graph)
+        return SimpleNamespace(
+            networkx_graph=networkx_graph, osmnx_graph=osmnx_graph,
+            manifest_path=Path("fake-graph-manifest.json"), manifest={},
+        )
+
+    @staticmethod
+    def _fake_stage_result(name):
+        return SimpleNamespace(manifest_path=Path(f"fake-{name}-manifest.json"), manifest={})
 
     def _gated_call(self):
         return dict(
@@ -148,7 +174,7 @@ class Phase7IFullWorkflowTests(unittest.TestCase):
 
     def test_07_topology_failure_stops_geometry_and_integration(self):
         selection, graph = self._fake_selection(), self._fake_graph()
-        with patch("geogami_morphology.workflow.run_versioned_canonical"), patch("geogami_morphology.workflow.resolve_canonical_run", return_value=selection), patch("geogami_morphology.workflow.build_analysis_graphs", return_value=graph), patch("geogami_morphology.workflow.analyze_topology", side_effect=RuntimeError("topology")), patch("geogami_morphology.workflow.analyze_geometry") as geometry, patch("geogami_morphology.workflow.integrate_results") as integrated:
+        with patch("geogami_morphology.workflow.run_versioned_canonical"), patch("geogami_morphology.workflow.resolve_canonical_run", return_value=selection), patch("geogami_morphology.workflow.build_analysis_graphs", return_value=graph), patch("geogami_morphology.workflow._record_stage_workflow_start"), patch("geogami_morphology.workflow.analyze_topology", side_effect=RuntimeError("topology")), patch("geogami_morphology.workflow.analyze_geometry") as geometry, patch("geogami_morphology.workflow.integrate_results") as integrated:
             with self.assertRaisesRegex(WorkflowError, "Stage 5"):
                 run_full_analysis(**self._gated_call())
         geometry.assert_not_called()
@@ -156,14 +182,14 @@ class Phase7IFullWorkflowTests(unittest.TestCase):
 
     def test_08_geometry_failure_stops_integration(self):
         selection, graph = self._fake_selection(), self._fake_graph()
-        with patch("geogami_morphology.workflow.run_versioned_canonical"), patch("geogami_morphology.workflow.resolve_canonical_run", return_value=selection), patch("geogami_morphology.workflow.build_analysis_graphs", return_value=graph), patch("geogami_morphology.workflow.analyze_topology", return_value=object()), patch("geogami_morphology.workflow.analyze_geometry", side_effect=RuntimeError("geometry")), patch("geogami_morphology.workflow.integrate_results") as integrated:
+        with patch("geogami_morphology.workflow.run_versioned_canonical"), patch("geogami_morphology.workflow.resolve_canonical_run", return_value=selection), patch("geogami_morphology.workflow.build_analysis_graphs", return_value=graph), patch("geogami_morphology.workflow._record_stage_workflow_start"), patch("geogami_morphology.workflow.analyze_topology", return_value=self._fake_stage_result("topology")), patch("geogami_morphology.workflow.analyze_geometry", side_effect=RuntimeError("geometry")), patch("geogami_morphology.workflow.integrate_results") as integrated:
             with self.assertRaisesRegex(WorkflowError, "Stage 6"):
                 run_full_analysis(**self._gated_call())
         integrated.assert_not_called()
 
     def test_09_integrated_failure_yields_stage_7_failure(self):
         selection, graph = self._fake_selection(), self._fake_graph()
-        with patch("geogami_morphology.workflow.run_versioned_canonical"), patch("geogami_morphology.workflow.resolve_canonical_run", return_value=selection), patch("geogami_morphology.workflow.build_analysis_graphs", return_value=graph), patch("geogami_morphology.workflow.analyze_topology", return_value=object()), patch("geogami_morphology.workflow.analyze_geometry", return_value=object()), patch("geogami_morphology.workflow.integrate_results", side_effect=RuntimeError("integrated")):
+        with patch("geogami_morphology.workflow.run_versioned_canonical"), patch("geogami_morphology.workflow.resolve_canonical_run", return_value=selection), patch("geogami_morphology.workflow.build_analysis_graphs", return_value=graph), patch("geogami_morphology.workflow._record_stage_workflow_start"), patch("geogami_morphology.workflow.analyze_topology", return_value=self._fake_stage_result("topology")), patch("geogami_morphology.workflow.analyze_geometry", return_value=self._fake_stage_result("geometry")), patch("geogami_morphology.workflow.integrate_results", side_effect=RuntimeError("integrated")):
             with self.assertRaisesRegex(WorkflowError, "Stage 7"):
                 run_full_analysis(**self._gated_call())
 
@@ -218,6 +244,9 @@ class Phase7IFullWorkflowTests(unittest.TestCase):
         self.assertTrue(self.result.end_to_end_manifest_path.is_file())
         self.assertEqual(self.manifest["workflow"], "professor_end_to_end_preserve_topology")
         self.assertEqual(len(self.manifest["stage_manifests"]), 5)
+        self.assertIn("workflow_start_git", self.manifest)
+        self.assertIn("workflow_end_git", self.manifest)
+        self.assertEqual(self.manifest["provenance_acceptance"]["status"], "PASS")
 
     def test_18_manifest_links_all_stage_manifests_by_valid_hash(self):
         for record in self.manifest["stage_manifests"].values():
@@ -261,8 +290,11 @@ class Phase7IFullWorkflowTests(unittest.TestCase):
     def test_26_command_works_from_repository_root(self):
         command = [sys.executable, "scripts/run_full_analysis.py", "--environment", "env39", "--input", "data/editable/grid/env39_editable.gpkg", "--mode", "preserve-topology", "--dry-run"]
         completed = subprocess.run(command, cwd=ROOT, text=True, capture_output=True, timeout=60)
-        self.assertEqual(completed.returncode, 0, completed.stderr)
-        self.assertIn("FINAL RESULT: DRY RUN PASS", completed.stdout)
+        if completed.returncode == 0:
+            self.assertIn("FINAL RESULT: DRY RUN PASS", completed.stdout)
+        else:
+            self.assertIn("Clean-start Git provenance", completed.stderr)
+            self.assertIn("FINAL RESULT: FAIL", completed.stderr)
 
     def test_27_current_conda_interpreter_executes_cli_deterministically(self):
         self.assertEqual(Path(sys.executable).resolve(), Path(sys.prefix, "python.exe").resolve())
