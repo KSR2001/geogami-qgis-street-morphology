@@ -1,0 +1,2619 @@
+{
+  "comparison_id": "env38_vs_env39_20260825T165714757859Z_03e06d7804d1",
+  "comparison_metric_count": 39,
+  "comparison_metrics": [
+    {
+      "absolute_difference": 0.1327906649018531,
+      "comparison_role": "geometry_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "1.2696740110613949",
+      "env39_value": "1.402464675963248",
+      "interpretation_note": "Env38 is lower for this dimensionless planar geometry descriptor.",
+      "library_or_method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.maximum_edge_circuity",
+      "metric_label": "Maximum edge circuity",
+      "metric_tier": "supplementary",
+      "population": "positive-chord physical edges",
+      "relative_difference_percent": -9.468378575071712,
+      "signed_difference_env38_minus_env39": -0.1327906649018531,
+      "unit": "ratio",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 169.4751476105643,
+      "comparison_role": "geometry_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "505.5201047999172",
+      "env39_value": "674.9952524104815",
+      "interpretation_note": "Env38 is lower for this planar geometry descriptor in GeoGami local units.",
+      "library_or_method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.maximum_edge_length",
+      "metric_label": "Maximum physical-edge length",
+      "metric_tier": "supplementary",
+      "population": "physical canonical edges",
+      "relative_difference_percent": -25.107605869130207,
+      "signed_difference_env38_minus_env39": -169.4751476105643,
+      "unit": "local units",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.02535263600242854,
+      "comparison_role": "geometry_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "1.0364975857178171",
+      "env39_value": "1.0111449497153886",
+      "interpretation_note": "Env38 is greater for this dimensionless planar geometry descriptor.",
+      "library_or_method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.mean_edge_circuity",
+      "metric_label": "Mean edge circuity",
+      "metric_tier": "core",
+      "population": "positive-chord physical edges",
+      "relative_difference_percent": 2.507319648836169,
+      "signed_difference_env38_minus_env39": 0.02535263600242854,
+      "unit": "ratio",
+      "weighting": "equal observation"
+    },
+    {
+      "absolute_difference": 6.568066996974011,
+      "comparison_role": "geometry_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "165.20078701368584",
+      "env39_value": "158.63272001671183",
+      "interpretation_note": "Env38 is greater for this planar geometry descriptor in GeoGami local units.",
+      "library_or_method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.mean_edge_length",
+      "metric_label": "Mean physical-edge length",
+      "metric_tier": "core",
+      "population": "physical canonical edges",
+      "relative_difference_percent": 4.140423864813054,
+      "signed_difference_env38_minus_env39": 6.568066996974011,
+      "unit": "local units",
+      "weighting": "equal observation"
+    },
+    {
+      "absolute_difference": 0.013974468703938259,
+      "comparison_role": "geometry_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "1.0139744687039383",
+      "env39_value": "1.0",
+      "interpretation_note": "Env38 is greater for this dimensionless planar geometry descriptor.",
+      "library_or_method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.median_edge_circuity",
+      "metric_label": "Median edge circuity",
+      "metric_tier": "supplementary",
+      "population": "positive-chord physical edges",
+      "relative_difference_percent": 1.3974468703938259,
+      "signed_difference_env38_minus_env39": 0.013974468703938259,
+      "unit": "ratio",
+      "weighting": "equal observation"
+    },
+    {
+      "absolute_difference": 12.430379908186296,
+      "comparison_role": "geometry_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "143.4478602096824",
+      "env39_value": "131.0174803014961",
+      "interpretation_note": "Env38 is greater for this planar geometry descriptor in GeoGami local units.",
+      "library_or_method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.median_edge_length",
+      "metric_label": "Median physical-edge length",
+      "metric_tier": "supplementary",
+      "population": "physical canonical edges",
+      "relative_difference_percent": 9.487573627260753,
+      "signed_difference_env38_minus_env39": 12.430379908186296,
+      "unit": "local units",
+      "weighting": "equal observation"
+    },
+    {
+      "absolute_difference": 0.016250419107800118,
+      "comparison_role": "geometry_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "1.038846945394489",
+      "env39_value": "1.022596526286689",
+      "interpretation_note": "Env38 is greater for this dimensionless planar geometry descriptor.",
+      "library_or_method": "sum(L_i) / sum(D_i)",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.network_circuity",
+      "metric_label": "Network circuity",
+      "metric_tier": "core",
+      "population": "positive-chord physical edges",
+      "relative_difference_percent": 1.5891330246162256,
+      "signed_difference_env38_minus_env39": 0.016250419107800118,
+      "unit": "ratio",
+      "weighting": "aggregate length ratio"
+    },
+    {
+      "absolute_difference": 102.0,
+      "comparison_role": "context_only",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "178",
+      "env39_value": "76",
+      "interpretation_note": "Env38 is greater for this dimensionless planar geometry descriptor.",
+      "library_or_method": "positive consecutive coordinate pairs",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.segment_count",
+      "metric_label": "Geometry segment count",
+      "metric_tier": "supplementary",
+      "population": "LineString geometry segments",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 102.0,
+      "unit": "segments",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 453.1966227912071,
+      "comparison_role": "geometry_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "11398.854303944323",
+      "env39_value": "10945.657681153116",
+      "interpretation_note": "Env38 is greater for this planar geometry descriptor in GeoGami local units.",
+      "library_or_method": "math.fsum",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.total_length",
+      "metric_label": "Total physical network length",
+      "metric_tier": "core",
+      "population": "physical canonical edges",
+      "relative_difference_percent": 4.140423864813058,
+      "signed_difference_env38_minus_env39": 453.1966227912071,
+      "unit": "local units",
+      "weighting": "unweighted sum"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "context_only",
+      "comparison_status": "DESCRIPTIVE_MATCH",
+      "env38_value": "0",
+      "env39_value": "0",
+      "interpretation_note": "The stored descriptive values are equal under the accepted shared methodology.",
+      "library_or_method": "D <= configured tolerance",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.zero_chord_edge_count",
+      "metric_label": "Zero-chord edge count",
+      "metric_tier": "supplementary",
+      "population": "physical canonical edges",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "physical streets",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 2.8746798468772568,
+      "comparison_role": "geometry_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "721.4252938680377",
+      "env39_value": "724.2999737149149",
+      "interpretation_note": "Env38 is lower; equal topology isolates a difference in local geometry-based edge costs.",
+      "library_or_method": "NetworkX: average_shortest_path_length",
+      "metric_family": "geometry_weighted_network",
+      "metric_id": "network_weighted.mean_shortest_path_length",
+      "metric_label": "Mean weighted shortest-path length",
+      "metric_tier": "core",
+      "population": "unordered canonical-node pairs",
+      "relative_difference_percent": -0.3968907843711635,
+      "signed_difference_env38_minus_env39": -2.8746798468772568,
+      "unit": "local units",
+      "weighting": "weight = length"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "context_only",
+      "comparison_status": "DESCRIPTIVE_MATCH",
+      "env38_value": "36",
+      "env39_value": "36",
+      "interpretation_note": "The stored descriptive values are equal under the accepted shared methodology.",
+      "library_or_method": "180 / configured bin width",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.bin_count",
+      "metric_label": "Orientation-bin count",
+      "metric_tier": "supplementary",
+      "population": "both axial distributions",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "bins",
+      "weighting": "not applicable"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "context_only",
+      "comparison_status": "DESCRIPTIVE_MATCH",
+      "env38_value": "5.0",
+      "env39_value": "5.0",
+      "interpretation_note": "The stored descriptive values are equal under the accepted shared methodology.",
+      "library_or_method": "180 / bins",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.bin_width_degrees",
+      "metric_label": "Orientation-bin width",
+      "metric_tier": "supplementary",
+      "population": "both axial distributions",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "degrees",
+      "weighting": "not applicable"
+    },
+    {
+      "absolute_difference": 2.1574339076963494,
+      "comparison_role": "orientation_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "2.9808051798049027",
+      "env39_value": "0.8233712721085531",
+      "interpretation_note": "Env38 is greater for this directional morphology descriptor; no navigation claim is implied.",
+      "library_or_method": "-sum(p_i * ln(p_i))",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.chord_entropy",
+      "metric_label": "Chord orientation entropy",
+      "metric_tier": "core",
+      "population": "36-bin chord orientations",
+      "relative_difference_percent": 262.0244330569641,
+      "signed_difference_env38_minus_env39": 2.1574339076963494,
+      "unit": "nats",
+      "weighting": "equal physical edge"
+    },
+    {
+      "absolute_difference": 0.6020433949836577,
+      "comparison_role": "orientation_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "0.8318095232640588",
+      "env39_value": "0.22976612828040105",
+      "interpretation_note": "Env38 is greater for this directional morphology descriptor; no navigation claim is implied.",
+      "library_or_method": "H / ln(number_of_bins)",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.chord_entropy_normalized",
+      "metric_label": "Normalized chord orientation entropy",
+      "metric_tier": "core",
+      "population": "36-bin chord orientations",
+      "relative_difference_percent": 262.0244330569641,
+      "signed_difference_env38_minus_env39": 0.6020433949836577,
+      "unit": "proportion",
+      "weighting": "equal physical edge"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "context_only",
+      "comparison_status": "DESCRIPTIVE_MATCH",
+      "env38_value": "69",
+      "env39_value": "69",
+      "interpretation_note": "The stored descriptive values are equal under the accepted shared methodology.",
+      "library_or_method": "one chord orientation per eligible edge",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.chord_observation_count",
+      "metric_label": "Chord-orientation observations",
+      "metric_tier": "supplementary",
+      "population": "positive-chord physical edges",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "physical streets",
+      "weighting": "equal physical edge"
+    },
+    {
+      "absolute_difference": 0.37239989542109575,
+      "comparison_role": "orientation_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "0.5787070314167302",
+      "env39_value": "0.9511069268378259",
+      "interpretation_note": "Env38 is lower for this directional morphology descriptor; no navigation claim is implied.",
+      "library_or_method": "|sum(w*exp(i*4*theta))/sum(w)|",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.phi_chord",
+      "metric_label": "Fourfold order, chords",
+      "metric_tier": "core",
+      "population": "positive-chord physical edges",
+      "relative_difference_percent": -39.154366865902766,
+      "signed_difference_env38_minus_env39": -0.37239989542109575,
+      "unit": "proportion",
+      "weighting": "equal physical edge"
+    },
+    {
+      "absolute_difference": 0.5562708899219103,
+      "comparison_role": "orientation_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "0.4437291100780897",
+      "env39_value": "1.0",
+      "interpretation_note": "Env38 is lower for this directional morphology descriptor; no navigation claim is implied.",
+      "library_or_method": "|sum(w*exp(i*4*theta))/sum(w)|",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.phi_segment_length_weighted",
+      "metric_label": "Fourfold order, length-weighted segments",
+      "metric_tier": "core",
+      "population": "positive LineString geometry segments",
+      "relative_difference_percent": -55.627088992191034,
+      "signed_difference_env38_minus_env39": -0.5562708899219103,
+      "unit": "proportion",
+      "weighting": "segment_length_local"
+    },
+    {
+      "absolute_difference": 2.5373594966906827,
+      "comparison_role": "orientation_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "3.2269625103808837",
+      "env39_value": "0.6896030136902007",
+      "interpretation_note": "Env38 is greater for this directional morphology descriptor; no navigation claim is implied.",
+      "library_or_method": "-sum(p_i * ln(p_i))",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.segment_entropy_length_weighted",
+      "metric_label": "Segment-length-weighted orientation entropy",
+      "metric_tier": "core",
+      "population": "36-bin geometry-segment orientations",
+      "relative_difference_percent": 367.9449547519776,
+      "signed_difference_env38_minus_env39": 2.5373594966906827,
+      "unit": "nats",
+      "weighting": "segment_length_local"
+    },
+    {
+      "absolute_difference": 0.7080636492418972,
+      "comparison_role": "orientation_sensitive",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "0.9005010342630304",
+      "env39_value": "0.19243738502113314",
+      "interpretation_note": "Env38 is greater for this directional morphology descriptor; no navigation claim is implied.",
+      "library_or_method": "H / ln(number_of_bins)",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.segment_entropy_length_weighted_normalized",
+      "metric_label": "Normalized segment-length-weighted entropy",
+      "metric_tier": "core",
+      "population": "36-bin geometry-segment orientations",
+      "relative_difference_percent": 367.9449547519776,
+      "signed_difference_env38_minus_env39": 0.7080636492418972,
+      "unit": "proportion",
+      "weighting": "segment_length_local"
+    },
+    {
+      "absolute_difference": 102.0,
+      "comparison_role": "context_only",
+      "comparison_status": "DESCRIPTIVE_DIFFERENCE",
+      "env38_value": "178",
+      "env39_value": "76",
+      "interpretation_note": "Env38 is greater for this directional morphology descriptor; no navigation claim is implied.",
+      "library_or_method": "one orientation per positive geometry segment",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.segment_observation_count",
+      "metric_label": "Segment-orientation observations",
+      "metric_tier": "supplementary",
+      "population": "LineString geometry segments",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 102.0,
+      "unit": "segments",
+      "weighting": "segment length"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "9",
+      "env39_value": "9",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: articulation_points",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.articulation_point_count",
+      "metric_label": "Articulation-point count",
+      "metric_tier": "supplementary",
+      "population": "canonical nodes",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "nodes",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "10",
+      "env39_value": "10",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: bridges",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.bridge_count",
+      "metric_label": "Bridge count",
+      "metric_tier": "supplementary",
+      "population": "simple physical graph edges",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "physical streets",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "1",
+      "env39_value": "1",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: number_connected_components",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.component_count",
+      "metric_label": "Connected components",
+      "metric_tier": "core",
+      "population": "physical graph",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "components",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "24",
+      "env39_value": "24",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "custom: E - V + C",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.cycle_rank",
+      "metric_label": "Cycle rank",
+      "metric_tier": "core",
+      "population": "physical graph",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "independent cycles",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "0.21739130434782608",
+      "env39_value": "0.21739130434782608",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "custom: degree == 1",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.dead_end_proportion",
+      "metric_label": "Dead-end proportion",
+      "metric_tier": "core",
+      "population": "canonical nodes",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "proportion",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "0.34782608695652173",
+      "env39_value": "0.34782608695652173",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "custom: degree == 3",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.degree_3_proportion",
+      "metric_label": "Degree-3 node proportion",
+      "metric_tier": "core",
+      "population": "canonical nodes",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "proportion",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "0.43478260869565216",
+      "env39_value": "0.43478260869565216",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "custom: degree == 4",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.degree_4_proportion",
+      "metric_label": "Degree-4 node proportion",
+      "metric_tier": "core",
+      "population": "canonical nodes",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "proportion",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "10",
+      "env39_value": "10",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: diameter",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.diameter_hops",
+      "metric_label": "Diameter in hops",
+      "metric_tier": "supplementary",
+      "population": "physical graph",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "hops",
+      "weighting": "edge cost = 1"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "1",
+      "env39_value": "1",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: edge_connectivity",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.edge_connectivity",
+      "metric_label": "Edge connectivity",
+      "metric_tier": "supplementary",
+      "population": "physical graph",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "physical streets",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": null,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "True",
+      "env39_value": "True",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: is_connected",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.is_connected",
+      "metric_label": "Graph is connected",
+      "metric_tier": "supplementary",
+      "population": "physical graph",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": null,
+      "unit": "boolean",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "3.0",
+      "env39_value": "3.0",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "Python: statistics.mean",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.mean_degree",
+      "metric_label": "Mean physical-node degree",
+      "metric_tier": "core",
+      "population": "canonical nodes",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "physical streets per node",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "4.308212560386473",
+      "env39_value": "4.308212560386473",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: average_shortest_path_length",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.mean_shortest_path_hops",
+      "metric_label": "Mean shortest-path hops",
+      "metric_tier": "supplementary",
+      "population": "unordered canonical-node pairs",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "hops",
+      "weighting": "edge cost = 1"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "1",
+      "env39_value": "1",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: node_connectivity",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.node_connectivity",
+      "metric_label": "Node connectivity",
+      "metric_tier": "supplementary",
+      "population": "physical graph",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "nodes",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "46",
+      "env39_value": "46",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: Graph.number_of_nodes",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.node_count",
+      "metric_label": "Canonical nodes",
+      "metric_tier": "core",
+      "population": "canonical nodes",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "nodes",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "0",
+      "env39_value": "0",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "custom: parallel_physical_edge_count",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.parallel_edge_count",
+      "metric_label": "Parallel physical-edge count",
+      "metric_tier": "supplementary",
+      "population": "undirected physical edges",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "physical streets beyond first per pair",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "69",
+      "env39_value": "69",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: Graph.number_of_edges",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.physical_edge_count",
+      "metric_label": "Physical canonical edges",
+      "metric_tier": "core",
+      "population": "undirected physical edges",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "physical streets",
+      "weighting": "unweighted"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "6",
+      "env39_value": "6",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: radius",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.radius_hops",
+      "metric_label": "Radius in hops",
+      "metric_tier": "supplementary",
+      "population": "physical graph",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "hops",
+      "weighting": "edge cost = 1"
+    },
+    {
+      "absolute_difference": 0.0,
+      "comparison_role": "topology_control",
+      "comparison_status": "CONTROL_MATCH",
+      "env38_value": "0",
+      "env39_value": "0",
+      "interpretation_note": "Expected equality confirms the controlled graph topology; it does not imply equal morphology.",
+      "library_or_method": "NetworkX: number_of_selfloops",
+      "metric_family": "topology_controlled",
+      "metric_id": "topology.self_loop_count",
+      "metric_label": "Self-loop count",
+      "metric_tier": "supplementary",
+      "population": "undirected physical edges",
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0,
+      "unit": "physical streets",
+      "weighting": "unweighted"
+    }
+  ],
+  "core_metric_count": 19,
+  "detailed_geometry": {
+    "absolute_excess_length_local": {
+      "absolute_difference": 184.383624825936,
+      "env38_value": 426.2520794503679,
+      "env39_value": 241.86845462443188,
+      "relative_difference_percent": 76.23301894091271,
+      "signed_difference_env38_minus_env39": 184.383624825936
+    },
+    "geometry_segment_count": {
+      "absolute_difference": 102.0,
+      "env38_value": 178,
+      "env39_value": 76,
+      "relative_difference_percent": 134.21052631578948,
+      "signed_difference_env38_minus_env39": 102.0
+    },
+    "mean_edge_circuity": {
+      "absolute_difference": 0.02535263600242854,
+      "env38_value": 1.0364975857178171,
+      "env39_value": 1.0111449497153886,
+      "relative_difference_percent": 2.507319648836169,
+      "signed_difference_env38_minus_env39": 0.02535263600242854
+    },
+    "mean_edge_length_local": {
+      "absolute_difference": 6.568066996974011,
+      "env38_value": 165.20078701368584,
+      "env39_value": 158.63272001671183,
+      "relative_difference_percent": 4.140423864813054,
+      "signed_difference_env38_minus_env39": 6.568066996974011
+    },
+    "median_edge_length_local": {
+      "absolute_difference": 12.430379908186296,
+      "env38_value": 143.4478602096824,
+      "env39_value": 131.0174803014961,
+      "relative_difference_percent": 9.487573627260753,
+      "signed_difference_env38_minus_env39": 12.430379908186296
+    },
+    "network_circuity": {
+      "absolute_difference": 0.016250419107800118,
+      "env38_value": 1.038846945394489,
+      "env39_value": 1.022596526286689,
+      "relative_difference_percent": 1.5891330246162256,
+      "signed_difference_env38_minus_env39": 0.016250419107800118
+    },
+    "total_chord_length_local": {
+      "absolute_difference": 268.8129979652731,
+      "env38_value": 10972.602224493956,
+      "env39_value": 10703.789226528683,
+      "relative_difference_percent": 2.5113816451003785,
+      "signed_difference_env38_minus_env39": 268.8129979652731
+    },
+    "total_network_length_local": {
+      "absolute_difference": 453.1966227912071,
+      "env38_value": 11398.854303944323,
+      "env39_value": 10945.657681153116,
+      "relative_difference_percent": 4.140423864813058,
+      "signed_difference_env38_minus_env39": 453.1966227912071
+    },
+    "zero_chord_edge_count": {
+      "absolute_difference": 0.0,
+      "env38_value": 0,
+      "env39_value": 0,
+      "relative_difference_percent": null,
+      "signed_difference_env38_minus_env39": 0.0
+    }
+  },
+  "detailed_orientation": {
+    "chord_orientation_entropy": {
+      "absolute_difference": 2.1574339076963494,
+      "env38_value": 2.9808051798049027,
+      "env39_value": 0.8233712721085531,
+      "relative_difference_percent": 262.0244330569641,
+      "signed_difference_env38_minus_env39": 2.1574339076963494
+    },
+    "chord_orientation_normalized_entropy": {
+      "absolute_difference": 0.6020433949836577,
+      "env38_value": 0.8318095232640588,
+      "env39_value": 0.22976612828040105,
+      "relative_difference_percent": 262.0244330569641,
+      "signed_difference_env38_minus_env39": 0.6020433949836577
+    },
+    "chord_orientation_observation_count": {
+      "absolute_difference": 0.0,
+      "env38_value": 69,
+      "env39_value": 69,
+      "relative_difference_percent": 0.0,
+      "signed_difference_env38_minus_env39": 0.0
+    },
+    "orientation_bin_count": {
+      "absolute_difference": 0.0,
+      "env38_value": 36,
+      "env39_value": 36,
+      "relative_difference_percent": 0.0,
+      "signed_difference_env38_minus_env39": 0.0
+    },
+    "orientation_bin_width_degrees": {
+      "absolute_difference": 0.0,
+      "env38_value": 5.0,
+      "env39_value": 5.0,
+      "relative_difference_percent": 0.0,
+      "signed_difference_env38_minus_env39": 0.0
+    },
+    "phi_chord": {
+      "absolute_difference": 0.37239989542109575,
+      "env38_value": 0.5787070314167302,
+      "env39_value": 0.9511069268378259,
+      "relative_difference_percent": -39.154366865902766,
+      "signed_difference_env38_minus_env39": -0.37239989542109575
+    },
+    "phi_segment_length_weighted": {
+      "absolute_difference": 0.5562708899219103,
+      "env38_value": 0.4437291100780897,
+      "env39_value": 1.0,
+      "relative_difference_percent": -55.627088992191034,
+      "signed_difference_env38_minus_env39": -0.5562708899219103
+    },
+    "segment_length_weighted_normalized_entropy": {
+      "absolute_difference": 0.7080636492418972,
+      "env38_value": 0.9005010342630304,
+      "env39_value": 0.19243738502113314,
+      "relative_difference_percent": 367.9449547519776,
+      "signed_difference_env38_minus_env39": 0.7080636492418972
+    },
+    "segment_length_weighted_orientation_entropy": {
+      "absolute_difference": 2.5373594966906827,
+      "env38_value": 3.2269625103808837,
+      "env39_value": 0.6896030136902007,
+      "relative_difference_percent": 367.9449547519776,
+      "signed_difference_env38_minus_env39": 2.5373594966906827
+    },
+    "segment_orientation_observation_count": {
+      "absolute_difference": 102.0,
+      "env38_value": 178,
+      "env39_value": 76,
+      "relative_difference_percent": 134.21052631578948,
+      "signed_difference_env38_minus_env39": 102.0
+    }
+  },
+  "final_comparison_status": "PASS",
+  "inferential_statistics": {
+    "performed": false,
+    "reason": "One accepted spatial realization per design; the second Env38 run is a computational replicate."
+  },
+  "largest_descriptive_differences": [
+    {
+      "env38_value": "3.2269625103808837",
+      "env39_value": "0.6896030136902007",
+      "interpretation_note": "Env38 is greater for this directional morphology descriptor; no navigation claim is implied.",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.segment_entropy_length_weighted",
+      "metric_label": "Segment-length-weighted orientation entropy",
+      "relative_difference_percent": 367.9449547519776,
+      "signed_difference_env38_minus_env39": 2.5373594966906827
+    },
+    {
+      "env38_value": "0.9005010342630304",
+      "env39_value": "0.19243738502113314",
+      "interpretation_note": "Env38 is greater for this directional morphology descriptor; no navigation claim is implied.",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.segment_entropy_length_weighted_normalized",
+      "metric_label": "Normalized segment-length-weighted entropy",
+      "relative_difference_percent": 367.9449547519776,
+      "signed_difference_env38_minus_env39": 0.7080636492418972
+    },
+    {
+      "env38_value": "2.9808051798049027",
+      "env39_value": "0.8233712721085531",
+      "interpretation_note": "Env38 is greater for this directional morphology descriptor; no navigation claim is implied.",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.chord_entropy",
+      "metric_label": "Chord orientation entropy",
+      "relative_difference_percent": 262.0244330569641,
+      "signed_difference_env38_minus_env39": 2.1574339076963494
+    },
+    {
+      "env38_value": "0.8318095232640588",
+      "env39_value": "0.22976612828040105",
+      "interpretation_note": "Env38 is greater for this directional morphology descriptor; no navigation claim is implied.",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.chord_entropy_normalized",
+      "metric_label": "Normalized chord orientation entropy",
+      "relative_difference_percent": 262.0244330569641,
+      "signed_difference_env38_minus_env39": 0.6020433949836577
+    },
+    {
+      "env38_value": "0.4437291100780897",
+      "env39_value": "1.0",
+      "interpretation_note": "Env38 is lower for this directional morphology descriptor; no navigation claim is implied.",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.phi_segment_length_weighted",
+      "metric_label": "Fourfold order, length-weighted segments",
+      "relative_difference_percent": -55.627088992191034,
+      "signed_difference_env38_minus_env39": -0.5562708899219103
+    },
+    {
+      "env38_value": "0.5787070314167302",
+      "env39_value": "0.9511069268378259",
+      "interpretation_note": "Env38 is lower for this directional morphology descriptor; no navigation claim is implied.",
+      "metric_family": "orientation_morphology",
+      "metric_id": "orientation.phi_chord",
+      "metric_label": "Fourfold order, chords",
+      "relative_difference_percent": -39.154366865902766,
+      "signed_difference_env38_minus_env39": -0.37239989542109575
+    },
+    {
+      "env38_value": "505.5201047999172",
+      "env39_value": "674.9952524104815",
+      "interpretation_note": "Env38 is lower for this planar geometry descriptor in GeoGami local units.",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.maximum_edge_length",
+      "metric_label": "Maximum physical-edge length",
+      "relative_difference_percent": -25.107605869130207,
+      "signed_difference_env38_minus_env39": -169.4751476105643
+    },
+    {
+      "env38_value": "143.4478602096824",
+      "env39_value": "131.0174803014961",
+      "interpretation_note": "Env38 is greater for this planar geometry descriptor in GeoGami local units.",
+      "metric_family": "geometric_morphology",
+      "metric_id": "geometry.median_edge_length",
+      "metric_label": "Median physical-edge length",
+      "relative_difference_percent": 9.487573627260753,
+      "signed_difference_env38_minus_env39": 12.430379908186296
+    }
+  ],
+  "length_weighted_centrality_leaders": {
+    "env38": {
+      "edge_betweenness_length_top5": [
+        {
+          "id": "E022",
+          "value": 0.20096618357487922
+        },
+        {
+          "id": "E048",
+          "value": 0.1893719806763285
+        },
+        {
+          "id": "E059",
+          "value": 0.15169082125603864
+        },
+        {
+          "id": "E050",
+          "value": 0.1497584541062802
+        },
+        {
+          "id": "E026",
+          "value": 0.14782608695652175
+        }
+      ],
+      "node_betweenness_length_top5": [
+        {
+          "id": "N030",
+          "value": 0.25555555555555554
+        },
+        {
+          "id": "N015",
+          "value": 0.23434343434343435
+        },
+        {
+          "id": "N014",
+          "value": 0.20404040404040405
+        },
+        {
+          "id": "N016",
+          "value": 0.1919191919191919
+        },
+        {
+          "id": "N029",
+          "value": 0.17575757575757575
+        }
+      ],
+      "node_closeness_length_top5": [
+        {
+          "id": "N030",
+          "value": 0.0018795119507499568
+        },
+        {
+          "id": "N024",
+          "value": 0.0018423722300654351
+        },
+        {
+          "id": "N029",
+          "value": 0.0018156782886924532
+        },
+        {
+          "id": "N019",
+          "value": 0.0018150757040739749
+        },
+        {
+          "id": "N031",
+          "value": 0.001772581689275252
+        }
+      ]
+    },
+    "env39": {
+      "edge_betweenness_length_top5": [
+        {
+          "id": "E031",
+          "value": 0.19861142078533378
+        },
+        {
+          "id": "E033",
+          "value": 0.19042425368512322
+        },
+        {
+          "id": "E026",
+          "value": 0.16847826086956516
+        },
+        {
+          "id": "E024",
+          "value": 0.16279264214046824
+        },
+        {
+          "id": "E053",
+          "value": 0.15560574691009477
+        }
+      ],
+      "node_betweenness_length_top5": [
+        {
+          "id": "N020",
+          "value": 0.2818900543900544
+        },
+        {
+          "id": "N019",
+          "value": 0.24593013468013467
+        },
+        {
+          "id": "N016",
+          "value": 0.20239898989898983
+        },
+        {
+          "id": "N023",
+          "value": 0.2017579053942691
+        },
+        {
+          "id": "N010",
+          "value": 0.1876262626262627
+        }
+      ],
+      "node_closeness_length_top5": [
+        {
+          "id": "N024",
+          "value": 0.0019325926703578243
+        },
+        {
+          "id": "N030",
+          "value": 0.001891783835483553
+        },
+        {
+          "id": "N019",
+          "value": 0.0018734660845307301
+        },
+        {
+          "id": "N023",
+          "value": 0.001829643346661655
+        },
+        {
+          "id": "N025",
+          "value": 0.0018275650809999227
+        }
+      ]
+    },
+    "interpretation": "Stored accepted length-weighted centrality rankings are compared by stable node and physical-edge IDs; no centrality is recalculated here."
+  },
+  "metric_family_summaries": {
+    "geometric_morphology": {
+      "control_failure_count": 0,
+      "control_match_count": 0,
+      "descriptive_difference_count": 9,
+      "descriptive_match_count": 1,
+      "metric_count": 10,
+      "status": "PASS"
+    },
+    "geometry_weighted_network": {
+      "control_failure_count": 0,
+      "control_match_count": 0,
+      "descriptive_difference_count": 1,
+      "descriptive_match_count": 0,
+      "metric_count": 1,
+      "status": "PASS"
+    },
+    "orientation_morphology": {
+      "control_failure_count": 0,
+      "control_match_count": 0,
+      "descriptive_difference_count": 7,
+      "descriptive_match_count": 3,
+      "metric_count": 10,
+      "status": "PASS"
+    },
+    "topology_controlled": {
+      "control_failure_count": 0,
+      "control_match_count": 18,
+      "descriptive_difference_count": 0,
+      "descriptive_match_count": 0,
+      "metric_count": 18,
+      "status": "PASS"
+    }
+  },
+  "orientation_distributions": {
+    "bin_edges": [
+      {
+        "end_deg": 5.0,
+        "start_deg": 0.0
+      },
+      {
+        "end_deg": 10.0,
+        "start_deg": 5.0
+      },
+      {
+        "end_deg": 15.0,
+        "start_deg": 10.0
+      },
+      {
+        "end_deg": 20.0,
+        "start_deg": 15.0
+      },
+      {
+        "end_deg": 25.0,
+        "start_deg": 20.0
+      },
+      {
+        "end_deg": 30.0,
+        "start_deg": 25.0
+      },
+      {
+        "end_deg": 35.0,
+        "start_deg": 30.0
+      },
+      {
+        "end_deg": 40.0,
+        "start_deg": 35.0
+      },
+      {
+        "end_deg": 45.0,
+        "start_deg": 40.0
+      },
+      {
+        "end_deg": 50.0,
+        "start_deg": 45.0
+      },
+      {
+        "end_deg": 55.0,
+        "start_deg": 50.0
+      },
+      {
+        "end_deg": 60.0,
+        "start_deg": 55.0
+      },
+      {
+        "end_deg": 65.0,
+        "start_deg": 60.0
+      },
+      {
+        "end_deg": 70.0,
+        "start_deg": 65.0
+      },
+      {
+        "end_deg": 75.0,
+        "start_deg": 70.0
+      },
+      {
+        "end_deg": 80.0,
+        "start_deg": 75.0
+      },
+      {
+        "end_deg": 85.0,
+        "start_deg": 80.0
+      },
+      {
+        "end_deg": 90.0,
+        "start_deg": 85.0
+      },
+      {
+        "end_deg": 95.0,
+        "start_deg": 90.0
+      },
+      {
+        "end_deg": 100.0,
+        "start_deg": 95.0
+      },
+      {
+        "end_deg": 105.0,
+        "start_deg": 100.0
+      },
+      {
+        "end_deg": 110.0,
+        "start_deg": 105.0
+      },
+      {
+        "end_deg": 115.0,
+        "start_deg": 110.0
+      },
+      {
+        "end_deg": 120.0,
+        "start_deg": 115.0
+      },
+      {
+        "end_deg": 125.0,
+        "start_deg": 120.0
+      },
+      {
+        "end_deg": 130.0,
+        "start_deg": 125.0
+      },
+      {
+        "end_deg": 135.0,
+        "start_deg": 130.0
+      },
+      {
+        "end_deg": 140.0,
+        "start_deg": 135.0
+      },
+      {
+        "end_deg": 145.0,
+        "start_deg": 140.0
+      },
+      {
+        "end_deg": 150.0,
+        "start_deg": 145.0
+      },
+      {
+        "end_deg": 155.0,
+        "start_deg": 150.0
+      },
+      {
+        "end_deg": 160.0,
+        "start_deg": 155.0
+      },
+      {
+        "end_deg": 165.0,
+        "start_deg": 160.0
+      },
+      {
+        "end_deg": 170.0,
+        "start_deg": 165.0
+      },
+      {
+        "end_deg": 175.0,
+        "start_deg": 170.0
+      },
+      {
+        "end_deg": 180.0,
+        "start_deg": 175.0
+      }
+    ],
+    "chord": {
+      "env38": [
+        {
+          "bin_center_deg": 2.5,
+          "bin_end_deg": 5.0,
+          "bin_index": 0,
+          "bin_start_deg": 0.0,
+          "observation_count": 5,
+          "probability": 0.07246376811594203,
+          "weight": 5.0
+        },
+        {
+          "bin_center_deg": 7.5,
+          "bin_end_deg": 10.0,
+          "bin_index": 1,
+          "bin_start_deg": 5.0,
+          "observation_count": 1,
+          "probability": 0.014492753623188406,
+          "weight": 1.0
+        },
+        {
+          "bin_center_deg": 12.5,
+          "bin_end_deg": 15.0,
+          "bin_index": 2,
+          "bin_start_deg": 10.0,
+          "observation_count": 2,
+          "probability": 0.028985507246376812,
+          "weight": 2.0
+        },
+        {
+          "bin_center_deg": 17.5,
+          "bin_end_deg": 20.0,
+          "bin_index": 3,
+          "bin_start_deg": 15.0,
+          "observation_count": 3,
+          "probability": 0.043478260869565216,
+          "weight": 3.0
+        },
+        {
+          "bin_center_deg": 22.5,
+          "bin_end_deg": 25.0,
+          "bin_index": 4,
+          "bin_start_deg": 20.0,
+          "observation_count": 1,
+          "probability": 0.014492753623188406,
+          "weight": 1.0
+        },
+        {
+          "bin_center_deg": 27.5,
+          "bin_end_deg": 30.0,
+          "bin_index": 5,
+          "bin_start_deg": 25.0,
+          "observation_count": 1,
+          "probability": 0.014492753623188406,
+          "weight": 1.0
+        },
+        {
+          "bin_center_deg": 32.5,
+          "bin_end_deg": 35.0,
+          "bin_index": 6,
+          "bin_start_deg": 30.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 37.5,
+          "bin_end_deg": 40.0,
+          "bin_index": 7,
+          "bin_start_deg": 35.0,
+          "observation_count": 1,
+          "probability": 0.014492753623188406,
+          "weight": 1.0
+        },
+        {
+          "bin_center_deg": 42.5,
+          "bin_end_deg": 45.0,
+          "bin_index": 8,
+          "bin_start_deg": 40.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 47.5,
+          "bin_end_deg": 50.0,
+          "bin_index": 9,
+          "bin_start_deg": 45.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 52.5,
+          "bin_end_deg": 55.0,
+          "bin_index": 10,
+          "bin_start_deg": 50.0,
+          "observation_count": 1,
+          "probability": 0.014492753623188406,
+          "weight": 1.0
+        },
+        {
+          "bin_center_deg": 57.5,
+          "bin_end_deg": 60.0,
+          "bin_index": 11,
+          "bin_start_deg": 55.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 62.5,
+          "bin_end_deg": 65.0,
+          "bin_index": 12,
+          "bin_start_deg": 60.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 67.5,
+          "bin_end_deg": 70.0,
+          "bin_index": 13,
+          "bin_start_deg": 65.0,
+          "observation_count": 2,
+          "probability": 0.028985507246376812,
+          "weight": 2.0
+        },
+        {
+          "bin_center_deg": 72.5,
+          "bin_end_deg": 75.0,
+          "bin_index": 14,
+          "bin_start_deg": 70.0,
+          "observation_count": 5,
+          "probability": 0.07246376811594203,
+          "weight": 5.0
+        },
+        {
+          "bin_center_deg": 77.5,
+          "bin_end_deg": 80.0,
+          "bin_index": 15,
+          "bin_start_deg": 75.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 82.5,
+          "bin_end_deg": 85.0,
+          "bin_index": 16,
+          "bin_start_deg": 80.0,
+          "observation_count": 2,
+          "probability": 0.028985507246376812,
+          "weight": 2.0
+        },
+        {
+          "bin_center_deg": 87.5,
+          "bin_end_deg": 90.0,
+          "bin_index": 17,
+          "bin_start_deg": 85.0,
+          "observation_count": 7,
+          "probability": 0.10144927536231885,
+          "weight": 7.0
+        },
+        {
+          "bin_center_deg": 92.5,
+          "bin_end_deg": 95.0,
+          "bin_index": 18,
+          "bin_start_deg": 90.0,
+          "observation_count": 3,
+          "probability": 0.043478260869565216,
+          "weight": 3.0
+        },
+        {
+          "bin_center_deg": 97.5,
+          "bin_end_deg": 100.0,
+          "bin_index": 19,
+          "bin_start_deg": 95.0,
+          "observation_count": 5,
+          "probability": 0.07246376811594203,
+          "weight": 5.0
+        },
+        {
+          "bin_center_deg": 102.5,
+          "bin_end_deg": 105.0,
+          "bin_index": 20,
+          "bin_start_deg": 100.0,
+          "observation_count": 2,
+          "probability": 0.028985507246376812,
+          "weight": 2.0
+        },
+        {
+          "bin_center_deg": 107.5,
+          "bin_end_deg": 110.0,
+          "bin_index": 21,
+          "bin_start_deg": 105.0,
+          "observation_count": 2,
+          "probability": 0.028985507246376812,
+          "weight": 2.0
+        },
+        {
+          "bin_center_deg": 112.5,
+          "bin_end_deg": 115.0,
+          "bin_index": 22,
+          "bin_start_deg": 110.0,
+          "observation_count": 2,
+          "probability": 0.028985507246376812,
+          "weight": 2.0
+        },
+        {
+          "bin_center_deg": 117.5,
+          "bin_end_deg": 120.0,
+          "bin_index": 23,
+          "bin_start_deg": 115.0,
+          "observation_count": 1,
+          "probability": 0.014492753623188406,
+          "weight": 1.0
+        },
+        {
+          "bin_center_deg": 122.5,
+          "bin_end_deg": 125.0,
+          "bin_index": 24,
+          "bin_start_deg": 120.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 127.5,
+          "bin_end_deg": 130.0,
+          "bin_index": 25,
+          "bin_start_deg": 125.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 132.5,
+          "bin_end_deg": 135.0,
+          "bin_index": 26,
+          "bin_start_deg": 130.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 137.5,
+          "bin_end_deg": 140.0,
+          "bin_index": 27,
+          "bin_start_deg": 135.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 142.5,
+          "bin_end_deg": 145.0,
+          "bin_index": 28,
+          "bin_start_deg": 140.0,
+          "observation_count": 1,
+          "probability": 0.014492753623188406,
+          "weight": 1.0
+        },
+        {
+          "bin_center_deg": 147.5,
+          "bin_end_deg": 150.0,
+          "bin_index": 29,
+          "bin_start_deg": 145.0,
+          "observation_count": 1,
+          "probability": 0.014492753623188406,
+          "weight": 1.0
+        },
+        {
+          "bin_center_deg": 152.5,
+          "bin_end_deg": 155.0,
+          "bin_index": 30,
+          "bin_start_deg": 150.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 157.5,
+          "bin_end_deg": 160.0,
+          "bin_index": 31,
+          "bin_start_deg": 155.0,
+          "observation_count": 2,
+          "probability": 0.028985507246376812,
+          "weight": 2.0
+        },
+        {
+          "bin_center_deg": 162.5,
+          "bin_end_deg": 165.0,
+          "bin_index": 32,
+          "bin_start_deg": 160.0,
+          "observation_count": 1,
+          "probability": 0.014492753623188406,
+          "weight": 1.0
+        },
+        {
+          "bin_center_deg": 167.5,
+          "bin_end_deg": 170.0,
+          "bin_index": 33,
+          "bin_start_deg": 165.0,
+          "observation_count": 5,
+          "probability": 0.07246376811594203,
+          "weight": 5.0
+        },
+        {
+          "bin_center_deg": 172.5,
+          "bin_end_deg": 175.0,
+          "bin_index": 34,
+          "bin_start_deg": 170.0,
+          "observation_count": 6,
+          "probability": 0.08695652173913043,
+          "weight": 6.0
+        },
+        {
+          "bin_center_deg": 177.5,
+          "bin_end_deg": 180.0,
+          "bin_index": 35,
+          "bin_start_deg": 175.0,
+          "observation_count": 7,
+          "probability": 0.10144927536231885,
+          "weight": 7.0
+        }
+      ],
+      "env39": [
+        {
+          "bin_center_deg": 2.5,
+          "bin_end_deg": 5.0,
+          "bin_index": 0,
+          "bin_start_deg": 0.0,
+          "observation_count": 35,
+          "probability": 0.5072463768115942,
+          "weight": 35.0
+        },
+        {
+          "bin_center_deg": 7.5,
+          "bin_end_deg": 10.0,
+          "bin_index": 1,
+          "bin_start_deg": 5.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 12.5,
+          "bin_end_deg": 15.0,
+          "bin_index": 2,
+          "bin_start_deg": 10.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 17.5,
+          "bin_end_deg": 20.0,
+          "bin_index": 3,
+          "bin_start_deg": 15.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 22.5,
+          "bin_end_deg": 25.0,
+          "bin_index": 4,
+          "bin_start_deg": 20.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 27.5,
+          "bin_end_deg": 30.0,
+          "bin_index": 5,
+          "bin_start_deg": 25.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 32.5,
+          "bin_end_deg": 35.0,
+          "bin_index": 6,
+          "bin_start_deg": 30.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 37.5,
+          "bin_end_deg": 40.0,
+          "bin_index": 7,
+          "bin_start_deg": 35.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 42.5,
+          "bin_end_deg": 45.0,
+          "bin_index": 8,
+          "bin_start_deg": 40.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 47.5,
+          "bin_end_deg": 50.0,
+          "bin_index": 9,
+          "bin_start_deg": 45.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 52.5,
+          "bin_end_deg": 55.0,
+          "bin_index": 10,
+          "bin_start_deg": 50.0,
+          "observation_count": 1,
+          "probability": 0.014492753623188406,
+          "weight": 1.0
+        },
+        {
+          "bin_center_deg": 57.5,
+          "bin_end_deg": 60.0,
+          "bin_index": 11,
+          "bin_start_deg": 55.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 62.5,
+          "bin_end_deg": 65.0,
+          "bin_index": 12,
+          "bin_start_deg": 60.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 67.5,
+          "bin_end_deg": 70.0,
+          "bin_index": 13,
+          "bin_start_deg": 65.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 72.5,
+          "bin_end_deg": 75.0,
+          "bin_index": 14,
+          "bin_start_deg": 70.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 77.5,
+          "bin_end_deg": 80.0,
+          "bin_index": 15,
+          "bin_start_deg": 75.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 82.5,
+          "bin_end_deg": 85.0,
+          "bin_index": 16,
+          "bin_start_deg": 80.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 87.5,
+          "bin_end_deg": 90.0,
+          "bin_index": 17,
+          "bin_start_deg": 85.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 92.5,
+          "bin_end_deg": 95.0,
+          "bin_index": 18,
+          "bin_start_deg": 90.0,
+          "observation_count": 32,
+          "probability": 0.463768115942029,
+          "weight": 32.0
+        },
+        {
+          "bin_center_deg": 97.5,
+          "bin_end_deg": 100.0,
+          "bin_index": 19,
+          "bin_start_deg": 95.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 102.5,
+          "bin_end_deg": 105.0,
+          "bin_index": 20,
+          "bin_start_deg": 100.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 107.5,
+          "bin_end_deg": 110.0,
+          "bin_index": 21,
+          "bin_start_deg": 105.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 112.5,
+          "bin_end_deg": 115.0,
+          "bin_index": 22,
+          "bin_start_deg": 110.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 117.5,
+          "bin_end_deg": 120.0,
+          "bin_index": 23,
+          "bin_start_deg": 115.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 122.5,
+          "bin_end_deg": 125.0,
+          "bin_index": 24,
+          "bin_start_deg": 120.0,
+          "observation_count": 1,
+          "probability": 0.014492753623188406,
+          "weight": 1.0
+        },
+        {
+          "bin_center_deg": 127.5,
+          "bin_end_deg": 130.0,
+          "bin_index": 25,
+          "bin_start_deg": 125.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 132.5,
+          "bin_end_deg": 135.0,
+          "bin_index": 26,
+          "bin_start_deg": 130.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 137.5,
+          "bin_end_deg": 140.0,
+          "bin_index": 27,
+          "bin_start_deg": 135.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 142.5,
+          "bin_end_deg": 145.0,
+          "bin_index": 28,
+          "bin_start_deg": 140.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 147.5,
+          "bin_end_deg": 150.0,
+          "bin_index": 29,
+          "bin_start_deg": 145.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 152.5,
+          "bin_end_deg": 155.0,
+          "bin_index": 30,
+          "bin_start_deg": 150.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 157.5,
+          "bin_end_deg": 160.0,
+          "bin_index": 31,
+          "bin_start_deg": 155.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 162.5,
+          "bin_end_deg": 165.0,
+          "bin_index": 32,
+          "bin_start_deg": 160.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 167.5,
+          "bin_end_deg": 170.0,
+          "bin_index": 33,
+          "bin_start_deg": 165.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 172.5,
+          "bin_end_deg": 175.0,
+          "bin_index": 34,
+          "bin_start_deg": 170.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 177.5,
+          "bin_end_deg": 180.0,
+          "bin_index": 35,
+          "bin_start_deg": 175.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        }
+      ]
+    },
+    "methodology": {
+      "bin_count": 36,
+      "bin_width_degrees": 5.0,
+      "domain_degrees": "[0, 180)",
+      "east_degrees": 90,
+      "entropy_logarithm": "natural",
+      "identical_bin_edges": true,
+      "north_degrees": 0,
+      "order_symmetry": 4,
+      "rotation": "clockwise"
+    },
+    "segment_length_weighted": {
+      "env38": [
+        {
+          "bin_center_deg": 2.5,
+          "bin_end_deg": 5.0,
+          "bin_index": 0,
+          "bin_start_deg": 0.0,
+          "observation_count": 12,
+          "probability": 0.06879576278841981,
+          "weight": 784.192876753912
+        },
+        {
+          "bin_center_deg": 7.5,
+          "bin_end_deg": 10.0,
+          "bin_index": 1,
+          "bin_start_deg": 5.0,
+          "observation_count": 4,
+          "probability": 0.027779237421351313,
+          "weight": 316.6514800406616
+        },
+        {
+          "bin_center_deg": 12.5,
+          "bin_end_deg": 15.0,
+          "bin_index": 2,
+          "bin_start_deg": 10.0,
+          "observation_count": 6,
+          "probability": 0.031080829375592586,
+          "weight": 354.2858456981327
+        },
+        {
+          "bin_center_deg": 17.5,
+          "bin_end_deg": 20.0,
+          "bin_index": 3,
+          "bin_start_deg": 15.0,
+          "observation_count": 2,
+          "probability": 0.006523893733347941,
+          "weight": 74.36491416084857
+        },
+        {
+          "bin_center_deg": 22.5,
+          "bin_end_deg": 25.0,
+          "bin_index": 4,
+          "bin_start_deg": 20.0,
+          "observation_count": 3,
+          "probability": 0.013280947729135129,
+          "weight": 151.38758818271154
+        },
+        {
+          "bin_center_deg": 27.5,
+          "bin_end_deg": 30.0,
+          "bin_index": 5,
+          "bin_start_deg": 25.0,
+          "observation_count": 5,
+          "probability": 0.023107717815438338,
+          "weight": 263.4015086748402
+        },
+        {
+          "bin_center_deg": 32.5,
+          "bin_end_deg": 35.0,
+          "bin_index": 6,
+          "bin_start_deg": 30.0,
+          "observation_count": 4,
+          "probability": 0.01825210297421104,
+          "weight": 208.0530625436205
+        },
+        {
+          "bin_center_deg": 37.5,
+          "bin_end_deg": 40.0,
+          "bin_index": 7,
+          "bin_start_deg": 35.0,
+          "observation_count": 2,
+          "probability": 0.009419651994900947,
+          "weight": 107.3732406837344
+        },
+        {
+          "bin_center_deg": 42.5,
+          "bin_end_deg": 45.0,
+          "bin_index": 8,
+          "bin_start_deg": 40.0,
+          "observation_count": 3,
+          "probability": 0.010549922681492616,
+          "weight": 120.25703156421194
+        },
+        {
+          "bin_center_deg": 47.5,
+          "bin_end_deg": 50.0,
+          "bin_index": 9,
+          "bin_start_deg": 45.0,
+          "observation_count": 2,
+          "probability": 0.008722439636213856,
+          "weight": 99.42581858815086
+        },
+        {
+          "bin_center_deg": 52.5,
+          "bin_end_deg": 55.0,
+          "bin_index": 10,
+          "bin_start_deg": 50.0,
+          "observation_count": 3,
+          "probability": 0.012291162960135367,
+          "weight": 140.10517580862006
+        },
+        {
+          "bin_center_deg": 57.5,
+          "bin_end_deg": 60.0,
+          "bin_index": 11,
+          "bin_start_deg": 55.0,
+          "observation_count": 2,
+          "probability": 0.0035716752613406,
+          "weight": 40.713005925023765
+        },
+        {
+          "bin_center_deg": 62.5,
+          "bin_end_deg": 65.0,
+          "bin_index": 12,
+          "bin_start_deg": 60.0,
+          "observation_count": 6,
+          "probability": 0.021270248837734814,
+          "weight": 242.45646750998023
+        },
+        {
+          "bin_center_deg": 67.5,
+          "bin_end_deg": 70.0,
+          "bin_index": 13,
+          "bin_start_deg": 65.0,
+          "observation_count": 8,
+          "probability": 0.027660448391935443,
+          "weight": 315.29742120144317
+        },
+        {
+          "bin_center_deg": 72.5,
+          "bin_end_deg": 75.0,
+          "bin_index": 14,
+          "bin_start_deg": 70.0,
+          "observation_count": 9,
+          "probability": 0.03885071869348809,
+          "weight": 442.8536819905969
+        },
+        {
+          "bin_center_deg": 77.5,
+          "bin_end_deg": 80.0,
+          "bin_index": 15,
+          "bin_start_deg": 75.0,
+          "observation_count": 3,
+          "probability": 0.011437361248231774,
+          "weight": 130.37281449017277
+        },
+        {
+          "bin_center_deg": 82.5,
+          "bin_end_deg": 85.0,
+          "bin_index": 16,
+          "bin_start_deg": 80.0,
+          "observation_count": 7,
+          "probability": 0.03902686650538291,
+          "weight": 444.86156523434454
+        },
+        {
+          "bin_center_deg": 87.5,
+          "bin_end_deg": 90.0,
+          "bin_index": 17,
+          "bin_start_deg": 85.0,
+          "observation_count": 7,
+          "probability": 0.035418469880913746,
+          "weight": 403.72997784117604
+        },
+        {
+          "bin_center_deg": 92.5,
+          "bin_end_deg": 95.0,
+          "bin_index": 18,
+          "bin_start_deg": 90.0,
+          "observation_count": 9,
+          "probability": 0.0654102927350829,
+          "weight": 745.6023968655578
+        },
+        {
+          "bin_center_deg": 97.5,
+          "bin_end_deg": 100.0,
+          "bin_index": 19,
+          "bin_start_deg": 95.0,
+          "observation_count": 5,
+          "probability": 0.02618889985580152,
+          "weight": 298.52345383687003
+        },
+        {
+          "bin_center_deg": 102.5,
+          "bin_end_deg": 105.0,
+          "bin_index": 20,
+          "bin_start_deg": 100.0,
+          "observation_count": 8,
+          "probability": 0.04950277121779482,
+          "weight": 564.2748767531316
+        },
+        {
+          "bin_center_deg": 107.5,
+          "bin_end_deg": 110.0,
+          "bin_index": 21,
+          "bin_start_deg": 105.0,
+          "observation_count": 6,
+          "probability": 0.03690440494821264,
+          "weight": 420.66793517843786
+        },
+        {
+          "bin_center_deg": 112.5,
+          "bin_end_deg": 115.0,
+          "bin_index": 22,
+          "bin_start_deg": 110.0,
+          "observation_count": 4,
+          "probability": 0.017362848544069043,
+          "weight": 197.91658085529485
+        },
+        {
+          "bin_center_deg": 117.5,
+          "bin_end_deg": 120.0,
+          "bin_index": 23,
+          "bin_start_deg": 115.0,
+          "observation_count": 4,
+          "probability": 0.01145220109819889,
+          "weight": 130.54197177784033
+        },
+        {
+          "bin_center_deg": 122.5,
+          "bin_end_deg": 125.0,
+          "bin_index": 24,
+          "bin_start_deg": 120.0,
+          "observation_count": 3,
+          "probability": 0.016519757467443597,
+          "weight": 188.3063085078858
+        },
+        {
+          "bin_center_deg": 127.5,
+          "bin_end_deg": 130.0,
+          "bin_index": 25,
+          "bin_start_deg": 125.0,
+          "observation_count": 4,
+          "probability": 0.015247003288173041,
+          "weight": 173.7983690536445
+        },
+        {
+          "bin_center_deg": 132.5,
+          "bin_end_deg": 135.0,
+          "bin_index": 26,
+          "bin_start_deg": 130.0,
+          "observation_count": 3,
+          "probability": 0.013124653747962975,
+          "weight": 149.60601586274674
+        },
+        {
+          "bin_center_deg": 137.5,
+          "bin_end_deg": 140.0,
+          "bin_index": 27,
+          "bin_start_deg": 135.0,
+          "observation_count": 2,
+          "probability": 0.010119930045990558,
+          "weight": 115.35560816035493
+        },
+        {
+          "bin_center_deg": 142.5,
+          "bin_end_deg": 145.0,
+          "bin_index": 28,
+          "bin_start_deg": 140.0,
+          "observation_count": 1,
+          "probability": 0.003962846375621376,
+          "weight": 45.171908464621886
+        },
+        {
+          "bin_center_deg": 147.5,
+          "bin_end_deg": 150.0,
+          "bin_index": 29,
+          "bin_start_deg": 145.0,
+          "observation_count": 5,
+          "probability": 0.023614533673914306,
+          "weight": 269.17862880453623
+        },
+        {
+          "bin_center_deg": 152.5,
+          "bin_end_deg": 155.0,
+          "bin_index": 30,
+          "bin_start_deg": 150.0,
+          "observation_count": 1,
+          "probability": 0.003957634978004081,
+          "weight": 45.112504502462414
+        },
+        {
+          "bin_center_deg": 157.5,
+          "bin_end_deg": 160.0,
+          "bin_index": 31,
+          "bin_start_deg": 155.0,
+          "observation_count": 2,
+          "probability": 0.009837587910883329,
+          "weight": 112.13723129840307
+        },
+        {
+          "bin_center_deg": 162.5,
+          "bin_end_deg": 165.0,
+          "bin_index": 32,
+          "bin_start_deg": 160.0,
+          "observation_count": 8,
+          "probability": 0.0315075850575579,
+          "weight": 359.1503715402357
+        },
+        {
+          "bin_center_deg": 167.5,
+          "bin_end_deg": 170.0,
+          "bin_index": 33,
+          "bin_start_deg": 165.0,
+          "observation_count": 6,
+          "probability": 0.029480252686314327,
+          "weight": 336.04110521476025
+        },
+        {
+          "bin_center_deg": 172.5,
+          "bin_end_deg": 175.0,
+          "bin_index": 34,
+          "bin_start_deg": 170.0,
+          "observation_count": 7,
+          "probability": 0.07586232441732814,
+          "weight": 864.7435831916813
+        },
+        {
+          "bin_center_deg": 177.5,
+          "bin_end_deg": 180.0,
+          "bin_index": 35,
+          "bin_start_deg": 175.0,
+          "observation_count": 12,
+          "probability": 0.15290501402238024,
+          "weight": 1742.941977183676
+        }
+      ],
+      "env39": [
+        {
+          "bin_center_deg": 2.5,
+          "bin_end_deg": 5.0,
+          "bin_index": 0,
+          "bin_start_deg": 0.0,
+          "observation_count": 42,
+          "probability": 0.5420712362983899,
+          "weight": 5933.326191321637
+        },
+        {
+          "bin_center_deg": 7.5,
+          "bin_end_deg": 10.0,
+          "bin_index": 1,
+          "bin_start_deg": 5.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 12.5,
+          "bin_end_deg": 15.0,
+          "bin_index": 2,
+          "bin_start_deg": 10.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 17.5,
+          "bin_end_deg": 20.0,
+          "bin_index": 3,
+          "bin_start_deg": 15.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 22.5,
+          "bin_end_deg": 25.0,
+          "bin_index": 4,
+          "bin_start_deg": 20.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 27.5,
+          "bin_end_deg": 30.0,
+          "bin_index": 5,
+          "bin_start_deg": 25.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 32.5,
+          "bin_end_deg": 35.0,
+          "bin_index": 6,
+          "bin_start_deg": 30.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 37.5,
+          "bin_end_deg": 40.0,
+          "bin_index": 7,
+          "bin_start_deg": 35.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 42.5,
+          "bin_end_deg": 45.0,
+          "bin_index": 8,
+          "bin_start_deg": 40.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 47.5,
+          "bin_end_deg": 50.0,
+          "bin_index": 9,
+          "bin_start_deg": 45.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 52.5,
+          "bin_end_deg": 55.0,
+          "bin_index": 10,
+          "bin_start_deg": 50.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 57.5,
+          "bin_end_deg": 60.0,
+          "bin_index": 11,
+          "bin_start_deg": 55.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 62.5,
+          "bin_end_deg": 65.0,
+          "bin_index": 12,
+          "bin_start_deg": 60.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 67.5,
+          "bin_end_deg": 70.0,
+          "bin_index": 13,
+          "bin_start_deg": 65.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 72.5,
+          "bin_end_deg": 75.0,
+          "bin_index": 14,
+          "bin_start_deg": 70.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 77.5,
+          "bin_end_deg": 80.0,
+          "bin_index": 15,
+          "bin_start_deg": 75.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 82.5,
+          "bin_end_deg": 85.0,
+          "bin_index": 16,
+          "bin_start_deg": 80.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 87.5,
+          "bin_end_deg": 90.0,
+          "bin_index": 17,
+          "bin_start_deg": 85.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 92.5,
+          "bin_end_deg": 95.0,
+          "bin_index": 18,
+          "bin_start_deg": 90.0,
+          "observation_count": 34,
+          "probability": 0.4579287637016102,
+          "weight": 5012.331489831479
+        },
+        {
+          "bin_center_deg": 97.5,
+          "bin_end_deg": 100.0,
+          "bin_index": 19,
+          "bin_start_deg": 95.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 102.5,
+          "bin_end_deg": 105.0,
+          "bin_index": 20,
+          "bin_start_deg": 100.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 107.5,
+          "bin_end_deg": 110.0,
+          "bin_index": 21,
+          "bin_start_deg": 105.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 112.5,
+          "bin_end_deg": 115.0,
+          "bin_index": 22,
+          "bin_start_deg": 110.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 117.5,
+          "bin_end_deg": 120.0,
+          "bin_index": 23,
+          "bin_start_deg": 115.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 122.5,
+          "bin_end_deg": 125.0,
+          "bin_index": 24,
+          "bin_start_deg": 120.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 127.5,
+          "bin_end_deg": 130.0,
+          "bin_index": 25,
+          "bin_start_deg": 125.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 132.5,
+          "bin_end_deg": 135.0,
+          "bin_index": 26,
+          "bin_start_deg": 130.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 137.5,
+          "bin_end_deg": 140.0,
+          "bin_index": 27,
+          "bin_start_deg": 135.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 142.5,
+          "bin_end_deg": 145.0,
+          "bin_index": 28,
+          "bin_start_deg": 140.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 147.5,
+          "bin_end_deg": 150.0,
+          "bin_index": 29,
+          "bin_start_deg": 145.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 152.5,
+          "bin_end_deg": 155.0,
+          "bin_index": 30,
+          "bin_start_deg": 150.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 157.5,
+          "bin_end_deg": 160.0,
+          "bin_index": 31,
+          "bin_start_deg": 155.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 162.5,
+          "bin_end_deg": 165.0,
+          "bin_index": 32,
+          "bin_start_deg": 160.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 167.5,
+          "bin_end_deg": 170.0,
+          "bin_index": 33,
+          "bin_start_deg": 165.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 172.5,
+          "bin_end_deg": 175.0,
+          "bin_index": 34,
+          "bin_start_deg": 170.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        },
+        {
+          "bin_center_deg": 177.5,
+          "bin_end_deg": 180.0,
+          "bin_index": 35,
+          "bin_start_deg": 175.0,
+          "observation_count": 0,
+          "probability": 0.0,
+          "weight": 0.0
+        }
+      ]
+    }
+  },
+  "phase9f_reproducibility": {
+    "comparison_ready_exact_match_count": 39,
+    "core_exact_match_count": 19,
+    "file_sha256": "1714837473DEF1214E94DB33C223831A62A65744B5C13ACC61AC49FFB133A654",
+    "first_accepted_run": "env38_20260825T150753632988Z_974f687c1ac4",
+    "first_freeze_artifact": {
+      "file_sha256": "1B3F5808E2E5604322C059481BBCC6DEC015F41F4D0A8098D3DDC3324F2C4815",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/env38_scientific_baseline_freeze.json"
+    },
+    "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/env38_reproducibility_comparison.json",
+    "scientific_mismatch_count": 0,
+    "second_clean_run": "env38_20260825T162856878635Z_974f687c1ac4",
+    "status": "PASS"
+  },
+  "research_question": "Given equal canonical topology, how do Env38 and Env39 differ in geometry-weighted network structure, geometric morphology, and orientation morphology?",
+  "runs": {
+    "env38": "env38_20260825T162856878635Z_974f687c1ac4",
+    "env39": "env39_20260825T081117893828Z_2046798c1e9c"
+  },
+  "schema_version": "1.0.0",
+  "topology_control": {
+    "env38": {
+      "connected_component_count": 1,
+      "cycle_rank": 24,
+      "dead_end_count": 10,
+      "degree_3_count": 16,
+      "degree_4_count": 20,
+      "degree_mean": 3.0,
+      "node_count": 46,
+      "physical_edge_count": 69
+    },
+    "env39": {
+      "connected_component_count": 1,
+      "cycle_rank": 24,
+      "dead_end_count": 10,
+      "degree_3_count": 16,
+      "degree_4_count": 20,
+      "degree_mean": 3.0,
+      "node_count": 46,
+      "physical_edge_count": 69
+    },
+    "stable_node_ids_equal": true,
+    "stable_physical_edge_connectivity_equal": true,
+    "status": "PASS",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  }
+}

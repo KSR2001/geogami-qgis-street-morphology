@@ -1,0 +1,230 @@
+{
+  "accepted_sources_preserved": {
+    "after": {
+      "env38_analysis_latest_sha256": "B9EC12E3E5407807068A9F5747AAB0DBFAC0E60B3DEE0EC6B346D0426071EF08",
+      "env38_analysis_run": {
+        "file_count": 32,
+        "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4",
+        "tree_sha256": "63C0FB6EF2FA1ADD9CC37E8205E21850CCDDDD9EC845CB2008CE02126F70EDF8"
+      },
+      "env38_canonical_latest_sha256": "DBC6DFF11A809D78924E89685F754DBE05676A4A14C2BACAEB9C0B0AB54E74F6",
+      "env38_canonical_run": {
+        "file_count": 9,
+        "path": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4",
+        "tree_sha256": "B9D77C9D0C1EAA7BD4FBD4CA077C1DD366A90FBB815ACCFD80AD44F619130AF2"
+      },
+      "env39_analysis_latest_sha256": "D3F5A640522D9D023779C90102F4FC48CD9B72AC85573C617BD4CA9FCD2AC4DC",
+      "env39_analysis_run": {
+        "file_count": 33,
+        "path": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c",
+        "tree_sha256": "889529EC103D056EE311485F56097454BDDDB5CAA91E0EEDF288CDB0A948A2D9"
+      },
+      "env39_canonical_latest_sha256": "8CA4DD504B0FD0FCC8DD08CA6F20B969BD67AFA9815EF86C2075775544561896",
+      "env39_canonical_run": {
+        "file_count": 9,
+        "path": "data/canonical/grid/runs/env39_20260825T081117893828Z_2046798c1e9c",
+        "tree_sha256": "48C8AB4D0E9CCA3DE37D42F830824FAF4A2277AD59DD1702CF59CF63C473CFDD"
+      }
+    },
+    "before": {
+      "env38_analysis_latest_sha256": "B9EC12E3E5407807068A9F5747AAB0DBFAC0E60B3DEE0EC6B346D0426071EF08",
+      "env38_analysis_run": {
+        "file_count": 32,
+        "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4",
+        "tree_sha256": "63C0FB6EF2FA1ADD9CC37E8205E21850CCDDDD9EC845CB2008CE02126F70EDF8"
+      },
+      "env38_canonical_latest_sha256": "DBC6DFF11A809D78924E89685F754DBE05676A4A14C2BACAEB9C0B0AB54E74F6",
+      "env38_canonical_run": {
+        "file_count": 9,
+        "path": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4",
+        "tree_sha256": "B9D77C9D0C1EAA7BD4FBD4CA077C1DD366A90FBB815ACCFD80AD44F619130AF2"
+      },
+      "env39_analysis_latest_sha256": "D3F5A640522D9D023779C90102F4FC48CD9B72AC85573C617BD4CA9FCD2AC4DC",
+      "env39_analysis_run": {
+        "file_count": 33,
+        "path": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c",
+        "tree_sha256": "889529EC103D056EE311485F56097454BDDDB5CAA91E0EEDF288CDB0A948A2D9"
+      },
+      "env39_canonical_latest_sha256": "8CA4DD504B0FD0FCC8DD08CA6F20B969BD67AFA9815EF86C2075775544561896",
+      "env39_canonical_run": {
+        "file_count": 9,
+        "path": "data/canonical/grid/runs/env39_20260825T081117893828Z_2046798c1e9c",
+        "tree_sha256": "48C8AB4D0E9CCA3DE37D42F830824FAF4A2277AD59DD1702CF59CF63C473CFDD"
+      }
+    },
+    "status": "PASS"
+  },
+  "artifacts": {
+    "comparison_core_metrics.csv": {
+      "file_sha256": "EB365DB81939301A7FBD1C43B346419F8C114B0CE10C887A0B28A9D4A24179CD",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/comparison_core_metrics.csv"
+    },
+    "comparison_methodology.json": {
+      "file_sha256": "0197DFB1C85E76591CF5D7BD59C3B0C107817B5EBB6E8496A8492E7FF7696767",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/comparison_methodology.json"
+    },
+    "comparison_metrics.csv": {
+      "file_sha256": "757266E2D3918763F9E513520ED4288ACFF66B8AFA92E5C60E3E8A8733121E9D",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/comparison_metrics.csv"
+    },
+    "comparison_summary.json": {
+      "file_sha256": "EEE6E6F2D17175CF69529ABE3AAED121C539C8A62470885CE411ED4F4FCD6699",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/comparison_summary.json"
+    },
+    "env38_vs_env39_summary.md": {
+      "file_sha256": "F24D11B19BC3CAEDCF46312A1E0DD2E07DCCD18D16F22963238E10178F1AD02C",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/env38_vs_env39_summary.md"
+    },
+    "figures/01_physical_networks_equal_scale.svg": {
+      "file_sha256": "4D44D7626D6C5AFC6F5DCDD7F973602CA837949B416064195F5C8ED4DA045334",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/figures/01_physical_networks_equal_scale.svg"
+    },
+    "figures/02_topology_control_summary.svg": {
+      "file_sha256": "B8CE9CB69D36C64401C8B55734675AAE7C6AEB1D5CA9A14EE82B1978BA903A3F",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/figures/02_topology_control_summary.svg"
+    },
+    "figures/03_edge_circuity_comparison.svg": {
+      "file_sha256": "99AA38C49DBEA2B20771F83F53B114374B357D8D8DA1502896B2E6F58B2126B6",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/figures/03_edge_circuity_comparison.svg"
+    },
+    "figures/04_chord_orientation_comparison.svg": {
+      "file_sha256": "67D998BE32F69905A2C887D00394F59B2F4C3E1D8317734E76BFE6F7454CAD7B",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/figures/04_chord_orientation_comparison.svg"
+    },
+    "figures/05_segment_orientation_comparison.svg": {
+      "file_sha256": "32F1A79E8100B47A0E3B624F5308E3843786117BAD3F6B75F8734EF6529330AC",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/figures/05_segment_orientation_comparison.svg"
+    },
+    "figures/06_normalized_entropy_comparison.svg": {
+      "file_sha256": "CC96D8F5B195F35F1ED309F428F45871F8538D2DE7AE1AF78CDA66844FE914D8",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/figures/06_normalized_entropy_comparison.svg"
+    },
+    "figures/07_phi_comparison.svg": {
+      "file_sha256": "0DD280A21FA0DE03E68225979E9A18C292C5DCAB14D7C158CC1F90283715DAFE",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/figures/07_phi_comparison.svg"
+    },
+    "figures/08_selected_core_metric_comparison.svg": {
+      "file_sha256": "D6CAE28D307D8A7E777A0DC09A424B0A06E8228ADDB02BCE252B6E0E8C1A6320",
+      "path": "results/comparison/env38_vs_env39/env38_vs_env39_20260825T165714757859Z_03e06d7804d1/figures/08_selected_core_metric_comparison.svg"
+    }
+  },
+  "comparison_id": "env38_vs_env39_20260825T165714757859Z_03e06d7804d1",
+  "configuration": {
+    "environment_registry": {
+      "file_sha256": "CD4C3065AA9AC6880CCB21EDED6866568BE5F378101BB4A9928A7244A8CF2AF0",
+      "path": "config/environments.yaml"
+    },
+    "metrics": {
+      "file_sha256": "80042A6B046FC19C2E7F1C7A5D66CB6987EC7ACACB844351728DA39DA13A95E3",
+      "path": "config/metrics.yaml"
+    }
+  },
+  "created_at_utc": "2026-08-25T16:57:14.757859Z",
+  "environments": {
+    "env38": {
+      "canonical_path": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/env38_canonical.gpkg",
+      "comparison_ready_metrics_path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/integrated/comparison_ready_metrics.csv",
+      "comparison_ready_metrics_sha256": "5701B161124663376F59DDD157AB1BC14B35315A52B7A9276195110285519C0A",
+      "integrated_manifest_path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/integrated/integrated_analysis_manifest.json",
+      "integrated_manifest_sha256": "658C2CA6ADDB0D053F5BAAFD2B75754672322DCFB52F6ACB30A65713849D6B19",
+      "run_id": "env38_20260825T162856878635Z_974f687c1ac4",
+      "scientific_content_signature": "974F687C1AC4E1CDA548366DFB89FFBFCDBE05F44BA28342EF52149A4C607945",
+      "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+    },
+    "env39": {
+      "canonical_path": "data/canonical/grid/runs/env39_20260825T081117893828Z_2046798c1e9c/env39_canonical.gpkg",
+      "comparison_ready_metrics_path": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c/integrated/comparison_ready_metrics.csv",
+      "comparison_ready_metrics_sha256": "6EA83EFA925D658E68570A7B4A9690DF038F6E704EF2DBBECA321D06C0C59BC7",
+      "integrated_manifest_path": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c/integrated/integrated_analysis_manifest.json",
+      "integrated_manifest_sha256": "D214E135E08CE8AE8185CA51874BE2970A8C29319DED5EDF7B22DED4F9DABEDF",
+      "run_id": "env39_20260825T081117893828Z_2046798c1e9c",
+      "scientific_content_signature": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447",
+      "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+    }
+  },
+  "final_comparison_status": "PASS",
+  "git_provenance": {
+    "generation": {
+      "branch": "phase-9-env38-reproducible-analysis",
+      "changed_paths": [
+        "scripts/build_environment_comparison.py",
+        "src/geogami_morphology/comparison.py",
+        "tests/test_environment_comparison.py"
+      ],
+      "commit_sha": "5a8fdc82884db6c4cfc2d37fcadacc5b9d92649f",
+      "dirty": true,
+      "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git",
+      "repository": "geogami-qgis-street-morphology",
+      "repository_root": "."
+    },
+    "phase_start": {
+      "branch": "phase-9-env38-reproducible-analysis",
+      "clean": true,
+      "commit_sha": "5a8fdc82884db6c4cfc2d37fcadacc5b9d92649f"
+    }
+  },
+  "metric_counts": {
+    "comparison": 39,
+    "core": 19
+  },
+  "phase9f_reproducibility": {
+    "comparison_ready_exact_match_count": 39,
+    "core_exact_match_count": 19,
+    "file_sha256": "1714837473DEF1214E94DB33C223831A62A65744B5C13ACC61AC49FFB133A654",
+    "first_accepted_run": "env38_20260825T150753632988Z_974f687c1ac4",
+    "first_freeze_artifact": {
+      "file_sha256": "1B3F5808E2E5604322C059481BBCC6DEC015F41F4D0A8098D3DDC3324F2C4815",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/env38_scientific_baseline_freeze.json"
+    },
+    "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/env38_reproducibility_comparison.json",
+    "scientific_mismatch_count": 0,
+    "second_clean_run": "env38_20260825T162856878635Z_974f687c1ac4",
+    "status": "PASS"
+  },
+  "schema_version": "1.0.0",
+  "software_environment": {
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "fiona": null,
+      "gdal": "3.13.2",
+      "geopandas": "1.1.4",
+      "matplotlib": "3.11.1",
+      "networkx": "3.6.1",
+      "numpy": "2.5.2",
+      "osmnx": "2.1.1",
+      "pandas": "3.0.5",
+      "pyogrio": "0.13.0",
+      "pyproj": "3.7.2",
+      "scipy": "1.18.0",
+      "shapely": "2.1.2"
+    },
+    "python": "3.12.13",
+    "python_implementation": "CPython"
+  },
+  "topology_control": {
+    "env38": {
+      "connected_component_count": 1,
+      "cycle_rank": 24,
+      "dead_end_count": 10,
+      "degree_3_count": 16,
+      "degree_4_count": 20,
+      "degree_mean": 3.0,
+      "node_count": 46,
+      "physical_edge_count": 69
+    },
+    "env39": {
+      "connected_component_count": 1,
+      "cycle_rank": 24,
+      "dead_end_count": 10,
+      "degree_3_count": 16,
+      "degree_4_count": 20,
+      "degree_mean": 3.0,
+      "node_count": 46,
+      "physical_edge_count": 69
+    },
+    "stable_node_ids_equal": true,
+    "stable_physical_edge_connectivity_equal": true,
+    "status": "PASS",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  }
+}

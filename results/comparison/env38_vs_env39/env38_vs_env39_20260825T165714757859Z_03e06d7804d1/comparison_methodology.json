@@ -1,0 +1,61 @@
+{
+  "comparison_roles": [
+    "context_only",
+    "geometry_sensitive",
+    "orientation_sensitive",
+    "topology_control"
+  ],
+  "comparison_type": "controlled_descriptive_street_morphology",
+  "figure_contract": {
+    "direct_comparisons": "Common bin edges and common scales are used.",
+    "format": "deterministic headless-safe SVG",
+    "physical_networks": "69 physical edges per environment; reciprocal OSMnx arcs are not plotted."
+  },
+  "inferential_statistics": {
+    "performed": false,
+    "prohibited_methods": [
+      "p-values",
+      "t-tests",
+      "ANOVA",
+      "confidence intervals",
+      "effect-significance claims"
+    ]
+  },
+  "interpretation_constraints": [
+    "No environment is objectively better or worse.",
+    "Orientation entropy or phi is not universally good or bad.",
+    "Behavioral and navigation conclusions require independent wayfinding evidence."
+  ],
+  "join_key": "metric_id",
+  "line_geometry_definitions": {
+    "edge_circuity": "LineString length divided by endpoint chord for an eligible edge.",
+    "endpoint_chord": "Euclidean local-coordinate distance between physical-edge endpoints.",
+    "linestring_length": "Stored physical-edge LineString path length.",
+    "network_circuity": "Sum of eligible LineString lengths divided by sum of corresponding chords."
+  },
+  "local_coordinate_limitation": "GeoGami Local Cartesian coordinates are not longitude/latitude. Lengths remain local units, not metres. No WGS84 reprojection, geographic bearing, great-circle distance, or geographic nearest-node operation is used.",
+  "metric_families": [
+    "geometric_morphology",
+    "geometry_weighted_network",
+    "orientation_morphology",
+    "topology_controlled"
+  ],
+  "orientation_methodology": {
+    "bin_count": 36,
+    "bin_width_degrees": 5.0,
+    "domain_degrees": "[0, 180)",
+    "east_degrees": 90,
+    "entropy_logarithm": "natural",
+    "identical_bin_edges": true,
+    "north_degrees": 0,
+    "order_symmetry": 4,
+    "rotation": "clockwise"
+  },
+  "relative_difference_percent": "100 * (Env38 - Env39) / abs(Env39), only for nonzero scientifically appropriate geometry- or orientation-sensitive metrics; otherwise null",
+  "schema_version": "1.0.0",
+  "signed_difference": "Env38 - Env39",
+  "topology_control_status": {
+    "different": "CONTROL_FAILURE",
+    "equal": "CONTROL_MATCH"
+  }
+}
