@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import closing
 from pathlib import Path
 import sqlite3
 import sys
@@ -13,7 +14,7 @@ import validate_env38_topology as validator
 
 
 def _stabilize_gpkg(path: Path) -> None:
-    with sqlite3.connect(path) as connection:
+    with closing(sqlite3.connect(path)) as connection:
         connection.execute("UPDATE gpkg_contents SET last_change='2000-01-01T00:00:00.000Z'")
         connection.commit()
         connection.execute("VACUUM")

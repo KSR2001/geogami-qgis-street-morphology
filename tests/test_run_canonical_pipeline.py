@@ -4,6 +4,7 @@ from pathlib import Path
 import shutil
 import sys
 import unittest
+from unittest.mock import patch
 import uuid
 
 import geopandas as gpd
@@ -16,6 +17,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from geogami_morphology.canonical import PipelineError, run_preserve_topology
 from geogami_morphology.io import sha256_file
+import geogami_morphology.canonical as canonical_module
 
 
 class Phase7BCanonicalPipelineTests(unittest.TestCase):
@@ -169,6 +171,31 @@ class Phase7BCanonicalPipelineTests(unittest.TestCase):
             edges.at[edges.index[0], "geometry"] = LineString(reversed(geometry.coords))
         error, _, _ = self._run("reversed", mutate, False)
         self.assertIn("reversed_edge_orientation", {item["issue_type"] for item in error.report["diagnostics"]})
+
+    def test_14_candidate_is_serialized_reread_then_published_through_fresh_copy(self):
+        events = []
+        real_read = canonical_module.read_network
+        real_publish = canonical_module.publish_validated_geopackage
+
+        def tracked_read(path):
+            if ".candidate-" in Path(path).name:
+                events.append("candidate_scientifically_reread")
+            return real_read(path)
+
+        def tracked_publish(*args, **kwargs):
+            events.append("publication_started")
+            return real_publish(*args, **kwargs)
+
+        with patch.object(canonical_module, "read_network", side_effect=tracked_read), patch.object(
+            canonical_module, "publish_validated_geopackage", side_effect=tracked_publish
+        ):
+            result, _source, output = self._run("publication_sequence")
+        self.assertLess(events.index("candidate_scientifically_reread"), events.index("publication_started"))
+        publication = result.report["publication"]
+        self.assertTrue(publication["fresh_publication_copy"])
+        self.assertEqual(publication["sqlite_integrity_check"], "ok")
+        self.assertEqual(publication["validated_candidate_sha256"], publication["published_sha256"])
+        self.assertEqual(publication["published_sha256"], sha256_file(output))
 
 
 if __name__ == "__main__":

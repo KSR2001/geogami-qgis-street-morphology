@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter, defaultdict
+from contextlib import closing
 from dataclasses import dataclass
 import hashlib
 import json
@@ -529,7 +530,7 @@ def _write_csv(path: Path, records: list[dict[str, Any]], columns: list[str] | N
 
 
 def _stabilize_gpkg(path: Path) -> None:
-    with sqlite3.connect(path) as connection:
+    with closing(sqlite3.connect(path)) as connection:
         connection.execute("UPDATE gpkg_contents SET last_change='2000-01-01T00:00:00.000Z'")
         connection.commit()
         connection.execute("VACUUM")
