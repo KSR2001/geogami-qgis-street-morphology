@@ -1,0 +1,82 @@
+{
+  "artifacts": {
+    "graphml_path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/graphs/env38_osmnx.graphml",
+    "graphml_sha256": "84929F9DEFEFECE4B1DCC4466027F2692EBC13FB41F6B2B80085C618D2227DBA"
+  },
+  "canonical": {
+    "file_sha256": "501E8B16A5F99143328166DB31DB159801C23268CEABBFCEC92A5A368C9A0D21",
+    "path": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/env38_canonical.gpkg",
+    "scientific_content_signature": "974F687C1AC4E1CDA548366DFB89FFBFCDBE05F44BA28342EF52149A4C607945",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "canonical_run_id": "env38_20260825T162856878635Z_974f687c1ac4",
+  "created_at_utc": "2026-08-25T16:28:57.892546Z",
+  "environment": "env38",
+  "environment_routing": {
+    "downstream_analysis_output_root": "results/analysis",
+    "environment_id": "env38",
+    "environment_registry_path": "config/environments.yaml",
+    "environment_registry_sha256": "CD4C3065AA9AC6880CCB21EDED6866568BE5F378101BB4A9928A7244A8CF2AF0",
+    "resolved_analysis_environment_root": "results/analysis/env38",
+    "resolved_canonical_latest_pointer": "data/canonical/curvilinear/latest.json",
+    "resolved_canonical_root": "data/canonical/curvilinear",
+    "resolved_canonical_runs_root": "data/canonical/curvilinear/runs",
+    "resolved_editable_source": "data/editable/curvilinear/env38_editable.gpkg",
+    "resolved_topology_reference": "data/canonical/grid/env39_canonical.gpkg",
+    "routing_mode": "environment_registry"
+  },
+  "networkx_graph": {
+    "component_count": 1,
+    "degree_distribution": {
+      "1": 10,
+      "3": 16,
+      "4": 20
+    },
+    "graph_type": "MultiGraph",
+    "handshake_degree_sum": 138,
+    "node_count": 46,
+    "physical_edge_count": 69
+  },
+  "osmnx_graph": {
+    "directed_arc_count": 138,
+    "graph_type": "MultiDiGraph",
+    "node_count": 46,
+    "physical_canonical_edge_count": 69
+  },
+  "roundtrip_validation": {
+    "directed_arc_count": 138,
+    "geometry_orientation_verified": true,
+    "local_crs_verified": true,
+    "node_count": 46,
+    "numeric_attributes_verified": true,
+    "physical_canonical_edge_count": 69,
+    "status": "PASS"
+  },
+  "schema_version": "1.0.0",
+  "semantics": {
+    "authoritative_length": "LineString.length in canonical local Cartesian coordinates",
+    "canonical_graph": "undirected physical street MultiGraph",
+    "coordinate_system": "GeoGami Local Cartesian",
+    "coordinate_units": "local_units",
+    "directed_arcs_are_physical_streets": false,
+    "length_units": "local_units",
+    "osmnx_graph": "reciprocal directed representation"
+  },
+  "software": {
+    "GeoPandas": "1.1.4",
+    "NetworkX": "3.6.1",
+    "OSMnx": "2.1.1",
+    "Python": "3.12.13",
+    "Shapely": "2.1.2",
+    "pyproj": "3.7.2"
+  },
+  "workflow_start_git": {
+    "branch": "phase-9-env38-reproducible-analysis",
+    "changed_paths": [],
+    "commit_sha": "e2fe446c30b66cd5e60a7d64606385be1525ff84",
+    "dirty": false,
+    "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git",
+    "repository": "geogami-qgis-street-morphology",
+    "repository_root": "."
+  }
+}

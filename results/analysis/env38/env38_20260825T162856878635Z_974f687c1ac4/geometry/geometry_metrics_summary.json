@@ -1,0 +1,293 @@
+{
+  "metrics": [
+    {
+      "interpretation": "canonical nodes retained",
+      "method": "GeoDataFrame row count",
+      "metric_name": "node_count",
+      "population": "canonical nodes",
+      "units": "nodes",
+      "value": 46,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "one geometry record per physical canonical street",
+      "method": "GeoDataFrame row count",
+      "metric_name": "physical_edge_geometry_count",
+      "population": "canonical edges",
+      "units": "physical streets",
+      "value": 69,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "total geometry-derived LineString length",
+      "method": "math.fsum",
+      "metric_name": "total_network_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 11398.854303944323,
+      "weighting": "unweighted sum"
+    },
+    {
+      "interpretation": "mean geometry-derived LineString length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "mean_edge_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 165.20078701368584,
+      "weighting": "equal observation"
+    },
+    {
+      "interpretation": "median geometry-derived LineString length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "median_edge_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 143.4478602096824,
+      "weighting": "equal observation"
+    },
+    {
+      "interpretation": "population standard deviation of geometry-derived LineString length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "std_edge_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 92.53994018970549,
+      "weighting": "equal observation"
+    },
+    {
+      "interpretation": "minimum geometry-derived LineString length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "minimum_edge_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 36.615543500190505,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "maximum geometry-derived LineString length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "maximum_edge_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 505.5201047999172,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "inclusive first quartile of geometry-derived LineString length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "q1_edge_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 93.76016943217722,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "inclusive third quartile of geometry-derived LineString length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "q3_edge_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 185.06437388168803,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "total canonical endpoint Euclidean chord length",
+      "method": "math.fsum",
+      "metric_name": "total_chord_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 10972.602224493956,
+      "weighting": "unweighted sum"
+    },
+    {
+      "interpretation": "mean canonical endpoint Euclidean chord length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "mean_chord_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 159.02322064483994,
+      "weighting": "equal observation"
+    },
+    {
+      "interpretation": "median canonical endpoint Euclidean chord length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "median_chord_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 143.0602113790603,
+      "weighting": "equal observation"
+    },
+    {
+      "interpretation": "population standard deviation of canonical endpoint Euclidean chord length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "std_chord_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 88.42591811644922,
+      "weighting": "equal observation"
+    },
+    {
+      "interpretation": "minimum canonical endpoint Euclidean chord length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "minimum_chord_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 36.615543500190505,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "maximum canonical endpoint Euclidean chord length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "maximum_chord_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 478.1427003647597,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "inclusive first quartile of canonical endpoint Euclidean chord length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "q1_chord_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 93.76016943217722,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "inclusive third quartile of canonical endpoint Euclidean chord length",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "q3_chord_length_local",
+      "population": "physical canonical edges",
+      "units": "local units",
+      "value": 177.21786188114964,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "edges explicitly excluded from circuity and chord orientation",
+      "method": "D <= configured tolerance",
+      "metric_name": "zero_chord_edge_count",
+      "population": "physical canonical edges",
+      "units": "physical streets",
+      "value": 0,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "edges eligible for L/D circuity",
+      "method": "D > configured tolerance",
+      "metric_name": "eligible_circuity_edge_count",
+      "population": "physical canonical edges",
+      "units": "physical streets",
+      "value": 69,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "total per-edge L_i / D_i circuity",
+      "method": "math.fsum",
+      "metric_name": "total_edge_circuity",
+      "population": "positive-chord physical edges",
+      "units": "ratio",
+      "value": 71.51833341452938,
+      "weighting": "unweighted sum"
+    },
+    {
+      "interpretation": "mean per-edge L_i / D_i circuity",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "mean_edge_circuity",
+      "population": "positive-chord physical edges",
+      "units": "ratio",
+      "value": 1.0364975857178171,
+      "weighting": "equal observation"
+    },
+    {
+      "interpretation": "median per-edge L_i / D_i circuity",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "median_edge_circuity",
+      "population": "positive-chord physical edges",
+      "units": "ratio",
+      "value": 1.0139744687039383,
+      "weighting": "equal observation"
+    },
+    {
+      "interpretation": "population standard deviation of per-edge L_i / D_i circuity",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "std_edge_circuity",
+      "population": "positive-chord physical edges",
+      "units": "ratio",
+      "value": 0.05344393566768329,
+      "weighting": "equal observation"
+    },
+    {
+      "interpretation": "minimum per-edge L_i / D_i circuity",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "minimum_edge_circuity",
+      "population": "positive-chord physical edges",
+      "units": "ratio",
+      "value": 1.0,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "maximum per-edge L_i / D_i circuity",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "maximum_edge_circuity",
+      "population": "positive-chord physical edges",
+      "units": "ratio",
+      "value": 1.2696740110613949,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "inclusive first quartile of per-edge L_i / D_i circuity",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "q1_edge_circuity",
+      "population": "positive-chord physical edges",
+      "units": "ratio",
+      "value": 1.0003154369883607,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "inclusive third quartile of per-edge L_i / D_i circuity",
+      "method": "Python statistics; inclusive quartiles; population standard deviation ddof=0",
+      "metric_name": "q3_edge_circuity",
+      "population": "positive-chord physical edges",
+      "units": "ratio",
+      "value": 1.044276078704756,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "network aggregate circuity, distinct from mean per-edge circuity",
+      "method": "sum(L_i) / sum(D_i)",
+      "metric_name": "network_circuity",
+      "population": "positive-chord physical edges",
+      "units": "ratio",
+      "value": 1.038846945394489,
+      "weighting": "aggregate length ratio"
+    },
+    {
+      "interpretation": "geometry segments are not graph edges or nodes",
+      "method": "positive consecutive coordinate pairs",
+      "metric_name": "geometry_segment_count",
+      "population": "LineString geometry segments",
+      "units": "segments",
+      "value": 178,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "excluded zero-length geometry segments",
+      "method": "segment length <= configured tolerance",
+      "metric_name": "zero_length_geometry_segment_count",
+      "population": "LineString coordinate pairs",
+      "units": "segments",
+      "value": 1,
+      "weighting": "unweighted"
+    },
+    {
+      "interpretation": "independent sum equal to total physical LineString length",
+      "method": "math.fsum",
+      "metric_name": "total_geometry_segment_length_local",
+      "population": "positive LineString geometry segments",
+      "units": "local units",
+      "value": 11398.854303944323,
+      "weighting": "segment length"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

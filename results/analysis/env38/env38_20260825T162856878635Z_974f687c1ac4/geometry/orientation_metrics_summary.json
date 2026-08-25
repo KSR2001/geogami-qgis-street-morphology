@@ -1,0 +1,765 @@
+{
+  "chord_histogram": [
+    {
+      "bin_center_deg": 2.5,
+      "bin_end_deg": 5.0,
+      "bin_index": 0,
+      "bin_start_deg": 0.0,
+      "observation_count": 5,
+      "probability": 0.07246376811594203,
+      "weight": 5.0
+    },
+    {
+      "bin_center_deg": 7.5,
+      "bin_end_deg": 10.0,
+      "bin_index": 1,
+      "bin_start_deg": 5.0,
+      "observation_count": 1,
+      "probability": 0.014492753623188406,
+      "weight": 1.0
+    },
+    {
+      "bin_center_deg": 12.5,
+      "bin_end_deg": 15.0,
+      "bin_index": 2,
+      "bin_start_deg": 10.0,
+      "observation_count": 2,
+      "probability": 0.028985507246376812,
+      "weight": 2.0
+    },
+    {
+      "bin_center_deg": 17.5,
+      "bin_end_deg": 20.0,
+      "bin_index": 3,
+      "bin_start_deg": 15.0,
+      "observation_count": 3,
+      "probability": 0.043478260869565216,
+      "weight": 3.0
+    },
+    {
+      "bin_center_deg": 22.5,
+      "bin_end_deg": 25.0,
+      "bin_index": 4,
+      "bin_start_deg": 20.0,
+      "observation_count": 1,
+      "probability": 0.014492753623188406,
+      "weight": 1.0
+    },
+    {
+      "bin_center_deg": 27.5,
+      "bin_end_deg": 30.0,
+      "bin_index": 5,
+      "bin_start_deg": 25.0,
+      "observation_count": 1,
+      "probability": 0.014492753623188406,
+      "weight": 1.0
+    },
+    {
+      "bin_center_deg": 32.5,
+      "bin_end_deg": 35.0,
+      "bin_index": 6,
+      "bin_start_deg": 30.0,
+      "observation_count": 0,
+      "probability": 0.0,
+      "weight": 0.0
+    },
+    {
+      "bin_center_deg": 37.5,
+      "bin_end_deg": 40.0,
+      "bin_index": 7,
+      "bin_start_deg": 35.0,
+      "observation_count": 1,
+      "probability": 0.014492753623188406,
+      "weight": 1.0
+    },
+    {
+      "bin_center_deg": 42.5,
+      "bin_end_deg": 45.0,
+      "bin_index": 8,
+      "bin_start_deg": 40.0,
+      "observation_count": 0,
+      "probability": 0.0,
+      "weight": 0.0
+    },
+    {
+      "bin_center_deg": 47.5,
+      "bin_end_deg": 50.0,
+      "bin_index": 9,
+      "bin_start_deg": 45.0,
+      "observation_count": 0,
+      "probability": 0.0,
+      "weight": 0.0
+    },
+    {
+      "bin_center_deg": 52.5,
+      "bin_end_deg": 55.0,
+      "bin_index": 10,
+      "bin_start_deg": 50.0,
+      "observation_count": 1,
+      "probability": 0.014492753623188406,
+      "weight": 1.0
+    },
+    {
+      "bin_center_deg": 57.5,
+      "bin_end_deg": 60.0,
+      "bin_index": 11,
+      "bin_start_deg": 55.0,
+      "observation_count": 0,
+      "probability": 0.0,
+      "weight": 0.0
+    },
+    {
+      "bin_center_deg": 62.5,
+      "bin_end_deg": 65.0,
+      "bin_index": 12,
+      "bin_start_deg": 60.0,
+      "observation_count": 0,
+      "probability": 0.0,
+      "weight": 0.0
+    },
+    {
+      "bin_center_deg": 67.5,
+      "bin_end_deg": 70.0,
+      "bin_index": 13,
+      "bin_start_deg": 65.0,
+      "observation_count": 2,
+      "probability": 0.028985507246376812,
+      "weight": 2.0
+    },
+    {
+      "bin_center_deg": 72.5,
+      "bin_end_deg": 75.0,
+      "bin_index": 14,
+      "bin_start_deg": 70.0,
+      "observation_count": 5,
+      "probability": 0.07246376811594203,
+      "weight": 5.0
+    },
+    {
+      "bin_center_deg": 77.5,
+      "bin_end_deg": 80.0,
+      "bin_index": 15,
+      "bin_start_deg": 75.0,
+      "observation_count": 0,
+      "probability": 0.0,
+      "weight": 0.0
+    },
+    {
+      "bin_center_deg": 82.5,
+      "bin_end_deg": 85.0,
+      "bin_index": 16,
+      "bin_start_deg": 80.0,
+      "observation_count": 2,
+      "probability": 0.028985507246376812,
+      "weight": 2.0
+    },
+    {
+      "bin_center_deg": 87.5,
+      "bin_end_deg": 90.0,
+      "bin_index": 17,
+      "bin_start_deg": 85.0,
+      "observation_count": 7,
+      "probability": 0.10144927536231885,
+      "weight": 7.0
+    },
+    {
+      "bin_center_deg": 92.5,
+      "bin_end_deg": 95.0,
+      "bin_index": 18,
+      "bin_start_deg": 90.0,
+      "observation_count": 3,
+      "probability": 0.043478260869565216,
+      "weight": 3.0
+    },
+    {
+      "bin_center_deg": 97.5,
+      "bin_end_deg": 100.0,
+      "bin_index": 19,
+      "bin_start_deg": 95.0,
+      "observation_count": 5,
+      "probability": 0.07246376811594203,
+      "weight": 5.0
+    },
+    {
+      "bin_center_deg": 102.5,
+      "bin_end_deg": 105.0,
+      "bin_index": 20,
+      "bin_start_deg": 100.0,
+      "observation_count": 2,
+      "probability": 0.028985507246376812,
+      "weight": 2.0
+    },
+    {
+      "bin_center_deg": 107.5,
+      "bin_end_deg": 110.0,
+      "bin_index": 21,
+      "bin_start_deg": 105.0,
+      "observation_count": 2,
+      "probability": 0.028985507246376812,
+      "weight": 2.0
+    },
+    {
+      "bin_center_deg": 112.5,
+      "bin_end_deg": 115.0,
+      "bin_index": 22,
+      "bin_start_deg": 110.0,
+      "observation_count": 2,
+      "probability": 0.028985507246376812,
+      "weight": 2.0
+    },
+    {
+      "bin_center_deg": 117.5,
+      "bin_end_deg": 120.0,
+      "bin_index": 23,
+      "bin_start_deg": 115.0,
+      "observation_count": 1,
+      "probability": 0.014492753623188406,
+      "weight": 1.0
+    },
+    {
+      "bin_center_deg": 122.5,
+      "bin_end_deg": 125.0,
+      "bin_index": 24,
+      "bin_start_deg": 120.0,
+      "observation_count": 0,
+      "probability": 0.0,
+      "weight": 0.0
+    },
+    {
+      "bin_center_deg": 127.5,
+      "bin_end_deg": 130.0,
+      "bin_index": 25,
+      "bin_start_deg": 125.0,
+      "observation_count": 0,
+      "probability": 0.0,
+      "weight": 0.0
+    },
+    {
+      "bin_center_deg": 132.5,
+      "bin_end_deg": 135.0,
+      "bin_index": 26,
+      "bin_start_deg": 130.0,
+      "observation_count": 0,
+      "probability": 0.0,
+      "weight": 0.0
+    },
+    {
+      "bin_center_deg": 137.5,
+      "bin_end_deg": 140.0,
+      "bin_index": 27,
+      "bin_start_deg": 135.0,
+      "observation_count": 0,
+      "probability": 0.0,
+      "weight": 0.0
+    },
+    {
+      "bin_center_deg": 142.5,
+      "bin_end_deg": 145.0,
+      "bin_index": 28,
+      "bin_start_deg": 140.0,
+      "observation_count": 1,
+      "probability": 0.014492753623188406,
+      "weight": 1.0
+    },
+    {
+      "bin_center_deg": 147.5,
+      "bin_end_deg": 150.0,
+      "bin_index": 29,
+      "bin_start_deg": 145.0,
+      "observation_count": 1,
+      "probability": 0.014492753623188406,
+      "weight": 1.0
+    },
+    {
+      "bin_center_deg": 152.5,
+      "bin_end_deg": 155.0,
+      "bin_index": 30,
+      "bin_start_deg": 150.0,
+      "observation_count": 0,
+      "probability": 0.0,
+      "weight": 0.0
+    },
+    {
+      "bin_center_deg": 157.5,
+      "bin_end_deg": 160.0,
+      "bin_index": 31,
+      "bin_start_deg": 155.0,
+      "observation_count": 2,
+      "probability": 0.028985507246376812,
+      "weight": 2.0
+    },
+    {
+      "bin_center_deg": 162.5,
+      "bin_end_deg": 165.0,
+      "bin_index": 32,
+      "bin_start_deg": 160.0,
+      "observation_count": 1,
+      "probability": 0.014492753623188406,
+      "weight": 1.0
+    },
+    {
+      "bin_center_deg": 167.5,
+      "bin_end_deg": 170.0,
+      "bin_index": 33,
+      "bin_start_deg": 165.0,
+      "observation_count": 5,
+      "probability": 0.07246376811594203,
+      "weight": 5.0
+    },
+    {
+      "bin_center_deg": 172.5,
+      "bin_end_deg": 175.0,
+      "bin_index": 34,
+      "bin_start_deg": 170.0,
+      "observation_count": 6,
+      "probability": 0.08695652173913043,
+      "weight": 6.0
+    },
+    {
+      "bin_center_deg": 177.5,
+      "bin_end_deg": 180.0,
+      "bin_index": 35,
+      "bin_start_deg": 175.0,
+      "observation_count": 7,
+      "probability": 0.10144927536231885,
+      "weight": 7.0
+    }
+  ],
+  "metrics": [
+    {
+      "interpretation": "number of deterministic axial bins",
+      "method": "180 / configured bin width",
+      "metric_name": "orientation_bin_count",
+      "population": "both axial distributions",
+      "units": "bins",
+      "value": 36,
+      "weighting": "not applicable"
+    },
+    {
+      "interpretation": "axial histogram bin width",
+      "method": "180 / bins",
+      "metric_name": "orientation_bin_width_degrees",
+      "population": "both axial distributions",
+      "units": "degrees",
+      "value": 5.0,
+      "weighting": "not applicable"
+    },
+    {
+      "interpretation": "overall endpoint-to-endpoint street axes",
+      "method": "one chord orientation per eligible edge",
+      "metric_name": "chord_orientation_observation_count",
+      "population": "positive-chord physical edges",
+      "units": "physical streets",
+      "value": 69,
+      "weighting": "equal physical edge"
+    },
+    {
+      "interpretation": "local geometry orientations including internal curvature",
+      "method": "one orientation per positive geometry segment",
+      "metric_name": "segment_orientation_observation_count",
+      "population": "LineString geometry segments",
+      "units": "segments",
+      "value": 178,
+      "weighting": "segment length"
+    },
+    {
+      "interpretation": "raw Shannon orientation entropy",
+      "method": "-sum(p_i * ln(p_i))",
+      "metric_name": "chord_orientation_entropy",
+      "population": "36-bin chord orientations",
+      "units": "nats",
+      "value": 2.9808051798049027,
+      "weighting": "equal physical edge"
+    },
+    {
+      "interpretation": "maximum possible entropy for configured bins",
+      "method": "ln(number_of_bins)",
+      "metric_name": "chord_orientation_maximum_entropy",
+      "population": "36-bin chord orientations",
+      "units": "nats",
+      "value": 3.58351893845611,
+      "weighting": "not applicable"
+    },
+    {
+      "interpretation": "orientation disorder normalized to [0,1]",
+      "method": "H / ln(number_of_bins)",
+      "metric_name": "chord_orientation_normalized_entropy",
+      "population": "36-bin chord orientations",
+      "units": "proportion",
+      "value": 0.8318095232640588,
+      "weighting": "equal physical edge"
+    },
+    {
+      "interpretation": "raw length-weighted Shannon orientation entropy",
+      "method": "-sum(p_i * ln(p_i))",
+      "metric_name": "segment_length_weighted_orientation_entropy",
+      "population": "36-bin geometry-segment orientations",
+      "units": "nats",
+      "value": 3.2269625103808837,
+      "weighting": "segment_length_local"
+    },
+    {
+      "interpretation": "maximum possible entropy for configured bins",
+      "method": "ln(number_of_bins)",
+      "metric_name": "segment_orientation_maximum_entropy",
+      "population": "36-bin geometry-segment orientations",
+      "units": "nats",
+      "value": 3.58351893845611,
+      "weighting": "not applicable"
+    },
+    {
+      "interpretation": "length-weighted orientation disorder normalized to [0,1]",
+      "method": "H / ln(number_of_bins)",
+      "metric_name": "segment_length_weighted_normalized_entropy",
+      "population": "36-bin geometry-segment orientations",
+      "units": "proportion",
+      "value": 0.9005010342630304,
+      "weighting": "segment_length_local"
+    },
+    {
+      "interpretation": "fourfold orthogonal orientation order",
+      "method": "|sum(w*exp(i*4*theta))/sum(w)|",
+      "metric_name": "phi_chord",
+      "population": "positive-chord physical edges",
+      "units": "proportion",
+      "value": 0.5787070314167302,
+      "weighting": "equal physical edge"
+    },
+    {
+      "interpretation": "length-weighted fourfold local-orientation order",
+      "method": "|sum(w*exp(i*4*theta))/sum(w)|",
+      "metric_name": "phi_segment_length_weighted",
+      "population": "positive LineString geometry segments",
+      "units": "proportion",
+      "value": 0.4437291100780897,
+      "weighting": "segment_length_local"
+    }
+  ],
+  "schema_version": "1.0.0",
+  "segment_length_weighted_histogram": [
+    {
+      "bin_center_deg": 2.5,
+      "bin_end_deg": 5.0,
+      "bin_index": 0,
+      "bin_start_deg": 0.0,
+      "observation_count": 12,
+      "probability": 0.06879576278841981,
+      "weight": 784.192876753912
+    },
+    {
+      "bin_center_deg": 7.5,
+      "bin_end_deg": 10.0,
+      "bin_index": 1,
+      "bin_start_deg": 5.0,
+      "observation_count": 4,
+      "probability": 0.027779237421351313,
+      "weight": 316.6514800406616
+    },
+    {
+      "bin_center_deg": 12.5,
+      "bin_end_deg": 15.0,
+      "bin_index": 2,
+      "bin_start_deg": 10.0,
+      "observation_count": 6,
+      "probability": 0.031080829375592586,
+      "weight": 354.2858456981327
+    },
+    {
+      "bin_center_deg": 17.5,
+      "bin_end_deg": 20.0,
+      "bin_index": 3,
+      "bin_start_deg": 15.0,
+      "observation_count": 2,
+      "probability": 0.006523893733347941,
+      "weight": 74.36491416084857
+    },
+    {
+      "bin_center_deg": 22.5,
+      "bin_end_deg": 25.0,
+      "bin_index": 4,
+      "bin_start_deg": 20.0,
+      "observation_count": 3,
+      "probability": 0.013280947729135129,
+      "weight": 151.38758818271154
+    },
+    {
+      "bin_center_deg": 27.5,
+      "bin_end_deg": 30.0,
+      "bin_index": 5,
+      "bin_start_deg": 25.0,
+      "observation_count": 5,
+      "probability": 0.023107717815438338,
+      "weight": 263.4015086748402
+    },
+    {
+      "bin_center_deg": 32.5,
+      "bin_end_deg": 35.0,
+      "bin_index": 6,
+      "bin_start_deg": 30.0,
+      "observation_count": 4,
+      "probability": 0.01825210297421104,
+      "weight": 208.0530625436205
+    },
+    {
+      "bin_center_deg": 37.5,
+      "bin_end_deg": 40.0,
+      "bin_index": 7,
+      "bin_start_deg": 35.0,
+      "observation_count": 2,
+      "probability": 0.009419651994900947,
+      "weight": 107.3732406837344
+    },
+    {
+      "bin_center_deg": 42.5,
+      "bin_end_deg": 45.0,
+      "bin_index": 8,
+      "bin_start_deg": 40.0,
+      "observation_count": 3,
+      "probability": 0.010549922681492616,
+      "weight": 120.25703156421194
+    },
+    {
+      "bin_center_deg": 47.5,
+      "bin_end_deg": 50.0,
+      "bin_index": 9,
+      "bin_start_deg": 45.0,
+      "observation_count": 2,
+      "probability": 0.008722439636213856,
+      "weight": 99.42581858815086
+    },
+    {
+      "bin_center_deg": 52.5,
+      "bin_end_deg": 55.0,
+      "bin_index": 10,
+      "bin_start_deg": 50.0,
+      "observation_count": 3,
+      "probability": 0.012291162960135367,
+      "weight": 140.10517580862006
+    },
+    {
+      "bin_center_deg": 57.5,
+      "bin_end_deg": 60.0,
+      "bin_index": 11,
+      "bin_start_deg": 55.0,
+      "observation_count": 2,
+      "probability": 0.0035716752613406,
+      "weight": 40.713005925023765
+    },
+    {
+      "bin_center_deg": 62.5,
+      "bin_end_deg": 65.0,
+      "bin_index": 12,
+      "bin_start_deg": 60.0,
+      "observation_count": 6,
+      "probability": 0.021270248837734814,
+      "weight": 242.45646750998023
+    },
+    {
+      "bin_center_deg": 67.5,
+      "bin_end_deg": 70.0,
+      "bin_index": 13,
+      "bin_start_deg": 65.0,
+      "observation_count": 8,
+      "probability": 0.027660448391935443,
+      "weight": 315.29742120144317
+    },
+    {
+      "bin_center_deg": 72.5,
+      "bin_end_deg": 75.0,
+      "bin_index": 14,
+      "bin_start_deg": 70.0,
+      "observation_count": 9,
+      "probability": 0.03885071869348809,
+      "weight": 442.8536819905969
+    },
+    {
+      "bin_center_deg": 77.5,
+      "bin_end_deg": 80.0,
+      "bin_index": 15,
+      "bin_start_deg": 75.0,
+      "observation_count": 3,
+      "probability": 0.011437361248231774,
+      "weight": 130.37281449017277
+    },
+    {
+      "bin_center_deg": 82.5,
+      "bin_end_deg": 85.0,
+      "bin_index": 16,
+      "bin_start_deg": 80.0,
+      "observation_count": 7,
+      "probability": 0.03902686650538291,
+      "weight": 444.86156523434454
+    },
+    {
+      "bin_center_deg": 87.5,
+      "bin_end_deg": 90.0,
+      "bin_index": 17,
+      "bin_start_deg": 85.0,
+      "observation_count": 7,
+      "probability": 0.035418469880913746,
+      "weight": 403.72997784117604
+    },
+    {
+      "bin_center_deg": 92.5,
+      "bin_end_deg": 95.0,
+      "bin_index": 18,
+      "bin_start_deg": 90.0,
+      "observation_count": 9,
+      "probability": 0.0654102927350829,
+      "weight": 745.6023968655578
+    },
+    {
+      "bin_center_deg": 97.5,
+      "bin_end_deg": 100.0,
+      "bin_index": 19,
+      "bin_start_deg": 95.0,
+      "observation_count": 5,
+      "probability": 0.02618889985580152,
+      "weight": 298.52345383687003
+    },
+    {
+      "bin_center_deg": 102.5,
+      "bin_end_deg": 105.0,
+      "bin_index": 20,
+      "bin_start_deg": 100.0,
+      "observation_count": 8,
+      "probability": 0.04950277121779482,
+      "weight": 564.2748767531316
+    },
+    {
+      "bin_center_deg": 107.5,
+      "bin_end_deg": 110.0,
+      "bin_index": 21,
+      "bin_start_deg": 105.0,
+      "observation_count": 6,
+      "probability": 0.03690440494821264,
+      "weight": 420.66793517843786
+    },
+    {
+      "bin_center_deg": 112.5,
+      "bin_end_deg": 115.0,
+      "bin_index": 22,
+      "bin_start_deg": 110.0,
+      "observation_count": 4,
+      "probability": 0.017362848544069043,
+      "weight": 197.91658085529485
+    },
+    {
+      "bin_center_deg": 117.5,
+      "bin_end_deg": 120.0,
+      "bin_index": 23,
+      "bin_start_deg": 115.0,
+      "observation_count": 4,
+      "probability": 0.01145220109819889,
+      "weight": 130.54197177784033
+    },
+    {
+      "bin_center_deg": 122.5,
+      "bin_end_deg": 125.0,
+      "bin_index": 24,
+      "bin_start_deg": 120.0,
+      "observation_count": 3,
+      "probability": 0.016519757467443597,
+      "weight": 188.3063085078858
+    },
+    {
+      "bin_center_deg": 127.5,
+      "bin_end_deg": 130.0,
+      "bin_index": 25,
+      "bin_start_deg": 125.0,
+      "observation_count": 4,
+      "probability": 0.015247003288173041,
+      "weight": 173.7983690536445
+    },
+    {
+      "bin_center_deg": 132.5,
+      "bin_end_deg": 135.0,
+      "bin_index": 26,
+      "bin_start_deg": 130.0,
+      "observation_count": 3,
+      "probability": 0.013124653747962975,
+      "weight": 149.60601586274674
+    },
+    {
+      "bin_center_deg": 137.5,
+      "bin_end_deg": 140.0,
+      "bin_index": 27,
+      "bin_start_deg": 135.0,
+      "observation_count": 2,
+      "probability": 0.010119930045990558,
+      "weight": 115.35560816035493
+    },
+    {
+      "bin_center_deg": 142.5,
+      "bin_end_deg": 145.0,
+      "bin_index": 28,
+      "bin_start_deg": 140.0,
+      "observation_count": 1,
+      "probability": 0.003962846375621376,
+      "weight": 45.171908464621886
+    },
+    {
+      "bin_center_deg": 147.5,
+      "bin_end_deg": 150.0,
+      "bin_index": 29,
+      "bin_start_deg": 145.0,
+      "observation_count": 5,
+      "probability": 0.023614533673914306,
+      "weight": 269.17862880453623
+    },
+    {
+      "bin_center_deg": 152.5,
+      "bin_end_deg": 155.0,
+      "bin_index": 30,
+      "bin_start_deg": 150.0,
+      "observation_count": 1,
+      "probability": 0.003957634978004081,
+      "weight": 45.112504502462414
+    },
+    {
+      "bin_center_deg": 157.5,
+      "bin_end_deg": 160.0,
+      "bin_index": 31,
+      "bin_start_deg": 155.0,
+      "observation_count": 2,
+      "probability": 0.009837587910883329,
+      "weight": 112.13723129840307
+    },
+    {
+      "bin_center_deg": 162.5,
+      "bin_end_deg": 165.0,
+      "bin_index": 32,
+      "bin_start_deg": 160.0,
+      "observation_count": 8,
+      "probability": 0.0315075850575579,
+      "weight": 359.1503715402357
+    },
+    {
+      "bin_center_deg": 167.5,
+      "bin_end_deg": 170.0,
+      "bin_index": 33,
+      "bin_start_deg": 165.0,
+      "observation_count": 6,
+      "probability": 0.029480252686314327,
+      "weight": 336.04110521476025
+    },
+    {
+      "bin_center_deg": 172.5,
+      "bin_end_deg": 175.0,
+      "bin_index": 34,
+      "bin_start_deg": 170.0,
+      "observation_count": 7,
+      "probability": 0.07586232441732814,
+      "weight": 864.7435831916813
+    },
+    {
+      "bin_center_deg": 177.5,
+      "bin_end_deg": 180.0,
+      "bin_index": 35,
+      "bin_start_deg": 175.0,
+      "observation_count": 12,
+      "probability": 0.15290501402238024,
+      "weight": 1742.941977183676
+    }
+  ]
+}

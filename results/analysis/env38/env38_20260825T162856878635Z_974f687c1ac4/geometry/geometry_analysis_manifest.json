@@ -1,0 +1,194 @@
+{
+  "analysis_git_provenance": {
+    "branch": "phase-9-env38-reproducible-analysis",
+    "changed_paths": [
+      "data/canonical/curvilinear/latest.json",
+      "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/canonical_edges.csv",
+      "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/canonical_manifest.json",
+      "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/canonical_nodes.csv",
+      "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/canonical_validation.json",
+      "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/diagnostics.csv",
+      "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/endpoint_adjustments.csv",
+      "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/env38_canonical.gpkg",
+      "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/scientific_content_signature.txt",
+      "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/topology_signature.txt",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/analysis_graph_manifest.json",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/edge_geometry_metrics.csv",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/figures/chord_orientation_histogram.svg",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/figures/chord_orientation_rose.svg",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/figures/edge_circuity_distribution.svg",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/figures/edge_length_distribution.svg",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/figures/segment_length_weighted_orientation_histogram.svg",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/geometry_methodology.json",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/geometry_metrics_summary.csv",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/geometry_metrics_summary.json",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/orientation_metrics_summary.csv",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/orientation_metrics_summary.json",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/segment_orientation_metrics.csv",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/graphs/env38_osmnx.graphml",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/topology/edge_topology_metrics.csv",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/topology/node_topology_metrics.csv",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/topology/osmnx_crosscheck.json",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/topology/topology_analysis_manifest.json",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/topology/topology_methodology.json",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/topology/topology_metrics_summary.csv",
+      "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/topology/topology_metrics_summary.json"
+    ],
+    "commit_sha": "e2fe446c30b66cd5e60a7d64606385be1525ff84",
+    "dirty": true,
+    "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git",
+    "repository": "geogami-qgis-street-morphology",
+    "repository_root": "."
+  },
+  "analysis_type": "Phase 7G planar geometry and orientation metrics",
+  "artifacts": {
+    "chord_orientation_histogram_svg": {
+      "file_sha256": "1F1BC886EB8A5BAA91CD7CF9112D5A74A5EB0826A8193F12718258B4C21C513C",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/figures/chord_orientation_histogram.svg"
+    },
+    "chord_orientation_rose_svg": {
+      "file_sha256": "1DCC081D7B5712A15BB5B95FF449AEC51B29A5DF21479A2468B0765F06DD031C",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/figures/chord_orientation_rose.svg"
+    },
+    "edge_circuity_distribution_svg": {
+      "file_sha256": "DA5E67805A07B4DADE8629FFFFAF1015BBA3F74C2A35F09A8D609375292C0BB9",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/figures/edge_circuity_distribution.svg"
+    },
+    "edge_geometry_metrics_csv": {
+      "file_sha256": "B866932205AC60C668E2A5B8C61BDE5E7B56B7903D2FBA143A8BC52C16F7A0D8",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/edge_geometry_metrics.csv"
+    },
+    "edge_length_distribution_svg": {
+      "file_sha256": "83C2A8498EA7946976D78CA9D160451C80B706E75480A16E5DBE08CC6D23B3AC",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/figures/edge_length_distribution.svg"
+    },
+    "geometry_methodology_json": {
+      "file_sha256": "9301883F964BD6D38A9589D53391D71F59818487F5BC9EEE33EE51DDCDC37122",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/geometry_methodology.json"
+    },
+    "geometry_metrics_summary_csv": {
+      "file_sha256": "BD92C8908609ABB405F2672FFA722ACD66DBAECCFEF92BAA1EC44F2A6B93837B",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/geometry_metrics_summary.csv"
+    },
+    "geometry_metrics_summary_json": {
+      "file_sha256": "5A7E9129DB377FAFA0051D124151113440FBBE821497FD513D66FE28EFBF859C",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/geometry_metrics_summary.json"
+    },
+    "orientation_metrics_summary_csv": {
+      "file_sha256": "3E3A3C8CD62C766F2FE1FA9C31A2985DAE2B9987381A697469D3373FC7F65386",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/orientation_metrics_summary.csv"
+    },
+    "orientation_metrics_summary_json": {
+      "file_sha256": "8ACB653BCD2ADC26D236888653BBFC82185FA9DB3458EFDE41FE10335F6EA2CA",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/orientation_metrics_summary.json"
+    },
+    "segment_orientation_histogram_svg": {
+      "file_sha256": "3BBA514F5F394200E93B85050566527F60865DC45862A47172850C2D0C9C7185",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/figures/segment_length_weighted_orientation_histogram.svg"
+    },
+    "segment_orientation_metrics_csv": {
+      "file_sha256": "208E1CC82B834CC2EAB64833646C87608E1532D5ADCF3A4BCFB0A5B0F914E7A3",
+      "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/geometry/segment_orientation_metrics.csv"
+    }
+  },
+  "canonical": {
+    "file_sha256": "501E8B16A5F99143328166DB31DB159801C23268CEABBFCEC92A5A368C9A0D21",
+    "path": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/env38_canonical.gpkg",
+    "publication_git_provenance": {
+      "branch": "phase-9-env38-reproducible-analysis",
+      "changed_paths": [],
+      "commit_sha": "e2fe446c30b66cd5e60a7d64606385be1525ff84",
+      "dirty": false,
+      "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git",
+      "repository": "geogami-qgis-street-morphology",
+      "repository_root": "."
+    },
+    "scientific_content_signature": "974F687C1AC4E1CDA548366DFB89FFBFCDBE05F44BA28342EF52149A4C607945",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "canonical_run_id": "env38_20260825T162856878635Z_974f687c1ac4",
+  "environment": "env38",
+  "environment_routing": {
+    "downstream_analysis_output_root": "results/analysis",
+    "environment_id": "env38",
+    "environment_registry_path": "config/environments.yaml",
+    "environment_registry_sha256": "CD4C3065AA9AC6880CCB21EDED6866568BE5F378101BB4A9928A7244A8CF2AF0",
+    "resolved_analysis_environment_root": "results/analysis/env38",
+    "resolved_canonical_latest_pointer": "data/canonical/curvilinear/latest.json",
+    "resolved_canonical_root": "data/canonical/curvilinear",
+    "resolved_canonical_runs_root": "data/canonical/curvilinear/runs",
+    "resolved_editable_source": "data/editable/curvilinear/env38_editable.gpkg",
+    "resolved_topology_reference": "data/canonical/grid/env39_canonical.gpkg",
+    "routing_mode": "environment_registry"
+  },
+  "metrics_configuration": {
+    "file_sha256": "80042A6B046FC19C2E7F1C7A5D66CB6987EC7ACACB844351728DA39DA13A95E3",
+    "path": "config/metrics.yaml",
+    "schema_version": "1.0.0"
+  },
+  "orientation_convention": {
+    "angular_reference": "north_clockwise",
+    "axial_domain_degrees": [
+      0,
+      180
+    ],
+    "bin_boundary_tolerance_degrees": 1e-09,
+    "bin_count": 36,
+    "bin_width_degrees": 5.0,
+    "chord_weighting": "equal_edge",
+    "entropy_logarithm_base": "natural",
+    "phi_formula": "|sum(w_i * exp(i * 4 * theta_i)) / sum(w_i)|",
+    "segment_weighting": "segment_length_local"
+  },
+  "phase_7d_manifest_preserved": {
+    "available": true,
+    "file_sha256": "F927112CF312F4B4B08CCD3F07FCF09CB85FC1805EA8BEE0E49A7ADD5EC29300",
+    "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/analysis_graph_manifest.json"
+  },
+  "phase_7f_artifacts_preserved": {
+    "file_sha256": {
+      "edge_topology_metrics.csv": "F516A8304833074A954674D8F57A21955ED83DB52241F38FABF8DA9F2059AD79",
+      "node_topology_metrics.csv": "FD7DC69134652AEBE9315AA071A8FB5940F0CD5E4C88974EBF28DC8C0516DAB4",
+      "osmnx_crosscheck.json": "1F21853A49D93BC589E676FD8DD212762A74E3D72A20364EE6A5D794CE7E3320",
+      "topology_analysis_manifest.json": "2DD54751D805171B723E25C4D44907AF1B18FC026A569682732E4B61ED0B7D6B",
+      "topology_methodology.json": "B5FC9203C5A4EF0F2DCADB27148275C9317DBB73F28F8BE893C8AAD7178EFAD8",
+      "topology_metrics_summary.csv": "DCE3057EA0B10C06BDE1856CFF93DB845A39EE8A7971EAB517F1BB524AF34FAD",
+      "topology_metrics_summary.json": "36EE8BAE7A60C76512C7E4D8D44F9BDF20D790A831F352EE66B47A7EA7E95477"
+    },
+    "status": "PASS"
+  },
+  "phase_7f_manifest_preserved": {
+    "available": true,
+    "file_sha256": "2DD54751D805171B723E25C4D44907AF1B18FC026A569682732E4B61ED0B7D6B",
+    "path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/topology/topology_analysis_manifest.json"
+  },
+  "schema_version": "1.0.0",
+  "software_environment": {
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "fiona": null,
+      "gdal": "3.13.2",
+      "geopandas": "1.1.4",
+      "matplotlib": "3.11.1",
+      "networkx": "3.6.1",
+      "numpy": "2.5.2",
+      "osmnx": "2.1.1",
+      "pandas": "3.0.5",
+      "pyogrio": "0.13.0",
+      "pyproj": "3.7.2",
+      "scipy": "1.18.0",
+      "shapely": "2.1.2"
+    },
+    "python": "3.12.13",
+    "python_implementation": "CPython"
+  },
+  "workflow_start_git": {
+    "branch": "phase-9-env38-reproducible-analysis",
+    "changed_paths": [],
+    "commit_sha": "e2fe446c30b66cd5e60a7d64606385be1525ff84",
+    "dirty": false,
+    "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git",
+    "repository": "geogami-qgis-street-morphology",
+    "repository_root": "."
+  }
+}

@@ -1,0 +1,849 @@
+{
+  "audit_type": "independent_clean_env38_reproducibility_rerun",
+  "canonical_container_identity": {
+    "byte_identical": true,
+    "first_sha256": "501E8B16A5F99143328166DB31DB159801C23268CEABBFCEC92A5A368C9A0D21",
+    "interpretation": "SQLite container identity is reported separately from scientific identity.",
+    "second_sha256": "501E8B16A5F99143328166DB31DB159801C23268CEABBFCEC92A5A368C9A0D21"
+  },
+  "comparison_ready_metrics": {
+    "comparisons": [
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "1.2696740110613949",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.maximum_edge_circuity",
+        "metric_tier": "supplementary",
+        "second_value": "1.2696740110613949"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "505.5201047999172",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.maximum_edge_length",
+        "metric_tier": "supplementary",
+        "second_value": "505.5201047999172"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "1.0364975857178171",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.mean_edge_circuity",
+        "metric_tier": "core",
+        "second_value": "1.0364975857178171"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "165.20078701368584",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.mean_edge_length",
+        "metric_tier": "core",
+        "second_value": "165.20078701368584"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "1.0139744687039383",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.median_edge_circuity",
+        "metric_tier": "supplementary",
+        "second_value": "1.0139744687039383"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "143.4478602096824",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.median_edge_length",
+        "metric_tier": "supplementary",
+        "second_value": "143.4478602096824"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "1.038846945394489",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.network_circuity",
+        "metric_tier": "core",
+        "second_value": "1.038846945394489"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "178",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.segment_count",
+        "metric_tier": "supplementary",
+        "second_value": "178"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "11398.854303944323",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.total_length",
+        "metric_tier": "core",
+        "second_value": "11398.854303944323"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.zero_chord_edge_count",
+        "metric_tier": "supplementary",
+        "second_value": "0"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "721.4252938680377",
+        "metric_family": "geometry_weighted_network",
+        "metric_id": "network_weighted.mean_shortest_path_length",
+        "metric_tier": "core",
+        "second_value": "721.4252938680377"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "36",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.bin_count",
+        "metric_tier": "supplementary",
+        "second_value": "36"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "5.0",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.bin_width_degrees",
+        "metric_tier": "supplementary",
+        "second_value": "5.0"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "2.9808051798049027",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.chord_entropy",
+        "metric_tier": "core",
+        "second_value": "2.9808051798049027"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.8318095232640588",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.chord_entropy_normalized",
+        "metric_tier": "core",
+        "second_value": "0.8318095232640588"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "69",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.chord_observation_count",
+        "metric_tier": "supplementary",
+        "second_value": "69"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.5787070314167302",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.phi_chord",
+        "metric_tier": "core",
+        "second_value": "0.5787070314167302"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.4437291100780897",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.phi_segment_length_weighted",
+        "metric_tier": "core",
+        "second_value": "0.4437291100780897"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "3.2269625103808837",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.segment_entropy_length_weighted",
+        "metric_tier": "core",
+        "second_value": "3.2269625103808837"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.9005010342630304",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.segment_entropy_length_weighted_normalized",
+        "metric_tier": "core",
+        "second_value": "0.9005010342630304"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "178",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.segment_observation_count",
+        "metric_tier": "supplementary",
+        "second_value": "178"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "9",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.articulation_point_count",
+        "metric_tier": "supplementary",
+        "second_value": "9"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "10",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.bridge_count",
+        "metric_tier": "supplementary",
+        "second_value": "10"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "1",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.component_count",
+        "metric_tier": "core",
+        "second_value": "1"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "24",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.cycle_rank",
+        "metric_tier": "core",
+        "second_value": "24"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.21739130434782608",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.dead_end_proportion",
+        "metric_tier": "core",
+        "second_value": "0.21739130434782608"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.34782608695652173",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.degree_3_proportion",
+        "metric_tier": "core",
+        "second_value": "0.34782608695652173"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.43478260869565216",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.degree_4_proportion",
+        "metric_tier": "core",
+        "second_value": "0.43478260869565216"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "10",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.diameter_hops",
+        "metric_tier": "supplementary",
+        "second_value": "10"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "1",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.edge_connectivity",
+        "metric_tier": "supplementary",
+        "second_value": "1"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "True",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.is_connected",
+        "metric_tier": "supplementary",
+        "second_value": "True"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "3.0",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.mean_degree",
+        "metric_tier": "core",
+        "second_value": "3.0"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "4.308212560386473",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.mean_shortest_path_hops",
+        "metric_tier": "supplementary",
+        "second_value": "4.308212560386473"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "1",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.node_connectivity",
+        "metric_tier": "supplementary",
+        "second_value": "1"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "46",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.node_count",
+        "metric_tier": "core",
+        "second_value": "46"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.parallel_edge_count",
+        "metric_tier": "supplementary",
+        "second_value": "0"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "69",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.physical_edge_count",
+        "metric_tier": "core",
+        "second_value": "69"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "6",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.radius_hops",
+        "metric_tier": "supplementary",
+        "second_value": "6"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.self_loop_count",
+        "metric_tier": "supplementary",
+        "second_value": "0"
+      }
+    ],
+    "exact_match_count": 39,
+    "first_count": 39,
+    "mismatch_count": 0,
+    "numeric_equivalent_count": 0,
+    "second_count": 39
+  },
+  "configuration": {
+    "environment_registry": {
+      "file_sha256": "CD4C3065AA9AC6880CCB21EDED6866568BE5F378101BB4A9928A7244A8CF2AF0",
+      "first_frozen_sha256": "CD4C3065AA9AC6880CCB21EDED6866568BE5F378101BB4A9928A7244A8CF2AF0",
+      "path": "config/environments.yaml"
+    },
+    "metrics": {
+      "file_sha256": "80042A6B046FC19C2E7F1C7A5D66CB6987EC7ACACB844351728DA39DA13A95E3",
+      "first_frozen_sha256": "80042A6B046FC19C2E7F1C7A5D66CB6987EC7ACACB844351728DA39DA13A95E3",
+      "path": "config/metrics.yaml"
+    }
+  },
+  "core_metrics": {
+    "comparisons": [
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "1.0364975857178171",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.mean_edge_circuity",
+        "metric_tier": "core",
+        "second_value": "1.0364975857178171"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "165.20078701368584",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.mean_edge_length",
+        "metric_tier": "core",
+        "second_value": "165.20078701368584"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "1.038846945394489",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.network_circuity",
+        "metric_tier": "core",
+        "second_value": "1.038846945394489"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "11398.854303944323",
+        "metric_family": "geometric_morphology",
+        "metric_id": "geometry.total_length",
+        "metric_tier": "core",
+        "second_value": "11398.854303944323"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "721.4252938680377",
+        "metric_family": "geometry_weighted_network",
+        "metric_id": "network_weighted.mean_shortest_path_length",
+        "metric_tier": "core",
+        "second_value": "721.4252938680377"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "2.9808051798049027",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.chord_entropy",
+        "metric_tier": "core",
+        "second_value": "2.9808051798049027"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.8318095232640588",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.chord_entropy_normalized",
+        "metric_tier": "core",
+        "second_value": "0.8318095232640588"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.5787070314167302",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.phi_chord",
+        "metric_tier": "core",
+        "second_value": "0.5787070314167302"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.4437291100780897",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.phi_segment_length_weighted",
+        "metric_tier": "core",
+        "second_value": "0.4437291100780897"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "3.2269625103808837",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.segment_entropy_length_weighted",
+        "metric_tier": "core",
+        "second_value": "3.2269625103808837"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.9005010342630304",
+        "metric_family": "orientation_morphology",
+        "metric_id": "orientation.segment_entropy_length_weighted_normalized",
+        "metric_tier": "core",
+        "second_value": "0.9005010342630304"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "1",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.component_count",
+        "metric_tier": "core",
+        "second_value": "1"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "24",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.cycle_rank",
+        "metric_tier": "core",
+        "second_value": "24"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.21739130434782608",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.dead_end_proportion",
+        "metric_tier": "core",
+        "second_value": "0.21739130434782608"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.34782608695652173",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.degree_3_proportion",
+        "metric_tier": "core",
+        "second_value": "0.34782608695652173"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "0.43478260869565216",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.degree_4_proportion",
+        "metric_tier": "core",
+        "second_value": "0.43478260869565216"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "3.0",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.mean_degree",
+        "metric_tier": "core",
+        "second_value": "3.0"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "46",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.node_count",
+        "metric_tier": "core",
+        "second_value": "46"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_value": "69",
+        "metric_family": "topology_controlled",
+        "metric_id": "topology.physical_edge_count",
+        "metric_tier": "core",
+        "second_value": "69"
+      }
+    ],
+    "exact_match_count": 19,
+    "first_count": 19,
+    "mismatch_count": 0,
+    "numeric_equivalent_count": 0,
+    "second_count": 19
+  },
+  "created_at_utc": "2026-08-25T16:32:11.965981Z",
+  "detailed_reproduction": {
+    "geometry": {
+      "absolute_excess_length_local": {
+        "exact_match": true,
+        "first": 426.2520794503679,
+        "second": 426.2520794503679
+      },
+      "geometry_segment_count": {
+        "exact_match": true,
+        "first": 178,
+        "second": 178
+      },
+      "mean_edge_circuity": {
+        "exact_match": true,
+        "first": 1.0364975857178171,
+        "second": 1.0364975857178171
+      },
+      "mean_edge_length_local": {
+        "exact_match": true,
+        "first": 165.20078701368584,
+        "second": 165.20078701368584
+      },
+      "median_edge_length_local": {
+        "exact_match": true,
+        "first": 143.4478602096824,
+        "second": 143.4478602096824
+      },
+      "network_circuity": {
+        "exact_match": true,
+        "first": 1.038846945394489,
+        "second": 1.038846945394489
+      },
+      "total_chord_length_local": {
+        "exact_match": true,
+        "first": 10972.602224493956,
+        "second": 10972.602224493956
+      },
+      "total_network_length_local": {
+        "exact_match": true,
+        "first": 11398.854303944323,
+        "second": 11398.854303944323
+      },
+      "zero_chord_edge_count": {
+        "exact_match": true,
+        "first": 0,
+        "second": 0
+      }
+    },
+    "orientation": {
+      "chord_orientation_entropy": {
+        "exact_match": true,
+        "first": 2.9808051798049027,
+        "second": 2.9808051798049027
+      },
+      "chord_orientation_normalized_entropy": {
+        "exact_match": true,
+        "first": 0.8318095232640588,
+        "second": 0.8318095232640588
+      },
+      "chord_orientation_observation_count": {
+        "exact_match": true,
+        "first": 69,
+        "second": 69
+      },
+      "orientation_bin_count": {
+        "exact_match": true,
+        "first": 36,
+        "second": 36
+      },
+      "orientation_bin_width_degrees": {
+        "exact_match": true,
+        "first": 5.0,
+        "second": 5.0
+      },
+      "phi_chord": {
+        "exact_match": true,
+        "first": 0.5787070314167302,
+        "second": 0.5787070314167302
+      },
+      "phi_segment_length_weighted": {
+        "exact_match": true,
+        "first": 0.4437291100780897,
+        "second": 0.4437291100780897
+      },
+      "segment_length_weighted_normalized_entropy": {
+        "exact_match": true,
+        "first": 0.9005010342630304,
+        "second": 0.9005010342630304
+      },
+      "segment_length_weighted_orientation_entropy": {
+        "exact_match": true,
+        "first": 3.2269625103808837,
+        "second": 3.2269625103808837
+      },
+      "segment_orientation_observation_count": {
+        "exact_match": true,
+        "first": 178,
+        "second": 178
+      }
+    },
+    "topology_and_weighted_network": {
+      "articulation_point_count": {
+        "exact_match": true,
+        "first": 9,
+        "second": 9
+      },
+      "average_shortest_path_hops": {
+        "exact_match": true,
+        "first": 4.308212560386473,
+        "second": 4.308212560386473
+      },
+      "average_shortest_path_length_local": {
+        "exact_match": true,
+        "first": 721.4252938680377,
+        "second": 721.4252938680377
+      },
+      "bridge_count": {
+        "exact_match": true,
+        "first": 10,
+        "second": 10
+      },
+      "cycle_rank": {
+        "exact_match": true,
+        "first": 24,
+        "second": 24
+      },
+      "dead_end_count": {
+        "exact_match": true,
+        "first": 10,
+        "second": 10
+      },
+      "degree_3_count": {
+        "exact_match": true,
+        "first": 16,
+        "second": 16
+      },
+      "degree_4_count": {
+        "exact_match": true,
+        "first": 20,
+        "second": 20
+      },
+      "degree_mean": {
+        "exact_match": true,
+        "first": 3.0,
+        "second": 3.0
+      },
+      "diameter_hops": {
+        "exact_match": true,
+        "first": 10,
+        "second": 10
+      },
+      "edge_connectivity": {
+        "exact_match": true,
+        "first": 1,
+        "second": 1
+      },
+      "node_connectivity": {
+        "exact_match": true,
+        "first": 1,
+        "second": 1
+      },
+      "radius_hops": {
+        "exact_match": true,
+        "first": 6,
+        "second": 6
+      }
+    }
+  },
+  "family_summaries": {
+    "geometric_morphology": {
+      "exact_match_count": 10,
+      "metric_count": 10,
+      "mismatch_count": 0,
+      "numeric_equivalent_count": 0,
+      "status": "PASS"
+    },
+    "geometry_weighted_network": {
+      "exact_match_count": 1,
+      "metric_count": 1,
+      "mismatch_count": 0,
+      "numeric_equivalent_count": 0,
+      "status": "PASS"
+    },
+    "orientation_morphology": {
+      "exact_match_count": 10,
+      "metric_count": 10,
+      "mismatch_count": 0,
+      "numeric_equivalent_count": 0,
+      "status": "PASS"
+    },
+    "topology_controlled": {
+      "exact_match_count": 18,
+      "metric_count": 18,
+      "mismatch_count": 0,
+      "numeric_equivalent_count": 0,
+      "status": "PASS"
+    }
+  },
+  "figure_reproducibility": {
+    "comparisons": [
+      {
+        "classification": "EXACT_MATCH",
+        "first_sha256": "1F1BC886EB8A5BAA91CD7CF9112D5A74A5EB0826A8193F12718258B4C21C513C",
+        "path": "geometry/figures/chord_orientation_histogram.svg",
+        "second_sha256": "1F1BC886EB8A5BAA91CD7CF9112D5A74A5EB0826A8193F12718258B4C21C513C"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_sha256": "1DCC081D7B5712A15BB5B95FF449AEC51B29A5DF21479A2468B0765F06DD031C",
+        "path": "geometry/figures/chord_orientation_rose.svg",
+        "second_sha256": "1DCC081D7B5712A15BB5B95FF449AEC51B29A5DF21479A2468B0765F06DD031C"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_sha256": "DA5E67805A07B4DADE8629FFFFAF1015BBA3F74C2A35F09A8D609375292C0BB9",
+        "path": "geometry/figures/edge_circuity_distribution.svg",
+        "second_sha256": "DA5E67805A07B4DADE8629FFFFAF1015BBA3F74C2A35F09A8D609375292C0BB9"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_sha256": "83C2A8498EA7946976D78CA9D160451C80B706E75480A16E5DBE08CC6D23B3AC",
+        "path": "geometry/figures/edge_length_distribution.svg",
+        "second_sha256": "83C2A8498EA7946976D78CA9D160451C80B706E75480A16E5DBE08CC6D23B3AC"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_sha256": "3BBA514F5F394200E93B85050566527F60865DC45862A47172850C2D0C9C7185",
+        "path": "geometry/figures/segment_length_weighted_orientation_histogram.svg",
+        "second_sha256": "3BBA514F5F394200E93B85050566527F60865DC45862A47172850C2D0C9C7185"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_sha256": "ED8BE4A8A16F09D682EFBD746086885318B968AB360EB6F51184E53E2EB407CE",
+        "path": "integrated/figures/canonical_physical_network.svg",
+        "second_sha256": "ED8BE4A8A16F09D682EFBD746086885318B968AB360EB6F51184E53E2EB407CE"
+      },
+      {
+        "classification": "EXACT_MATCH",
+        "first_sha256": "E69A8CCD6389914A7A10597E4D487EA06EE59C4812FCC8300AF08729746E389A",
+        "path": "integrated/figures/degree_junction_structure.svg",
+        "second_sha256": "E69A8CCD6389914A7A10597E4D487EA06EE59C4812FCC8300AF08729746E389A"
+      }
+    ],
+    "exact_match_count": 7,
+    "first_count": 7,
+    "second_count": 7,
+    "status": "PASS"
+  },
+  "final_reproducibility_status": "PASS",
+  "first_accepted_run": "env38_20260825T150753632988Z_974f687c1ac4",
+  "first_freeze_artifact": {
+    "file_sha256": "1B3F5808E2E5604322C059481BBCC6DEC015F41F4D0A8098D3DDC3324F2C4815",
+    "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/env38_scientific_baseline_freeze.json"
+  },
+  "graph_identity": {
+    "e042_canonical_geometry_stored_direction": "v_to_u",
+    "e042_canonical_stored_u": "N025",
+    "e042_canonical_stored_v": "N031",
+    "e042_reverse_arc_is_exact_coordinate_reversal": true,
+    "graphml_roundtrip_status": "PASS",
+    "local_cartesian_crs_verified": true,
+    "networkx": {
+      "component_count": 1,
+      "graph_type": "MultiGraph",
+      "node_count": 46,
+      "physical_edge_count": 69
+    },
+    "osmnx": {
+      "directed_arc_count": 138,
+      "graph_type": "MultiDiGraph",
+      "node_count": 46,
+      "unique_physical_edge_id_count": 69
+    },
+    "status": "PASS"
+  },
+  "input_protection": {
+    "editable": {
+      "file_sha256": "B2F608ED60EA4E5B7F6C2A3564102E6ACDF576F36870D6EA666E75600746F429",
+      "path": "data/editable/curvilinear/env38_editable.gpkg"
+    },
+    "working": {
+      "file_sha256": "B2F608ED60EA4E5B7F6C2A3564102E6ACDF576F36870D6EA666E75600746F429",
+      "path": "data/working/curvilinear/env38_working.gpkg"
+    }
+  },
+  "latest_pointers": {
+    "analysis_after_sha256": "B9EC12E3E5407807068A9F5747AAB0DBFAC0E60B3DEE0EC6B346D0426071EF08",
+    "analysis_before_sha256": "DE4DDD57B3DAD4FFAFE7DCD7C0E23937C7E3242A6F5997D60C646846646647D4",
+    "analysis_second_run": "env38_20260825T162856878635Z_974f687c1ac4",
+    "canonical_after_sha256": "DBC6DFF11A809D78924E89685F754DBE05676A4A14C2BACAEB9C0B0AB54E74F6",
+    "canonical_before_sha256": "ECB78EF2F888A2F2F2056E72F3CDD0FFFDC547138B7431E354BCC0D30BA4D2AD",
+    "canonical_second_run": "env38_20260825T162856878635Z_974f687c1ac4",
+    "status": "PASS"
+  },
+  "numeric_equivalent_count": 0,
+  "provenance_differences": {
+    "expected_fields": [
+      "run_id",
+      "timestamps",
+      "Git commit",
+      "manifest creation metadata",
+      "latest pointer values"
+    ],
+    "first_created_at_utc": "2026-08-25T15:07:56.632828Z",
+    "first_generation_commit": "59118d44f15613f42dd37853f12cd0cc0d1d3951",
+    "scientific_differences": [],
+    "second_created_at_utc": "2026-08-25T16:28:59.260686Z",
+    "second_generation_commit": "e2fe446c30b66cd5e60a7d64606385be1525ff84"
+  },
+  "schema_version": "1.0.0",
+  "scientific_identity": {
+    "component_count": 1,
+    "degree_distribution": {
+      "1": 10,
+      "3": 16,
+      "4": 20
+    },
+    "first_scientific_content_signature": "974F687C1AC4E1CDA548366DFB89FFBFCDBE05F44BA28342EF52149A4C607945",
+    "first_topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB",
+    "node_count": 46,
+    "physical_edge_count": 69,
+    "second_scientific_content_signature": "974F687C1AC4E1CDA548366DFB89FFBFCDBE05F44BA28342EF52149A4C607945",
+    "second_topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB",
+    "status": "PASS"
+  },
+  "scientific_mismatch_count": 0,
+  "second_clean_run": "env38_20260825T162856878635Z_974f687c1ac4",
+  "software_environment": {
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "geopandas": "1.1.4",
+      "ipykernel": "6.30.1",
+      "jupyterlab": "4.4.7",
+      "matplotlib": "3.11.1",
+      "networkx": "3.6.1",
+      "numpy": "2.5.2",
+      "osmnx": "2.1.1",
+      "pandas": "3.0.5",
+      "pyproj": "3.7.2",
+      "scipy": "1.18.0",
+      "shapely": "2.1.2"
+    },
+    "python": "3.12.13"
+  }
+}
+
