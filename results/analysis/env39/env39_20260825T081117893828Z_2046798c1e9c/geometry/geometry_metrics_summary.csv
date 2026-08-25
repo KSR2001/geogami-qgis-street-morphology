@@ -1,0 +1,33 @@
+metric_name,value,units,method,weighting,population,interpretation
+node_count,46,nodes,GeoDataFrame row count,unweighted,canonical nodes,canonical nodes retained
+physical_edge_geometry_count,69,physical streets,GeoDataFrame row count,unweighted,canonical edges,one geometry record per physical canonical street
+total_network_length_local,10945.657681153116,local units,math.fsum,unweighted sum,physical canonical edges,total geometry-derived LineString length
+mean_edge_length_local,158.63272001671183,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,equal observation,physical canonical edges,mean geometry-derived LineString length
+median_edge_length_local,131.0174803014961,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,equal observation,physical canonical edges,median geometry-derived LineString length
+std_edge_length_local,95.96630988821602,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,equal observation,physical canonical edges,population standard deviation of geometry-derived LineString length
+minimum_edge_length_local,69.93270701808099,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,physical canonical edges,minimum geometry-derived LineString length
+maximum_edge_length_local,674.9952524104815,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,physical canonical edges,maximum geometry-derived LineString length
+q1_edge_length_local,115.53359626588013,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,physical canonical edges,inclusive first quartile of geometry-derived LineString length
+q3_edge_length_local,152.78984520882673,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,physical canonical edges,inclusive third quartile of geometry-derived LineString length
+total_chord_length_local,10703.789226528683,local units,math.fsum,unweighted sum,physical canonical edges,total canonical endpoint Euclidean chord length
+mean_chord_length_local,155.12738009461862,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,equal observation,physical canonical edges,mean canonical endpoint Euclidean chord length
+median_chord_length_local,131.0174803014961,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,equal observation,physical canonical edges,median canonical endpoint Euclidean chord length
+std_chord_length_local,83.19959075949049,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,equal observation,physical canonical edges,population standard deviation of canonical endpoint Euclidean chord length
+minimum_chord_length_local,69.93270701808099,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,physical canonical edges,minimum canonical endpoint Euclidean chord length
+maximum_chord_length_local,493.94588242375454,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,physical canonical edges,maximum canonical endpoint Euclidean chord length
+q1_chord_length_local,115.53359626588013,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,physical canonical edges,inclusive first quartile of canonical endpoint Euclidean chord length
+q3_chord_length_local,151.11657810003373,local units,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,physical canonical edges,inclusive third quartile of canonical endpoint Euclidean chord length
+zero_chord_edge_count,0,physical streets,D <= configured tolerance,unweighted,physical canonical edges,edges explicitly excluded from circuity and chord orientation
+eligible_circuity_edge_count,69,physical streets,D > configured tolerance,unweighted,physical canonical edges,edges eligible for L/D circuity
+total_edge_circuity,69.76900153036182,ratio,math.fsum,unweighted sum,positive-chord physical edges,total per-edge L_i / D_i circuity
+mean_edge_circuity,1.0111449497153886,ratio,Python statistics; inclusive quartiles; population standard deviation ddof=0,equal observation,positive-chord physical edges,mean per-edge L_i / D_i circuity
+median_edge_circuity,1.0,ratio,Python statistics; inclusive quartiles; population standard deviation ddof=0,equal observation,positive-chord physical edges,median per-edge L_i / D_i circuity
+std_edge_circuity,0.06457852176301732,ratio,Python statistics; inclusive quartiles; population standard deviation ddof=0,equal observation,positive-chord physical edges,population standard deviation of per-edge L_i / D_i circuity
+minimum_edge_circuity,1.0,ratio,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,positive-chord physical edges,minimum per-edge L_i / D_i circuity
+maximum_edge_circuity,1.402464675963248,ratio,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,positive-chord physical edges,maximum per-edge L_i / D_i circuity
+q1_edge_circuity,1.0,ratio,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,positive-chord physical edges,inclusive first quartile of per-edge L_i / D_i circuity
+q3_edge_circuity,1.0,ratio,Python statistics; inclusive quartiles; population standard deviation ddof=0,unweighted,positive-chord physical edges,inclusive third quartile of per-edge L_i / D_i circuity
+network_circuity,1.022596526286689,ratio,sum(L_i) / sum(D_i),aggregate length ratio,positive-chord physical edges,"network aggregate circuity, distinct from mean per-edge circuity"
+geometry_segment_count,76,segments,positive consecutive coordinate pairs,unweighted,LineString geometry segments,geometry segments are not graph edges or nodes
+zero_length_geometry_segment_count,0,segments,segment length <= configured tolerance,unweighted,LineString coordinate pairs,excluded zero-length geometry segments
+total_geometry_segment_length_local,10945.657681153116,local units,math.fsum,segment length,positive LineString geometry segments,independent sum equal to total physical LineString length

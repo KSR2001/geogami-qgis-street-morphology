@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "created_at_utc": "2026-08-25T08:16:14.053256Z",
+  "final_run_id": "env39_20260825T081117893828Z_2046798c1e9c",
+  "comparison_baseline_run_id": "env39_20260825T073700593222Z_2046798c1e9c",
+  "workflow_start_git": {
+    "branch": "phase-7j-provenance-fix",
+    "commit_sha": "5e38b2c2594608b40ee523e9609decba008c639e",
+    "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git",
+    "dirty": false,
+    "changed_paths": []
+  },
+  "provenance_acceptance": {
+    "clean_start": true,
+    "head_unchanged": true,
+    "branch_unchanged": true,
+    "source_code_unchanged": true,
+    "configuration_unchanged": true,
+    "editable_input_unchanged": true,
+    "frozen_inputs_unchanged": true,
+    "only_expected_generated_changes": true,
+    "unexpected_changes": [],
+    "status": "PASS"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "osmnx": "2.1.1",
+    "networkx": "3.6.1",
+    "geopandas": "1.1.4",
+    "shapely": "2.1.2",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "scipy": "1.18.0",
+    "matplotlib": "3.11.1",
+    "pyproj": "3.7.2",
+    "jupyterlab": "4.4.7",
+    "ipykernel": "6.30.1",
+    "package_integrity": "PASS"
+  },
+  "scientific_identity": {
+    "node_count": 46,
+    "physical_edge_count": 69,
+    "component_count": 1,
+    "degree_distribution": {"1": 10, "3": 16, "4": 20},
+    "osmnx_directed_arc_count": 138,
+    "canonical_file_sha256": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "scientific_content_signature": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "artifact_hashes": {
+    "graphml_sha256": "4779A72D76AFB27D93FCA64864B4F602FBDCFA1452A65083E87E7B6BA3CCCDD2",
+    "metrics_configuration_sha256": "80042A6B046FC19C2E7F1C7A5D66CB6987EC7ACACB844351728DA39DA13A95E3",
+    "phase7f_manifest_sha256": "F9DBFBAFAC18ADF503DCDDC675A624BD9CF984D45D4A9376D3C5D97F8CCEAEB0",
+    "phase7g_manifest_sha256": "0C05DC9E945F5521C7E5588857FC96B88FF9B7585D01847D8F5661555D0AC196",
+    "phase7h_manifest_sha256": "D214E135E08CE8AE8185CA51874BE2970A8C29319DED5EDF7B22DED4F9DABEDF",
+    "end_to_end_manifest_sha256": "5647E949D50043EE5DB3B3B0F26A8A920E343D608FCCCB9B55049C43AABC80A8",
+    "reproducibility_comparison_sha256": "F0EE03CC67CE8C8D63E12A7291F30771650C1D758B34135D25D72D76DE8C46A5"
+  },
+  "line_ending_validation": {
+    "policy": ".gitattributes text eol=lf",
+    "manifest_hash_records_checked": 55,
+    "unique_manifest_artifacts_checked": 35,
+    "new_run_text_files_checked": 41,
+    "manifest_hash_mismatch_count": 0,
+    "new_run_crlf_text_file_count": 0,
+    "status": "PASS"
+  },
+  "notebook_status": {
+    "00_osmnx_networkx_introduction.ipynb": "PASS",
+    "01_env39_load_canonical_graph.ipynb": "PASS",
+    "02_env39_topological_metrics.ipynb": "PASS",
+    "03_env39_geometry_orientation_metrics.ipynb": "PASS",
+    "04_env39_integrated_results.ipynb": "PASS",
+    "execution_passed": 5,
+    "execution_total": 5,
+    "notebook_test_count": 20,
+    "status": "PASS"
+  },
+  "complete_test_status": {
+    "collected": 271,
+    "passed": 271,
+    "failures": 0,
+    "errors": 0,
+    "warnings": 11,
+    "subtests_passed": 11,
+    "status": "PASS"
+  },
+  "frozen_baseline_hashes": {
+    "data/baselines/grid/network_v2.gpkg": "7698544A01EED008E5451F8368703AFD0DBE232D10C9D7ADAA58C13DA57E0289",
+    "data/canonical/grid/env39_canonical.gpkg": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "status": "PASS"
+  },
+  "reproduction_comparison": {
+    "path": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c/reproducibility_comparison.json",
+    "integrated_metrics_exact_match": 39,
+    "integrated_metrics_total": 39,
+    "failure_count": 0,
+    "status": "PASS"
+  },
+  "final_artifacts": {
+    "end_to_end_manifest": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c/end_to_end_analysis_manifest.json",
+    "reproducibility_comparison": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c/reproducibility_comparison.json",
+    "phase7_final_manifest": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c/phase7_final_reproducibility_manifest.json"
+  },
+  "final_phase7_status": "PASS"
+}
