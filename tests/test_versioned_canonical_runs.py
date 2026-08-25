@@ -331,6 +331,34 @@ class Phase7CVersionedCanonicalRunTests(unittest.TestCase):
         self.assertEqual(len(failed_runs), 1)
         self.assertTrue((failed_runs[0] / "failure.json").is_file())
 
+    def test_14_geopackage_publication_failure_preserves_latest_output_and_inputs(self):
+        first = self._run()
+        latest_before = self.latest.read_bytes()
+        canonical_before = sha256_file(first.canonical_path)
+        editable_before = sha256_file(self.editable)
+        reference_before = sha256_file(self.reference)
+        successful_before = {
+            path.name for path in self.runs_root.iterdir()
+            if path.is_dir() and path.name not in {"failed", ".scratch"}
+        }
+        error = PermissionError("simulated permanent candidate publication lock")
+        error.winerror = 32
+        with patch(
+            "geogami_morphology.canonical.publish_validated_geopackage",
+            side_effect=error,
+        ):
+            with self.assertRaisesRegex(PipelineError, "permanent candidate publication lock"):
+                self._run()
+        self.assertEqual(self.latest.read_bytes(), latest_before)
+        self.assertEqual(sha256_file(first.canonical_path), canonical_before)
+        self.assertEqual(sha256_file(self.editable), editable_before)
+        self.assertEqual(sha256_file(self.reference), reference_before)
+        successful_after = {
+            path.name for path in self.runs_root.iterdir()
+            if path.is_dir() and path.name not in {"failed", ".scratch"}
+        }
+        self.assertEqual(successful_after, successful_before)
+
 
 def platform_python_version() -> str:
     import platform

@@ -234,6 +234,16 @@ Save all edits and close every QGIS window. The workflow deliberately does not d
 SQLite sidecars. If a sidecar remains, inspect the situation in QGIS rather than
 deleting it automatically.
 
+### Windows reports that an internal candidate GeoPackage is in use
+
+Canonical publication validates a candidate first, then copies it to a fresh
+publication-stage file in the destination directory. That fresh copy is never opened
+through GDAL/Pyogrio before its atomic rename. Transient Windows sharing violations
+are retried for a short, bounded interval; unrelated permission and disk errors are
+reported immediately. If the bounded attempts still fail, confirm QGIS is closed and
+that no external process is locking the reported path, then rerun the unchanged
+command. Do not delete unknown GeoPackages or SQLite sidecars manually.
+
 ### Topology-control failure
 
 Confirm no node/street was added, deleted, split, merged, or reconnected. Restore the

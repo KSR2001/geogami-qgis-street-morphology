@@ -9,6 +9,7 @@ node geometry, CRS, crossing, or near miss is modified by this utility.
 from __future__ import annotations
 
 import argparse
+from contextlib import closing
 from dataclasses import asdict, dataclass
 import json
 import math
@@ -243,7 +244,7 @@ def _layer_names(path: Path) -> list[str]:
 def _fid_map(path: Path, layer: str, id_field: str) -> dict[str, int]:
     if not layer.replace("_", "").isalnum() or not id_field.replace("_", "").isalnum():
         raise SynchronizationError("Unsafe GeoPackage table or field name.")
-    with sqlite3.connect(path) as connection:
+    with closing(sqlite3.connect(path)) as connection:
         table_info = connection.execute(f'PRAGMA table_info("{layer}")').fetchall()
         primary_keys = [row[1] for row in table_info if row[5] == 1]
         if len(primary_keys) != 1:

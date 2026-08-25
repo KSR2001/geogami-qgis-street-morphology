@@ -364,6 +364,12 @@ def run_versioned_canonical(
             },
             "publication_checks": {
                 "phase7b_validation_pass": phase7b.report["final_result"] == "PASS",
+                "fresh_publication_copy": phase7b.report.get("publication", {}).get("fresh_publication_copy") is True,
+                "published_candidate_hash_preserved": (
+                    phase7b.report.get("publication", {}).get("validated_candidate_sha256")
+                    == phase7b.report.get("publication", {}).get("published_sha256")
+                ),
+                "sqlite_integrity_check": phase7b.report.get("publication", {}).get("sqlite_integrity_check") == "ok",
                 "required_artifacts_exist": False,
                 "manifest_created": False,
                 "latest_update_eligible": False,
@@ -513,7 +519,12 @@ def run_versioned_canonical(
         )
     except Exception as exc:
         if scratch_dir.exists():
-            shutil.rmtree(scratch_dir)
+            try:
+                shutil.rmtree(scratch_dir)
+            except OSError:
+                # A Windows lock may keep clearly named .scratch diagnostics
+                # in place; it must not hide the original publication error.
+                pass
         if final_dir is not None and final_dir.exists() and not latest_updated:
             shutil.rmtree(final_dir)
         try:

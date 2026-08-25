@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from collections import Counter
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 import csv
 import math
 from pathlib import Path
@@ -13,7 +13,7 @@ from typing import Any
 import geopandas as gpd
 from shapely.geometry import LineString, Point
 
-from .io import atomic_publish, read_network, sha256_file, write_json, write_network
+from .io import publish_validated_geopackage, read_network, sha256_file, write_json, write_network
 from .identity import scientific_content_signature
 from .validation import TOPOLOGY_SERIALIZATION, graph_statistics, intersection_errors
 
@@ -298,16 +298,34 @@ def run_preserve_topology(
         write_network(candidate_path, candidate_nodes, candidate_edges)
         # A complete reread verifies the actual serialized candidate, not only memory objects.
         published_nodes, published_edges = read_network(candidate_path)
+        candidate_sha = sha256_file(candidate_path)
+        candidate_scientific = scientific_content_signature(published_nodes, published_edges)[0]
         report["candidate"] = {
-            "sha256": sha256_file(candidate_path),
-            "scientific_content_sha256": scientific_content_signature(published_nodes, published_edges)[0],
+            "sha256": candidate_sha,
+            "scientific_content_sha256": candidate_scientific,
         }
+        # GeoPandas frames are fully materialized. Drop the validation-reader
+        # references before any filesystem publication operation on Windows.
+        del published_nodes, published_edges
         if sha256_file(input_path) != source_hash or sha256_file(reference_path) != reference_hash:
             issues.append(_issue("io", "input_changed_during_run", "Editable input or reference changed while the candidate was being built."))
             report["error_counts"]["io"] = 1
             raise PipelineError("An input changed during pipeline execution.", report)
-        atomic_publish(candidate_path, output)
+
+        def verify_published(path: Path) -> None:
+            reopened_nodes, reopened_edges = read_network(path)
+            if sha256_file(path) != candidate_sha:
+                raise PipelineError("Published GeoPackage is not byte-identical to the validated candidate.", report)
+            if scientific_content_signature(reopened_nodes, reopened_edges)[0] != candidate_scientific:
+                raise PipelineError("Published GeoPackage scientific identity differs from the validated candidate.", report)
+
+        publication = publish_validated_geopackage(
+            candidate_path,
+            output,
+            verify_published=verify_published,
+        )
         candidate_path = None
+        report["publication"] = asdict(publication)
         report["published"] = True
         report["final_result"] = "PASS"
         report["source"].update({"sha256_after": sha256_file(input_path), "unchanged": True})

@@ -235,19 +235,16 @@ class Phase6BEndpointSynchronizationTests(unittest.TestCase):
         with self.assertRaisesRegex(sync.AmbiguousOrientationError, "ambiguous endpoint assignment"):
             sync.build_sync_plan(path, self.canonical)
 
-    def test_14_current_professor_env38_dry_run_has_expected_changes_and_e042(self):
+    def test_14_current_professor_env38_is_fully_synchronized_and_e042_unchanged(self):
         path = validator.DEFAULT_INPUT
         before = validator.sha256_file(path)
         canonical_before = validator.sha256_file(self.canonical)
         plan = sync.build_sync_plan(path, self.canonical)
         self.assertEqual(plan.edges_total, 69)
-        self.assertEqual(plan.affected_edge_ids, ["E019", "E020", "E021"])
-        self.assertEqual(plan.affected_node_ids, ["N013"])
-        self.assertEqual(plan.endpoint_count, 3)
-        self.assertEqual(
-            {change.required_coordinate for change in plan.changes},
-            {(98.48348990297171, 864.9274336319993)},
-        )
+        self.assertEqual(plan.edges_already_match, 69)
+        self.assertEqual(plan.affected_edge_ids, [])
+        self.assertEqual(plan.affected_node_ids, [])
+        self.assertEqual(plan.endpoint_count, 0)
         e042 = self._orientation(plan, "E042")
         self.assertEqual(e042.classification, "reversed/unambiguous")
         self.assertEqual(e042.reverse_assignment_cost, 0.0)

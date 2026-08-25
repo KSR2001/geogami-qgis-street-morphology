@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+from contextlib import closing
 from dataclasses import dataclass, field
 import hashlib
 import json
@@ -712,7 +713,7 @@ def _spatial_records(
 
 def _stabilize_gpkg_metadata(path: Path) -> None:
     """Replace generated-layer timestamps in the derived GeoPackage only."""
-    with sqlite3.connect(path) as connection:
+    with closing(sqlite3.connect(path)) as connection:
         connection.execute(
             "UPDATE gpkg_contents SET last_change = '2000-01-01T00:00:00.000Z'"
         )
