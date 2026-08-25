@@ -27,8 +27,29 @@ class Phase7EThrough7HNotebookTests(unittest.TestCase):
         cls.topology_path = NOTEBOOKS / "02_env39_topological_metrics.ipynb"
         cls.geometry_path = NOTEBOOKS / "03_env39_geometry_orientation_metrics.ipynb"
         cls.integrated_path = NOTEBOOKS / "04_env39_integrated_results.ipynb"
+        cls.env38_canonical_path = NOTEBOOKS / "05_env38_load_canonical_graph.ipynb"
+        cls.env38_topology_path = NOTEBOOKS / "06_env38_topological_metrics.ipynb"
+        cls.env38_geometry_path = NOTEBOOKS / "07_env38_geometry_orientation_metrics.ipynb"
+        cls.env38_integrated_path = NOTEBOOKS / "08_env38_integrated_results.ipynb"
+        cls.all_notebook_paths = (
+            cls.introduction_path, cls.canonical_path, cls.topology_path,
+            cls.geometry_path, cls.integrated_path, cls.env38_canonical_path,
+            cls.env38_topology_path, cls.env38_geometry_path, cls.env38_integrated_path,
+        )
         cls.latest_path = ROOT / "data" / "canonical" / "grid" / "latest.json"
         cls.latest_bytes = cls.latest_path.read_bytes()
+        cls.env38_canonical_latest_path = ROOT / "data" / "canonical" / "curvilinear" / "latest.json"
+        cls.env38_analysis_latest_path = ROOT / "results" / "analysis" / "env38" / "latest.json"
+        cls.env38_canonical_latest_bytes = cls.env38_canonical_latest_path.read_bytes()
+        cls.env38_analysis_latest_bytes = cls.env38_analysis_latest_path.read_bytes()
+        cls.env38_analysis_pointer = json.loads(cls.env38_analysis_latest_bytes)
+        cls.env38_run_id = cls.env38_analysis_pointer["canonical_run_id"]
+        cls.env38_run_root = (
+            ROOT / cls.env38_analysis_pointer["analysis_manifest_path"]
+        ).parent
+        cls.env38_freeze_path = cls.env38_run_root / "env38_scientific_baseline_freeze.json"
+        cls.env38_freeze_bytes = cls.env38_freeze_path.read_bytes()
+        cls.env38_protected_hashes = cls._hash_tree(cls.env38_run_root)
         cls._original_path = os.environ.get("PATH", "")
         cls._original_runtime = os.environ.get("JUPYTER_RUNTIME_DIR")
         cls._original_insecure_writes = os.environ.get("JUPYTER_ALLOW_INSECURE_WRITES")
@@ -56,6 +77,8 @@ class Phase7EThrough7HNotebookTests(unittest.TestCase):
         cls._executed_02_root = None
         cls._executed_03_root = None
         cls._executed_04_root = None
+        cls._executed_env38_root = {}
+        cls._executed_env38_notebooks = {}
 
     @classmethod
     def tearDownClass(cls):
@@ -112,8 +135,15 @@ class Phase7EThrough7HNotebookTests(unittest.TestCase):
     def _code(notebook) -> str:
         return "\n".join(cell.source for cell in notebook.cells if cell.cell_type == "code")
 
+    @staticmethod
+    def _hash_tree(root: Path) -> dict[str, str]:
+        return {
+            path.relative_to(root).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in root.rglob("*") if path.is_file()
+        }
+
     def test_01_source_notebooks_are_valid_clean_nbformat_documents(self):
-        for path in (self.introduction_path, self.canonical_path, self.topology_path, self.geometry_path, self.integrated_path):
+        for path in self.all_notebook_paths:
             with self.subTest(path=path.name):
                 notebook = nbformat.read(path, as_version=4)
                 nbformat.validate(notebook)
@@ -232,6 +262,145 @@ class Phase7EThrough7HNotebookTests(unittest.TestCase):
 
     def test_08_notebook_execution_does_not_modify_latest_pointer(self):
         self.assertEqual(self.latest_path.read_bytes(), self.latest_bytes)
+
+    def test_21_env38_notebooks_are_professor_facing_and_resolve_latest_dynamically(self):
+        required_phrases = {
+            self.env38_canonical_path: (
+                "Research context", "Environment registry resolution", "Canonical provenance",
+                "NetworkX", "OSMnx", "69 physical edges", "138 directed arcs", "E042",
+                "GraphML round-trip", "local units",
+            ),
+            self.env38_topology_path: (
+                "Graph representations", "Degree and junction structure", "OSMnx cross-checks",
+                "Cycle structure", "Bridges, articulation points", "Shortest paths",
+                "Node and edge centrality", "Controlled versus geometry-weighted metrics",
+            ),
+            self.env38_geometry_path: (
+                "LineString length and chord length", "L_i / D_i", "sum(L_i) / sum(D_i)",
+                "36 bins", "5 degrees per bin", "natural logarithm", "exp(i 4 theta_k)",
+                "Chord and segment populations", "Absolute excess-length audit",
+            ),
+            self.env38_integrated_path: (
+                "Metric families", "Comparison roles", "Nineteen core metrics",
+                "Five-figure evidence catalog", "Boundary before Phase 9G comparison",
+                "not intrinsically better or worse",
+            ),
+        }
+        for path, phrases in required_phrases.items():
+            source = path.read_text(encoding="utf-8")
+            with self.subTest(path=path.name):
+                self.assertNotIn(self.env38_run_id, source)
+                self.assertIn("latest.json", source)
+                self.assertIn("GeoGami Local Cartesian", source)
+                self.assertIn("not longitude/latitude", source)
+                self.assertIn("local units", source)
+                self.assertIn("metres unless a justified scale transformation", source)
+                for phrase in phrases:
+                    self.assertIn(phrase, source)
+
+    def test_22_env38_notebooks_use_production_modules_without_prohibited_algorithms(self):
+        notebooks = {
+            self.env38_canonical_path: (
+                "load_canonical_geopackage(", "build_networkx_multigraph(",
+                "build_osmnx_multidigraph(", "validate_graphml_roundtrip(",
+            ),
+            self.env38_topology_path: ("analyze_topology(", "load_topology_config("),
+            self.env38_geometry_path: ("analyze_geometry(", "load_geometry_config("),
+            self.env38_integrated_path: ("integrate_results(",),
+        }
+        combined = ""
+        for path, calls in notebooks.items():
+            code = self._code(nbformat.read(path, as_version=4))
+            combined += "\n" + code
+            for call in calls:
+                self.assertIn(call, code)
+        for forbidden in (
+            "graph_from_place(", "add_edge_lengths(", "add_edge_bearings(",
+            "plot_orientation(", "orientation_entropy(", "betweenness_centrality(",
+            "shortest_path(", "atan2(", "requests.", "urlopen(",
+        ):
+            self.assertNotIn(forbidden, combined)
+        self.assertIsNone(re.search(r"[A-Za-z]:[\\/]", combined))
+
+    def test_23_env38_canonical_notebook_executes_from_root_and_notebooks_directory(self):
+        for working_directory, cache in (
+            (ROOT, self.__class__._executed_env38_root),
+            (NOTEBOOKS, self.__class__._executed_env38_notebooks),
+        ):
+            if "05" not in cache:
+                cache["05"] = self._execute(self.env38_canonical_path, working_directory)
+            output = self._text(cache["05"])
+            for marker in (
+                "ENVIRONMENT_REGISTRY_RESOLUTION: PASS", "CANONICAL_LATEST_RESOLUTION: PASS",
+                "ANALYSIS_LATEST_RESOLUTION: PASS", "E042_GRAPH_ADAPTER: PASS",
+                "GRAPHML_ROUNDTRIP:", "NOTEBOOK_05_EXECUTION: PASS",
+            ):
+                self.assertIn(marker, output)
+
+    def test_24_env38_topology_notebook_executes_from_root_and_notebooks_directory(self):
+        for working_directory, cache in (
+            (ROOT, self.__class__._executed_env38_root),
+            (NOTEBOOKS, self.__class__._executed_env38_notebooks),
+        ):
+            if "06" not in cache:
+                cache["06"] = self._execute(self.env38_topology_path, working_directory)
+            output = self._text(cache["06"])
+            for marker in (
+                "ENV38_TOPOLOGY_POINTER_RESOLUTION: PASS", "ENV38_TOPOLOGY_CALCULATION: PASS",
+                "ENV38_TOPOLOGY_STORED_CROSSCHECK: PASS", "NOTEBOOK_06_EXECUTION: PASS",
+            ):
+                self.assertIn(marker, output)
+
+    def test_25_env38_geometry_notebook_executes_from_root_and_notebooks_directory(self):
+        for working_directory, cache in (
+            (ROOT, self.__class__._executed_env38_root),
+            (NOTEBOOKS, self.__class__._executed_env38_notebooks),
+        ):
+            if "07" not in cache:
+                cache["07"] = self._execute(self.env38_geometry_path, working_directory)
+            output = self._text(cache["07"])
+            for marker in (
+                "ENV38_GEOMETRY_POINTER_RESOLUTION: PASS", "ENV38_GEOMETRY_CALCULATION: PASS",
+                "ENV38_GEOMETRY_STORED_CROSSCHECK: PASS", "ENV38_ABSOLUTE_EXCESS_AUDIT: PASS",
+                "NOTEBOOK_07_EXECUTION: PASS",
+            ):
+                self.assertIn(marker, output)
+
+    def test_26_env38_integrated_notebook_executes_from_root_and_notebooks_directory(self):
+        for working_directory, cache in (
+            (ROOT, self.__class__._executed_env38_root),
+            (NOTEBOOKS, self.__class__._executed_env38_notebooks),
+        ):
+            if "08" not in cache:
+                cache["08"] = self._execute(self.env38_integrated_path, working_directory)
+            output = self._text(cache["08"])
+            for marker in (
+                "ENV38_INTEGRATED_POINTER_RESOLUTION: PASS", "ENV38_INTEGRATED_SOURCE_LOADING: PASS",
+                "ENV38_INTEGRATED_METRICS: 39 total | 19 core | PASS",
+                "ENV38_INTEGRATED_FIGURES: 5 | PASS", "NOTEBOOK_08_EXECUTION: PASS",
+            ):
+                self.assertIn(marker, output)
+
+    def test_27_env38_notebook_execution_preserves_pointers_freeze_and_accepted_run(self):
+        for key, path in (
+            ("05", self.env38_canonical_path), ("06", self.env38_topology_path),
+            ("07", self.env38_geometry_path), ("08", self.env38_integrated_path),
+        ):
+            if key not in self.__class__._executed_env38_root:
+                self.__class__._executed_env38_root[key] = self._execute(path, ROOT)
+        self.assertEqual(self.env38_canonical_latest_path.read_bytes(), self.env38_canonical_latest_bytes)
+        self.assertEqual(self.env38_analysis_latest_path.read_bytes(), self.env38_analysis_latest_bytes)
+        self.assertEqual(self.env38_freeze_path.read_bytes(), self.env38_freeze_bytes)
+        self.assertEqual(self._hash_tree(self.env38_run_root), self.env38_protected_hashes)
+
+    def test_28_readme_documents_shared_introduction_and_both_workflows(self):
+        source = (NOTEBOOKS / "README.md").read_text(encoding="utf-8")
+        for name in (
+            "00_osmnx_networkx_introduction.ipynb", "01_env39_load_canonical_graph.ipynb",
+            "04_env39_integrated_results.ipynb", "05_env38_load_canonical_graph.ipynb",
+            "08_env38_integrated_results.ipynb", "GeoGami Morphology", "latest.json",
+        ):
+            self.assertIn(name, source)
 
     def test_09_topology_notebook_contains_all_professor_facing_sections(self):
         source = self.topology_path.read_text(encoding="utf-8")
