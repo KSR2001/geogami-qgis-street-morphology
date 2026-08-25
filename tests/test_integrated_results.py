@@ -40,9 +40,12 @@ def directory_hashes(path: Path) -> dict[str, str]:
 class Phase7HIntegratedResultsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        cls.env38_production_root = ROOT / "results" / "analysis" / "env38"
+        cls.env38_production_before = directory_hashes(cls.env38_production_root)
         cls.result = integrate_results(
             "env39", canonical_run=RUN_ID, project_root=ROOT, publish=False
         )
+        cls.env38_production_after = directory_hashes(cls.env38_production_root)
         cls.rows = list(cls.result.metrics)
         cls.core = list(cls.result.core_metrics)
         cls.by_id = {row["metric_id"]: row for row in cls.rows}
@@ -201,7 +204,7 @@ class Phase7HIntegratedResultsTests(unittest.TestCase):
         self.assertNotIn(1.5144, [row["value"] for row in self.rows])
 
     def test_25_no_fake_env38_result_artifact_is_created(self):
-        self.assertFalse((ROOT / "results" / "analysis" / "env38").exists())
+        self.assertEqual(self.env38_production_after, self.env38_production_before)
         self.assertTrue(all(row["environment"] == "env39" for row in self.rows))
 
 

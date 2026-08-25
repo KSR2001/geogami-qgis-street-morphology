@@ -172,13 +172,25 @@ class Phase9BDualEnvironmentWorkflowTests(unittest.TestCase):
         )
 
     def test_09_env38_missing_latest_fails_without_fallback(self):
-        self.assertFalse(self.env38.canonical_latest.exists())
+        isolated_root = self.root / "missing-latest"
+        env38_latest = isolated_root / "env38" / "latest.json"
+        env39_latest = isolated_root / "env39" / "latest.json"
+        env39_latest.parent.mkdir(parents=True)
+        shutil.copy2(self.env39.canonical_latest, env39_latest)
+        self.assertTrue(env39_latest.is_file())
+        self.assertFalse(env38_latest.exists())
         with patch("geogami_morphology.workflow.git_provenance", return_value=CLEAN_GIT):
-            with self.assertRaisesRegex(WorkflowError, "Latest canonical pointer does not exist.*curvilinear"):
+            with self.assertRaisesRegex(
+                WorkflowError,
+                rf"Latest canonical pointer does not exist.*{env38_latest.name}",
+            ) as caught:
                 run_full_analysis(
                     "env38", canonical_run="latest", dry_run=True,
+                    canonical_latest=env38_latest,
                     project_root=ROOT, reporter=lambda _value: None,
                 )
+        self.assertIn(str(env38_latest), str(caught.exception))
+        self.assertNotIn(str(env39_latest), str(caught.exception))
 
     def test_10_registry_provenance_is_complete_in_both_manifests(self):
         required = {
@@ -235,11 +247,9 @@ class Phase9BDualEnvironmentWorkflowTests(unittest.TestCase):
             self.assertEqual(result.end_to_end_manifest_path.parent, expected)
             self.assertNotIn(f"/{environment}/{environment}/", expected.as_posix())
 
-    def test_18_production_pointers_are_unchanged_and_env38_absent(self):
+    def test_18_isolated_operations_preserve_production_pointers(self):
         for path, before in self.production_pointers.items():
             self.assertEqual(file_or_absent(path), before)
-        self.assertIsNone(self.production_pointers[self.env38.canonical_latest])
-        self.assertIsNone(self.production_pointers[self.env38.analysis_root / "latest.json"])
 
     def test_19_all_protected_geopackages_are_unchanged(self):
         for path, before in self.protected.items():
