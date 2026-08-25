@@ -265,7 +265,12 @@ def calculate_geometry_metrics(
         if u not in node_points or v not in node_points:
             raise GeometryMetricError(f"Edge {edge_id} references a missing canonical endpoint node.")
         first, second = node_points[u], node_points[v]
-        if tuple(geometry.coords[0]) != tuple(first.coords[0]) or tuple(geometry.coords[-1]) != tuple(second.coords[0]):
+        start, end = tuple(geometry.coords[0]), tuple(geometry.coords[-1])
+        first_coordinate, second_coordinate = tuple(first.coords[0]), tuple(second.coords[0])
+        if not (
+            (start == first_coordinate and end == second_coordinate)
+            or (start == second_coordinate and end == first_coordinate)
+        ):
             raise GeometryMetricError(f"Edge {edge_id} LineString endpoints do not match canonical u/v nodes.")
         geometry_length = float(geometry.length)
         stored_length = getattr(row, "length_local", geometry_length)
@@ -467,11 +472,12 @@ def publish_geometry_metrics(
     write_json(paths["geometry_methodology_json"], methodology)
     lengths = [float(row["geometry_length_local"]) for row in calculation.edge_rows]
     circuities = [float(row["circuity"]) for row in calculation.edge_rows if row["circuity"] is not None]
-    _write_text(paths["edge_length_distribution_svg"], numeric_distribution_svg(lengths, title="Env39 physical-edge length distribution", x_label="LineString length [local units]"))
-    _write_text(paths["edge_circuity_distribution_svg"], numeric_distribution_svg(circuities, title="Env39 edge circuity distribution", x_label="Circuity L / D [ratio]"))
-    _write_text(paths["chord_orientation_histogram_svg"], orientation_histogram_svg(calculation.chord_histogram, title="Env39 chord-orientation distribution", y_label="Equal-edge probability"))
-    _write_text(paths["chord_orientation_rose_svg"], axial_rose_svg(calculation.chord_histogram, title="Env39 axial chord-orientation rose"))
-    _write_text(paths["segment_orientation_histogram_svg"], orientation_histogram_svg(calculation.segment_histogram, title="Env39 segment-length-weighted orientation", y_label="Length-weighted probability"))
+    label = selection.environment.replace("env", "Env", 1)
+    _write_text(paths["edge_length_distribution_svg"], numeric_distribution_svg(lengths, title=f"{label} physical-edge length distribution", x_label="LineString length [local units]"))
+    _write_text(paths["edge_circuity_distribution_svg"], numeric_distribution_svg(circuities, title=f"{label} edge circuity distribution", x_label="Circuity L / D [ratio]"))
+    _write_text(paths["chord_orientation_histogram_svg"], orientation_histogram_svg(calculation.chord_histogram, title=f"{label} chord-orientation distribution", y_label="Equal-edge probability"))
+    _write_text(paths["chord_orientation_rose_svg"], axial_rose_svg(calculation.chord_histogram, title=f"{label} axial chord-orientation rose"))
+    _write_text(paths["segment_orientation_histogram_svg"], orientation_histogram_svg(calculation.segment_histogram, title=f"{label} segment-length-weighted orientation", y_label="Length-weighted probability"))
     topology_after = _directory_hashes(topology_dir)
     if topology_before != topology_after:
         raise GeometryMetricError("Phase 7F topology artifacts changed during Phase 7G publication.")

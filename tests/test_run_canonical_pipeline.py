@@ -165,12 +165,15 @@ class Phase7BCanonicalPipelineTests(unittest.TestCase):
     def test_12_frozen_phase5_file_remains_byte_identical(self):
         self.assertEqual(sha256_file(self.reference), self.reference_hash)
 
-    def test_13_reversed_edge_orientation_fails(self):
+    def test_13_reversed_edge_orientation_is_preserved(self):
         def mutate(_nodes, edges):
             geometry = edges.geometry.iloc[0]
             edges.at[edges.index[0], "geometry"] = LineString(reversed(geometry.coords))
-        error, _, _ = self._run("reversed", mutate, False)
-        self.assertIn("reversed_edge_orientation", {item["issue_type"] for item in error.report["diagnostics"]})
+        result, source, output = self._run("reversed", mutate)
+        source_geometry = gpd.read_file(source, layer="edges").geometry.iloc[0]
+        output_geometry = gpd.read_file(output, layer="edges").geometry.iloc[0]
+        self.assertEqual(tuple(output_geometry.coords), tuple(source_geometry.coords))
+        self.assertEqual(result.report["final_result"], "PASS")
 
     def test_14_candidate_is_serialized_reread_then_published_through_fresh_copy(self):
         events = []

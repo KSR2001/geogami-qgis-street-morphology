@@ -1,0 +1,179 @@
+{
+  "artifacts": {
+    "canonical_edges_csv": {
+      "path": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/canonical_edges.csv",
+      "row_count": 69
+    },
+    "canonical_geopackage": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/env38_canonical.gpkg",
+    "canonical_manifest": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/canonical_manifest.json",
+    "canonical_nodes_csv": {
+      "path": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/canonical_nodes.csv",
+      "row_count": 46
+    },
+    "canonical_validation": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/canonical_validation.json",
+    "diagnostics_csv": {
+      "path": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/diagnostics.csv",
+      "row_count": 0
+    },
+    "endpoint_adjustments_csv": {
+      "path": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/endpoint_adjustments.csv",
+      "row_count": 0
+    },
+    "scientific_content_signature": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/scientific_content_signature.txt",
+    "topology_signature": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/topology_signature.txt",
+    "zero_row_table_convention": "CSV is present with a valid header even when row_count is zero"
+  },
+  "configuration": {
+    "canonicalization_mode": "preserve-topology",
+    "cli_options": {
+      "environment": "env38",
+      "input": "data/editable/curvilinear/env38_editable.gpkg",
+      "mode": "preserve-topology",
+      "reference_canonical": "data/canonical/grid/env39_canonical.gpkg",
+      "runs_root": "data/canonical/curvilinear/runs"
+    },
+    "configuration_files": [
+      {
+        "available": true,
+        "file_sha256": "B54D0D645417BB984173B971616A76E6EA438008E178E574A11153EEB4870CBC",
+        "path": "environment.yml"
+      },
+      {
+        "available": true,
+        "file_sha256": "80042A6B046FC19C2E7F1C7A5D66CB6987EC7ACACB844351728DA39DA13A95E3",
+        "path": "config/metrics.yaml"
+      },
+      {
+        "available": true,
+        "file_sha256": "CD4C3065AA9AC6880CCB21EDED6866568BE5F378101BB4A9928A7244A8CF2AF0",
+        "path": "config/environments.yaml"
+      }
+    ],
+    "endpoint_correction_tolerance_local_units": 1e-06
+  },
+  "environment_routing": {
+    "downstream_analysis_output_root": "results/analysis",
+    "environment_id": "env38",
+    "environment_registry_path": "config/environments.yaml",
+    "environment_registry_sha256": "CD4C3065AA9AC6880CCB21EDED6866568BE5F378101BB4A9928A7244A8CF2AF0",
+    "resolved_analysis_environment_root": "results/analysis/env38",
+    "resolved_canonical_latest_pointer": "data/canonical/curvilinear/latest.json",
+    "resolved_canonical_root": "data/canonical/curvilinear",
+    "resolved_canonical_runs_root": "data/canonical/curvilinear/runs",
+    "resolved_editable_source": "data/editable/curvilinear/env38_editable.gpkg",
+    "resolved_topology_reference": "data/canonical/grid/env39_canonical.gpkg",
+    "routing_mode": "environment_registry"
+  },
+  "git_provenance": {
+    "branch": "phase-9-env38-reproducible-analysis",
+    "changed_paths": [],
+    "commit_sha": "e2fe446c30b66cd5e60a7d64606385be1525ff84",
+    "dirty": false,
+    "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git",
+    "repository": "geogami-qgis-street-morphology",
+    "repository_root": "."
+  },
+  "identity": {
+    "build_mode": "preserve-topology",
+    "environment": "env38",
+    "run_id": "env38_20260825T162856878635Z_974f687c1ac4"
+  },
+  "input_editable_network": {
+    "feature_counts": {
+      "edges": 69,
+      "nodes": 46
+    },
+    "file_sha256": "B2F608ED60EA4E5B7F6C2A3564102E6ACDF576F36870D6EA666E75600746F429",
+    "layer_names": [
+      "nodes",
+      "edges"
+    ],
+    "path": "data/editable/curvilinear/env38_editable.gpkg",
+    "scientific_content_signature": "974F687C1AC4E1CDA548366DFB89FFBFCDBE05F44BA28342EF52149A4C607945"
+  },
+  "network_identity": {
+    "component_count": 1,
+    "coordinate_system": "GeoGami Local Cartesian",
+    "coordinate_units": "local units",
+    "crs": "LOCAL_CS[\"GeoGami Local Cartesian\",LOCAL_DATUM[\"GeoGami local engineering datum\",32767],UNIT[\"local unit\",1],AXIS[\"X\",EAST],AXIS[\"Y\",NORTH]]",
+    "crs_wkt": "ENGCRS[\"GeoGami Local Cartesian\",EDATUM[\"GeoGami local engineering datum\"],CS[Cartesian,2],AXIS[\"x\",east,ORDER[1],LENGTHUNIT[\"local unit\",1]],AXIS[\"y\",north,ORDER[2],LENGTHUNIT[\"local unit\",1]]]",
+    "degree_distribution": {
+      "1": 10,
+      "3": 16,
+      "4": 20
+    },
+    "node_count": 46,
+    "physical_edge_count": 69,
+    "scientific_content_signature": "974F687C1AC4E1CDA548366DFB89FFBFCDBE05F44BA28342EF52149A4C607945",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB",
+    "total_geometry_length_local": 11398.854303944323
+  },
+  "published_canonical": {
+    "file_sha256": "501E8B16A5F99143328166DB31DB159801C23268CEABBFCEC92A5A368C9A0D21",
+    "path": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/env38_canonical.gpkg",
+    "scientific_content_signature": "974F687C1AC4E1CDA548366DFB89FFBFCDBE05F44BA28342EF52149A4C607945",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "reference_canonical": {
+    "feature_counts": {
+      "edges": 69,
+      "nodes": 46
+    },
+    "file_sha256": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "layer_names": [
+      "nodes",
+      "edges"
+    ],
+    "path": "data/canonical/grid/env39_canonical.gpkg",
+    "scientific_content_signature": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "schema_version": "1.0.0",
+  "signature_methodology": {
+    "file_sha256": "SHA-256 of exact file bytes",
+    "scientific_content_excluded_fields": [
+      "GeoPackage FIDs and metadata",
+      "derived x, y, degree, length_local and vertex_count",
+      "source_fids and source_fids_ordered provenance"
+    ],
+    "scientific_content_included_fields": [
+      "CRS WKT",
+      "node_id and exact ordered Point coordinates",
+      "edge_id, u, v, key and exact ordered LineString coordinates"
+    ],
+    "scientific_content_schema_version": "1.0.0",
+    "scientific_content_serialization": "UTF-8 canonical JSON; sorted object keys; nodes by node_id; edges by (edge_id,u,v,key); exact float.hex coordinates; ordered geometry vertices",
+    "topology_serialization": "UTF-8 lines, sorted normalized tuples as u|v|key followed by LF; no header"
+  },
+  "software_environment": {
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "fiona": null,
+      "gdal": "3.13.2",
+      "geopandas": "1.1.4",
+      "matplotlib": "3.11.1",
+      "networkx": "3.6.1",
+      "numpy": "2.5.2",
+      "osmnx": "2.1.1",
+      "pandas": "3.0.5",
+      "pyogrio": "0.13.0",
+      "pyproj": "3.7.2",
+      "scipy": "1.18.0",
+      "shapely": "2.1.2"
+    },
+    "python": "3.12.13",
+    "python_implementation": "CPython"
+  },
+  "time": {
+    "build_finished_at_utc": "2026-08-25T16:28:57.396818Z",
+    "build_started_at_utc": "2026-08-25T16:28:56.878635Z"
+  },
+  "validation": {
+    "diagnostic_error_count": 0,
+    "diagnostic_warning_count": 0,
+    "endpoint_adjustment_count": 0,
+    "final_status": "PASS",
+    "geometry_status": "PASS",
+    "topology_status": "PASS"
+  }
+}

@@ -7,13 +7,13 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
-import re
 from typing import Any, Callable
 import uuid
 
 import geopandas as gpd
 
 from .graph import AnalysisBuildResult, CanonicalSelection, build_analysis_graphs, resolve_canonical_run
+from .environments import EnvironmentRegistryError, get_environment
 from .guards import verify_frozen_baselines
 from .integrated import IntegratedResult, integrate_results
 from .io import sha256_file, write_json
@@ -194,7 +194,7 @@ def preflight_editable_input(input_path: Path, *, project_root: Path = PROJECT_R
             continue
         raise ValueError(
             "Frozen baseline and canonical GeoPackages cannot be used as professor editable input. "
-            "Use data/editable/grid/env39_editable.gpkg."
+            "Use the editable source registered for the selected environment."
         )
     locks = qgis_lock_files(selected)
     if locks:
@@ -276,9 +276,11 @@ def _restore_pointer(path: Path, previous_bytes: bytes | None) -> None:
 
 def _record_stage_workflow_start(
     path: Path, document: dict[str, Any], workflow_start_git: GitSnapshot,
+    environment_routing: dict[str, Any],
 ) -> None:
     """Add immutable entry provenance without replacing honest stage-time provenance."""
     document["workflow_start_git"] = workflow_start_git.as_dict()
+    document["environment_routing"] = environment_routing
     write_json(path, document)
 
 
@@ -302,6 +304,7 @@ def _verify_and_publish_summary(
     integrated: IntegratedResult, metrics_config: Path,
     canonical_latest: Path, analysis_latest: Path,
     workflow_start_git: GitSnapshot,
+    environment_routing: dict[str, Any],
 ) -> tuple[Path, dict[str, Any]]:
     run_id = selection.run_id
     stage_manifests = {
@@ -377,6 +380,7 @@ def _verify_and_publish_summary(
         "final_status": "PENDING_PROVENANCE",
         "created_at_utc": created_at,
         "environment": environment,
+        "environment_routing": environment_routing,
         "canonical_run_id": run_id,
         "workflow_start_git": workflow_start_git.as_dict(),
         "editable_source": None if editable is None else {
@@ -472,10 +476,66 @@ def run_full_analysis(
     analysis_root: Path | None = None, analysis_latest: Path | None = None,
     metrics_config: Path | None = None, endpoint_tolerance: float = 1e-6,
     dry_run: bool = False, verbose: bool = False,
+    environment_registry: Path | None = None,
     project_root: Path = PROJECT_ROOT, reporter: Callable[[str], None] = print,
 ) -> FullAnalysisResult:
     """Run or plan the strictly gated Phase 7B-through-7H workflow."""
     root = Path(project_root).resolve()
+    registry_path = (
+        Path(environment_registry).resolve()
+        if environment_registry is not None
+        else root / "config" / "environments.yaml"
+    )
+    try:
+        registered = get_environment(environment, registry_path=registry_path, repository_root=root)
+    except EnvironmentRegistryError as exc:
+        raise WorkflowError(0, "Environment routing", exc) from exc
+    registry_analysis_root = registered.analysis_root.resolve()
+    if registry_analysis_root.name != environment:
+        raise WorkflowError(
+            0, "Environment routing",
+            f"Registry analysis root must end in selected environment {environment!r}: {registry_analysis_root}",
+        )
+    controlled_override = any(
+        value is not None
+        for value in (reference_canonical, runs_root, canonical_latest, analysis_root, analysis_latest)
+    )
+    reference = (
+        Path(reference_canonical).resolve()
+        if reference_canonical is not None else registered.topology_reference.resolve()
+    )
+    canonical_runs = (
+        Path(runs_root).resolve() if runs_root is not None else registered.canonical_runs.resolve()
+    )
+    canonical_pointer = (
+        Path(canonical_latest).resolve()
+        if canonical_latest is not None else registered.canonical_latest.resolve()
+    )
+    # Downstream Phase 7 APIs append environment/run_id themselves. The registry
+    # stores that environment directory, so normal routing passes its parent.
+    analysis_output = (
+        Path(analysis_root).resolve()
+        if analysis_root is not None else registry_analysis_root.parent
+    )
+    resolved_analysis_environment_root = analysis_output / environment
+    analysis_pointer = (
+        Path(analysis_latest).resolve()
+        if analysis_latest is not None else resolved_analysis_environment_root / "latest.json"
+    )
+    config = Path(metrics_config).resolve() if metrics_config is not None else root / "config" / "metrics.yaml"
+    routing = {
+        "environment_id": environment,
+        "routing_mode": "controlled_internal_override" if controlled_override else "environment_registry",
+        "environment_registry_path": _display_path(registry_path, root),
+        "environment_registry_sha256": sha256_file(registry_path),
+        "resolved_editable_source": _display_path(registered.editable_source, root),
+        "resolved_topology_reference": _display_path(reference, root),
+        "resolved_canonical_root": _display_path(canonical_runs.parent, root),
+        "resolved_canonical_runs_root": _display_path(canonical_runs, root),
+        "resolved_canonical_latest_pointer": _display_path(canonical_pointer, root),
+        "resolved_analysis_environment_root": _display_path(resolved_analysis_environment_root, root),
+        "downstream_analysis_output_root": _display_path(analysis_output, root),
+    }
     workflow_start_git = capture_git_snapshot(root)
     if (
         workflow_start_git.dirty
@@ -488,24 +548,17 @@ def run_full_analysis(
             "Clean-start Git provenance",
             f"Workflow requires a clean committed repository before execution. Changed paths: {changed}",
         )
-    if not re.fullmatch(r"[A-Za-z0-9_-]+", environment):
-        raise WorkflowError(2, "Editable input validation", "Environment must use letters, digits, underscore, or hyphen.")
     if mode != SUPPORTED_MODE:
         raise WorkflowError(2, "Editable input validation", f"Unsupported mode: {mode}")
     if (input_path is None) == (canonical_run is None):
         raise WorkflowError(2, "Editable input validation", "Specify exactly one of input_path or canonical_run.")
-    reference = Path(reference_canonical) if reference_canonical is not None else root / "data" / "canonical" / "grid" / "env39_canonical.gpkg"
-    canonical_runs = Path(runs_root) if runs_root is not None else root / "data" / "canonical" / "grid" / "runs"
-    canonical_pointer = Path(canonical_latest) if canonical_latest is not None else canonical_runs.parent / "latest.json"
-    analysis_output = Path(analysis_root) if analysis_root is not None else root / "results" / "analysis"
-    analysis_pointer = Path(analysis_latest) if analysis_latest is not None else analysis_output / environment / "latest.json"
-    config = Path(metrics_config) if metrics_config is not None else root / "config" / "metrics.yaml"
     selected_input = None if input_path is None else Path(input_path).resolve()
     reporter("GEOGAMI STREET MORPHOLOGY ANALYSIS")
     reporter("")
     reporter(f"Environment: {environment}")
     reporter(f"Input: {_display_path(selected_input, root) if selected_input else '(existing canonical run)'}")
     reporter(f"Mode: {mode}")
+    reporter(f"Environment registry: {routing['environment_registry_path']}")
     reporter("")
     frozen_before = _stage(1, "Frozen baseline guard", lambda: verify_frozen_baselines(root), reporter)
 
@@ -521,6 +574,12 @@ def run_full_analysis(
                 project_root=root,
             )
             return None
+        if not controlled_override and selected_input != registered.editable_source.resolve():
+            raise ValueError(
+                f"Environment {environment} expects professor editable input: "
+                f"{_display_path(registered.editable_source, root)}; "
+                f"received: {_display_path(selected_input, root)}"
+            )
         if not reference.is_file():
             raise ValueError(f"Reference canonical GeoPackage does not exist: {reference}")
         return preflight_editable_input(selected_input, project_root=root)
@@ -531,11 +590,14 @@ def run_full_analysis(
         reporter("DRY RUN: no canonical run, analysis artifacts, metrics, or pointers will be created.")
         reporter("Planned stages: canonical publication/selection -> graph build -> topology metrics -> geometry/orientation metrics -> integrated results -> final verification")
         reporter(f"Planned canonical: {_display_path(canonical_runs / run_token / f'{environment}_canonical.gpkg', root)}")
-        reporter(f"Planned analysis: {_display_path(analysis_output / environment / run_token, root)}")
+        reporter(f"Planned analysis: {_display_path(resolved_analysis_environment_root / run_token, root)}")
         reporter(f"Canonical latest pointer: {_display_path(canonical_pointer, root)} (unchanged)")
         reporter(f"Analysis latest pointer: {_display_path(analysis_pointer, root)} (unchanged)")
         reporter("FINAL RESULT: DRY RUN PASS")
-        return FullAnalysisResult(environment, True, None, None, None, None, None, None, None, None, analysis_pointer, {})
+        return FullAnalysisResult(
+            environment, True, None, None, None, None, None, None, None, None,
+            analysis_pointer, {"environment_routing": routing},
+        )
 
     canonical_result: VersionedRunResult | None = None
 
@@ -548,7 +610,9 @@ def run_full_analysis(
         canonical_result = run_versioned_canonical(
             environment, selected_input, reference, canonical_runs,
             latest_path=canonical_pointer, endpoint_tolerance=endpoint_tolerance,
-            project_root=root, configuration_paths=(root / "environment.yml", config),
+            project_root=root,
+            configuration_paths=(root / "environment.yml", config, registry_path),
+            environment_routing=routing,
         )
         return resolve_canonical_run(
             environment, canonical_path=canonical_result.canonical_path, project_root=root
@@ -567,7 +631,7 @@ def run_full_analysis(
             environment, canonical_path=selection.canonical_path,
             output_root=analysis_output, project_root=root,
         )
-        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git)
+        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git, routing)
         return result
 
     graph = _stage(4, "NetworkX / OSMnx graph build", graph_stage, reporter)
@@ -579,7 +643,7 @@ def run_full_analysis(
             environment, canonical_path=selection.canonical_path, config_path=config,
             output_root=analysis_output, project_root=root, publish=True,
         )
-        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git)
+        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git, routing)
         return result
 
     topology = _stage(5, "Topology metrics", topology_stage, reporter)
@@ -589,7 +653,7 @@ def run_full_analysis(
             environment, canonical_path=selection.canonical_path, config_path=config,
             output_root=analysis_output, project_root=root, publish=True,
         )
-        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git)
+        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git, routing)
         return result
 
     geometry = _stage(6, "Geometry / orientation metrics", geometry_stage, reporter)
@@ -599,7 +663,7 @@ def run_full_analysis(
             environment, canonical_path=selection.canonical_path,
             output_root=analysis_output, project_root=root, publish=True,
         )
-        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git)
+        _record_stage_workflow_start(result.manifest_path, result.manifest, workflow_start_git, routing)
         return result
 
     integrated = _stage(7, "Integrated results", integrated_stage, reporter)
@@ -609,11 +673,13 @@ def run_full_analysis(
         graph=graph, topology=topology, geometry=geometry, integrated=integrated,
         metrics_config=config, canonical_latest=canonical_pointer,
         analysis_latest=analysis_pointer, workflow_start_git=workflow_start_git,
+        environment_routing=routing,
     ), reporter)
     if verbose:
         reporter(f"Canonical SHA-256: {selection.file_sha256}")
         reporter(f"Topology signature: {selection.topology_signature}")
         reporter(f"Metrics config SHA-256: {sha256_file(config)}")
+        reporter(f"Environment registry SHA-256: {routing['environment_registry_sha256']}")
         reporter("")
     reporter("FINAL RESULTS:")
     reporter(f"Canonical GeoPackage: {selection.canonical_path}")

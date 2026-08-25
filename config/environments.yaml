@@ -1,0 +1,22 @@
+schema_version: 1
+
+environments:
+  env39:
+    environment_id: env39
+    editable_source: data/editable/grid/env39_editable.gpkg
+    canonical_root: data/canonical/grid
+    canonical_runs: data/canonical/grid/runs
+    canonical_latest: data/canonical/grid/latest.json
+    analysis_root: results/analysis/env39
+    topology_reference: data/canonical/grid/env39_canonical.gpkg
+    reference_image: data/reference/env39_reference.jpeg
+
+  env38:
+    environment_id: env38
+    editable_source: data/editable/curvilinear/env38_editable.gpkg
+    canonical_root: data/canonical/curvilinear
+    canonical_runs: data/canonical/curvilinear/runs
+    canonical_latest: data/canonical/curvilinear/latest.json
+    analysis_root: results/analysis/env38
+    topology_reference: data/canonical/grid/env39_canonical.gpkg
+    reference_image: data/reference/env38_reference.jpeg

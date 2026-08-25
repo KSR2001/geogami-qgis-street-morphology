@@ -1,0 +1,221 @@
+{
+  "accepted_metrics": {
+    "geometry": {
+      "absolute_excess_length_local": 426.252079450368,
+      "mean_edge_circuity": 1.0364975857178171,
+      "mean_edge_length_local": 165.20078701368584,
+      "median_edge_length_local": 143.4478602096824,
+      "network_circuity": 1.038846945394489,
+      "positive_geometry_segment_count": 178,
+      "total_chord_length_local": 10972.602224493956,
+      "total_network_length_local": 11398.854303944323,
+      "zero_chord_edge_count": 0
+    },
+    "orientation": {
+      "bin_count": 36,
+      "bin_width_degrees": 5.0,
+      "chord_entropy": 2.9808051798049027,
+      "chord_normalized_entropy": 0.8318095232640588,
+      "chord_observation_count": 69,
+      "phi_chord": 0.5787070314167302,
+      "phi_segment_length_weighted": 0.4437291100780897,
+      "segment_length_weighted_entropy": 3.2269625103808837,
+      "segment_length_weighted_normalized_entropy": 0.9005010342630304,
+      "segment_observation_count": 178
+    },
+    "topology_and_weighted_network": {
+      "articulation_point_count": 9,
+      "bridge_count": 10,
+      "cycle_rank": 24,
+      "dead_end_count": 10,
+      "degree_3_count": 16,
+      "degree_4_count": 20,
+      "diameter_hops": 10,
+      "edge_connectivity": 1,
+      "intersection_count": 36,
+      "mean_degree": 3.0,
+      "mean_shortest_path_hops": 4.308212560386473,
+      "mean_weighted_shortest_path_local": 721.4252938680377,
+      "node_connectivity": 1,
+      "radius_hops": 6
+    }
+  },
+  "audit": {
+    "artifact_hash_mismatches": 0,
+    "audit_timestamp_utc": "2026-08-25T15:45:25.745995Z",
+    "figure_count": 7,
+    "manifest_hash_records_checked": 46,
+    "missing_artifacts": 0,
+    "status": "PASS",
+    "unique_hashed_artifacts_checked": 37
+  },
+  "canonical_identity": {
+    "component_count": 1,
+    "container_sha256": "501E8B16A5F99143328166DB31DB159801C23268CEABBFCEC92A5A368C9A0D21",
+    "degree_distribution": {
+      "1": 10,
+      "3": 16,
+      "4": 20
+    },
+    "editable_scientific_identity_equal": true,
+    "node_count": 46,
+    "path": "data/canonical/curvilinear/runs/env38_20260825T150753632988Z_974f687c1ac4/env38_canonical.gpkg",
+    "physical_edge_count": 69,
+    "scientific_content_signature": "974F687C1AC4E1CDA548366DFB89FFBFCDBE05F44BA28342EF52149A4C607945",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "environment": "env38",
+  "graph_identity": {
+    "e042": {
+      "canonical_geometry_stored_direction": "v_to_u",
+      "forward_arc_direction": "u_to_v",
+      "reverse_arc_is_exact_coordinate_reversal": true
+    },
+    "graphml_roundtrip_status": "PASS",
+    "local_cartesian_crs_verified": true,
+    "networkx": {
+      "component_count": 1,
+      "degree_sum": 138,
+      "graph_type": "MultiGraph",
+      "node_count": 46,
+      "physical_edge_count": 69
+    },
+    "osmnx": {
+      "directed_arc_count": 138,
+      "graph_type": "MultiDiGraph",
+      "node_count": 46,
+      "unique_physical_edge_id_count": 69
+    }
+  },
+  "integrated_schema": {
+    "comparison_ready_metric_count": 39,
+    "core_metric_count": 19,
+    "metric_families_match_env39": true,
+    "metric_ids_match_env39": true,
+    "schema_fields_match_env39": true,
+    "stored_source_traceability_status": "PASS"
+  },
+  "methodology_artifacts": {
+    "geometry": {
+      "file_sha256": "9301883F964BD6D38A9589D53391D71F59818487F5BC9EEE33EE51DDCDC37122",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/geometry/geometry_methodology.json"
+    },
+    "integrated": {
+      "file_sha256": "CB5D84F5DD3A980619577E95F1F655BA3982464E3C5C741459718B5AB5598019",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/integrated/integrated_methodology.json"
+    },
+    "topology": {
+      "file_sha256": "B5FC9203C5A4EF0F2DCADB27148275C9317DBB73F28F8BE893C8AAD7178EFAD8",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/topology/topology_methodology.json"
+    }
+  },
+  "official_run_id": "env38_20260825T150753632988Z_974f687c1ac4",
+  "pointers": {
+    "analysis_latest": {
+      "file_sha256": "DE4DDD57B3DAD4FFAFE7DCD7C0E23937C7E3242A6F5997D60C646846646647D4",
+      "path": "results/analysis/env38/latest.json"
+    },
+    "canonical_latest": {
+      "file_sha256": "ECB78EF2F888A2F2F2056E72F3CDD0FFFDC547138B7431E354BCC0D30BA4D2AD",
+      "path": "data/canonical/curvilinear/latest.json"
+    }
+  },
+  "provenance": {
+    "freeze_audit_git": {
+      "branch": "phase-9-env38-reproducible-analysis",
+      "clean_start": true,
+      "commit_sha": "4ce18cd32a81a8508eabcb354e4293d256f4ef88"
+    },
+    "metrics_configuration": {
+      "file_sha256": "80042A6B046FC19C2E7F1C7A5D66CB6987EC7ACACB844351728DA39DA13A95E3",
+      "path": "config/metrics.yaml"
+    },
+    "production_generation_git": {
+      "branch": "phase-9-env38-reproducible-analysis",
+      "clean_start": true,
+      "commit_sha": "59118d44f15613f42dd37853f12cd0cc0d1d3951",
+      "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git"
+    },
+    "registry": {
+      "file_sha256": "CD4C3065AA9AC6880CCB21EDED6866568BE5F378101BB4A9928A7244A8CF2AF0",
+      "path": "config/environments.yaml"
+    }
+  },
+  "schema_version": "1.0.0",
+  "software_environment": {
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "fiona": null,
+      "gdal": "3.13.2",
+      "geopandas": "1.1.4",
+      "matplotlib": "3.11.1",
+      "networkx": "3.6.1",
+      "numpy": "2.5.2",
+      "osmnx": "2.1.1",
+      "pandas": "3.0.5",
+      "pyogrio": "0.13.0",
+      "pyproj": "3.7.2",
+      "scipy": "1.18.0",
+      "shapely": "2.1.2"
+    },
+    "python": "3.12.13",
+    "python_implementation": "CPython"
+  },
+  "source_artifacts": {
+    "comparison_ready_metrics": {
+      "file_sha256": "E9D1ACAA9CA48B8AF1E9E64E9E6278BEA40B85A7A6C79D47EA86C7FA816A2B7C",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/integrated/comparison_ready_metrics.csv"
+    },
+    "core_metrics": {
+      "file_sha256": "4FB07023FC1CE89DF63D3C77A511D5A3D11A74CEEFC5CF16296552C409AA32A9",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/integrated/core_metrics.csv"
+    },
+    "edge_geometry_metrics": {
+      "file_sha256": "B866932205AC60C668E2A5B8C61BDE5E7B56B7903D2FBA143A8BC52C16F7A0D8",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/geometry/edge_geometry_metrics.csv"
+    },
+    "geometry_summary": {
+      "file_sha256": "5A7E9129DB377FAFA0051D124151113440FBBE821497FD513D66FE28EFBF859C",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/geometry/geometry_metrics_summary.json"
+    },
+    "graphml": {
+      "file_sha256": "C714D14C57AC9BBFB624B4C8EB50E32D64D776607A195D1C06621F8D6AFDDC3B",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/graphs/env38_osmnx.graphml"
+    },
+    "orientation_summary": {
+      "file_sha256": "8ACB653BCD2ADC26D236888653BBFC82185FA9DB3458EFDE41FE10335F6EA2CA",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/geometry/orientation_metrics_summary.json"
+    },
+    "topology_summary": {
+      "file_sha256": "36EE8BAE7A60C76512C7E4D8D44F9BDF20D790A831F352EE66B47A7EA7E95477",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/topology/topology_metrics_summary.json"
+    }
+  },
+  "source_manifests": {
+    "analysis_graph": {
+      "file_sha256": "703594F21DCEE1C528588A676AAA7F751B0F6008913F6BCA742BB6D4945A8AB7",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/analysis_graph_manifest.json"
+    },
+    "canonical": {
+      "file_sha256": "F70FE1354D506301E6A9CE1AB28ACE34F2490E9F022AE64CA6A9B3C6EE9AC40B",
+      "path": "data/canonical/curvilinear/runs/env38_20260825T150753632988Z_974f687c1ac4/canonical_manifest.json"
+    },
+    "end_to_end": {
+      "file_sha256": "A778CFB88D5E7D394D7DC788EAC35C290F492B0EA9204A088D1E76EEAD12622B",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/end_to_end_analysis_manifest.json"
+    },
+    "geometry": {
+      "file_sha256": "41492D4CD48C44B0DEC57F0E22F2AFFBA7ACB66E677B38EA99FDD3B1F959E73A",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/geometry/geometry_analysis_manifest.json"
+    },
+    "integrated": {
+      "file_sha256": "31EC942E7E4BB15505D387BB6F4067291EE2AD27F34E95EC45A3977495910451",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/integrated/integrated_analysis_manifest.json"
+    },
+    "topology": {
+      "file_sha256": "736F96B377DE105ECB987998E98D256C99F3B1DAE25CBB7D55E371DC46E14375",
+      "path": "results/analysis/env38/env38_20260825T150753632988Z_974f687c1ac4/topology/topology_analysis_manifest.json"
+    }
+  },
+  "status": "PASS"
+}

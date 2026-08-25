@@ -424,10 +424,16 @@ def validate_canonical_for_analysis(
             errors.append(f"edge {row.edge_id} duplicates canonical topology tuple {normalized}")
         seen_topology.add(normalized)
         topology_tuples.append(normalized)
-        if tuple(geometry.coords[0]) != tuple(node_points[row.u].coords[0]):
-            errors.append(f"edge {row.edge_id} geometry does not start at canonical u={row.u}")
-        if tuple(geometry.coords[-1]) != tuple(node_points[row.v].coords[0]):
-            errors.append(f"edge {row.edge_id} geometry does not end at canonical v={row.v}")
+        start, end = tuple(geometry.coords[0]), tuple(geometry.coords[-1])
+        u_coordinate, v_coordinate = tuple(node_points[row.u].coords[0]), tuple(node_points[row.v].coords[0])
+        if not (
+            (start == u_coordinate and end == v_coordinate)
+            or (start == v_coordinate and end == u_coordinate)
+        ):
+            errors.append(
+                f"edge {row.edge_id} geometry endpoints do not exactly match canonical nodes "
+                f"u={row.u} and v={row.v} in either LineString direction"
+            )
         actual_length = float(geometry.length)
         if "length_local" in edges and not _is_close(
             getattr(row, "length_local"), actual_length, derived_tolerance
@@ -543,7 +549,17 @@ def prepare_osmnx_node_gdf(canonical: CanonicalData) -> gpd.GeoDataFrame:
 def prepare_osmnx_edge_gdf(canonical: CanonicalData) -> gpd.GeoDataFrame:
     """Create exactly two geometry-oriented directed records per physical edge."""
     records: list[dict[str, Any]] = []
+    node_points = canonical.nodes.set_index("node_id").geometry
     for row in canonical.edges.sort_values("edge_id", kind="stable").itertuples():
+        stored_coordinates = tuple(row.geometry.coords)
+        u_coordinate = tuple(node_points[str(row.u)].coords[0])
+        forward_coordinates = (
+            stored_coordinates
+            if tuple(stored_coordinates[0]) == u_coordinate
+            else tuple(reversed(stored_coordinates))
+        )
+        forward_geometry = LineString(forward_coordinates)
+        reverse_geometry = LineString(tuple(reversed(forward_coordinates)))
         common = {
             "canonical_edge_id": str(row.edge_id),
             "edge_id": str(row.edge_id),
@@ -562,7 +578,7 @@ def prepare_osmnx_edge_gdf(canonical: CanonicalData) -> gpd.GeoDataFrame:
                 "key": int(row.key),
                 **common,
                 "arc_direction": "forward",
-                "geometry": row.geometry,
+                "geometry": forward_geometry,
             }
         )
         records.append(
@@ -572,7 +588,7 @@ def prepare_osmnx_edge_gdf(canonical: CanonicalData) -> gpd.GeoDataFrame:
                 "key": int(row.key),
                 **common,
                 "arc_direction": "reverse",
-                "geometry": LineString(list(reversed(row.geometry.coords))),
+                "geometry": reverse_geometry,
             }
         )
     edges = gpd.GeoDataFrame(records, geometry="geometry", crs=canonical.edges.crs)
@@ -672,9 +688,16 @@ def validate_graph_correspondence(
         if not isinstance(forward_geometry, LineString) or not isinstance(reverse_geometry, LineString):
             raise AnalysisGraphError(f"Physical edge {edge_id} arc geometry is not LineString.")
         canonical_coordinates = _coordinates(canonical_edge.geometry)
-        if _coordinates(forward_geometry) != canonical_coordinates:
-            raise AnalysisGraphError(f"Physical edge {edge_id} forward geometry orientation changed.")
-        if _coordinates(reverse_geometry) != tuple(reversed(canonical_coordinates)):
+        node_lookup = canonical.nodes.set_index("node_id").geometry
+        canonical_u = tuple(node_lookup[str(canonical_edge.u)].coords[0])
+        expected_forward_geometry = (
+            canonical_coordinates
+            if canonical_coordinates[0] == canonical_u
+            else tuple(reversed(canonical_coordinates))
+        )
+        if _coordinates(forward_geometry) != expected_forward_geometry:
+            raise AnalysisGraphError(f"Physical edge {edge_id} forward geometry does not run from u to v.")
+        if _coordinates(reverse_geometry) != tuple(reversed(expected_forward_geometry)):
             raise AnalysisGraphError(f"Physical edge {edge_id} reverse geometry is not exact coordinate reversal.")
         canonical_length = float(canonical_edge.geometry.length)
         for _, _, _, data in (forward, reverse):

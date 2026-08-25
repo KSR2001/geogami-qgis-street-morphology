@@ -1,288 +1,662 @@
-# Professor workflow: GeoGami street-morphology analysis
+# Professor operating manual: Env38 and Env39 street morphology
 
-## 1. Purpose
+This is the final operating procedure for the controlled GeoGami Env38/Env39
+street-morphology experiment. It is written for a GIS researcher who can use QGIS but
+may be new to this repository, Conda, command-line Git, or Jupyter.
 
-This workflow analyzes synthetic GeoGami street networks with QGIS, GeoPandas,
-NetworkX, OSMnx, and JupyterLab. It is designed for the controlled Env38/Env39
-experiment in which graph topology is held constant while street geometry may change.
+The production command-line interface (CLI) is authoritative. QGIS is the geometry
+editing interface, Jupyter is for teaching and inspection, and Git/GitHub records
+scientific provenance. Do not use a notebook as a substitute for the production CLI.
 
-The command-line workflow produces all machine-readable results. Jupyter notebooks use
-the same tested Python modules for teaching, inspection, and visual interpretation.
+## Quick reference
 
-## 2. First-time installation
+Run every command from the repository root after activating `geogami-morphology`.
 
-From Anaconda Prompt or PowerShell in the repository root, create the tested Conda
-environment:
+| Environment | Editable GeoPackage | Dry run | Production run | Canonical latest | Analysis latest | Notebooks |
+| --- | --- | --- | --- | --- | --- | --- |
+| Env39, grid-like | `data/editable/grid/env39_editable.gpkg` | `python scripts/run_full_analysis.py --environment env39 --input data/editable/grid/env39_editable.gpkg --mode preserve-topology --dry-run` | `python scripts/run_full_analysis.py --environment env39 --input data/editable/grid/env39_editable.gpkg --mode preserve-topology` | `data/canonical/grid/latest.json` | `results/analysis/env39/latest.json` | 01-04 |
+| Env38, curvilinear | `data/editable/curvilinear/env38_editable.gpkg` | `python scripts/run_full_analysis.py --environment env38 --input data/editable/curvilinear/env38_editable.gpkg --mode preserve-topology --dry-run` | `python scripts/run_full_analysis.py --environment env38 --input data/editable/curvilinear/env38_editable.gpkg --mode preserve-topology` | `data/canonical/curvilinear/latest.json` | `results/analysis/env38/latest.json` | 05-08 |
+
+## 1. Understand the system
+
+The controlled workflow is:
+
+```text
+QGIS editable geometry
+    -> version-controlled editable GeoPackage
+    -> canonicalization
+    -> NetworkX physical graph
+    -> OSMnx reciprocal analysis graph
+    -> topology metrics
+    -> geometry/orientation metrics
+    -> integrated metrics
+    -> Jupyter inspection
+    -> optional Env38-versus-Env39 comparison
+```
+
+- **QGIS** edits the spatial realization of an existing street graph.
+- **Git/GitHub** preserve the exact editable input and generated research artifacts.
+- **The CLI** validates, computes, publishes, and records the reproducible result.
+- **Jupyter** reads accepted results for explanation, visualization, and interpretation.
+
+Env39 and Env38 intentionally use the same topology contract: 46 graph nodes and 69
+physical streets with the same stable connectivity. Env39 is grid-like and Env38 is
+curvilinear. The experiment changes geometry, not topology; neither design is presumed
+better.
+
+## 2. Environment file map and protection boundary
+
+The registry `config/environments.yaml` is authoritative for environment paths and
+reference images.
+
+| Role | Env39, grid-like | Env38, curvilinear |
+| --- | --- | --- |
+| Editable input | `data/editable/grid/env39_editable.gpkg` | `data/editable/curvilinear/env38_editable.gpkg` |
+| Topology reference | `data/canonical/grid/env39_canonical.gpkg` | `data/canonical/grid/env39_canonical.gpkg` |
+| Canonical runs | `data/canonical/grid/runs/` | `data/canonical/curvilinear/runs/` |
+| Canonical latest | `data/canonical/grid/latest.json` | `data/canonical/curvilinear/latest.json` |
+| Analysis root | `results/analysis/env39/` | `results/analysis/env38/` |
+| Reference image | Resolve `environments.env39.reference_image` from `config/environments.yaml` | Resolve `environments.env38.reference_image` from `config/environments.yaml` |
+
+Both topology-reference entries point to Env39's frozen canonical graph because the
+scientific design controls connectivity while allowing different spatial geometry.
+Reference images are optional visual aids. Resolve their paths from the registry at
+the time of use; if a registered file is absent, report the configuration/data drift
+rather than guessing another filename or changing scientific data during this workflow.
+
+### File protection table
+
+| Classification | Paths | Rule |
+| --- | --- | --- |
+| **Professor-editable** | `data/editable/grid/env39_editable.gpkg`<br>`data/editable/curvilinear/env38_editable.gpkg` | Edit only the environment selected for the current branch. |
+| **Do not edit directly** | `data/baselines/grid/network_v2.gpkg`<br>`data/canonical/grid/env39_canonical.gpkg`<br>`data/canonical/grid/runs/*`<br>`data/canonical/curvilinear/runs/*`<br>`results/analysis/*`<br>`results/comparison/*`<br>`data/working/curvilinear/env38_working.gpkg` | Frozen inputs, working provenance, and generated research artifacts are immutable. Recreate outputs through the supported CLI, never by hand. |
+
+## 3. One-time Windows setup
+
+Install Git and a Conda distribution first. Then use Anaconda Prompt or PowerShell:
 
 ```powershell
+git clone https://github.com/KSR2001/geogami-qgis-street-morphology.git
+cd geogami-qgis-street-morphology
 conda env create --name geogami-morphology --file environment.yml
+conda activate geogami-morphology
 ```
 
 If the environment already exists, update it from the versioned specification:
 
 ```powershell
 conda env update --name geogami-morphology --file environment.yml --prune
-```
-
-## 3. Activate the environment
-
-```powershell
 conda activate geogami-morphology
 ```
 
-## 4. Verify the interpreter
+Verify the active interpreter and package consistency:
 
 ```powershell
 where.exe python
+python --version
 python -c "import sys; print(sys.executable)"
+python -c "import osmnx; print(osmnx.__version__)"
+python -c "import networkx; print(networkx.__version__)"
+python -m pip check
 ```
 
-The displayed interpreter must belong to the `geogami-morphology` Conda environment.
-If it points to `WindowsApps`, Microsoft Store Python is shadowing Conda. Reactivate
-the environment or use the deterministic form `conda run -n geogami-morphology
-python ...`.
+The interpreter path must belong to the `geogami-morphology` environment, not
+`WindowsApps`. The repository was validated with Python 3.12, OSMnx 2.1, NetworkX
+3.6, GeoPandas 1.1, Shapely 2.1, pandas 3.0, NumPy 2.5, pyproj 3.7, JupyterLab 4.4,
+and ipykernel 6.30. These describe the validated snapshot; `environment.yml` remains
+the installation authority, so do not install packages manually to chase this list.
+In Anaconda Prompt, `where python` is equivalent to PowerShell's unambiguous
+`where.exe python` command shown above.
 
-## 5. Register the Jupyter kernel
+### Register the Jupyter kernel
 
-This is required once per user account:
+Run once per Windows user account:
 
 ```powershell
 python -m ipykernel install --user --name geogami-morphology --display-name "GeoGami Morphology"
+python -m jupyter lab
 ```
 
-## 6. Open QGIS
+The accepted kernel name is `geogami-morphology`; its display name is **GeoGami
+Morphology**. VS Code can occasionally rewrite notebook kernelspec metadata to
+`python3`. Select the accepted kernel and do not commit an unintended kernelspec-only
+change.
 
-Open the repository project:
+## 4. Start a safe editing branch
 
-```text
-qgis/geogami_baselines.qgz
+Do not make scientific geometry edits directly on `main`.
+
+```powershell
+git switch main
+git pull
+git status
+git switch -c edit-env39-YYYY-MM-DD
 ```
 
-## 7. Which layer to edit
+For Env38, use `git switch -c edit-env38-YYYY-MM-DD`. Before opening QGIS, `git
+status` should report a clean working tree. Stop and review unexpected changes rather
+than carrying them into a new experiment.
 
-Edit only:
+## 5. Open and organize the QGIS project
 
-```text
-data/editable/grid/env39_editable.gpkg
+1. Start QGIS and choose **Project > Open**.
+2. Open `qgis/geogami_baselines.qgz`.
+3. If the editable layers are absent, choose **Layer > Add Layer > Add Vector Layer**.
+4. Browse to the selected editable GeoPackage:
+   - Env39: `data/editable/grid/env39_editable.gpkg`
+   - Env38: `data/editable/curvilinear/env38_editable.gpkg`
+5. Add both `nodes` and `edges`.
+6. For each layer, open **Layer Properties > Information** (or **Source**) and verify
+   the source begins with `data/editable/`. Never edit a canonical, working, baseline,
+   or result path.
+
+Create an obvious `ENV39_EDITABLE` or `ENV38_EDITABLE` layer group. Suggested other
+groups are `REFERENCE_IMAGES` and `FROZEN_REFERENCE`. Use distinct styling for the
+editable nodes and edges. Turn frozen/canonical layers off while editing unless they
+are temporarily needed as a visual reference.
+
+### Configure snapping
+
+Open **Project > Snapping Options**, select **Advanced Configuration**, and configure
+only the active editable layers:
+
+| Layer | Enabled | Type | Tolerance |
+| --- | --- | --- | --- |
+| Editable `nodes` | Yes | Vertex | approximately 10 pixels |
+| Editable `edges` | Yes | Vertex | approximately 10 pixels |
+
+Initially keep segment snapping off. For the current preserve-topology procedure also
+keep **Topological Editing**, **Snapping on Intersection**, and **Self-snapping** off
+unless a separately reviewed edit explicitly justifies one of them. Snapping exists to
+make each edge endpoint coincide exactly with its prescribed graph node; it is not
+permission to create new junctions.
+
+## 6. Edit geometry without changing topology
+
+### Allowed geometry edits
+
+Under `preserve-topology`, you may:
+
+- move an existing node coordinate;
+- reshape an existing physical street;
+- move an edge endpoint together with its referenced node;
+- add LineString vertices between the endpoints;
+- remove unnecessary internal vertices while retaining a valid LineString;
+- change curvature, orientation, physical length, and other geometry-derived values.
+
+Do not manually rewrite geometry-derived attributes unless a future validated pipeline
+explicitly requires it. The canonical workflow derives or validates geometry.
+
+### Prohibited topology edits
+
+You must not:
+
+- add or delete a graph node or physical street;
+- split one canonical street into multiple graph edges;
+- merge canonical streets;
+- reconnect a street to different endpoints;
+- change `node_id`, `edge_id`, `u`, `v`, or `key`;
+- introduce an unintended crossing or junction.
+
+The controlled topology is 46 nodes and 69 physical streets. If the research question
+requires changed topology, stop: that needs a separate topology-rebuild and scientific
+review workflow.
+
+### Graph nodes versus curve vertices
+
+A bend does not require a graph node. A graph node represents controlled network
+connectivity and has a stable `node_id`. An internal LineString vertex merely shapes
+one street between its existing endpoints. Thus a straight `N001 ----- N002` street
+may become a curved LineString while remaining one physical edge from N001 to N002.
+
+### Move a node safely
+
+1. Select the editable `nodes` layer and toggle editing on.
+2. Use the Vertex Tool or Move Feature tool to move the existing node.
+3. Identify every edge incident to that node.
+4. Select the editable `edges` layer and move every incident first/last vertex exactly
+   onto the moved node.
+5. Preserve every ID and `u/v/key` value.
+6. Save both layers and validate before editing a large new area.
+
+Leaving an incident street endpoint at the old coordinate causes an endpoint-node
+mismatch and the production gate will stop.
+
+### Reshape a street safely
+
+1. Select the editable `edges` layer and toggle editing on.
+2. Select the existing edge with the Vertex Tool.
+3. Add or drag internal vertices to follow the intended street form.
+4. Keep the first endpoint on its `u` node and the last endpoint on its `v` node.
+5. Avoid feature creation, deletion, splitting, or an unintended crossing.
+6. Save the layer and inspect the result at a useful zoom.
+
+### Street-network versus non-street objects
+
+This GeoPackage represents the analytical street network. Trees, playgrounds,
+buildings, water, landscape objects, decorative elements, and Unity props are not
+NetworkX/OSMnx street entities unless a future model explicitly represents them as
+such. Moving a tree alone does not alter topology, street length, circuity, orientation
+entropy, or fourfold order (`phi`). If moving a non-street object also requires a
+street to move, edit the **street geometry** in the appropriate editable GeoPackage.
+Unity/non-network placement is a separate environment-design task.
+
+## 7. Save, close, and commit the editable input
+
+Before analysis:
+
+1. Save changes in every edited layer.
+2. Toggle editing off and confirm QGIS has no unsaved layer edits.
+3. Save the QGIS project only if its configuration was intentionally changed.
+4. Close QGIS completely.
+5. Confirm there is no active `*.gpkg-wal`, `*.gpkg-shm`, or `*.gpkg-journal` file.
+
+GeoPackages are SQLite databases. Open handles and transaction sidecars can mean that
+the saved database is not ready for an atomic, reproducible read. Never delete an
+active or unexplained transaction file manually.
+
+The production workflow requires a clean, committed start. Inspect the change:
+
+```powershell
+git status --short
 ```
 
-Do not edit:
+The intentional data change should primarily be the selected editable GeoPackage. Do
+not include transaction sidecars, `.vscode/`, `__pycache__/`, or `*.pyc` files.
 
-```text
-data/baselines/grid/network_v2.gpkg
-data/canonical/grid/env39_canonical.gpkg
-data/canonical/grid/runs/<run_id>/*
+For Env39:
+
+```powershell
+git add data/editable/grid/env39_editable.gpkg
+git commit -m "Update Env39 street geometry"
+git status --porcelain
 ```
 
-The first two are frozen scientific artifacts. Versioned canonical runs are generated
-outputs and must remain immutable.
+For Env38:
 
-## 8. Allowed QGIS edits
+```powershell
+git add data/editable/curvilinear/env38_editable.gpkg
+git commit -m "Update Env38 street geometry"
+git status --porcelain
+```
 
-The supported mode is `preserve-topology`. You may change node positions, street
-curvature, LineString geometry, internal vertices, edge lengths, and orientations.
+`git status --porcelain` must print nothing before a production analysis. If the QGIS
+project was deliberately changed, review and commit it separately; never hide an
+unrelated dirty path in the geometry commit.
 
-You must preserve node IDs, edge IDs, `u/v/key` connectivity, component structure, and
-degree structure. Adding/deleting streets or nodes, changing connectivity, or
-splitting/merging canonical streets will fail validation.
+## 8. Validate and run the production pipeline
 
-Topology-changing QGIS edits require a separate topology-rebuild workflow and are not
-part of the controlled Env38/Env39 experiment. Phase 7I does not implement such a
-workflow.
+### Env39
 
-## 9. Save procedure
-
-1. Save all edited layer changes in QGIS.
-2. Save the QGIS project if its presentation changed.
-3. Close QGIS completely.
-
-Closing QGIS matters because a GeoPackage is a SQLite database. The analysis refuses
-to run when `.gpkg-wal`, `.gpkg-shm`, or `.gpkg-journal` files are present. It never
-deletes these files or assumes that they are stale.
-
-## 10. Optional dry run
-
-From the repository root:
+Validate without creating a run or changing a latest pointer:
 
 ```powershell
 python scripts/run_full_analysis.py --environment env39 --input data/editable/grid/env39_editable.gpkg --mode preserve-topology --dry-run
 ```
 
-The dry run verifies the environment label, input, layers, fields, CRS, frozen hashes,
-QGIS lock state, and metrics configuration. It prints the planned stages and output
-locations but creates no run, calculates no metrics, and changes no latest pointer.
-
-## 11. Run the complete analysis
+After `FINAL RESULT: DRY RUN PASS`, run production:
 
 ```powershell
 python scripts/run_full_analysis.py --environment env39 --input data/editable/grid/env39_editable.gpkg --mode preserve-topology
 ```
 
-The deterministic Conda alternative is:
+### Env38
+
+Validate without creating a run or changing a latest pointer:
 
 ```powershell
-conda run -n geogami-morphology python scripts/run_full_analysis.py --environment env39 --input data/editable/grid/env39_editable.gpkg --mode preserve-topology
+python scripts/run_full_analysis.py --environment env38 --input data/editable/curvilinear/env38_editable.gpkg --mode preserve-topology --dry-run
 ```
 
-Each successful QGIS-edit run creates a new canonical run. For a verified canonical run
-that does not yet have analysis outputs, the advanced analysis-only form is:
+After `FINAL RESULT: DRY RUN PASS`, run production:
 
 ```powershell
-python scripts/run_full_analysis.py --environment env39 --canonical-run latest --mode preserve-topology
+python scripts/run_full_analysis.py --environment env38 --input data/editable/curvilinear/env38_editable.gpkg --mode preserve-topology
 ```
 
-## 12. Interpret PASS/FAIL
+With controlled topology, the result should contain 46 nodes, 69 physical streets,
+and 138 reciprocal OSMnx arcs. These are graph counts, not geometry values.
 
-The command is strictly gated:
+### What the eight gated stages do
 
-1. frozen baseline guard;
-2. editable input validation;
-3. canonical network build;
-4. NetworkX/OSMnx graph build;
-5. topology metrics;
-6. geometry/orientation metrics;
-7. integrated results;
-8. final cross-stage verification.
+1. Record clean-start Git provenance and enforce the frozen baseline guard.
+2. Validate the environment label, registered editable input, schema, CRS, and locks.
+3. Canonicalize and publish a versioned physical network.
+4. Build NetworkX and OSMnx graph representations.
+5. Calculate topology metrics.
+6. Calculate geometry and orientation metrics.
+7. Integrate the accepted metric families and publish machine-readable results.
+8. Verify identities, artifacts, provenance, and pointer eligibility.
 
-`PASS` means that stage completed and its required identity checks succeeded. `FAIL`
-stops the command immediately; downstream stages are not run and the process exits
-non-zero. A failed or incomplete analysis never updates the analysis latest pointer.
+A failure stops downstream work and returns a non-zero exit status. An incomplete run
+cannot replace the analysis latest pointer.
 
-The clean-Git requirement applies at workflow entry: committed code, configuration,
-documentation, notebooks, tests, frozen inputs, and the selected editable GeoPackage
-must have no uncommitted change when execution starts. The end-to-end manifest records
-this immutable `workflow_start_git` snapshot separately from `workflow_end_git`.
-Versioned canonical and analysis artifacts may legitimately make the post-run tree
-dirty when those research outputs are tracked. They are accepted only when every
-changed path belongs to the actual new run or its two latest pointers; any unexpected
-source, configuration, frozen-input, or editable-input change still fails final
-verification.
+### NetworkX and OSMnx semantics
 
-Repository text bytes are governed by `.gitattributes`: source, configuration,
-notebook, documentation, GraphML, SVG, and tabular research artifacts use LF on every
-platform, including Windows installations with `core.autocrlf=true`. GeoPackages, QGIS
-projects, and raster images are explicitly binary and are never subject to line-ending
-conversion. Artifact SHA-256 values continue to identify exact file bytes; validation
-does not normalize content while hashing.
+The NetworkX physical graph is an undirected `MultiGraph` with 69 physical streets.
+The OSMnx analysis graph is a `MultiDiGraph` with two reciprocal arcs for each physical
+street, hence 138 arcs. The two arcs model opposite directions over one street; they
+do not double the physical-street count.
 
-## 13. Where results are stored
+### Local coordinate limitation
 
-Canonical publication:
+GeoGami uses a local Cartesian coordinate system. Lengths are reported in local units,
+not asserted metres. Do not apply great-circle distances, geographic bearings,
+WGS84/place downloads, a fake `EPSG:4326`, or geographic nearest-node routines.
 
-```text
-data/canonical/grid/runs/<canonical_run_id>/
-```
+## 9. Interpret the accepted metric families
 
-Analysis publication:
+| Family | Meaning and examples |
+| --- | --- |
+| `topology_controlled` | Connectivity-only controls: node/edge counts, degree distribution, dead ends, cycle rank, components, hop shortest paths, and unweighted centrality. These should match between Env38 and Env39. |
+| `geometry_weighted_network` | Graph measures whose costs use stored street lengths, including length-weighted shortest paths and centrality. |
+| `geometric_morphology` | Physical LineString length, endpoint chord, excess length, and circuity. Edge circuity is street-path length divided by endpoint chord; network circuity uses their aggregate sums. |
+| `orientation_morphology` | Axial street-direction distributions, orientation entropy and normalized entropy, and fourfold order `phi`. Higher entropy means a more dispersed distribution; higher `phi` means stronger fourfold axial order. Neither is inherently better. |
 
-```text
-results/analysis/env39/<canonical_run_id>/
-```
+Degree counts incident physical streets; a dead end has degree one. Cycle rank counts
+independent graph cycles. A shortest path minimizes hops or, when weighted, local
+street length. Centrality describes structural position under the stated weighting.
+Morphology does not directly measure navigation or human performance; those claims
+need independent behavioral evidence.
 
-The analysis directory contains GraphML, topology results, geometry/orientation
-results, integrated CSV/JSON/Markdown results, figures, stage manifests, and
-`end_to_end_analysis_manifest.json`. After complete success only,
-`results/analysis/env39/latest.json` points to that complete analysis.
+## 10. Find and inspect outputs
 
-The command prints the exact canonical, manifest, GraphML, result-directory, core CSV,
-comparison CSV, summary, and notebook paths at completion.
+Successful runs are never overwritten:
 
-## 14. Open JupyterLab
+- Env39 canonical: `data/canonical/grid/runs/<run_id>/`
+- Env39 analysis: `results/analysis/env39/<run_id>/`
+- Env38 canonical: `data/canonical/curvilinear/runs/<run_id>/`
+- Env38 analysis: `results/analysis/env38/<run_id>/`
+
+The convenience pointers identify the newest complete accepted run:
+
+- `data/canonical/grid/latest.json`
+- `results/analysis/env39/latest.json`
+- `data/canonical/curvilinear/latest.json`
+- `results/analysis/env38/latest.json`
+
+Open a latest JSON file in a text editor and follow its `run_id`, `canonical_path`,
+`manifest_path`, `analysis_manifest_path`, or `integrated_results_path`. A pointer is
+mutable navigation metadata; the referenced versioned directory is the immutable
+historical record. Analysis directories contain NetworkX/OSMnx GraphML, topology,
+geometry/orientation and integrated CSV/JSON/Markdown results, figures, and manifests.
+
+Within an analysis run, use these exact locations:
+
+- `analysis_graph_manifest.json` records the NetworkX physical `MultiGraph` summary
+  and the OSMnx reciprocal `MultiDiGraph` summary;
+- the physical-network source is the run-specific canonical GeoPackage plus
+  `canonical_nodes.csv` and `canonical_edges.csv` in its canonical run directory;
+- `graphs/env39_osmnx.graphml` or `graphs/env38_osmnx.graphml` is the serialized OSMnx
+  reciprocal graph;
+- `topology/` holds node, edge, summary, method, cross-check, and manifest outputs;
+- `geometry/` holds edge geometry, orientation, summary, figure, method, and manifest
+  outputs; and
+- `integrated/` holds `core_metrics.*`, `comparison_ready_metrics.csv`, the environment
+  summary, figures, methodology, and integrated manifest.
+
+## 11. Use the professor notebooks
+
+Launch JupyterLab from the repository root:
 
 ```powershell
+conda activate geogami-morphology
 python -m jupyter lab
 ```
 
-Select the **GeoGami Morphology** kernel. The CLI and notebooks are not separate
-scientific implementations: both call the same tested package modules. The CLI is for
-automation and reproduction; Jupyter is for teaching, inspection, and visual
-interpretation. You do not need to rerun notebooks to produce machine-readable results
-after the full-analysis command passes.
+Choose **GeoGami Morphology**, open the notebook, then choose **Run > Run All Cells**.
+Notebook 00 is a shared introduction. Use 01-04 for Env39 and 05-08 for Env38:
 
-## 15. Notebook order
+1. `00_osmnx_networkx_introduction.ipynb`
+2. `01_env39_load_canonical_graph.ipynb`
+3. `02_env39_topological_metrics.ipynb`
+4. `03_env39_geometry_orientation_metrics.ipynb`
+5. `04_env39_integrated_results.ipynb`
+6. `05_env38_load_canonical_graph.ipynb`
+7. `06_env38_topological_metrics.ipynb`
+8. `07_env38_geometry_orientation_metrics.ipynb`
+9. `08_env38_integrated_results.ipynb`
 
-1. `00_osmnx_networkx_introduction.ipynb` — optional introduction
-2. `01_env39_load_canonical_graph.ipynb` — canonical graph
-3. `02_env39_topological_metrics.ipynb` — topology metrics
-4. `03_env39_geometry_orientation_metrics.ipynb` — geometry/orientation metrics
-5. `04_env39_integrated_results.ipynb` — integrated baseline
+The notebooks dynamically resolve the accepted latest run and call the tested package
+modules. They are optional for production success. Source notebooks are intentionally
+clean; do not commit executed outputs unless repository policy explicitly changes.
 
-For routine inspection, run 01 through 04. Notebook 00 is optional.
+## 12. Build the optional formal comparison
 
-## 16. Routine workflow
+The exact routine CLI accepted by `scripts/build_environment_comparison.py` is:
 
-- Activate `geogami-morphology`.
-- Open `qgis/geogami_baselines.qgz`.
-- Edit only `data/editable/grid/env39_editable.gpkg` geometry.
-- Save the layer and project; close QGIS completely.
-- Run the optional `--dry-run` command.
-- Run the one-command complete analysis.
-- Confirm `FINAL RESULT: PASS` and use the printed output paths.
-- Optionally inspect Notebooks 01–04 in JupyterLab.
+```powershell
+python scripts/build_environment_comparison.py
+```
 
-## 17. Troubleshooting
+Run it only from a clean, committed repository after both `latest.json` pairs identify
+accepted analyses. The builder reads those accepted artifacts; it does not re-digitize,
+recalculate, or alter either environment. It publishes a new immutable directory at:
 
-### Wrong Python interpreter
+```text
+results/comparison/env38_vs_env39/env38_vs_env39_<timestamp>_<identity>/
+```
 
-Run `where.exe python` and `python -c "import sys; print(sys.executable)"`. Avoid the
-`WindowsApps` interpreter; reactivate Conda or use `conda run -n
-geogami-morphology`.
+There is deliberately no comparison latest pointer and the CLI currently provides no
+dry-run or temporary-output option. `--comparison-id` is an advanced optional naming
+argument; the `--phase-start-*` flags are provenance overrides for an independently
+audited phase, not routine professor options. Never invent an output flag.
 
-### QGIS still open or WAL/SHM/journal detected
+The Env38 latest run must also contain a valid Phase 9F independent reproducibility
+acceptance (`env38_reproducibility_comparison.json`) for that same run. If a newly
+edited Env38 run has not undergone that acceptance, comparison generation must stop;
+do not bypass the gate or copy an older audit. Complete the independent reproducibility
+review with the project maintainer first.
 
-Save all edits and close every QGIS window. The workflow deliberately does not delete
-SQLite sidecars. If a sidecar remains, inspect the situation in QGIS rather than
-deleting it automatically.
+The comparison is controlled and descriptive, not inferential: it is one accepted
+spatial realization per design, not a sample supporting p-values, confidence intervals,
+causal claims, or a ranking of the environments.
 
-### Windows reports that an internal candidate GeoPackage is in use
+### Current accepted comparison, concise finding
 
-Canonical publication validates a candidate first, then copies it to a fresh
-publication-stage file in the destination directory. That fresh copy is never opened
-through GDAL/Pyogrio before its atomic rename. Transient Windows sharing violations
-are retried for a short, bounded interval; unrelated permission and disk errors are
-reported immediately. If the bounded attempts still fail, confirm QGIS is closed and
-that no external process is locking the reported path, then rerun the unchanged
-command. Do not delete unknown GeoPackages or SQLite sidecars manually.
+The accepted versioned package under `results/comparison/env38_vs_env39/` shows that
+topology control succeeded. Descriptively, Env38 has higher orientation entropy, lower
+fourfold `phi`, greater circuity/excess length, and only a modest difference in mean
+length-weighted shortest path. These are morphology observations, not claims that one
+design is better. Use the package's `env38_vs_env39_summary.md`, CSV files, JSON files,
+figures, and hash manifest for authoritative current values; do not copy a large table
+into long-lived documentation.
 
-### Topology-control failure
+## 13. Commit generated artifacts and create a pull request
 
-Confirm no node/street was added, deleted, split, merged, or reconnected. Restore the
-expected IDs and `u/v/key` connectivity. A topology-rebuild workflow is outside this
-experiment.
+After a successful run, inspect every path:
+
+```powershell
+git status --short
+```
+
+Stage only the new run directory and its two latest pointers. Replace `<run_id>` with
+the ID printed by the successful command.
+
+Env39 example:
+
+```powershell
+git add data/canonical/grid/runs/<run_id>
+git add data/canonical/grid/latest.json
+git add results/analysis/env39/<run_id>
+git add results/analysis/env39/latest.json
+git commit -m "Record updated Env39 morphology analysis"
+```
+
+Env38 example:
+
+```powershell
+git add data/canonical/curvilinear/runs/<run_id>
+git add data/canonical/curvilinear/latest.json
+git add results/analysis/env38/<run_id>
+git add results/analysis/env38/latest.json
+git commit -m "Record updated Env38 morphology analysis"
+```
+
+If a formal comparison was intentionally generated, review and commit its one new
+`results/comparison/env38_vs_env39/<comparison_id>/` directory in a separate commit.
+There is no comparison latest pointer.
+
+Before pushing:
+
+```powershell
+conda run -n geogami-morphology python -m pytest
+python scripts/verify_frozen_baselines.py
+git diff --check
+git status
+git push -u origin <branch>
+```
+
+Create a GitHub pull request. Review the changed GeoPackage and all generated files;
+merge only after tests pass. Do not force-push `main`. After the reviewed pull request
+is merged:
+
+```powershell
+git switch main
+git pull
+```
+
+Warnings such as the known optional `GDAL_DATA` lookup warning are not test failures
+when the command exits successfully. Any non-zero exit, `FAILED`, or `ERROR` is a
+failure and must be resolved before merge.
+
+## 14. Complete worked example: Env39
+
+```powershell
+git switch main
+git pull
+git status
+git switch -c edit-env39-YYYY-MM-DD
+```
+
+Open `qgis/geogami_baselines.qgz`; verify and edit only the `nodes`/`edges` layers from
+`data/editable/grid/env39_editable.gpkg`. Preserve IDs and connectivity. Save layers,
+toggle editing off, and close QGIS completely. Then:
+
+```powershell
+git status --short
+git add data/editable/grid/env39_editable.gpkg
+git commit -m "Update Env39 street geometry"
+git status --porcelain
+python scripts/run_full_analysis.py --environment env39 --input data/editable/grid/env39_editable.gpkg --mode preserve-topology --dry-run
+python scripts/run_full_analysis.py --environment env39 --input data/editable/grid/env39_editable.gpkg --mode preserve-topology
+```
+
+Follow `data/canonical/grid/latest.json` and `results/analysis/env39/latest.json`.
+Optionally inspect notebooks 01-04 with **GeoGami Morphology**, then run the checks in
+section 13. Stage the four Env39 run/pointer paths shown there, commit, push the branch,
+and create a pull request.
+
+## 15. Complete worked example: Env38
+
+```powershell
+git switch main
+git pull
+git status
+git switch -c edit-env38-YYYY-MM-DD
+```
+
+Open `qgis/geogami_baselines.qgz`; verify and edit only the `nodes`/`edges` layers from
+`data/editable/curvilinear/env38_editable.gpkg`. Preserve IDs and connectivity. Save
+layers, toggle editing off, and close QGIS completely. Then:
+
+```powershell
+git status --short
+git add data/editable/curvilinear/env38_editable.gpkg
+git commit -m "Update Env38 street geometry"
+git status --porcelain
+python scripts/run_full_analysis.py --environment env38 --input data/editable/curvilinear/env38_editable.gpkg --mode preserve-topology --dry-run
+python scripts/run_full_analysis.py --environment env38 --input data/editable/curvilinear/env38_editable.gpkg --mode preserve-topology
+```
+
+Follow `data/canonical/curvilinear/latest.json` and `results/analysis/env38/latest.json`.
+Optionally inspect notebooks 05-08, run the checks in section 13, stage the four Env38
+run/pointer paths shown there, commit, push, and create a pull request. A formal
+comparison is a later optional step only after the new Env38 result has the required
+independent reproducibility acceptance.
+
+## 16. Troubleshooting and safe recovery
+
+### Windows `WinError 32` or a locked GeoPackage
+
+Phase 8C publication avoids known internal reader-lock races and uses bounded retries
+for transient sharing violations. A persistent lock usually belongs to QGIS, a file
+previewer, antivirus, backup software, or another process. Close QGIS, identify the
+external owner, wait until the lock is released, and rerun the unchanged command. Do
+not delete an unknown GeoPackage or transaction sidecar.
 
 ### Endpoint mismatch
 
-Ensure each edge endpoint coincides with its referenced `u` and `v` node. Only tiny
-endpoint discrepancies within the configured tolerance can be corrected in the
-generated candidate; the editable source is never changed.
+An edge's first or last coordinate does not exactly coincide with its prescribed node.
+In QGIS, move that endpoint to the existing referenced node without changing `u`, `v`,
+`key`, or IDs. `scripts/sync_env38_edge_endpoints.py` is a specialist Env38 utility:
+it defaults to dry-run and changes the editable file only with explicit `--apply`.
+Use it only after reviewing its report and retaining a recoverable copy; do not use it
+as arbitrary automatic snapping.
 
-### Unintended crossing or overlap
+### Unintended crossing
 
-Inspect the reported edge IDs in QGIS. Move geometry so streets do not cross, overlap,
-or form an unsplit intersection unless that structure is represented by the controlled
-topology.
+A geometry crossing outside an intended canonical node is a geometry-realization
+failure. Inspect the reported edges and move their geometry. Do not create a junction
+unless a separately reviewed topology redesign is intended.
 
-### Jupyter uses the wrong kernel
+### Topology-control failure
 
-Register the kernel as shown above and select **GeoGami Morphology** in JupyterLab.
+Likely causes are a node/edge addition or deletion, split, merge, reconnection, or a
+changed `node_id`, `edge_id`, `u`, `v`, or `key`. The preserve-topology workflow must
+stop. Review the edit against the last intentional commit; do not force it through.
+
+### Dirty-Git failure
+
+`Workflow requires a clean committed repository` means the input state lacks complete
+provenance. Run `git status`, review each path, commit intentional editable geometry,
+and revert or remove only clearly unintended changes. Never blindly reset valuable
+research work.
+
+### Cross-environment input error
+
+For example, `--environment env38` with `env39_editable.gpkg` is intentionally rejected.
+Because the networks share topology, silently accepting the wrong file could mislabel
+geometry. Use the registered environment/path pair from the quick-reference table.
+
+### Notebook kernel drift
+
+The expected kernel is `geogami-morphology` / **GeoGami Morphology**. If VS Code
+rewrites metadata to `python3`, reselect the expected kernel and do not commit the
+unintended notebook change.
 
 ### `GDAL_DATA` warning
 
-The tested Conda environment can emit a warning about optional GDAL support files while
-GeoPackage tests still pass. If a read/write operation actually fails, reactivate or
-update the Conda environment and verify that all packages came from that environment.
+The validated Conda environment can emit a warning about an optional GDAL support file
+while GeoPackage reads, writes, and tests still pass. Treat an actual read/write error
+or non-zero exit as a failure; reactivate/update the Conda environment and verify the
+interpreter before retrying.
 
-### OSMnx local-coordinate limitation
+### Prominent recovery warning
 
-GeoGami uses a local Cartesian CRS and local units, not WGS84 or metres. Do not apply
-OSMnx geographic bearing, great-circle distance, place-download, or nearest-node
-workflows to these graphs. The reciprocal OSMnx graph has 138 directed arcs for 69
-physical streets; directed arcs must never be reported as physical-street count.
+When research geometry may be uncommitted, do **not** casually use:
 
-## 18. Recoverability
+```text
+git reset --hard
+git clean -f
+manual deletion of GeoPackage transaction sidecars
+```
 
-Successful canonical and analysis runs are versioned by canonical run ID. Old
-successful runs are not overwritten. The canonical latest pointer updates only after
-canonical publication succeeds; the separate analysis latest pointer updates only
-after every analysis stage and final cross-stage verification succeeds. Failed runs
-cannot replace the latest complete analysis.
+First close QGIS, inspect `git status`, and create an external backup outside the
+repository. Destructive recovery can permanently erase uncommitted scientific work.
+
+## 17. Why this is reproducible
+
+- **Versioned run directories** preserve every accepted execution instead of
+  overwriting it.
+- **Scientific-content signatures** identify the canonical network meaning.
+- **Topology signatures** verify stable IDs and connectivity independently of
+  coordinates.
+- **Manifests** bind inputs, configuration, software, stages, outputs, and status.
+- **Artifact SHA-256 hashes** identify exact published bytes.
+- **Clean-start Git provenance** binds production to a committed repository state.
+- **Latest pointers** provide convenient navigation and update only after complete
+  publication; they are not substitutes for immutable historical directories.
+
+Together these controls distinguish a repeatable computation from an undocumented GIS
+edit and make later audit, comparison, and recovery possible.

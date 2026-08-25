@@ -1,0 +1,39 @@
+{
+  "bootstrap_method": "byte-for-byte copy to a temporary candidate; SQLite, hash, exact geometry, CRS, topology, and scientific-identity verification; atomic publication",
+  "component_count": 1,
+  "creation_timestamp_utc": "2026-08-25T14:30:55.629976+00:00",
+  "crs": "LOCAL_CS[\"GeoGami Local Cartesian\",LOCAL_DATUM[\"GeoGami local engineering datum\",32767],UNIT[\"local unit\",1],AXIS[\"X\",EAST],AXIS[\"Y\",NORTH]]",
+  "crs_wkt": "ENGCRS[\"GeoGami Local Cartesian\",EDATUM[\"GeoGami local engineering datum\"],CS[Cartesian,2],AXIS[\"x\",east,ORDER[1],LENGTHUNIT[\"local unit\",1]],AXIS[\"y\",north,ORDER[2],LENGTHUNIT[\"local unit\",1]]]",
+  "degree_distribution": {
+    "1": 10,
+    "3": 16,
+    "4": 20
+  },
+  "edge_count": 69,
+  "editable_path": "data/editable/curvilinear/env38_editable.gpkg",
+  "editable_sha256": "B2F608ED60EA4E5B7F6C2A3564102E6ACDF576F36870D6EA666E75600746F429",
+  "layers": [
+    "nodes",
+    "edges"
+  ],
+  "node_count": 46,
+  "overwrite_policy": "refuse",
+  "purpose": "QGIS-editable source network; never treat this file as generated canonical output",
+  "schema_version": 1,
+  "scientific_identity": {
+    "preserved_exactly": [
+      "node IDs",
+      "edge IDs",
+      "u/v/key",
+      "Point coordinates",
+      "ordered LineString coordinates including internal vertices",
+      "CRS"
+    ],
+    "schema_version": "1.0.0",
+    "scientific_content_signature_sha256": "974F687C1AC4E1CDA548366DFB89FFBFCDBE05F44BA28342EF52149A4C607945",
+    "serialization": "UTF-8 canonical JSON; sorted object keys; nodes by node_id; edges by (edge_id,u,v,key); exact float.hex coordinates; ordered geometry vertices"
+  },
+  "source_path": "data/working/curvilinear/env38_working.gpkg",
+  "source_sha256": "B2F608ED60EA4E5B7F6C2A3564102E6ACDF576F36870D6EA666E75600746F429",
+  "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+}

@@ -1,0 +1,10 @@
+{
+  "analysis_manifest_path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/end_to_end_analysis_manifest.json",
+  "canonical_path": "data/canonical/curvilinear/runs/env38_20260825T162856878635Z_974f687c1ac4/env38_canonical.gpkg",
+  "canonical_run_id": "env38_20260825T162856878635Z_974f687c1ac4",
+  "comparison_ready_metrics_path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/integrated/comparison_ready_metrics.csv",
+  "created_at_utc": "2026-08-25T16:28:59.260686Z",
+  "environment": "env38",
+  "integrated_results_path": "results/analysis/env38/env38_20260825T162856878635Z_974f687c1ac4/integrated",
+  "schema_version": "2.0.0"
+}
