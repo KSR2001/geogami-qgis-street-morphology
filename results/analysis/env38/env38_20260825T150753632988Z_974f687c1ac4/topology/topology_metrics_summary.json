@@ -1,0 +1,409 @@
+{
+  "degree_counts": {
+    "0": 0,
+    "1": 10,
+    "2": 0,
+    "3": 16,
+    "4": 20
+  },
+  "degree_proportions": {
+    "0": 0.0,
+    "1": 0.21739130434782608,
+    "2": 0.0,
+    "3": 0.34782608695652173,
+    "4": 0.43478260869565216
+  },
+  "metrics": [
+    {
+      "function": "Graph.number_of_nodes",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "canonical physical nodes",
+      "library": "NetworkX",
+      "metric_name": "node_count",
+      "units": "nodes",
+      "value": 46,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "Graph.number_of_edges",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "canonical physical streets, not reciprocal arcs",
+      "library": "NetworkX",
+      "metric_name": "physical_edge_count",
+      "units": "physical streets",
+      "value": 69,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "number_connected_components",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "maximal connected node sets",
+      "library": "NetworkX",
+      "metric_name": "connected_component_count",
+      "units": "components",
+      "value": 1,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "is_connected",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "whether every pair of nodes has a path",
+      "library": "NetworkX",
+      "metric_name": "is_connected",
+      "units": "boolean",
+      "value": true,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "number_of_selfloops",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "physical streets whose endpoints are identical",
+      "library": "NetworkX",
+      "metric_name": "self_loop_count",
+      "units": "physical streets",
+      "value": 0,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "parallel_physical_edge_count",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "edges that would be lost by simple conversion",
+      "library": "custom",
+      "metric_name": "parallel_physical_edge_count",
+      "units": "physical streets beyond first per pair",
+      "value": 0,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "Graph.degree",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "sum of physical street incidences",
+      "library": "NetworkX",
+      "metric_name": "degree_sum",
+      "units": "incidences",
+      "value": 138,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "2 * E",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "independent handshake-theorem comparator",
+      "library": "custom",
+      "metric_name": "twice_physical_edge_count",
+      "units": "incidences",
+      "value": 138,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "min",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "minimum node degree",
+      "library": "Python",
+      "metric_name": "degree_min",
+      "units": "physical streets per node",
+      "value": 1,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "max",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "maximum node degree",
+      "library": "Python",
+      "metric_name": "degree_max",
+      "units": "physical streets per node",
+      "value": 4,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "statistics.mean",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "mean node degree",
+      "library": "Python",
+      "metric_name": "degree_mean",
+      "units": "physical streets per node",
+      "value": 3.0,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "statistics.median",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "median node degree",
+      "library": "Python",
+      "metric_name": "degree_median",
+      "units": "physical streets per node",
+      "value": 3.0,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "degree == 1",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "nodes incident to one physical street",
+      "library": "custom",
+      "metric_name": "dead_end_count",
+      "units": "nodes",
+      "value": 10,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "degree == 1",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "fraction of nodes that are dead ends",
+      "library": "custom",
+      "metric_name": "dead_end_proportion",
+      "units": "proportion",
+      "value": 0.21739130434782608,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "degree == 3",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "three-street junction nodes",
+      "library": "custom",
+      "metric_name": "degree_3_count",
+      "units": "nodes",
+      "value": 16,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "degree == 3",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "fraction of three-street junctions",
+      "library": "custom",
+      "metric_name": "degree_3_proportion",
+      "units": "proportion",
+      "value": 0.34782608695652173,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "degree == 4",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "four-street junction nodes",
+      "library": "custom",
+      "metric_name": "degree_4_count",
+      "units": "nodes",
+      "value": 20,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "degree == 4",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "fraction of four-street junctions",
+      "library": "custom",
+      "metric_name": "degree_4_proportion",
+      "units": "proportion",
+      "value": 0.43478260869565216,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "stats.streets_per_node_avg",
+      "graph_representation": "G_ox MultiDiGraph",
+      "interpretation": "average physical street incidence after reciprocal-arc de-duplication",
+      "library": "OSMnx",
+      "metric_name": "osmnx_streets_per_node_average",
+      "units": "physical streets per node",
+      "value": 3.0,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "stats.intersection_count",
+      "graph_representation": "G_ox MultiDiGraph",
+      "interpretation": "nodes with at least 2 physical streets",
+      "library": "OSMnx",
+      "metric_name": "osmnx_intersection_count",
+      "units": "nodes",
+      "value": 36,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "stats.street_segment_count",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "undirected physical street count",
+      "library": "OSMnx",
+      "metric_name": "osmnx_street_segment_count",
+      "units": "physical streets",
+      "value": 69,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "stats.self_loop_proportion",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "fraction of physical streets that are self-loops",
+      "library": "OSMnx",
+      "metric_name": "osmnx_self_loop_proportion",
+      "units": "proportion",
+      "value": 0.0,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "E - V + C",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "cyclomatic number of the physical topology",
+      "library": "custom",
+      "metric_name": "cycle_rank",
+      "units": "independent cycles",
+      "value": 24,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "bridges",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "streets whose removal increases component count",
+      "library": "NetworkX",
+      "metric_name": "bridge_count",
+      "units": "physical streets",
+      "value": 10,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "bridges",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "fraction of physical streets that are bridges",
+      "library": "NetworkX",
+      "metric_name": "bridge_proportion",
+      "units": "proportion",
+      "value": 0.14492753623188406,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "articulation_points",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "nodes whose removal increases component count",
+      "library": "NetworkX",
+      "metric_name": "articulation_point_count",
+      "units": "nodes",
+      "value": 9,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "articulation_points",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "fraction of nodes that are articulation points",
+      "library": "NetworkX",
+      "metric_name": "articulation_point_proportion",
+      "units": "proportion",
+      "value": 0.1956521739130435,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "node_connectivity",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "minimum nodes whose removal disconnects the graph",
+      "library": "NetworkX",
+      "metric_name": "node_connectivity",
+      "units": "nodes",
+      "value": 1,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "edge_connectivity",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "minimum streets whose removal disconnects the graph",
+      "library": "NetworkX",
+      "metric_name": "edge_connectivity",
+      "units": "physical streets",
+      "value": 1,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "average_shortest_path_length",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "mean minimum physical-edge count between node pairs",
+      "library": "NetworkX",
+      "metric_name": "average_shortest_path_hops",
+      "units": "hops",
+      "value": 4.308212560386473,
+      "weighting": "edge cost = 1"
+    },
+    {
+      "function": "diameter",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "largest node eccentricity",
+      "library": "NetworkX",
+      "metric_name": "diameter_hops",
+      "units": "hops",
+      "value": 10,
+      "weighting": "edge cost = 1"
+    },
+    {
+      "function": "radius",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "smallest node eccentricity",
+      "library": "NetworkX",
+      "metric_name": "radius_hops",
+      "units": "hops",
+      "value": 6,
+      "weighting": "edge cost = 1"
+    },
+    {
+      "function": "average_shortest_path_length",
+      "graph_representation": "G_simple Graph",
+      "interpretation": "mean geometry-length-weighted shortest-path distance",
+      "library": "NetworkX",
+      "metric_name": "average_shortest_path_length_local",
+      "units": "local units",
+      "value": 721.4252938680377,
+      "weighting": "weight = length"
+    },
+    {
+      "function": "Counter(Graph.degree)",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "nodes of physical degree 1",
+      "library": "custom",
+      "metric_name": "degree_count_1",
+      "units": "nodes",
+      "value": 10,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "Counter(Graph.degree) / V",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "fraction of nodes of physical degree 1",
+      "library": "custom",
+      "metric_name": "degree_proportion_1",
+      "units": "proportion",
+      "value": 0.21739130434782608,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "Counter(Graph.degree)",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "nodes of physical degree 3",
+      "library": "custom",
+      "metric_name": "degree_count_3",
+      "units": "nodes",
+      "value": 16,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "Counter(Graph.degree) / V",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "fraction of nodes of physical degree 3",
+      "library": "custom",
+      "metric_name": "degree_proportion_3",
+      "units": "proportion",
+      "value": 0.34782608695652173,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "Counter(Graph.degree)",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "nodes of physical degree 4",
+      "library": "custom",
+      "metric_name": "degree_count_4",
+      "units": "nodes",
+      "value": 20,
+      "weighting": "unweighted"
+    },
+    {
+      "function": "Counter(Graph.degree) / V",
+      "graph_representation": "G_physical MultiGraph",
+      "interpretation": "fraction of nodes of physical degree 4",
+      "library": "custom",
+      "metric_name": "degree_proportion_4",
+      "units": "proportion",
+      "value": 0.43478260869565216,
+      "weighting": "unweighted"
+    }
+  ],
+  "schema_version": "1.0.0"
+}

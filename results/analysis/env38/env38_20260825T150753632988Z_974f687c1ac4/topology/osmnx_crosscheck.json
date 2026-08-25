@@ -1,0 +1,309 @@
+{
+  "directed_arc_count_not_physical_streets": 138,
+  "graph_types": {
+    "self_loop_proportion": "MultiGraph",
+    "street_incidence": "MultiDiGraph",
+    "street_segment_count": "MultiGraph"
+  },
+  "intersection_count": 36,
+  "intersection_min_streets": 2,
+  "node_by_node": [
+    {
+      "networkx_degree": 1,
+      "node_id": "N001",
+      "osmnx_street_count": 1
+    },
+    {
+      "networkx_degree": 1,
+      "node_id": "N002",
+      "osmnx_street_count": 1
+    },
+    {
+      "networkx_degree": 1,
+      "node_id": "N003",
+      "osmnx_street_count": 1
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N004",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N005",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N006",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N007",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N008",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N009",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N010",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N011",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 1,
+      "node_id": "N012",
+      "osmnx_street_count": 1
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N013",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N014",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N015",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N016",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N017",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 1,
+      "node_id": "N018",
+      "osmnx_street_count": 1
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N019",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N020",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N021",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N022",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N023",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N024",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N025",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N026",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N027",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N028",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N029",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N030",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N031",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N032",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N033",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N034",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N035",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N036",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N037",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N038",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 1,
+      "node_id": "N039",
+      "osmnx_street_count": 1
+    },
+    {
+      "networkx_degree": 3,
+      "node_id": "N040",
+      "osmnx_street_count": 3
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N041",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 4,
+      "node_id": "N042",
+      "osmnx_street_count": 4
+    },
+    {
+      "networkx_degree": 1,
+      "node_id": "N043",
+      "osmnx_street_count": 1
+    },
+    {
+      "networkx_degree": 1,
+      "node_id": "N044",
+      "osmnx_street_count": 1
+    },
+    {
+      "networkx_degree": 1,
+      "node_id": "N045",
+      "osmnx_street_count": 1
+    },
+    {
+      "networkx_degree": 1,
+      "node_id": "N046",
+      "osmnx_street_count": 1
+    }
+  ],
+  "physical_street_segment_count": 69,
+  "schema_version": "1.0.0",
+  "self_loop_proportion": 0.0,
+  "status": "PASS",
+  "streets_per_node": {
+    "N001": 1,
+    "N002": 1,
+    "N003": 1,
+    "N004": 3,
+    "N005": 4,
+    "N006": 3,
+    "N007": 3,
+    "N008": 3,
+    "N009": 4,
+    "N010": 4,
+    "N011": 3,
+    "N012": 1,
+    "N013": 3,
+    "N014": 4,
+    "N015": 4,
+    "N016": 4,
+    "N017": 4,
+    "N018": 1,
+    "N019": 4,
+    "N020": 4,
+    "N021": 3,
+    "N022": 3,
+    "N023": 4,
+    "N024": 4,
+    "N025": 4,
+    "N026": 3,
+    "N027": 4,
+    "N028": 3,
+    "N029": 3,
+    "N030": 4,
+    "N031": 4,
+    "N032": 3,
+    "N033": 3,
+    "N034": 4,
+    "N035": 4,
+    "N036": 3,
+    "N037": 3,
+    "N038": 4,
+    "N039": 1,
+    "N040": 3,
+    "N041": 4,
+    "N042": 4,
+    "N043": 1,
+    "N044": 1,
+    "N045": 1,
+    "N046": 1
+  },
+  "streets_per_node_average": 3.0,
+  "streets_per_node_counts": {
+    "0": 0,
+    "1": 10,
+    "2": 0,
+    "3": 16,
+    "4": 20
+  },
+  "streets_per_node_proportions": {
+    "0": 0.0,
+    "1": 0.21739130434782608,
+    "2": 0.0,
+    "3": 0.34782608695652173,
+    "4": 0.43478260869565216
+  }
+}
