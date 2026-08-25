@@ -38,6 +38,7 @@ from geogami_morphology.metrics_orientation import (
     planar_axial_orientation,
     shannon_orientation_entropy,
 )
+from geogami_morphology.versioned import git_provenance
 
 
 def directory_hashes(path: Path) -> dict[str, str]:
@@ -264,12 +265,24 @@ class Phase7GGeometryOrientationTests(unittest.TestCase):
         self.assertEqual(directory_hashes(self.topology_dir), self.topology_before)
 
     def test_36_publication_has_stable_schemas_hashes_figures_and_provenance(self):
+        expected_git = git_provenance(ROOT)
         output, manifest_path, manifest = publish_geometry_metrics(
             self.selection, self.env39, self.config, output_root=self.root, project_root=ROOT
         )
         self.assertTrue(manifest_path.is_file())
         self.assertEqual(manifest["canonical"]["topology_signature"], self.selection.topology_signature)
-        self.assertTrue(manifest["analysis_git_provenance"]["dirty"])
+        recorded_git = manifest["analysis_git_provenance"]
+        self.assertEqual(recorded_git, expected_git)
+        self.assertEqual(recorded_git["repository"], ROOT.name)
+        self.assertEqual(recorded_git["repository_root"], ".")
+        self.assertRegex(recorded_git["commit_sha"], r"^[0-9a-f]{40}$")
+        self.assertIsInstance(recorded_git["dirty"], bool)
+        self.assertEqual(recorded_git["dirty"], bool(recorded_git["changed_paths"]))
+        if expected_git["branch"] is None:
+            self.assertIsNone(recorded_git["branch"])
+        else:
+            self.assertTrue(recorded_git["branch"])
+        self.assertEqual(recorded_git["remote_origin"], expected_git["remote_origin"])
         self.assertEqual(manifest["orientation_convention"]["bin_count"], 36)
         for record in manifest["artifacts"].values():
             self.assertEqual(record["file_sha256"], sha256_file(ROOT / record["path"]))
