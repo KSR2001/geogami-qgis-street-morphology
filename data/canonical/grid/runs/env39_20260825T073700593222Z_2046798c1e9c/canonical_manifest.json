@@ -1,0 +1,161 @@
+{
+  "artifacts": {
+    "canonical_edges_csv": {
+      "path": "data/canonical/grid/runs/env39_20260825T073700593222Z_2046798c1e9c/canonical_edges.csv",
+      "row_count": 69
+    },
+    "canonical_geopackage": "data/canonical/grid/runs/env39_20260825T073700593222Z_2046798c1e9c/env39_canonical.gpkg",
+    "canonical_manifest": "data/canonical/grid/runs/env39_20260825T073700593222Z_2046798c1e9c/canonical_manifest.json",
+    "canonical_nodes_csv": {
+      "path": "data/canonical/grid/runs/env39_20260825T073700593222Z_2046798c1e9c/canonical_nodes.csv",
+      "row_count": 46
+    },
+    "canonical_validation": "data/canonical/grid/runs/env39_20260825T073700593222Z_2046798c1e9c/canonical_validation.json",
+    "diagnostics_csv": {
+      "path": "data/canonical/grid/runs/env39_20260825T073700593222Z_2046798c1e9c/diagnostics.csv",
+      "row_count": 0
+    },
+    "endpoint_adjustments_csv": {
+      "path": "data/canonical/grid/runs/env39_20260825T073700593222Z_2046798c1e9c/endpoint_adjustments.csv",
+      "row_count": 0
+    },
+    "scientific_content_signature": "data/canonical/grid/runs/env39_20260825T073700593222Z_2046798c1e9c/scientific_content_signature.txt",
+    "topology_signature": "data/canonical/grid/runs/env39_20260825T073700593222Z_2046798c1e9c/topology_signature.txt",
+    "zero_row_table_convention": "CSV is present with a valid header even when row_count is zero"
+  },
+  "configuration": {
+    "canonicalization_mode": "preserve-topology",
+    "cli_options": {
+      "environment": "env39",
+      "input": "data/editable/grid/env39_editable.gpkg",
+      "mode": "preserve-topology",
+      "reference_canonical": "data/canonical/grid/env39_canonical.gpkg",
+      "runs_root": "data/canonical/grid/runs"
+    },
+    "configuration_files": [
+      {
+        "available": true,
+        "file_sha256": "B54D0D645417BB984173B971616A76E6EA438008E178E574A11153EEB4870CBC",
+        "path": "environment.yml"
+      },
+      {
+        "available": true,
+        "file_sha256": "80042A6B046FC19C2E7F1C7A5D66CB6987EC7ACACB844351728DA39DA13A95E3",
+        "path": "config/metrics.yaml"
+      }
+    ],
+    "endpoint_correction_tolerance_local_units": 1e-06
+  },
+  "git_provenance": {
+    "branch": "phase-7j-provenance-fix",
+    "changed_paths": [],
+    "commit_sha": "367da0f1475196a2e16ff7526ae95f390146e91c",
+    "dirty": false,
+    "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git",
+    "repository": "geogami-qgis-street-morphology",
+    "repository_root": "."
+  },
+  "identity": {
+    "build_mode": "preserve-topology",
+    "environment": "env39",
+    "run_id": "env39_20260825T073700593222Z_2046798c1e9c"
+  },
+  "input_editable_network": {
+    "feature_counts": {
+      "edges": 69,
+      "nodes": 46
+    },
+    "file_sha256": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "layer_names": [
+      "nodes",
+      "edges"
+    ],
+    "path": "data/editable/grid/env39_editable.gpkg",
+    "scientific_content_signature": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447"
+  },
+  "network_identity": {
+    "component_count": 1,
+    "coordinate_system": "GeoGami Local Cartesian",
+    "coordinate_units": "local units",
+    "crs": "LOCAL_CS[\"GeoGami Local Cartesian\",LOCAL_DATUM[\"GeoGami local engineering datum\",32767],UNIT[\"local unit\",1],AXIS[\"X\",EAST],AXIS[\"Y\",NORTH]]",
+    "crs_wkt": "ENGCRS[\"GeoGami Local Cartesian\",EDATUM[\"GeoGami local engineering datum\"],CS[Cartesian,2],AXIS[\"x\",east,ORDER[1],LENGTHUNIT[\"local unit\",1]],AXIS[\"y\",north,ORDER[2],LENGTHUNIT[\"local unit\",1]]]",
+    "degree_distribution": {
+      "1": 10,
+      "3": 16,
+      "4": 20
+    },
+    "node_count": 46,
+    "physical_edge_count": 69,
+    "scientific_content_signature": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB",
+    "total_geometry_length_local": 10945.657681153116
+  },
+  "published_canonical": {
+    "file_sha256": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "path": "data/canonical/grid/runs/env39_20260825T073700593222Z_2046798c1e9c/env39_canonical.gpkg",
+    "scientific_content_signature": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "reference_canonical": {
+    "feature_counts": {
+      "edges": 69,
+      "nodes": 46
+    },
+    "file_sha256": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "layer_names": [
+      "nodes",
+      "edges"
+    ],
+    "path": "data/canonical/grid/env39_canonical.gpkg",
+    "scientific_content_signature": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "schema_version": "1.0.0",
+  "signature_methodology": {
+    "file_sha256": "SHA-256 of exact file bytes",
+    "scientific_content_excluded_fields": [
+      "GeoPackage FIDs and metadata",
+      "derived x, y, degree, length_local and vertex_count",
+      "source_fids and source_fids_ordered provenance"
+    ],
+    "scientific_content_included_fields": [
+      "CRS WKT",
+      "node_id and exact ordered Point coordinates",
+      "edge_id, u, v, key and exact ordered LineString coordinates"
+    ],
+    "scientific_content_schema_version": "1.0.0",
+    "scientific_content_serialization": "UTF-8 canonical JSON; sorted object keys; nodes by node_id; edges by (edge_id,u,v,key); exact float.hex coordinates; ordered geometry vertices",
+    "topology_serialization": "UTF-8 lines, sorted normalized tuples as u|v|key followed by LF; no header"
+  },
+  "software_environment": {
+    "operating_system": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "fiona": null,
+      "gdal": "3.13.2",
+      "geopandas": "1.1.4",
+      "matplotlib": "3.11.1",
+      "networkx": "3.6.1",
+      "numpy": "2.5.2",
+      "osmnx": "2.1.1",
+      "pandas": "3.0.5",
+      "pyogrio": "0.13.0",
+      "pyproj": "3.7.2",
+      "scipy": "1.18.0",
+      "shapely": "2.1.2"
+    },
+    "python": "3.12.13",
+    "python_implementation": "CPython"
+  },
+  "time": {
+    "build_finished_at_utc": "2026-08-25T07:37:01.322411Z",
+    "build_started_at_utc": "2026-08-25T07:37:00.593222Z"
+  },
+  "validation": {
+    "diagnostic_error_count": 0,
+    "diagnostic_warning_count": 0,
+    "endpoint_adjustment_count": 0,
+    "final_status": "PASS",
+    "geometry_status": "PASS",
+    "topology_status": "PASS"
+  }
+}

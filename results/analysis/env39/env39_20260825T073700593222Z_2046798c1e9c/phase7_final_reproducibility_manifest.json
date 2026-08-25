@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "created_at_utc": "2026-08-25T07:42:14.868518Z",
+  "clean_run_id": "env39_20260825T073700593222Z_2046798c1e9c",
+  "baseline_run_id": "env39_20260824T123033467880Z_2046798c1e9c",
+  "workflow_start_git": {
+    "branch": "phase-7j-provenance-fix",
+    "commit_sha": "367da0f1475196a2e16ff7526ae95f390146e91c",
+    "remote_origin": "https://github.com/KSR2001/geogami-qgis-street-morphology.git",
+    "dirty": false,
+    "changed_paths": []
+  },
+  "provenance_acceptance": {
+    "clean_start": true,
+    "same_commit": true,
+    "same_commit_source_field": "end_to_end_analysis_manifest.json:provenance_acceptance.head_unchanged",
+    "branch_unchanged": true,
+    "source_code_unchanged": true,
+    "configuration_unchanged": true,
+    "editable_input_unchanged": true,
+    "frozen_inputs_unchanged": true,
+    "only_expected_generated_changes": true,
+    "unexpected_changes": [],
+    "status": "PASS"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "osmnx": "2.1.1",
+    "networkx": "3.6.1",
+    "geopandas": "1.1.4",
+    "shapely": "2.1.2",
+    "pandas": "3.0.5",
+    "numpy": "2.5.2",
+    "scipy": "1.18.0",
+    "matplotlib": "3.11.1",
+    "pyproj": "3.7.2",
+    "pyogrio": "0.13.0",
+    "gdal": "3.13.2",
+    "package_integrity": "PASS"
+  },
+  "scientific_identity": {
+    "node_count": 46,
+    "physical_edge_count": 69,
+    "component_count": 1,
+    "degree_distribution": {"1": 10, "3": 16, "4": 20},
+    "osmnx_directed_arc_count": 138,
+    "canonical_file_sha256": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "scientific_content_signature": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447",
+    "topology_signature": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB"
+  },
+  "artifact_hashes": {
+    "graphml_sha256": "D9BC1EF63A3ECC4B3A036352553DA25197703A72459A22C70ADD7F52A784BA4A",
+    "metrics_configuration_sha256": "80042A6B046FC19C2E7F1C7A5D66CB6987EC7ACACB844351728DA39DA13A95E3",
+    "phase7f_manifest_sha256": "D81FDB66A1D0C88D17D811880E11CB992CDA6C91F2128E206A30AA399D4631A2",
+    "phase7g_manifest_sha256": "DB72AD9612682B6EEE989984DC92EB872CD64947226571060E65B10AB1F503E3",
+    "phase7h_manifest_sha256": "6C170F516D8A7CD34D5258D7CEA96AAFB6BBD2B4BA3BC4722ECA037BF5554E2C",
+    "end_to_end_manifest_sha256": "8CE2DD3E62C467EE87CDEED2ADB7B14EC4106C81A01031C4309910EC90130C6E",
+    "reproducibility_comparison_sha256": "81D648AFEA310DB8EA76D2BBB25C2DB42827C2745627C780062B6936409BAFE6"
+  },
+  "line_ending_validation": {
+    "policy": ".gitattributes text eol=lf",
+    "manifest_hash_records_checked": 49,
+    "manifest_hash_mismatch_count": 0,
+    "new_run_crlf_text_file_count": 0,
+    "status": "PASS"
+  },
+  "notebook_status": {
+    "00_osmnx_networkx_introduction.ipynb": "PASS",
+    "01_env39_load_canonical_graph.ipynb": "PASS",
+    "02_env39_topological_metrics.ipynb": "PASS",
+    "03_env39_geometry_orientation_metrics.ipynb": "PASS",
+    "04_env39_integrated_results.ipynb": "PASS",
+    "execution_passed": 5,
+    "execution_total": 5,
+    "test_suite_passed": 19,
+    "test_suite_total": 20,
+    "test_suite_note": "All five notebooks executed successfully against the clean run; one assertion hard-codes the old development run ID.",
+    "status": "PASS_WITH_STALE_TEST_ASSERTION"
+  },
+  "complete_test_status": {
+    "total": 271,
+    "passed": 269,
+    "failures": 2,
+    "errors": 0,
+    "failed_tests": [
+      "test_notebooks.Phase7EThrough7HNotebookTests.test_04_canonical_notebook_uses_latest_run_and_preserves_local_crs",
+      "test_topology_metrics.Phase7FTopologyMetricTests.test_26_published_outputs_have_stable_schemas_hashes_and_provenance"
+    ],
+    "failure_reason": "The committed tests assert the old run ID and dirty publication provenance, which are intentionally superseded by this clean-start run.",
+    "status": "FAIL"
+  },
+  "frozen_baseline_hashes": {
+    "data/baselines/grid/network_v2.gpkg": "7698544A01EED008E5451F8368703AFD0DBE232D10C9D7ADAA58C13DA57E0289",
+    "data/canonical/grid/env39_canonical.gpkg": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+    "status": "PASS"
+  },
+  "reproduction_comparison": {
+    "path": "results/analysis/env39/env39_20260825T073700593222Z_2046798c1e9c/reproducibility_comparison.json",
+    "integrated_metrics_exact_match": 39,
+    "integrated_metrics_total": 39,
+    "failure_count": 0,
+    "status": "PASS"
+  },
+  "final_phase7_status": "FAIL",
+  "blocking_condition": "Complete repository suite has 2 failures; acceptance requires zero failures and zero errors."
+}

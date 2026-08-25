@@ -248,8 +248,46 @@ class Phase7FTopologyMetricTests(unittest.TestCase):
             project_root=ROOT,
         )
         self.assertTrue(manifest_path.is_file())
+        self.assertEqual(manifest["canonical"]["file_sha256"], self.selection.file_sha256)
+        self.assertEqual(
+            manifest["canonical"]["scientific_content_signature"],
+            self.selection.scientific_content_signature,
+        )
         self.assertEqual(manifest["canonical"]["topology_signature"], self.selection.topology_signature)
-        self.assertTrue(manifest["canonical"]["publication_git_provenance"]["dirty"])
+        publication_git = manifest["canonical"]["publication_git_provenance"]
+        self.assertFalse(publication_git["dirty"])
+        self.assertEqual(publication_git["changed_paths"], [])
+        self.assertTrue(publication_git["branch"])
+        self.assertRegex(publication_git["commit_sha"], r"^[0-9a-f]{40}$")
+
+        analysis_latest = json.loads(
+            (ROOT / "results" / "analysis" / "env39" / "latest.json").read_text(encoding="utf-8")
+        )
+        workflow_manifest = json.loads(
+            (ROOT / analysis_latest["analysis_manifest_path"]).read_text(encoding="utf-8")
+        )
+        self.assertEqual(workflow_manifest["canonical_run_id"], analysis_latest["canonical_run_id"])
+        workflow_start_git = workflow_manifest["workflow_start_git"]
+        workflow_end_git = workflow_manifest["workflow_end_git"]
+        acceptance = workflow_manifest["provenance_acceptance"]
+        self.assertFalse(workflow_start_git["dirty"])
+        self.assertEqual(workflow_start_git["changed_paths"], [])
+        self.assertEqual(workflow_start_git["commit_sha"], publication_git["commit_sha"])
+        self.assertEqual(workflow_start_git["branch"], publication_git["branch"])
+        self.assertEqual(workflow_end_git["commit_sha"], workflow_start_git["commit_sha"])
+        self.assertEqual(workflow_end_git["branch"], workflow_start_git["branch"])
+        for field in (
+            "clean_start",
+            "head_unchanged",
+            "source_code_unchanged",
+            "configuration_unchanged",
+            "editable_input_unchanged",
+            "frozen_inputs_unchanged",
+            "only_expected_generated_changes",
+        ):
+            self.assertTrue(acceptance[field], field)
+        self.assertEqual(acceptance["status"], "PASS")
+        self.assertEqual(acceptance["unexpected_changes"], [])
         self.assertEqual(manifest["metrics_configuration"]["file_sha256"], self.config.file_sha256)
         for artifact in manifest["artifacts"].values():
             self.assertEqual(artifact["file_sha256"], sha256_file(ROOT / artifact["path"]))
