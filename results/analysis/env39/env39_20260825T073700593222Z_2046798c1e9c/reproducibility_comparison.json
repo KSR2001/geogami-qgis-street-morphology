@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "baseline_run_id": "env39_20260824T123033467880Z_2046798c1e9c",
+  "clean_run_id": "env39_20260825T073700593222Z_2046798c1e9c",
+  "tolerance": {
+    "absolute": 1e-12,
+    "relative": 1e-12
+  },
+  "sources": {
+    "baseline_metrics": "results/analysis/env39/env39_20260824T123033467880Z_2046798c1e9c/integrated/comparison_ready_metrics.csv",
+    "clean_metrics": "results/analysis/env39/env39_20260825T073700593222Z_2046798c1e9c/integrated/comparison_ready_metrics.csv"
+  },
+  "scientific_identity": {
+    "node_count": {"baseline": 46, "clean": 46, "classification": "EXACT_MATCH"},
+    "physical_edge_count": {"baseline": 69, "clean": 69, "classification": "EXACT_MATCH"},
+    "component_count": {"baseline": 1, "clean": 1, "classification": "EXACT_MATCH"},
+    "directed_arc_count": {"baseline": 138, "clean": 138, "classification": "EXACT_MATCH"},
+    "topology_signature": {
+      "baseline": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB",
+      "clean": "4AF93910532EB430103267DAECF73B3ADC3B3D1599471EDF6B1632B6C5F898CB",
+      "classification": "EXACT_MATCH"
+    },
+    "scientific_content_signature": {
+      "baseline": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447",
+      "clean": "2046798C1E9CB35310ABB4EA7134EE212423265572C278075A94ED0E9080D447",
+      "classification": "EXACT_MATCH"
+    },
+    "canonical_file_sha256": {
+      "baseline": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+      "clean": "212A2AA583BF77304859DB76639B8AD4B6DC458237EEA24FEB60FC228E5D6847",
+      "classification": "EXACT_MATCH"
+    }
+  },
+  "required_metric_checks": {
+    "degree_mean": {"baseline": 3.0, "clean": 3.0, "classification": "EXACT_MATCH"},
+    "cycle_rank": {"baseline": 24, "clean": 24, "classification": "EXACT_MATCH"},
+    "average_shortest_path_hops": {"baseline": 4.308212560386473, "clean": 4.308212560386473, "classification": "EXACT_MATCH"},
+    "average_shortest_path_length_local": {"baseline": 724.2999737149149, "clean": 724.2999737149149, "classification": "EXACT_MATCH"},
+    "total_network_length_local": {"baseline": 10945.657681153116, "clean": 10945.657681153116, "classification": "EXACT_MATCH"},
+    "mean_edge_circuity": {"baseline": 1.0111449497153886, "clean": 1.0111449497153886, "classification": "EXACT_MATCH"},
+    "network_circuity": {"baseline": 1.022596526286689, "clean": 1.022596526286689, "classification": "EXACT_MATCH"},
+    "chord_orientation_entropy": {"baseline": 0.8233712721085531, "clean": 0.8233712721085531, "classification": "EXACT_MATCH"},
+    "segment_length_weighted_orientation_entropy": {"baseline": 0.6896030136902007, "clean": 0.6896030136902007, "classification": "EXACT_MATCH"},
+    "phi_chord": {"baseline": 0.9511069268378259, "clean": 0.9511069268378259, "classification": "EXACT_MATCH"},
+    "phi_segment_length_weighted": {"baseline": 1.0, "clean": 1.0, "classification": "EXACT_MATCH"}
+  },
+  "centrality_and_geometry_leaders": {
+    "highest_unweighted_node_betweenness": {"baseline": "N034", "clean": "N034", "classification": "EXACT_MATCH"},
+    "highest_length_weighted_node_betweenness": {"baseline": "N020", "clean": "N020", "classification": "EXACT_MATCH"},
+    "highest_unweighted_closeness": {"baseline": "N024", "clean": "N024", "classification": "EXACT_MATCH"},
+    "highest_unweighted_edge_betweenness": {"baseline": "E022", "clean": "E022", "classification": "EXACT_MATCH"},
+    "highest_length_weighted_edge_betweenness": {"baseline": "E031", "clean": "E031", "classification": "EXACT_MATCH"},
+    "maximum_circuity_edge": {"baseline": "E005", "clean": "E005", "classification": "EXACT_MATCH"},
+    "total_excess_length_local": {"baseline": 241.86845462443188, "clean": 241.86845462443188, "classification": "EXACT_MATCH"}
+  },
+  "integrated_metric_comparison": {
+    "metric_count": 39,
+    "EXACT_MATCH": 39,
+    "NUMERICAL_MATCH_WITHIN_TOLERANCE": 0,
+    "FAIL": 0,
+    "comparison_rule": "All comparison-ready fields match exactly after excluding canonical_run_id."
+  },
+  "expected_provenance_differences": [
+    {"field": "run_id", "classification": "EXPECTED_PROVENANCE_DIFFERENCE"},
+    {"field": "created_at_utc", "classification": "EXPECTED_PROVENANCE_DIFFERENCE"},
+    {"field": "branch", "baseline": "phase-7-env39-reproducible-osmnx", "clean": "phase-7j-provenance-fix", "classification": "EXPECTED_PROVENANCE_DIFFERENCE"},
+    {"field": "commit_sha", "baseline": "2803bc52be9111f92745907670832e95759fb803", "clean": "367da0f1475196a2e16ff7526ae95f390146e91c", "classification": "EXPECTED_PROVENANCE_DIFFERENCE"},
+    {"field": "canonical_start_dirty", "baseline": true, "clean": false, "classification": "EXPECTED_PROVENANCE_DIFFERENCE"}
+  ],
+  "failure_count": 0,
+  "status": "PASS"
+}

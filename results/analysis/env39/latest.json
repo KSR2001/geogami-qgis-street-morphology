@@ -1,0 +1,10 @@
+{
+  "analysis_manifest_path": "results/analysis/env39/env39_20260825T073700593222Z_2046798c1e9c/end_to_end_analysis_manifest.json",
+  "canonical_path": "data/canonical/grid/runs/env39_20260825T073700593222Z_2046798c1e9c/env39_canonical.gpkg",
+  "canonical_run_id": "env39_20260825T073700593222Z_2046798c1e9c",
+  "comparison_ready_metrics_path": "results/analysis/env39/env39_20260825T073700593222Z_2046798c1e9c/integrated/comparison_ready_metrics.csv",
+  "created_at_utc": "2026-08-25T07:37:03.590658Z",
+  "environment": "env39",
+  "integrated_results_path": "results/analysis/env39/env39_20260825T073700593222Z_2046798c1e9c/integrated",
+  "schema_version": "2.0.0"
+}
