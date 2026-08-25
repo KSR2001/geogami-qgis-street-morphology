@@ -1,7 +1,8 @@
 """Synchronize only Env38 edge endpoints to their prescribed node Points.
 
-Execution is a dry-run unless ``--apply`` is supplied. Canonical Env39 and its
-edge orientation are authoritative. No internal vertex, topology attribute,
+Execution is a dry-run unless ``--apply`` is supplied. Canonical Env39 edge
+identity is authoritative, while either unambiguous working LineString
+direction is accepted and preserved. No internal vertex, topology attribute,
 node geometry, CRS, crossing, or near miss is modified by this utility.
 """
 
@@ -37,8 +38,8 @@ class SynchronizationError(RuntimeError):
     """Raised when synchronization cannot be performed without ambiguity."""
 
 
-class ReversedOrientationError(SynchronizationError):
-    """Raised when a working LineString appears reversed from canonical order."""
+class AmbiguousOrientationError(SynchronizationError):
+    """Raised when working endpoints cannot be assigned safely to u and v."""
 
 
 @dataclass(frozen=True)
@@ -51,6 +52,16 @@ class EndpointChange:
     distance_changed: float
 
 
+@dataclass(frozen=True)
+class EdgeOrientation:
+    edge_id: str
+    orientation: str
+    classification: str
+    forward_assignment_cost: float
+    reverse_assignment_cost: float
+    endpoint_synchronization_required: bool
+
+
 @dataclass
 class SyncPlan:
     input_path: Path
@@ -61,6 +72,7 @@ class SyncPlan:
     affected_edge_ids: list[str]
     affected_node_ids: list[str]
     changes: list[EndpointChange]
+    orientations: list[EdgeOrientation]
     replacement_geometries: dict[str, LineString]
     topology_signature_sha256: str
 
@@ -90,6 +102,16 @@ def _xy(coordinate: tuple[float, ...]) -> tuple[float, float]:
 
 def _distance(first: tuple[float, float], second: tuple[float, float]) -> float:
     return math.hypot(first[0] - second[0], first[1] - second[1])
+
+
+def _classify_orientation(edge_id: str, forward_cost: float, reverse_cost: float) -> str:
+    """Return the clearly cheaper endpoint assignment, failing on a near tie."""
+    if math.isclose(forward_cost, reverse_cost, rel_tol=1e-12, abs_tol=1e-12):
+        raise AmbiguousOrientationError(
+            f"Working edge {edge_id} has ambiguous endpoint assignment: "
+            f"forward cost={forward_cost:.17g}, reverse cost={reverse_cost:.17g}."
+        )
+    return "forward" if forward_cost < reverse_cost else "reversed"
 
 
 def _records_by_id(frame: gpd.GeoDataFrame, field: str, layer: str) -> dict[str, Any]:
@@ -137,6 +159,7 @@ def build_sync_plan(
     canonical_edge_rows = _records_by_id(canonical_edges, "edge_id", "canonical edges")
 
     changes: list[EndpointChange] = []
+    orientations: list[EdgeOrientation] = []
     replacements: dict[str, LineString] = {}
     matching_edges = 0
     for edge_id in sorted(canonical_edge_rows):
@@ -151,11 +174,10 @@ def build_sync_plan(
         canonical_v = _point_xy(canonical_node_rows[v].geometry, v, "canonical")
         canonical_coordinates = _line_coordinates(canonical_edge.geometry, edge_id, "canonical")
         canonical_start, canonical_end = _xy(canonical_coordinates[0]), _xy(canonical_coordinates[-1])
-        if canonical_start == canonical_u and canonical_end == canonical_v:
-            start_role, end_role = u, v
-        elif canonical_start == canonical_v and canonical_end == canonical_u:
-            start_role, end_role = v, u
-        else:
+        if not (
+            (canonical_start == canonical_u and canonical_end == canonical_v)
+            or (canonical_start == canonical_v and canonical_end == canonical_u)
+        ):
             raise SynchronizationError(f"Canonical edge {edge_id} endpoints do not exactly match canonical nodes.")
 
         current_coordinates = _line_coordinates(working_edge.geometry, edge_id, "working")
@@ -163,13 +185,10 @@ def build_sync_plan(
         working_u = _point_xy(working_node_rows[u].geometry, u, "working")
         working_v = _point_xy(working_node_rows[v].geometry, v, "working")
         targets = {u: working_u, v: working_v}
-        expected_cost = _distance(current_start, targets[start_role]) + _distance(current_end, targets[end_role])
-        reversed_cost = _distance(current_start, targets[end_role]) + _distance(current_end, targets[start_role])
-        if reversed_cost < expected_cost or (reversed_cost == expected_cost and expected_cost != 0.0):
-            raise ReversedOrientationError(
-                f"Working edge {edge_id} appears reversed or orientation is ambiguous: "
-                f"canonical-order cost={expected_cost:.17g}, reversed cost={reversed_cost:.17g}."
-            )
+        forward_cost = _distance(current_start, working_u) + _distance(current_end, working_v)
+        reverse_cost = _distance(current_start, working_v) + _distance(current_end, working_u)
+        orientation = _classify_orientation(edge_id, forward_cost, reverse_cost)
+        start_role, end_role = (u, v) if orientation == "forward" else (v, u)
 
         required_start, required_end = targets[start_role], targets[end_role]
         edge_changes: list[EndpointChange] = []
@@ -177,6 +196,16 @@ def build_sync_plan(
             edge_changes.append(EndpointChange(edge_id, "first", start_role, current_start, required_start, _distance(current_start, required_start)))
         if current_end != required_end:
             edge_changes.append(EndpointChange(edge_id, "last", end_role, current_end, required_end, _distance(current_end, required_end)))
+        orientations.append(
+            EdgeOrientation(
+                edge_id=edge_id,
+                orientation=orientation,
+                classification=f"{orientation}/unambiguous",
+                forward_assignment_cost=forward_cost,
+                reverse_assignment_cost=reverse_cost,
+                endpoint_synchronization_required=bool(edge_changes),
+            )
+        )
         if not edge_changes:
             matching_edges += 1
             continue
@@ -201,6 +230,7 @@ def build_sync_plan(
         affected_edge_ids=sorted(replacements),
         affected_node_ids=sorted({item.node_id for item in changes}),
         changes=changes,
+        orientations=orientations,
         replacement_geometries=replacements,
         topology_signature_sha256=preflight["topology_control"]["topology_signature_sha256"],
     )
@@ -284,6 +314,8 @@ def apply_sync_plan(plan: SyncPlan) -> dict[str, Any]:
     fresh_plan = build_sync_plan(input_path, canonical_path)
     if [asdict(item) for item in fresh_plan.changes] != [asdict(item) for item in plan.changes]:
         raise SynchronizationError("Working Env38 changed after dry-run planning; refusing stale apply.")
+    if [asdict(item) for item in fresh_plan.orientations] != [asdict(item) for item in plan.orientations]:
+        raise SynchronizationError("Working Env38 edge orientations changed after dry-run planning; refusing stale apply.")
     if not plan.changes:
         final = validator.validate_candidate(input_path, canonical_path)
         return {
@@ -359,6 +391,7 @@ def plan_report(plan: SyncPlan) -> dict[str, Any]:
         "affected_edge_ids": plan.affected_edge_ids,
         "affected_node_ids": plan.affected_node_ids,
         "changes": [asdict(item) for item in plan.changes],
+        "edge_orientations": [asdict(item) for item in plan.orientations],
     }
 
 
