@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
+import json
 import os
 from pathlib import Path
 import re
@@ -161,10 +163,33 @@ class Phase7EThrough7HNotebookTests(unittest.TestCase):
             self.assertIn(marker, output)
 
     def test_04_canonical_notebook_uses_latest_run_and_preserves_local_crs(self):
+        latest = json.loads(self.latest_path.read_text(encoding="utf-8"))
+        canonical_path = ROOT / latest["canonical_path"]
+        manifest_path = ROOT / latest["manifest_path"]
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+
+        self.assertTrue(canonical_path.is_file())
+        self.assertTrue(manifest_path.is_file())
+        self.assertEqual(manifest["identity"]["run_id"], latest["run_id"])
+        self.assertEqual(manifest["published_canonical"]["path"], latest["canonical_path"])
+        self.assertEqual(
+            hashlib.sha256(canonical_path.read_bytes()).hexdigest().upper(),
+            latest["canonical_file_sha256"],
+        )
+        for signature_name in ("scientific_content_signature", "topology_signature"):
+            self.assertEqual(manifest["network_identity"][signature_name], latest[signature_name])
+            self.assertEqual(manifest["published_canonical"][signature_name], latest[signature_name])
+        self.assertEqual(manifest["network_identity"]["node_count"], 46)
+        self.assertEqual(manifest["network_identity"]["physical_edge_count"], 69)
+        self.assertEqual(manifest["network_identity"]["coordinate_system"], "GeoGami Local Cartesian")
+        self.assertEqual(manifest["network_identity"]["coordinate_units"], "local units")
+
+        notebook = nbformat.read(self.canonical_path, as_version=4)
+        self.assertIn('CANONICAL_RUN = "latest"', self._code(notebook))
         if self.__class__._executed_01_root is None:
             self.__class__._executed_01_root = self._execute(self.canonical_path, ROOT)
         output = self._text(self.__class__._executed_01_root)
-        self.assertIn("env39_20260824T123033467880Z_2046798c1e9c", output)
+        self.assertIn(latest["run_id"], output)
         self.assertIn("Coordinate system: GeoGami Local Cartesian", output)
         self.assertIn("Units: local units", output)
         self.assertIn("GraphML round-trip validation: PASS", output)
