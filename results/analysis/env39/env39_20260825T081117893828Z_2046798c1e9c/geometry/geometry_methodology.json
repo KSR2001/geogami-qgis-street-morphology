@@ -1,0 +1,73 @@
+{
+  "chord": "D_i = Euclidean distance between canonical u/v Point geometries; LineString endpoints verified against those nodes",
+  "circuity": {
+    "edge": "L_i / D_i for D_i above zero-chord tolerance",
+    "historical_H4": "not used or claimed supported; Phase 7G formulas are explicitly defined planar ratios",
+    "mean_edge_circuity": "arithmetic mean of individual L_i / D_i ratios",
+    "network_circuity": "sum(L_i) / sum(D_i) over eligible positive-chord edges"
+  },
+  "configuration": {
+    "chord_weighting": "equal_edge",
+    "circuity_floating_tolerance": 1e-12,
+    "file_sha256": "80042A6B046FC19C2E7F1C7A5D66CB6987EC7ACACB844351728DA39DA13A95E3",
+    "length_comparison_tolerance_local": 1e-09,
+    "orientation_bin_width_degrees": 5.0,
+    "orientation_bins": 36,
+    "orientation_boundary_tolerance_degrees": 1e-09,
+    "path": "config/metrics.yaml",
+    "segment_weighting": "segment_length_local",
+    "zero_chord_tolerance_local": 1e-09,
+    "zero_segment_tolerance_local": 1e-12
+  },
+  "coordinate_system": "GeoGami Local Cartesian",
+  "coordinate_units": "local units, not metres",
+  "entropy": {
+    "formula": "H = -sum(p_i * ln(p_i)) over positive probabilities",
+    "logarithm_base": "natural",
+    "maximum": "ln(number_of_bins)",
+    "normalized": "H / H_max"
+  },
+  "excluded_experimental_metrics": [
+    "splines",
+    "Frechet distance",
+    "turning energy",
+    "experimental curvature estimators"
+  ],
+  "figure_semantics": "SVG rose plots mirror each [0,180) axial observation across 180 degrees as an undirected axis; they are not traffic bearings",
+  "forbidden_geographic_functions": [
+    "osmnx.distance.add_edge_lengths",
+    "osmnx.bearing.add_edge_bearings",
+    "great-circle distance",
+    "geographic nearest-node",
+    "fake EPSG:4326 reprojection",
+    "osmnx.plot_orientation"
+  ],
+  "histogram": {
+    "bin_width_degrees": 5.0,
+    "bins": 36,
+    "boundary_rule": "angle modulo 180; snap only within configured tolerance of an exact boundary; then floor(angle/bin_width); [start,end)",
+    "boundary_tolerance_degrees": 1e-09,
+    "domain_degrees": [
+      0,
+      180
+    ]
+  },
+  "length": "L_i = recomputed canonical LineString.length; stored length_local checked within configured tolerance",
+  "orientation": {
+    "chord": "one endpoint-chord orientation per eligible physical canonical edge; internal curvature not represented",
+    "convention": "0 degrees North, 90 East, clockwise, axial normalization to [0,180)",
+    "reversal_invariant": true,
+    "segment": "one local axial orientation per positive consecutive LineString coordinate pair; vertices are geometry vertices, not graph nodes"
+  },
+  "orientation_order": {
+    "formula": "phi = |sum(w_i * exp(i * 4 * theta_i)) / sum(w_i)|",
+    "range": [
+      0,
+      1
+    ],
+    "symmetry": 4,
+    "theta_units": "radians"
+  },
+  "schema_version": "1.0.0",
+  "scope": "planar physical-street geometry, circuity, axial orientation, entropy, and fourfold order"
+}

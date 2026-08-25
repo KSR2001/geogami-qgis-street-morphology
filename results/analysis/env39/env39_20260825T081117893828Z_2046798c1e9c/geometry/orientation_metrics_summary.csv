@@ -1,0 +1,13 @@
+metric_name,value,units,method,weighting,population,interpretation
+orientation_bin_count,36,bins,180 / configured bin width,not applicable,both axial distributions,number of deterministic axial bins
+orientation_bin_width_degrees,5.0,degrees,180 / bins,not applicable,both axial distributions,axial histogram bin width
+chord_orientation_observation_count,69,physical streets,one chord orientation per eligible edge,equal physical edge,positive-chord physical edges,overall endpoint-to-endpoint street axes
+segment_orientation_observation_count,76,segments,one orientation per positive geometry segment,segment length,LineString geometry segments,local geometry orientations including internal curvature
+chord_orientation_entropy,0.8233712721085531,nats,-sum(p_i * ln(p_i)),equal physical edge,36-bin chord orientations,raw Shannon orientation entropy
+chord_orientation_maximum_entropy,3.58351893845611,nats,ln(number_of_bins),not applicable,36-bin chord orientations,maximum possible entropy for configured bins
+chord_orientation_normalized_entropy,0.22976612828040105,proportion,H / ln(number_of_bins),equal physical edge,36-bin chord orientations,"orientation disorder normalized to [0,1]"
+segment_length_weighted_orientation_entropy,0.6896030136902007,nats,-sum(p_i * ln(p_i)),segment_length_local,36-bin geometry-segment orientations,raw length-weighted Shannon orientation entropy
+segment_orientation_maximum_entropy,3.58351893845611,nats,ln(number_of_bins),not applicable,36-bin geometry-segment orientations,maximum possible entropy for configured bins
+segment_length_weighted_normalized_entropy,0.19243738502113314,proportion,H / ln(number_of_bins),segment_length_local,36-bin geometry-segment orientations,"length-weighted orientation disorder normalized to [0,1]"
+phi_chord,0.9511069268378259,proportion,|sum(w*exp(i*4*theta))/sum(w)|,equal physical edge,positive-chord physical edges,fourfold orthogonal orientation order
+phi_segment_length_weighted,1.0,proportion,|sum(w*exp(i*4*theta))/sum(w)|,segment_length_local,positive LineString geometry segments,length-weighted fourfold local-orientation order

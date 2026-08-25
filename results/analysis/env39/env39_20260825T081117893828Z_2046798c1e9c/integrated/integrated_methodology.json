@@ -1,0 +1,79 @@
+{
+  "comparison_roles": [
+    "context_only",
+    "geometry_sensitive",
+    "orientation_sensitive",
+    "topology_control"
+  ],
+  "comparison_schema_version": "1.0.0",
+  "controlled_comparison": {
+    "different_geometric_metrics": "Differences associated with geometric realization rather than graph connectivity; no broader causal claim is implied.",
+    "different_geometry_weighted_network_metrics": "Routing-cost consequences of changed edge lengths/geometries on otherwise controlled connectivity.",
+    "identical_topology_metrics": "Evidence that experimental topology control was maintained."
+  },
+  "core_metric_selection_rationale": {
+    "geometry.mean_edge_circuity": "Summarizes edge-level geometric deviation from chords.",
+    "geometry.mean_edge_length": "Summarizes the scale of canonical physical edges.",
+    "geometry.network_circuity": "Provides the length-ratio aggregate for the entire physical network.",
+    "geometry.total_length": "Captures total realized street length on the fixed topology.",
+    "network_weighted.mean_shortest_path_length": "Summarizes routing cost when physical edge lengths weight the controlled graph.",
+    "orientation.chord_entropy": "Measures directional dispersion with one equally weighted chord per edge.",
+    "orientation.chord_entropy_normalized": "Makes chord entropy interpretable relative to the configured maximum.",
+    "orientation.phi_chord": "Quantifies fourfold axial order for equally weighted edge chords.",
+    "orientation.phi_segment_length_weighted": "Quantifies fourfold axial order while retaining segment length weighting.",
+    "orientation.segment_entropy_length_weighted": "Measures directional dispersion while retaining curved-edge segment geometry and length weighting.",
+    "orientation.segment_entropy_length_weighted_normalized": "Makes segment-weighted entropy interpretable relative to the configured maximum.",
+    "topology.component_count": "Confirms network connectedness and the analyzed component scope.",
+    "topology.cycle_rank": "Measures independent cycles and verifies controlled route redundancy.",
+    "topology.dead_end_proportion": "Captures the share of terminal nodes in a size-comparable form.",
+    "topology.degree_3_proportion": "Captures three-way junction composition in a size-comparable form.",
+    "topology.degree_4_proportion": "Captures four-way junction composition associated with grid structure.",
+    "topology.mean_degree": "Summarizes junction connectivity independently of edge geometry.",
+    "topology.node_count": "Defines graph order and is a direct topology-control check.",
+    "topology.physical_edge_count": "Defines graph size without counting reciprocal OSMnx arcs."
+  },
+  "figures": [
+    {
+      "figure_id": "canonical_network",
+      "file_sha256": "E3CEAE9F199ED1427E5B2C2E48AA60A4B1AF39E0931C043647744223C2DF9633",
+      "label": "Canonical physical street network",
+      "path": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c/integrated/figures/canonical_physical_network.svg",
+      "provenance": "Phase 7H view of canonical geometry"
+    },
+    {
+      "figure_id": "degree_structure",
+      "file_sha256": "2994A37DFABFB13A8C0609CE521B902ED1DA267F4C1C0F31443933BF690F971A",
+      "label": "Degree and junction structure",
+      "path": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c/integrated/figures/degree_junction_structure.svg",
+      "provenance": "Phase 7H view of stored Phase 7F summary"
+    },
+    {
+      "figure_id": "edge_circuity",
+      "file_sha256": "C1A9AD0124B9A5D67AB96A3C3C443602AD4E3D996AB72AD28744677D52CCFFD3",
+      "label": "Edge circuity distribution",
+      "path": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c/geometry/figures/edge_circuity_distribution.svg",
+      "provenance": "Reused Phase 7G figure"
+    },
+    {
+      "figure_id": "chord_orientation",
+      "file_sha256": "7452D5E2E0D9F3CE5AF02F3EF4761F9ED8D29833807C3C0821E49A68A74DA028",
+      "label": "Chord orientation rose",
+      "path": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c/geometry/figures/chord_orientation_rose.svg",
+      "provenance": "Reused Phase 7G figure"
+    },
+    {
+      "figure_id": "segment_orientation",
+      "file_sha256": "0058159EE0985A2256B9BB8CC7B732482269F4B37C21404EE4E41611A1D66FF3",
+      "label": "Segment-length-weighted orientation distribution",
+      "path": "results/analysis/env39/env39_20260825T081117893828Z_2046798c1e9c/geometry/figures/segment_length_weighted_orientation_histogram.svg",
+      "provenance": "Reused Phase 7G figure"
+    }
+  ],
+  "historical_methodology_note": "Earlier approximate outputs (orientation entropy 1.5144 and phi 0.9966) are retained only as historical results. Their insufficiently aligned/documented methodology makes them not directly comparable with the explicit Phase 7G chord and segment-length-weighted baselines; the Phase 7G methodology is current.",
+  "metric_families": {
+    "geometric_morphology": "Derives directly from planar physical geometry and may change between geometric realizations.",
+    "geometry_weighted_network": "Uses physical edge length as graph cost and may change when geometry changes on fixed connectivity.",
+    "orientation_morphology": "Describes axial street orientation under the fixed Phase 7G binning and weighting definitions.",
+    "topology_controlled": "Depends only on graph connectivity/topology and should remain identical when frozen topology is maintained."
+  }
+}
