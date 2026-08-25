@@ -47,7 +47,16 @@ class Phase7EThrough7HNotebookTests(unittest.TestCase):
         cls.env38_run_root = (
             ROOT / cls.env38_analysis_pointer["analysis_manifest_path"]
         ).parent
-        cls.env38_freeze_path = cls.env38_run_root / "env38_scientific_baseline_freeze.json"
+        freeze_paths = sorted(
+            (ROOT / "results" / "analysis" / "env38").glob(
+                "*/env38_scientific_baseline_freeze.json"
+            )
+        )
+        if len(freeze_paths) != 1:
+            raise AssertionError(
+                f"Expected one historical Env38 freeze artifact, found {len(freeze_paths)}."
+            )
+        cls.env38_freeze_path = freeze_paths[0]
         cls.env38_freeze_bytes = cls.env38_freeze_path.read_bytes()
         cls.env38_protected_hashes = cls._hash_tree(cls.env38_run_root)
         cls._original_path = os.environ.get("PATH", "")

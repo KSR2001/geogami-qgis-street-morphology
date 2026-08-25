@@ -35,6 +35,7 @@ from geogami_morphology.io import read_network, sha256_file
 OFFICIAL_RUN_ID = "env38_20260825T150753632988Z_974f687c1ac4"
 RUN_ROOT = ROOT / "results" / "analysis" / "env38" / OFFICIAL_RUN_ID
 FREEZE_PATH = RUN_ROOT / "env38_scientific_baseline_freeze.json"
+FREEZE_SHA256 = "1B3F5808E2E5604322C059481BBCC6DEC015F41F4D0A8098D3DDC3324F2C4815"
 
 
 def read_json(path: Path) -> dict:
@@ -55,18 +56,28 @@ class Phase9DEnv38ScientificBaselineFreezeTests(unittest.TestCase):
         cls.geometry = read_json(RUN_ROOT / "geometry/geometry_metrics_summary.json")
         cls.orientation = read_json(RUN_ROOT / "geometry/orientation_metrics_summary.json")
 
-    def test_01_both_latest_pointers_resolve_the_frozen_official_run(self):
-        self.assertEqual(self.canonical_latest["run_id"], OFFICIAL_RUN_ID)
-        self.assertEqual(self.analysis_latest["canonical_run_id"], OFFICIAL_RUN_ID)
+    def test_01_historical_freeze_is_immutable_and_latest_is_a_scientific_successor(self):
+        self.assertEqual(sha256_file(FREEZE_PATH), FREEZE_SHA256)
+        self.assertNotEqual(self.canonical_latest["run_id"], OFFICIAL_RUN_ID)
+        self.assertNotEqual(self.analysis_latest["canonical_run_id"], OFFICIAL_RUN_ID)
+        self.assertEqual(self.canonical_latest["run_id"], self.analysis_latest["canonical_run_id"])
         self.assertEqual(self.canonical_latest["canonical_path"], self.analysis_latest["canonical_path"])
         self.assertEqual(self.freeze["official_run_id"], OFFICIAL_RUN_ID)
         self.assertEqual(self.freeze["environment"], "env38")
         self.assertEqual(self.freeze["status"], "PASS")
+        self.assertEqual(
+            self.canonical_latest["scientific_content_signature"],
+            self.freeze["canonical_identity"]["scientific_content_signature"],
+        )
+        self.assertEqual(
+            self.canonical_latest["topology_signature"],
+            self.freeze["canonical_identity"]["topology_signature"],
+        )
 
     def test_02_canonical_graph_and_editable_identities_match_the_freeze(self):
         selection = resolve_canonical_run(
             "env38",
-            latest_path=ROOT / "data/canonical/curvilinear/latest.json",
+            canonical_path=ROOT / self.freeze["canonical_identity"]["path"],
             project_root=ROOT,
         )
         nodes, edges = load_canonical_geopackage(selection.canonical_path)
@@ -190,12 +201,13 @@ class Phase9DEnv38ScientificBaselineFreezeTests(unittest.TestCase):
             "source_manifests",
             "source_artifacts",
             "methodology_artifacts",
-            "pointers",
         ):
             for record in self.freeze[section].values():
                 path = ROOT / record["path"]
                 self.assertTrue(path.is_file())
                 self.assertEqual(sha256_file(path), record["file_sha256"])
+        for record in self.freeze["pointers"].values():
+            self.assertTrue((ROOT / record["path"]).is_file())
         for key in ("registry", "metrics_configuration"):
             record = self.freeze["provenance"][key]
             self.assertEqual(sha256_file(ROOT / record["path"]), record["file_sha256"])
