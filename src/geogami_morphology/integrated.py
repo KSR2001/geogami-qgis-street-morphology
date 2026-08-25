@@ -223,13 +223,14 @@ def _directory_hashes(path: Path) -> dict[str, str]:
 
 def _baseline_markdown(selection: CanonicalSelection, core: tuple[dict[str, Any], ...]) -> str:
     by_id = {row["metric_id"]: row for row in core}
+    label = selection.environment.replace("env", "Env", 1)
     table = ["| Family | Metric | Value | Units |", "|---|---|---:|---|"]
     for row in core:
         value = row["value"]
         shown = str(value) if isinstance(value, int) else f"{float(value):.12g}"
         table.append(f"| {row['metric_family']} | {row['metric_label']} | {shown} | {row['units']} |")
     return "\n".join([
-        "# Env39 baseline summary", "",
+        f"# {label} baseline summary", "",
         "This machine-produced baseline integrates the accepted Phase 7F topology and Phase 7G geometry/orientation results; it does not recalculate metrics.", "",
         "## Canonical identity", "",
         f"- Canonical run: `{selection.run_id}`",
@@ -244,7 +245,7 @@ def _baseline_markdown(selection: CanonicalSelection, core: tuple[dict[str, Any]
         f"- Normalized chord and segment-length-weighted entropies ({float(by_id['orientation.chord_entropy_normalized']['value']):.4f} and {float(by_id['orientation.segment_entropy_length_weighted_normalized']['value']):.4f}) indicate concentrated axial orientation under the accepted binning.",
         f"- Fourfold order is strong for both chords ({float(by_id['orientation.phi_chord']['value']):.4f}) and length-weighted segments ({float(by_id['orientation.phi_segment_length_weighted']['value']):.4f}).", "",
         "## Limitations", "",
-        "These descriptive values characterize Env39 under the accepted local-coordinate, graph, binning, and weighting definitions. They do not establish that one environment is better, nor do they demonstrate causal effects on navigation. A later Env38 comparison must first confirm identical topology-control metrics and then interpret geometry-sensitive differences within the experimental setup.", "",
+        f"These descriptive values characterize {label} under the accepted local-coordinate, graph, binning, and weighting definitions. They do not establish that one environment is better, nor do they demonstrate causal effects on navigation. Controlled comparisons must first confirm identical topology metrics and then interpret geometry-sensitive differences within the experimental setup.", "",
     ])
 
 
@@ -316,7 +317,7 @@ def integrate_results(
             for degree in (1, 3, 4) if f"degree_count_{degree}" in topology_values
         }
         (figures_dir / "degree_junction_structure.svg").write_text(
-            degree_count_svg(degrees, title="Env39 physical-node degree structure"),
+            degree_count_svg(degrees, title=f"{environment.replace('env', 'Env', 1)} physical-node degree structure"),
             encoding="utf-8", newline="\n",
         )
         figure_specs = (
@@ -358,7 +359,8 @@ def integrate_results(
             "figures": list(figure_catalog),
         }
         write_json(output_dir / "integrated_methodology.json", methodology)
-        (output_dir / "env39_baseline_summary.md").write_text(
+        baseline_summary = output_dir / f"{environment}_baseline_summary.md"
+        baseline_summary.write_text(
             _baseline_markdown(selection, core), encoding="utf-8", newline="\n"
         )
         artifact_paths = {
@@ -366,7 +368,7 @@ def integrate_results(
             "core_metrics_csv": output_dir / "core_metrics.csv",
             "core_metrics_json": output_dir / "core_metrics.json",
             "integrated_methodology_json": output_dir / "integrated_methodology.json",
-            "env39_baseline_summary_md": output_dir / "env39_baseline_summary.md",
+            f"{environment}_baseline_summary_md": baseline_summary,
             "canonical_network_svg": figures_dir / "canonical_physical_network.svg",
             "degree_structure_svg": figures_dir / "degree_junction_structure.svg",
         }

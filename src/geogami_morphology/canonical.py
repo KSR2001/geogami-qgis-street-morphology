@@ -234,23 +234,29 @@ def run_preserve_topology(
                 continue
             u, v, _key = expected
             ref_start, ref_end = Point(reference_geometry.coords[0][:2]), Point(reference_geometry.coords[-1][:2])
-            if ref_start.wkb == ref_points[u].wkb and ref_end.wkb == ref_points[v].wkb:
-                start_role, end_role = u, v
-            elif ref_start.wkb == ref_points[v].wkb and ref_end.wkb == ref_points[u].wkb:
-                start_role, end_role = v, u
-            else:
+            if not (
+                (ref_start.wkb == ref_points[u].wkb and ref_end.wkb == ref_points[v].wkb)
+                or (ref_start.wkb == ref_points[v].wkb and ref_end.wkb == ref_points[u].wkb)
+            ):
                 issues.append(_issue("geometry", "invalid_reference_endpoints", "Reference edge endpoints do not exactly match its prescribed nodes.", edge_id=edge_id))
                 continue
             endpoint_roles[edge_id] = (u, v)
             coordinates = [tuple(map(float, coordinate[:2])) for coordinate in geometry.coords]
             current_start, current_end = coordinates[0], coordinates[-1]
+            source_u = (float(node_points[u].x), float(node_points[u].y))
+            source_v = (float(node_points[v].x), float(node_points[v].y))
+            forward_cost = _distance(current_start, source_u) + _distance(current_end, source_v)
+            reverse_cost = _distance(current_start, source_v) + _distance(current_end, source_u)
+            if math.isclose(forward_cost, reverse_cost, rel_tol=1e-12, abs_tol=1e-12):
+                issues.append(_issue(
+                    "geometry", "ambiguous_edge_orientation",
+                    "Editable LineString endpoint assignment to its prescribed nodes is ambiguous.",
+                    edge_id=edge_id,
+                ))
+                continue
+            start_role, end_role = (u, v) if forward_cost < reverse_cost else (v, u)
             target_start = (float(node_points[start_role].x), float(node_points[start_role].y))
             target_end = (float(node_points[end_role].x), float(node_points[end_role].y))
-            expected_cost = _distance(current_start, target_start) + _distance(current_end, target_end)
-            reverse_cost = _distance(current_start, target_end) + _distance(current_end, target_start)
-            if reverse_cost < expected_cost:
-                issues.append(_issue("geometry", "reversed_edge_orientation", "Editable LineString is reversed relative to canonical provenance orientation.", edge_id=edge_id))
-                continue
             endpoint_failed = False
             for position, current, target, node_id in (("first", current_start, target_start, start_role), ("last", current_end, target_end, end_role)):
                 distance = _distance(current, target)

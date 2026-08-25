@@ -282,6 +282,7 @@ def run_versioned_canonical(
     endpoint_tolerance: float = DEFAULT_ENDPOINT_TOLERANCE,
     project_root: Path = PROJECT_ROOT,
     configuration_paths: Iterable[Path] | None = None,
+    environment_routing: dict[str, Any] | None = None,
 ) -> VersionedRunResult:
     input_path, reference_path, runs_root = map(Path, (input_path, reference_path, runs_root))
     project_root = Path(project_root)
@@ -406,6 +407,7 @@ def run_versioned_canonical(
             "git_provenance": git_state,
             "software_environment": software,
             "network_identity": identity,
+            "environment_routing": environment_routing,
             "validation": {
                 "topology_status": validation["topology_status"],
                 "geometry_status": validation["geometry_status"],
